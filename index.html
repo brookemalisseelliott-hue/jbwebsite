@@ -1,0 +1,3445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JB Contracting ATX | Austin Decks, Roofing, Fences & Outdoor Living</title>
+<meta name="description" content="Austin's family-owned contractor for decks, roofing, siding, fences, and the outdoor living spaces your family actually uses. Licensed, insured, and 5-star Google rated. Same-day callback when you reach out, every time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1e3a8a;
+    --navy-dark: #1a2f6f;
+    --navy-deep: #14245a;
+    --slate: #2a3e6b;
+    --slate-soft: #4a5b80;
+    --steel: #6b7a90;
+    --fog: #b8c4d4;
+    --mist: #e2e8f0;
+    --paper: #f4f6fb;
+    --white: #ffffff;
+    --offwhite: #fafbfd;
+    --line: #dde3ec;
+    --line-soft: #ecf0f6;
+    --copper: #2d5a3d;
+    --copper-dark: #1f4129;
+    --gold: #b6c2d4;
+    --shadow-sm: 0 4px 12px rgba(15, 28, 42, 0.06);
+    --shadow: 0 20px 50px -20px rgba(15, 28, 42, 0.22);
+    --shadow-lg: 0 30px 80px -25px rgba(15, 28, 42, 0.32);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  button { font-family: inherit; cursor: pointer; }
+
+  /* ===== ANNOUNCE ===== */
+  .announce {
+    background: var(--navy-deep);
+    color: var(--mist);
+    text-align: center;
+    padding: 9px 20px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .announce span { color: var(--gold); }
+  .announce a { color: var(--white); text-decoration: underline; text-underline-offset: 2px; }
+
+  /* ===== HEADER ===== */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 32px;
+  }
+  .header-inner {
+    max-width: 1340px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.015em;
+    color: var(--navy);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-mark {
+    width: 40px; height: 40px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: var(--shadow-sm);
+    letter-spacing: -0.02em;
+  }
+  .logo-mark .amp { color: var(--gold); font-style: italic; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.05; }
+  .logo-text span:first-child { font-size: 18px; }
+  .logo-text span:last-child {
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--slate-soft);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .nav { display: flex; gap: 32px; align-items: center; }
+  .nav a {
+    color: var(--slate);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav a:hover { color: var(--copper); }
+  .header-cta { display: flex; gap: 12px; align-items: center; }
+  .phone-link {
+    display: flex; align-items: center; gap: 6px;
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    letter-spacing: 0.005em;
+  }
+  .btn-primary { background: var(--copper); color: var(--white); }
+  .btn-primary:hover { background: var(--copper-dark); transform: translateY(-1px); box-shadow: 0 8px 20px -8px rgba(45, 90, 61, 0.55); }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-dark); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid var(--white);
+  }
+  .btn-outline:hover { background: var(--white); color: var(--navy); }
+  .btn-outline-navy {
+    background: transparent;
+    color: var(--navy);
+    border: 1.5px solid var(--navy);
+  }
+  .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
+  .btn-large { padding: 17px 32px; font-size: 16px; }
+  @media (max-width: 920px) {
+    .nav { display: none; }
+    .header-cta .phone-link { display: none; }
+    .header { padding: 14px 20px; }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 100%);
+    color: var(--white);
+    padding: 100px 32px 120px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 30%, rgba(201, 126, 63, 0.18), transparent 50%),
+      radial-gradient(ellipse at 10% 90%, rgba(74, 91, 112, 0.4), transparent 50%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1340px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-logo {
+    height: 110px;
+    width: auto;
+    margin-bottom: 22px;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 36px; height: 1.5px; background: var(--gold);
+  }
+  .hero h1 {
+    font-size: clamp(46px, 6vw, 86px);
+    margin-bottom: 28px;
+    color: var(--white);
+    font-weight: 600;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .hero-sub {
+    font-size: 19px;
+    color: var(--fog);
+    margin-bottom: 38px;
+    max-width: 520px;
+    line-height: 1.55;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
+  .hero-trust {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--mist);
+  }
+  .hero-trust > div {
+    display: flex; align-items: center; gap: 7px; font-weight: 500;
+  }
+  .hero-trust svg { color: var(--gold); flex-shrink: 0; }
+
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 500px;
+    margin-left: auto;
+  }
+  .hero-photo-main {
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-photo-main img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-photo-accent {
+    position: absolute;
+    bottom: -34px;
+    left: -34px;
+    width: 50%;
+    aspect-ratio: 4/3;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 6px solid var(--white);
+  }
+  .hero-photo-accent img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-rating-badge {
+    position: absolute;
+    top: -22px;
+    right: -22px;
+    background: var(--white);
+    border-radius: 100px;
+    padding: 14px 22px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+  }
+  .hero-rating-badge .stars { color: var(--copper); font-size: 14px; letter-spacing: 1.5px; }
+  .hero-rating-badge .label { font-size: 12px; font-weight: 600; color: var(--navy); }
+  .hero-rating-badge .label em { font-style: italic; color: var(--copper); font-weight: 500; }
+  .hero-award {
+    position: absolute;
+    bottom: -28px;
+    right: -28px;
+    width: 44%;
+    max-width: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid var(--white);
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 3;
+  }
+  .hero-award:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 28px 60px -20px rgba(15, 28, 42, 0.45);
+  }
+  .hero-award img { display: block; width: 100%; height: auto; }
+
+  @media (max-width: 920px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 90px; }
+    .hero { padding: 60px 22px 90px; }
+    .hero-visual { margin: 0 auto; max-width: 380px; }
+    .hero-logo { height: 86px; }
+    .hero-award { width: 50%; bottom: -22px; right: -16px; }
+    .hero-award img { width: 100%; }
+  }
+
+  /* ===== STAT STRIP ===== */
+  .stats {
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    padding: 36px 32px;
+  }
+  .stats-inner {
+    max-width: 1340px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    align-items: center;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 0 16px;
+    border-right: 1px solid var(--line);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -0.03em;
+  }
+  .stat-num em { font-style: italic; color: var(--copper); font-weight: 400; }
+  .stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--slate-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  @media (max-width: 720px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .stat-item { border-right: none; padding: 12px 0; }
+    .stat-item:nth-child(odd) { border-right: 1px solid var(--line); }
+    .stat-num { font-size: 32px; }
+  }
+
+  /* ===== TRUST/VERIFIED BAR ===== */
+  .verified {
+    background: var(--paper);
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .verified-inner {
+    max-width: 1340px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .verified-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--slate-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    flex-shrink: 0;
+  }
+  .verified-logos {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
+  }
+  .verified-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--slate);
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+  .verified-logo:hover { opacity: 1; }
+  .verified-logo .ico { color: var(--copper); }
+  .verified-logo svg { width: 22px; height: 22px; }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 120px 32px; }
+  .container { max-width: 1340px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 72px; }
+  .section-header.left { text-align: left; max-width: 760px; margin-bottom: 56px; }
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--copper);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 18px;
+  }
+  .section-header h2 {
+    font-size: clamp(40px, 5.2vw, 68px);
+    margin-bottom: 20px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--navy);
+    letter-spacing: -0.028em;
+  }
+  .section-header.left h2 { margin-left: 0; margin-right: 0; }
+  .section-header h2 em { font-style: italic; color: var(--copper); font-weight: 400; }
+  .section-header p {
+    font-size: 18px;
+    color: var(--slate-soft);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
+  .section-header.left p { margin-left: 0; margin-right: 0; }
+
+  /* ===== INSPIRATION (BEFORE DESIGNER) ===== */
+  .inspo {
+    background: var(--white);
+    padding: 120px 32px 100px;
+  }
+  .inspo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .inspo-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+  }
+  .inspo-card:hover { transform: translateY(-6px); }
+  .inspo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .inspo-card:hover img { transform: scale(1.05); }
+  .inspo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(15, 28, 42, 0.92));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 28px;
+    color: var(--white);
+  }
+  .inspo-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 8px;
+  }
+  .inspo-title {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .inspo-cta {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .inspo-cta::after { content: '→'; transition: transform 0.2s; }
+  .inspo-card:hover .inspo-cta::after { transform: translateX(4px); }
+  @media (max-width: 920px) {
+    .inspo-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .inspo-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== DREAM DESIGNER ===== */
+  .designer {
+    background: var(--paper);
+    position: relative;
+  }
+  .designer-trust-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px 32px;
+    margin: -8px auto 28px;
+    padding: 14px 24px;
+    max-width: 920px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--slate);
+  }
+  .designer-trust-bar > div { display: inline-flex; align-items: center; gap: 8px; }
+  .designer-trust-bar svg { color: var(--copper); }
+  @media (max-width: 720px) {
+    .designer-trust-bar { gap: 10px 18px; font-size: 12px; padding: 12px 16px; }
+  }
+  .designer-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 680px;
+  }
+  .designer-controls {
+    padding: 44px 42px;
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+  }
+  .designer-progress {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 32px;
+  }
+  .progress-dot {
+    flex: 1;
+    height: 4px;
+    background: var(--line);
+    border-radius: 2px;
+    transition: background 0.3s;
+  }
+  .progress-dot.active { background: var(--copper); }
+  .progress-dot.done { background: var(--navy); }
+
+  .designer-step-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--copper);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 8px;
+  }
+  .designer-step-title {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    color: var(--navy);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .designer-step-help {
+    color: var(--slate-soft);
+    font-size: 14px;
+    margin-bottom: 28px;
+    line-height: 1.55;
+  }
+
+  .option-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .option-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .option-grid.col { grid-template-columns: 1fr; }
+  .option-tile {
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    padding: 14px 16px;
+    background: var(--white);
+    text-align: left;
+    transition: all 0.18s;
+    position: relative;
+  }
+  .option-tile:hover { border-color: var(--slate-soft); transform: translateY(-1px); }
+  .option-tile.selected {
+    border-color: var(--copper);
+    background: rgba(201, 126, 63, 0.04);
+    box-shadow: 0 0 0 3px rgba(201, 126, 63, 0.12);
+  }
+  .option-tile.selected::after {
+    content: '✓';
+    position: absolute;
+    top: 8px; right: 10px;
+    color: var(--copper);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .option-tile-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .option-tile-desc {
+    font-size: 12px;
+    color: var(--slate-soft);
+    line-height: 1.4;
+  }
+
+  /* "Not sure" tile - distinctive style */
+  .option-tile.unsure {
+    background: var(--paper);
+    border-style: dashed;
+    border-color: var(--copper);
+  }
+  .option-tile.unsure .option-tile-title { color: var(--copper); font-style: italic; }
+  .option-tile.unsure::before {
+    content: '💡';
+    position: absolute;
+    top: 12px; right: 14px;
+    font-size: 16px;
+  }
+
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .swatch {
+    aspect-ratio: 1;
+    border-radius: 6px;
+    border: 2px solid var(--line);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+    overflow: hidden;
+  }
+  .swatch:hover { transform: scale(1.05); }
+  .swatch.selected {
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(201, 126, 63, 0.3);
+  }
+  .swatch-label {
+    font-size: 10px;
+    color: var(--slate);
+    text-align: center;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .swatch-wrap { display: flex; flex-direction: column; align-items: stretch; }
+
+  .designer-info {
+    margin-top: auto;
+    padding: 16px 18px;
+    background: var(--mist);
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.55;
+    border-left: 3px solid var(--copper);
+  }
+  .designer-info strong { color: var(--navy); }
+
+  /* "Not sure" inspiration panel */
+  .unsure-panel {
+    margin-bottom: 22px;
+  }
+  .unsure-panel-header {
+    font-size: 13px;
+    color: var(--slate-soft);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .unsure-panel-header strong { color: var(--navy); }
+  .unsure-photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .unsure-photo {
+    aspect-ratio: 4/3;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid var(--line);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .unsure-photo:hover { border-color: var(--copper); transform: translateY(-2px); }
+  .unsure-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .unsure-photo .photo-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(180deg, transparent, rgba(15, 28, 42, 0.9));
+    color: white;
+    padding: 14px 10px 8px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .designer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+  .btn-back {
+    background: none;
+    border: none;
+    color: var(--slate-soft);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 0;
+  }
+  .btn-back:hover { color: var(--navy); }
+  .btn-back:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  .designer-preview {
+    background: linear-gradient(180deg, #e8eef4 0%, #cdd5df 100%);
+    padding: 44px 42px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .preview-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 8px;
+  }
+  .preview-title {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    color: var(--navy);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .preview-stage {
+    flex: 1;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 340px;
+    position: relative;
+  }
+  .preview-stage svg { width: 100%; height: 100%; display: block; }
+  .preview-meta {
+    margin-top: 22px;
+    background: var(--white);
+    border-radius: 8px;
+    padding: 18px 22px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--line);
+  }
+  .preview-meta-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    font-size: 13px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .preview-meta-row:last-child { border-bottom: none; }
+  .preview-meta-row .label { color: var(--slate-soft); font-weight: 500; }
+  .preview-meta-row .value { color: var(--navy); font-weight: 600; }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .service-tile {
+    border: 1.5px solid var(--line);
+    border-radius: 8px;
+    background: var(--white);
+    padding: 24px 18px 20px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .service-tile:hover { border-color: var(--copper); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+  .service-tile.selected {
+    border-color: var(--copper);
+    background: rgba(201, 126, 63, 0.04);
+  }
+  .service-tile svg {
+    width: 38px; height: 38px;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .service-tile.selected svg { color: var(--copper); }
+  .service-tile-title {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .designer-final { padding: 0; }
+  .summary-list {
+    background: var(--paper);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 22px 0;
+    text-align: left;
+  }
+  .summary-list .summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--line);
+    gap: 16px;
+  }
+  .summary-list .summary-row:last-child { border-bottom: none; }
+  .summary-list .summary-row .key { color: var(--slate-soft); flex-shrink: 0; }
+  .summary-list .summary-row .val {
+    color: var(--navy);
+    font-weight: 600;
+    font-family: 'Fraunces', serif;
+    text-align: right;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+    text-align: left;
+  }
+  .form-grid .full { grid-column: 1 / -1; }
+  .form-grid label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .form-grid input,
+  .form-grid textarea,
+  .form-grid select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--white);
+    color: var(--navy);
+    transition: border 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-grid select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%234a5b80' stroke-width='1.8'><polyline points='1 1.5 6 6.5 11 1.5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+  .form-grid input:focus,
+  .form-grid textarea:focus,
+  .form-grid select:focus { outline: none; border-color: var(--copper); }
+  .form-grid textarea { resize: vertical; min-height: 70px; }
+  .form-promise-row {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 22px;
+    margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--slate);
+  }
+  .form-promise-row span { display: inline-flex; align-items: center; gap: 6px; }
+  .form-promise-row svg { color: var(--copper); }
+
+  .designer-success {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  .designer-success .check {
+    width: 64px; height: 64px;
+    background: var(--copper);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 26px;
+    font-size: 30px;
+  }
+  .designer-success h3 { font-family: 'Fraunces', serif; font-size: 32px; color: var(--navy); margin-bottom: 14px; }
+  .designer-success p { color: var(--slate-soft); max-width: 480px; margin: 0 auto 10px; }
+  .success-testimonial {
+    margin: 26px auto 0;
+    max-width: 480px;
+    padding: 22px 24px;
+    background: var(--paper);
+    border-left: 3px solid var(--copper);
+    border-radius: 6px;
+    text-align: left;
+  }
+  .success-stars { color: var(--copper); letter-spacing: 2px; font-size: 14px; margin-bottom: 8px; }
+  .success-quote { font-family: 'Fraunces', serif; font-style: italic; color: var(--navy); font-size: 17px; line-height: 1.45; margin: 0 0 10px !important; }
+  .success-attrib { font-size: 13px; color: var(--slate-soft); margin: 0 !important; }
+
+  @media (max-width: 920px) {
+    .designer-card { grid-template-columns: 1fr; min-height: auto; }
+    .designer-controls { border-right: none; border-bottom: 1px solid var(--line); padding: 30px 22px; }
+    .designer-preview { padding: 30px 22px; min-height: 320px; }
+    .preview-stage { min-height: 240px; }
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .swatch-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* ===== ABOUT ===== */
+  .about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 90px;
+    align-items: center;
+  }
+  .about-photo {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    box-shadow: 22px 22px 0 var(--navy);
+  }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .about h2 {
+    font-size: clamp(36px, 4.4vw, 56px);
+    margin-bottom: 26px;
+    margin-top: 14px;
+    color: var(--navy);
+    letter-spacing: -0.025em;
+  }
+  .about h2 em { font-style: italic; color: var(--copper); font-weight: 400; }
+  .about p {
+    font-size: 17px;
+    color: var(--slate);
+    margin-bottom: 18px;
+    line-height: 1.65;
+  }
+  .about-signature {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--copper);
+    margin-top: 26px;
+    border-left: 3px solid var(--copper);
+    padding-left: 20px;
+  }
+  @media (max-width: 920px) {
+    .about-grid { grid-template-columns: 1fr; gap: 50px; }
+    .about-photo { box-shadow: 14px 14px 0 var(--navy); max-width: 380px; margin: 0 auto; }
+  }
+
+  /* ===== PROCESS ===== */
+  .process {
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    counter-reset: step;
+  }
+  .process-step {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 36px 28px 32px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .process-step:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--copper); }
+  .process-step::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--copper);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .process-step .icon {
+    width: 44px;
+    height: 44px;
+    background: var(--mist);
+    color: var(--navy);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .process-step:hover .icon { background: var(--copper); color: var(--white); }
+  .process-step h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .process-step p {
+    font-size: 14px;
+    color: var(--slate-soft);
+    line-height: 1.6;
+  }
+  @media (max-width: 920px) {
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .process-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== WHY / FAMILY ===== */
+  .why {
+    background: var(--navy-deep);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .why::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(201, 126, 63, 0.15), transparent 50%),
+      radial-gradient(ellipse at 20% 80%, rgba(74, 91, 112, 0.3), transparent 50%);
+    pointer-events: none;
+  }
+  .why .container { position: relative; z-index: 1; }
+  .why-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .why .section-eyebrow { color: var(--gold); }
+  .why h2 {
+    color: var(--white);
+    font-size: clamp(38px, 4.8vw, 58px);
+    margin-bottom: 36px;
+  }
+  .why h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .why-text {
+    font-size: 19px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 26px;
+  }
+  .why-signoff {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--gold);
+    margin-top: 22px;
+  }
+
+  /* ===== GALLERY ===== */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 14px;
+    grid-auto-flow: dense;
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--mist);
+    cursor: pointer;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.05); }
+  .gallery-item .label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 36px 22px 16px;
+    background: linear-gradient(180deg, transparent, rgba(15, 28, 42, 0.92));
+    color: var(--white);
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s;
+  }
+  .gallery-item:hover .label { opacity: 1; transform: translateY(0); }
+  .g-large { grid-column: span 6; grid-row: span 2; aspect-ratio: 1/1; }
+  .g-tall { grid-column: span 3; grid-row: span 2; aspect-ratio: 1/2; }
+  .g-wide { grid-column: span 6; aspect-ratio: 16/9; }
+  .g-square { grid-column: span 3; aspect-ratio: 1/1; }
+  @media (max-width: 920px) {
+    .gallery-grid { grid-template-columns: repeat(6, 1fr); }
+    .g-large { grid-column: span 6; grid-row: span 1; aspect-ratio: 4/3; }
+    .g-tall { grid-column: span 3; grid-row: span 1; aspect-ratio: 4/3; }
+    .g-wide { grid-column: span 6; aspect-ratio: 4/3; }
+  }
+
+  /* ===== REVIEWS ===== */
+  .reviews { background: var(--paper); }
+  .reviews-google-bar {
+    display: flex; align-items: center; justify-content: center;
+    gap: 18px; margin-top: 22px;
+  }
+  .reviews-google-bar .stars { color: var(--copper); font-size: 24px; letter-spacing: 2px; }
+  .reviews-google-bar .label { font-size: 14px; color: var(--slate); font-weight: 500; }
+  .reviews-google-bar .label strong { color: var(--copper); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+  .review-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 36px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .review-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .review-card .quote-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 100px;
+    line-height: 1;
+    color: var(--copper);
+    opacity: 0.16;
+    position: absolute;
+    top: 14px;
+    right: 24px;
+  }
+  .review-stars { color: var(--copper); font-size: 16px; letter-spacing: 2px; margin-bottom: 16px; }
+  .review-text {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--navy);
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .review-author-row {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 14px;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  .review-author { font-size: 14px; font-weight: 600; color: var(--navy); }
+  .review-meta { font-size: 12px; color: var(--slate-soft); margin-top: 2px; }
+  .review-project {
+    font-size: 12px;
+    color: var(--copper);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 720px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta {
+    background:
+      linear-gradient(135deg, var(--navy-deep), var(--slate)),
+      radial-gradient(circle at 15% 50%, rgba(201, 126, 63, 0.4), transparent 50%);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(201, 126, 63, 0.18), transparent 50%);
+    pointer-events: none;
+  }
+  .final-cta .container { position: relative; z-index: 1; }
+  .final-cta h2 {
+    font-size: clamp(40px, 5.4vw, 64px);
+    margin-bottom: 22px;
+    color: var(--white);
+  }
+  .final-cta h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .final-cta p {
+    font-size: 18px;
+    margin-bottom: 38px;
+    max-width: 600px;
+    margin-left: auto; margin-right: auto;
+    opacity: 0.92;
+  }
+  .final-cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy-deep);
+    color: var(--white);
+    padding: 80px 32px 32px;
+  }
+  .footer-inner {
+    max-width: 1340px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: 50px;
+    margin-bottom: 52px;
+  }
+  .footer-brand h3 { font-size: 26px; margin-bottom: 14px; color: var(--white); }
+  .footer-brand h3 span { color: var(--gold); font-style: italic; font-weight: 400; }
+  .footer-brand p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    max-width: 320px;
+    margin-bottom: 22px;
+    line-height: 1.65;
+  }
+  .social-row { display: flex; gap: 10px; }
+  .social-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .social-icon:hover { background: var(--copper); border-color: var(--copper); transform: translateY(-2px); }
+  .social-icon svg { width: 16px; height: 16px; }
+  footer h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 10px; }
+  footer ul a, footer ul li {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  footer ul a:hover { color: var(--white); }
+  .footer-bottom {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding-top: 26px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  @media (max-width: 920px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 30px; }
+  }
+
+  .mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 99;
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    padding: 10px 14px;
+    gap: 8px;
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.1);
+  }
+  .mobile-cta a { flex: 1; padding: 14px; font-size: 14px; }
+  @media (max-width: 720px) {
+    .mobile-cta { display: flex; }
+    body { padding-bottom: 70px; }
+    section { padding: 80px 22px; }
+    .stats { padding: 28px 22px; }
+    .verified { padding: 22px 22px; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ===== LIFESTYLE PICKER ===== */
+  .lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .lifestyle-tile {
+    border: 1.5px solid var(--line);
+    border-radius: 8px;
+    background: var(--white);
+    padding: 18px 18px;
+    text-align: left;
+    transition: all 0.18s;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .lifestyle-tile:hover { border-color: var(--copper); transform: translateY(-2px); }
+  .lifestyle-tile.selected {
+    border-color: var(--copper);
+    background: rgba(201, 126, 63, 0.04);
+    box-shadow: 0 0 0 3px rgba(201, 126, 63, 0.12);
+  }
+  .lifestyle-emoji {
+    font-size: 28px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .lifestyle-info { flex: 1; }
+  .lifestyle-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .lifestyle-desc {
+    font-size: 12px;
+    color: var(--slate-soft);
+    line-height: 1.4;
+  }
+  @media (max-width: 720px) {
+    .lifestyle-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== PHOTO UPLOAD ===== */
+  .photo-upload-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .photo-upload {
+    border: 1.5px dashed var(--line);
+    border-radius: 8px;
+    padding: 18px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--paper);
+    position: relative;
+  }
+  .photo-upload:hover { border-color: var(--copper); background: rgba(201, 126, 63, 0.04); }
+  .photo-upload input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .photo-upload-icon {
+    color: var(--copper);
+    margin-bottom: 8px;
+  }
+  .photo-upload-title {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .photo-upload-desc {
+    font-size: 11px;
+    color: var(--slate-soft);
+  }
+  .photo-upload.has-files {
+    border-style: solid;
+    border-color: var(--copper);
+    background: rgba(201, 126, 63, 0.06);
+  }
+  .photo-upload-count {
+    font-size: 11px;
+    color: var(--copper);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  @media (max-width: 720px) {
+    .photo-upload-row { grid-template-columns: 1fr; }
+  }
+
+  /* ===== SAVE / MOOD BOARD ===== */
+  .save-design-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--slate);
+    border: 1px solid var(--line);
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+    flex: 1;
+  }
+  .btn-ghost:hover { border-color: var(--navy); color: var(--navy); background: var(--paper); }
+
+  .moodboard-toast {
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--navy);
+    color: var(--white);
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 200;
+    pointer-events: none;
+  }
+  .moodboard-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  .moodboard-toast .check {
+    color: var(--gold);
+    margin-right: 6px;
+  }
+
+  /* ===== MOODBOARD MODAL ===== */
+  .moodboard-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    background: rgba(20, 36, 90, 0.85);
+    backdrop-filter: blur(8px);
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 20px;
+    overflow-y: auto;
+  }
+  .moodboard-modal.open { display: flex; }
+  .moodboard-content {
+    background: var(--white);
+    border-radius: 12px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 40px;
+    position: relative;
+  }
+  .moodboard-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: none;
+    font-size: 20px;
+    color: var(--slate);
+    cursor: pointer;
+  }
+  .moodboard-close:hover { background: var(--mist); }
+  .moodboard-content h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .moodboard-content > p {
+    color: var(--slate-soft);
+    margin-bottom: 32px;
+  }
+  .moodboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .moodboard-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--slate-soft);
+  }
+  .moodboard-empty-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+  .saved-design {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+  .saved-design:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .saved-design-preview {
+    aspect-ratio: 16/10;
+    background: linear-gradient(180deg, #e8eef4, #cdd5df);
+    overflow: hidden;
+  }
+  .saved-design-preview svg { width: 100%; height: 100%; display: block; }
+  .saved-design-body { padding: 16px 18px; }
+  .saved-design-tag {
+    font-size: 11px;
+    color: var(--copper);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .saved-design-title {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .saved-design-meta {
+    font-size: 12px;
+    color: var(--slate-soft);
+    margin-bottom: 12px;
+  }
+  .saved-design-actions { display: flex; gap: 8px; }
+  .btn-mini {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--slate);
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-mini:hover { background: var(--mist); }
+  .btn-mini.primary { background: var(--copper); color: white; border-color: var(--copper); }
+  .btn-mini.primary:hover { background: var(--copper-dark); }
+
+  /* Moodboard count badge in nav */
+  .moodboard-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--slate);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+  }
+  .moodboard-trigger:hover { color: var(--copper); }
+  .moodboard-count {
+    background: var(--copper);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 1px 7px;
+    min-width: 18px;
+    text-align: center;
+    display: none;
+  }
+  .moodboard-count.has { display: inline-block; }
+</style>
+</head>
+<body>
+
+<div class="announce">
+  ⭐ Now booking <span>Spring 2026 projects</span> · Same-day callback, always · <a href="#designer">Design yours →</a>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <img src="images/jb-logo-small.png" alt="JB Contracting ATX" style="height: 52px; width: auto;">
+    </a>
+    <nav class="nav">
+      <a href="#designer">Design Yours</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#work">Our Work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="blog.html">Resources</a>
+      <button class="moodboard-trigger" onclick="openMoodboard()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        My Designs
+        <span class="moodboard-count" id="moodboard-count-nav">0</span>
+      </button>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:5125873914" class="phone-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (512) 587-3914
+      </a>
+      <a href="#designer" class="btn btn-primary">Get Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <img src="images/jb-logo.png" alt="JB Contracting ATX" class="hero-logo">
+      <div class="hero-eyebrow">Family-Owned · Serving Greater Austin Since 2017</div>
+      <h1>Built <em>around you</em>, by neighbors who care.</h1>
+      <p class="hero-sub">Custom decks, roofing, siding, fences, and the outdoor spaces your family actually uses. Honest pricing, transparent communication, work backed by warranty. Same-day callback, every time.</p>
+      <div class="hero-ctas">
+        <a href="#designer" class="btn btn-primary btn-large">Design My Project →</a>
+        <a href="tel:5125873914" class="btn btn-outline btn-large">Call (512) 587-3914</a>
+      </div>
+      <div class="hero-trust">
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Same-Day Callback</div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 5.0 on Google</div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Licensed & Insured</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo-main">
+        <img src="images/hero-pergola-hill-country.jpg" alt="Cedar pergola with string lights overlooking the Texas Hill Country">
+      </div>
+      <div class="hero-photo-accent">
+        <img src="images/hero-metal-roof-solar.jpg" alt="Standing seam metal roof with solar panels">
+      </div>
+      <a href="https://nextdoor.com/page/jb-contracting-and-property-services-austin-tx" target="_blank" rel="noopener" class="hero-award" aria-label="Nextdoor Neighborhood Favorite 2025 Winner">
+        <img src="images/nextdoor-fave-2025.jpg" alt="Nextdoor Neighborhood Favorite 2025 Winner">
+      </a>
+      <div class="hero-rating-badge">
+        <span class="stars">★★★★★</span>
+        <span class="label">Real <em>Austin neighbors</em></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">Decades<em>.</em></div>
+      <div class="stat-label">Of Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5.0<em>★</em></div>
+      <div class="stat-label">Google Rated</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Same<em>-day</em></div>
+      <div class="stat-label">Callback, Always</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100<em>%</em></div>
+      <div class="stat-label">Licensed & Insured</div>
+    </div>
+  </div>
+</section>
+
+<!-- VERIFIED / TRUSTED ON -->
+<section class="verified">
+  <div class="verified-inner">
+    <div class="verified-label">As verified on</div>
+    <div class="verified-logos">
+      <div class="verified-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" class="ico" style="fill: #4285f4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" class="ico" style="fill: #34a853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" class="ico" style="fill: #fbbc04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" class="ico" style="fill: #ea4335"/></svg>
+        Google
+      </div>
+      <div class="verified-logo">
+        <svg viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </div>
+      <div class="verified-logo">
+        <svg viewBox="0 0 24 24" fill="#8ED500"><path d="M16.51 8.83c-1.66 0-3.07.79-3.96 2.04V9.13h-3.5v11.34h3.5v-6.13c0-1.45 1.18-2.62 2.62-2.62s2.62 1.18 2.62 2.62v6.13H21.3V13.4c0-2.52-2.04-4.57-4.79-4.57zM6.74 9.13H3.24v11.34h3.5V9.13zM4.99 7.81c1.13 0 2.04-.91 2.04-2.04 0-1.13-.91-2.04-2.04-2.04S2.95 4.64 2.95 5.77c0 1.13.91 2.04 2.04 2.04z"/></svg>
+        Nextdoor
+      </div>
+      <div class="verified-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ico"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        Licensed & Insured
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DREAM DESIGNER -->
+<section class="designer" id="designer">
+  <div class="container reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">Free Design Builder · Takes 90 Seconds</span>
+      <h2>Picture it. We'll <em>build it</em>.</h2>
+      <p>Pick your project, materials, and finishes, and watch your design come to life on the right. Save the looks you love, snap photos of your space, and send the full vision to John. He calls every lead back the same day. No pressure, no fees, no awkward sales pitch.</p>
+    </div>
+
+    <div class="designer-trust-bar">
+      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Free, no fees</div>
+      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> No obligation</div>
+      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Same-day callback</div>
+      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 5.0 on Google</div>
+    </div>
+
+    <div class="designer-card" id="designer-card">
+      <div class="designer-controls">
+        <div class="designer-progress" id="progress"></div>
+        <div id="step-content"></div>
+        <div class="designer-nav">
+          <button class="btn-back" onclick="goBack()" id="back-btn" disabled>← Back</button>
+          <span style="font-size: 13px; color: var(--slate-soft);" id="step-counter">Step 1 of 5</span>
+        </div>
+      </div>
+      <div class="designer-preview">
+        <div class="preview-label">Live Preview</div>
+        <div class="preview-title" id="preview-title">Your project</div>
+        <div class="preview-stage" id="preview-stage"></div>
+        <div class="preview-meta" id="preview-meta">
+          <div class="preview-meta-row"><span class="label">Project</span><span class="value" id="meta-project">Pick one to start</span></div>
+          <div class="preview-meta-row"><span class="label">Material</span><span class="value" id="meta-material">...</span></div>
+          <div class="preview-meta-row"><span class="label">Finish</span><span class="value" id="meta-finish">...</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">From Real Austin Neighbors</span>
+      <h2>What homeowners <em>say about us</em>.</h2>
+      <div class="reviews-google-bar">
+        <span class="stars">★★★★★</span>
+        <span class="label"><strong>5.0</strong> on Google · Verified reviews</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I recently had my roof replaced by JB Contracting, and I couldn't be happier with the entire experience. From the very first consultation to the final inspection, John made the process completely stress-free.</p>
+        <div class="review-author-row">
+          <div>
+            <div class="review-author">Mary Bernard Pacheco</div>
+            <div class="review-meta">Local Guide · 50 reviews</div>
+          </div>
+          <div class="review-project">Roof</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Hired JB Contracting prior to selling our home, for a full interior/exterior paint job, full fence replacement and roof replacement. Whole job start to finish went smoothly, crews were fantastic and professional, and John was in communication start to finish.</p>
+        <div class="review-author-row">
+          <div>
+            <div class="review-author">Terry McClure</div>
+            <div class="review-meta">3 reviews</div>
+          </div>
+          <div class="review-project">Full Property</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I needed new siding on a gable end of my house. I selected JB Contracting because they looked like a professional outfit and their quote was very competitive. First off, John is a super nice guy and very pleasant to work with!</p>
+        <div class="review-author-row">
+          <div>
+            <div class="review-author">Brian Mc.</div>
+            <div class="review-meta">Local Guide · 13 reviews</div>
+          </div>
+          <div class="review-project">Siding</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">JB contracting is 5/5! They are fair, reliable, and honest. We had a fence that needed to get fixed. They gave us an honest assessment and a great price. And they fixed us for it in a timely manner.</p>
+        <div class="review-author-row">
+          <div>
+            <div class="review-author">Reid Comstock</div>
+            <div class="review-meta">4 reviews</div>
+          </div>
+          <div class="review-project">Fence</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">John did a great job replacing my wood privacy fence. Communicated, provided an estimate, got the job done in a timely manner keeping both my tenant and neighbor happy.</p>
+        <div class="review-author-row">
+          <div>
+            <div class="review-author">Tanya Demings</div>
+            <div class="review-meta">Local Guide · 11 reviews</div>
+          </div>
+          <div class="review-project">Privacy Fence</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I highly recommend this company! If I could give more stars I would. I was looking for somebody to repair my mom's patio cover and John was the only person who understood my request, he quoted me a fair price and did excellent work.</p>
+        <div class="review-author-row">
+          <div>
+            <div class="review-author">Theresa Barrios</div>
+            <div class="review-meta">5 reviews</div>
+          </div>
+          <div class="review-project">Patio Cover</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSPIRATION -->
+<section class="inspo">
+  <div class="container reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">Real Projects, Real Austin Homes</span>
+      <h2>Find the project <em>you've been picturing</em>.</h2>
+      <p>Tap any project below to start designing yours in that style. Prefer to start from scratch? Skip ahead to the Designer.</p>
+    </div>
+    <div class="inspo-grid">
+      <div class="inspo-card" onclick="startWithService('deck'); scrollToDesigner();">
+        <img src="images/inspo-deck.jpg" alt="Custom backyard deck at sunset with built-in lighting">
+        <div class="inspo-overlay">
+          <div class="inspo-tag">Decks & Patios</div>
+          <div class="inspo-title">The deck your weekends need</div>
+          <div class="inspo-cta">Design a deck like this →</div>
+        </div>
+      </div>
+      <div class="inspo-card" onclick="startWithService('fence'); scrollToDesigner();">
+        <img src="images/inspo-fence.jpg" alt="Stained horizontal cedar fence">
+        <div class="inspo-overlay">
+          <div class="inspo-tag">Fences</div>
+          <div class="inspo-title">Privacy that still has style</div>
+          <div class="inspo-cta">Design a fence like this →</div>
+        </div>
+      </div>
+      <div class="inspo-card" onclick="startWithService('pergola'); scrollToDesigner();">
+        <img src="images/inspo-pergola.jpg" alt="Cedar pergola with string lights at sunset">
+        <div class="inspo-overlay">
+          <div class="inspo-tag">Pergolas</div>
+          <div class="inspo-title">Beat the Texas heat in style</div>
+          <div class="inspo-cta">Design a pergola like this →</div>
+        </div>
+      </div>
+      <div class="inspo-card" onclick="startWithService('roof'); scrollToDesigner();">
+        <img src="images/inspo-roof.jpg" alt="Standing seam metal roof with solar panels">
+        <div class="inspo-overlay">
+          <div class="inspo-tag">Roofing</div>
+          <div class="inspo-title">A roof built for Texas storms</div>
+          <div class="inspo-cta">Design a roof like this →</div>
+        </div>
+      </div>
+      <div class="inspo-card" onclick="startWithService('siding'); scrollToDesigner();">
+        <img src="images/inspo-siding.jpg" alt="Hardie fiber cement siding replacement">
+        <div class="inspo-overlay">
+          <div class="inspo-tag">Siding</div>
+          <div class="inspo-title">Curb appeal that turns heads</div>
+          <div class="inspo-cta">Design siding like this →</div>
+        </div>
+      </div>
+      <div class="inspo-card" onclick="startWithService('hardscape'); scrollToDesigner();">
+        <img src="images/inspo-hardscape.jpg" alt="Brick paver patio">
+        <div class="inspo-overlay">
+          <div class="inspo-tag">Hardscape</div>
+          <div class="inspo-title">Patios, walkways, fire features</div>
+          <div class="inspo-cta">Design hardscape like this →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container reveal">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="images/about-john.jpg" alt="John Bernard, owner of JB Contracting ATX">
+      </div>
+      <div>
+        <span class="section-eyebrow">Meet John</span>
+        <h2>Hi, I'm John. I built this business on <em>honest work</em>.</h2>
+        <p>JB Contracting is a mom-and-pop operation built on hard work, honesty, and treating customers like family. When you hire us, you're not just getting a contractor. You're getting a neighbor who genuinely cares how your home turns out.</p>
+        <p>I've spent decades in this trade, from small home repairs to full roof replacements to backyard transformations the whole neighborhood notices. The thing I'll never compromise on is transparency. You'll always know what's happening with your project, what it costs, and why. No surprises, no upcharges, no games. Just honest work I'd be proud to put my name on.</p>
+        <div class="about-signature">John Bernard, Owner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">How It Works</span>
+      <h2>Simple, transparent, <em>no surprises</em>.</h2>
+      <p>From the first call to the final walkthrough, here's exactly what working with us looks like.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h4>Tell Us Your Vision</h4>
+        <p>Use the Design Builder, give us a call, or text us photos of your space. John calls every lead back the same day, and you can have him out walking the project as soon as your schedule allows.</p>
+      </div>
+      <div class="process-step">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+        </div>
+        <h4>Free On-Site Estimate</h4>
+        <p>We come out, walk the project with you, and write up an honest, line-itemed quote. No pressure, no hidden fees, no obligation to book.</p>
+      </div>
+      <div class="process-step">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 21l3-3m0 0l9-9m-9 9V3a9 9 0 1018 0v18l-3-3"/><path d="M14 8a4 4 0 100-8 4 4 0 000 8z"/></svg>
+        </div>
+        <h4>Build Day</h4>
+        <p>Our crew shows up on time and gets to work. John texts you daily updates with photos so you always know exactly where the project stands.</p>
+      </div>
+      <div class="process-step">
+        <div class="icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4>Walkthrough & Warranty</h4>
+        <p>We finish, clean up after ourselves, and walk every detail with you. Every job is backed by warranty. If something isn't right, we make it right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="work">
+  <div class="container reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">Recent Projects</span>
+      <h2>The work <em>speaks for itself</em>.</h2>
+      <p>A handful of recent builds across Travis, Hays, Williamson, and the rest of greater Austin.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item g-large">
+        <img src="images/gallery-pergola-hill-country.jpg" alt="Cedar pergola with string lights, Hill Country view">
+        <div class="label">Hill Country Pergola Cover</div>
+      </div>
+      <div class="gallery-item g-tall">
+        <img src="images/gallery-roof-golden.jpg" alt="Roof replacement photographed at golden hour">
+        <div class="label">Roof Replacement at Golden Hour</div>
+      </div>
+      <div class="gallery-item g-tall">
+        <img src="images/gallery-deck-build.jpg" alt="Custom pressure-treated deck build">
+        <div class="label">Pressure-Treated Deck Build</div>
+      </div>
+      <div class="gallery-item g-square">
+        <img src="images/gallery-deck-sunset.jpg" alt="Backyard deck with built-in lighting at sunset">
+        <div class="label">Sunset Deck with Lighting</div>
+      </div>
+      <div class="gallery-item g-square">
+        <img src="images/gallery-fence-cedar.jpg" alt="Cedar privacy fence in a backyard">
+        <div class="label">Cedar Privacy Fence</div>
+      </div>
+      <div class="gallery-item g-square">
+        <img src="images/gallery-pergola-cover.jpg" alt="Covered pergola patio with concrete pad">
+        <div class="label">Covered Pergola Patio</div>
+      </div>
+      <div class="gallery-item g-square">
+        <img src="images/gallery-hardscape-paver.jpg" alt="Brick paver patio aerial view">
+        <div class="label">Brick Paver Patio</div>
+      </div>
+      <div class="gallery-item g-wide">
+        <img src="images/gallery-fence-stained.jpg" alt="Stained horizontal cedar fence with curved planter wall">
+        <div class="label">Stained Horizontal Cedar Fence</div>
+      </div>
+      <div class="gallery-item g-wide">
+        <img src="images/gallery-roof-metal.jpg" alt="Standing seam metal roof with solar">
+        <div class="label">Standing Seam Metal Roof</div>
+      </div>
+      <div class="gallery-item g-square">
+        <img src="images/gallery-deck-stairs.jpg" alt="New pressure-treated deck with stairs">
+        <div class="label">Deck Build with Stairs</div>
+      </div>
+      <div class="gallery-item g-square">
+        <img src="images/gallery-fence-gate.jpg" alt="Cedar privacy fence with gate">
+        <div class="label">Cedar Fence with Gate</div>
+      </div>
+      <div class="gallery-item g-square">
+        <img src="images/gallery-pergola-night.jpg" alt="Covered pergola lit at night with grill underneath">
+        <div class="label">Covered Pergola at Night</div>
+      </div>
+      <div class="gallery-item g-square">
+        <img src="images/gallery-roof-workers.jpg" alt="Crew installing dark metal roof">
+        <div class="label">Metal Roof Install Day</div>
+      </div>
+      <div class="gallery-item g-wide">
+        <img src="images/gallery-deck-hill.jpg" alt="Covered deck under construction with Hill Country view">
+        <div class="label">Hill Country Covered Deck</div>
+      </div>
+      <div class="gallery-item g-wide">
+        <img src="images/gallery-fence-vertical.jpg" alt="Tall vertical cedar privacy fence">
+        <div class="label">Tall Cedar Privacy Fence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="container reveal">
+    <div class="why-inner">
+      <span class="section-eyebrow">Our Story</span>
+      <h2>Why we do <em>this</em>.</h2>
+      <p class="why-text">My wife Brooke and I built JB Contracting together, the same way we're building our life. With our hands, with care, and with the people we love at the center of every decision.</p>
+      <p class="why-text">Every deck, every roof, every fence we build is somebody's home. Somebody's Sunday morning coffee spot. Somebody's place where their kids will grow up. I never forget that. When I finish a project, I want it to be the kind of work I'd be proud to do on my own house, because the family living there matters as much as mine does.</p>
+      <p class="why-text">That's the whole reason this business exists. Not to be the biggest contractor in Austin. Just to be the one your family trusts enough to call back the next time.</p>
+      <div class="why-signoff">John & Brooke</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="contact">
+  <div class="container reveal">
+    <h2>Ready to start your <em>next project</em>?</h2>
+    <p>Free estimates. Honest pricing. Every job warrantied. Tell us what you're picturing and we'll take it from there.</p>
+    <div class="final-cta-buttons">
+      <a href="#designer" class="btn btn-primary btn-large">Design My Project</a>
+      <a href="tel:5125873914" class="btn btn-outline btn-large">Call (512) 587-3914</a>
+    </div>
+    <div style="margin-top: 18px; font-size: 13px; opacity: 0.85;">Same-day callback · No obligation · Licensed & insured</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/jb-logo.png" alt="JB Contracting ATX" style="height: 78px; width: auto; margin-bottom: 18px;">
+      <p>Austin's family-owned contractor. Honest work, quality craftsmanship, and homes that feel like home.</p>
+      <div class="social-row">
+        <a href="https://www.facebook.com/profile.php?id=61571954327161" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://nextdoor.com/page/jb-contracting-and-property-services-austin-tx" target="_blank" rel="noopener" class="social-icon" aria-label="Nextdoor">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.51 8.83c-1.66 0-3.07.79-3.96 2.04V9.13h-3.5v11.34h3.5v-6.13c0-1.45 1.18-2.62 2.62-2.62s2.62 1.18 2.62 2.62v6.13H21.3V13.4c0-2.52-2.04-4.57-4.79-4.57zM6.74 9.13H3.24v11.34h3.5V9.13zM4.99 7.81c1.13 0 2.04-.91 2.04-2.04 0-1.13-.91-2.04-2.04-2.04S2.95 4.64 2.95 5.77c0 1.13.91 2.04 2.04 2.04z"/></svg>
+        </a>
+        <a href="https://www.google.com/search?q=JB+Contracting+ATX+Austin+TX" target="_blank" rel="noopener" class="social-icon" aria-label="Google Business Profile">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" opacity="0.85"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" opacity="0.7"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" opacity="0.55"/></svg>
+        </a>
+        <a href="https://www.instagram.com/jbcontractingatx/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#designer">Decks & Patios</a></li>
+        <li><a href="#designer">Roofing</a></li>
+        <li><a href="#designer">Siding</a></li>
+        <li><a href="#designer">Fences</a></li>
+        <li><a href="#designer">Pergolas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About John</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#why">Our Story</a></li>
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="blog.html">Resources & Guides</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <ul>
+        <li><a href="tel:5125873914">(512) 587-3914</a></li>
+        <li><a href="mailto:jbconstructionatx@gmail.com">jbconstructionatx@gmail.com</a></li>
+        <li>Travis · Hays · Williamson</li>
+        <li>and surrounding counties</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 JB Contracting ATX · Licensed & Insured</div>
+    <div>Built with care in Austin, Texas</div>
+  </div>
+</footer>
+
+<!-- MOODBOARD MODAL -->
+<div class="moodboard-modal" id="moodboard-modal">
+  <div class="moodboard-content">
+    <button class="moodboard-close" onclick="closeMoodboard()">×</button>
+    <span class="section-eyebrow">Your Mood Board</span>
+    <h2>Designs you've saved.</h2>
+    <p>Every design you save lives right here. Send the whole collection to John when you're ready, or keep building out your dream and come back later.</p>
+    <div id="moodboard-grid" class="moodboard-grid"></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="moodboard-toast" id="moodboard-toast">
+  <span class="check">✓</span><span id="toast-msg">Saved to your mood board</span>
+</div>
+
+<div class="mobile-cta">
+  <a href="tel:5125873914" class="btn btn-outline-navy">📞 Call</a>
+  <a href="#designer" class="btn btn-primary">Free Quote</a>
+</div>
+
+<script>
+/* ============== DREAM DESIGNER (v4) ============== */
+
+const SERVICES = {
+  deck: {
+    name: 'Deck',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9h18M3 14h18M3 19h18M5 5l-2 4M19 5l2 4M3 5h18"/></svg>',
+    steps: ['material', 'finish', 'addons']
+  },
+  fence: {
+    name: 'Fence',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8l1-3 2 3v12M9 8l1-3 2 3v12M14 8l1-3 2 3v12M19 8l1-3M3 11h18M3 16h18"/></svg>',
+    steps: ['style', 'finish', 'height']
+  },
+  roof: {
+    name: 'Roof',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11l9-7 9 7M5 9.5V20h14V9.5M9 14h6v6H9z"/></svg>',
+    steps: ['material', 'finish', 'addons']
+  },
+  siding: {
+    name: 'Siding',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 10h18M3 14h18M3 18h18"/></svg>',
+    steps: ['material', 'finish', 'addons']
+  },
+  pergola: {
+    name: 'Pergola',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h18l-2 3H5zM5 10v11M19 10v11M8 8v-2M12 8v-2M16 8v-2M5 13h14M5 16h14"/></svg>',
+    steps: ['material', 'finish', 'addons']
+  },
+  hardscape: {
+    name: 'Hardscape',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h6v6H3zM15 6h6v6h-6zM3 14h6v6H3zM15 14h6v6h-6zM10 6h4v14h-4z"/></svg>',
+    steps: ['material', 'finish', 'addons']
+  }
+};
+
+/* All photos available for "not sure" inspiration paths */
+const PHOTOS = {
+  deck:      [{src: 'images/db-deck-1.jpg',      label: 'Sunset Deck Build'},        {src: 'images/db-deck-2.jpg',      label: 'Pressure-Treated Deck'}],
+  fence:     [{src: 'images/db-fence-1.jpg',     label: 'Stained Horizontal Cedar'}, {src: 'images/db-fence-2.jpg',     label: 'Cedar Privacy with Gate'}],
+  roof:      [{src: 'images/db-roof-1.jpg',      label: 'Standing Seam Metal'},      {src: 'images/db-roof-2.jpg',      label: 'Architectural Shingle'}],
+  siding:    [{src: 'images/db-siding-1.jpg',    label: 'Hardie Gable Replacement'}, {src: 'images/db-siding-2.jpg',    label: 'Modern Farmhouse Siding'}],
+  pergola:   [{src: 'images/db-pergola-1.jpg',   label: 'Cedar Pergola at Sunset'},  {src: 'images/db-pergola-2.jpg',   label: 'Hill Country Pergola'}],
+  hardscape: [{src: 'images/db-hardscape-1.jpg', label: 'Paver Patio'},              {src: 'images/db-hardscape-2.jpg', label: 'Brick Walkway'}],
+};
+
+/* Services that get the "lifestyle" step (outdoor living projects) */
+const LIFESTYLE_SERVICES = ['deck', 'pergola', 'hardscape'];
+
+/* LIFESTYLES: pre-pick add-ons based on how the family actually uses the space */
+const LIFESTYLES = {
+  bbq: {
+    name: 'Weekend BBQ HQ',
+    emoji: '🔥',
+    desc: 'Grilling, cold ones, the game on outside. Year-round.',
+    addons: { deck: ['railing', 'lighting', 'firepit'], pergola: ['covered', 'fan', 'lights'], hardscape: ['firepit', 'seating', 'lighting'] }
+  },
+  entertainer: {
+    name: 'The Entertainer',
+    emoji: '🥂',
+    desc: 'Birthdays, dinner parties, late nights with friends.',
+    addons: { deck: ['lighting', 'pergola', 'benches'], pergola: ['lights', 'fan', 'curtains'], hardscape: ['lighting', 'seating', 'planters'] }
+  },
+  family: {
+    name: 'Kids & Dogs in the Yard',
+    emoji: '🧒',
+    desc: 'Open space, durable surfaces, built to handle real life.',
+    addons: { deck: ['railing', 'benches'], pergola: ['covered', 'fan'], hardscape: ['drainage', 'edging'] }
+  },
+  hottub: {
+    name: 'Spa & Hot Tub Oasis',
+    emoji: '♨️',
+    desc: 'A calm, private retreat right outside your back door.',
+    addons: { deck: ['railing', 'lighting', 'planters'], pergola: ['covered', 'curtains', 'lights'], hardscape: ['lighting', 'planters'] }
+  },
+  morning: {
+    name: 'Morning Coffee Spot',
+    emoji: '☕',
+    desc: 'Quiet, peaceful, just you and the sunrise.',
+    addons: { deck: ['benches', 'planters'], pergola: ['open', 'lights'], hardscape: ['planters', 'edging'] }
+  },
+  lowmaint: {
+    name: 'Low Maintenance',
+    emoji: '🛠️',
+    desc: 'Build it once, build it right, then forget about it.',
+    addons: { deck: [], pergola: [], hardscape: ['drainage'] }
+  },
+};
+
+const QUESTIONS = {
+  deck: {
+    material: {
+      label: 'Decking Material',
+      title: 'Pick your decking material',
+      help: 'The biggest decision of the build. It shapes the look, the lifespan, the maintenance, and how it feels underfoot.',
+      options: [
+        { id: 'pt', name: 'Pressure-Treated Pine', desc: 'Most affordable. 20+ years with care.', info: '<strong>Pressure-treated pine</strong> is the most popular and budget-friendly option. Treated at the mill to resist rot and insects. Takes stain beautifully and can be painted any color you want.' },
+        { id: 'cedar', name: 'Western Red Cedar', desc: 'Naturally beautiful, warm tones.', info: '<strong>Cedar</strong> is naturally rot- and insect-resistant, no chemicals required. Warm reddish-brown that weathers to a soft silver-grey. Roughly 25 to 30 percent more than pressure-treated, and worth every penny if you love the look.' },
+        { id: 'composite', name: 'Composite (Trex / Fiberon)', desc: 'Zero maintenance. 25+ year warranty.', info: '<strong>Composite decking</strong> is wood fiber and recycled plastic. No staining, no sealing, ever. Won\'t warp, splinter, or rot. Premium price upfront, but you\'ll never touch it again.' },
+      ]
+    },
+    finish: {
+      label: 'Stain Color',
+      title: 'Pick your stain or finish',
+      help: 'This is where the personality comes in. Cedar can stay natural; pressure-treated almost always gets stained.',
+      swatches: [
+        { id: 'natural', name: 'Natural', color: '#c9a878' },
+        { id: 'honey', name: 'Honey', color: '#a87e4a' },
+        { id: 'cedar', name: 'Cedar Tone', color: '#8b563a' },
+        { id: 'walnut', name: 'Walnut', color: '#5a3d2a' },
+        { id: 'ebony', name: 'Ebony', color: '#2a201a' },
+        { id: 'driftwood', name: 'Driftwood Grey', color: '#7a7068' },
+        { id: 'redwood', name: 'Redwood', color: '#7a3a2a' },
+        { id: 'weathered', name: 'Weathered', color: '#9a8a7a' },
+      ],
+      info: '<strong>Pro tip:</strong> All wood decks need a stain or sealer to hold up in the Texas sun. We re-coat most decks every 2 to 3 years to keep them looking like the day we built them.'
+    },
+    addons: {
+      label: 'Features & Extras',
+      title: 'Make it yours',
+      help: 'Tap anything that catches your eye. We\'ll go through every detail when we come walk the project.',
+      multi: true,
+      options: [
+        { id: 'railing', name: 'Custom Railings', desc: 'Cable, metal, or wood' },
+        { id: 'lighting', name: 'Built-In Lighting', desc: 'Step lights and accents' },
+        { id: 'pergola', name: 'Attached Pergola', desc: 'Shade structure overhead' },
+        { id: 'benches', name: 'Built-In Benches', desc: 'Saves floor space, looks clean' },
+        { id: 'planters', name: 'Built-In Planters', desc: 'Greenery built right in' },
+        { id: 'firepit', name: 'Fire Pit Area', desc: 'Cooler nights, longer evenings' },
+      ]
+    }
+  },
+  fence: {
+    style: {
+      label: 'Fence Style',
+      title: 'Pick your fence style',
+      help: 'Each style has a different look and privacy level. The runaway favorite in Austin right now is horizontal cedar.',
+      options: [
+        { id: 'horizontal', name: 'Horizontal Slat', desc: 'Modern, clean, on trend.', info: '<strong>Horizontal fences</strong> are the modern Austin look. Boards run sideways for a clean, contemporary feel. Best on level yards where the lines stay straight.' },
+        { id: 'bob', name: 'Board on Board', desc: 'Maximum privacy, no gaps.', info: '<strong>Board on board</strong> overlaps the pickets so there are no gaps, even as the wood naturally shrinks. Looks just as good from your neighbor\'s yard as from yours.' },
+        { id: 'shadowbox', name: 'Shadowbox', desc: 'Looks the same on both sides.', info: '<strong>Shadowbox fences</strong> alternate boards on either side of the rail. Same look from both yards. Semi-private with great airflow on hot days.' },
+        { id: 'picket', name: 'Picket', desc: 'Classic, charming, front yard.', info: '<strong>Picket fences</strong> are the classic American look. Great for front yards and garden borders. Defines the space without blocking the view.' },
+        { id: 'capframe', name: 'Cap & Frame', desc: 'Premium, polished finish.', info: '<strong>Cap & frame fences</strong> add a top cap and trim that hides the board ends. More refined visually, and the cap also protects the wood from rain damage.' },
+      ]
+    },
+    finish: {
+      label: 'Wood & Stain',
+      title: 'Pick your wood color',
+      help: 'Cedar is our most popular by a mile. Leave it natural to weather to silver, or seal it to keep that warm honey tone.',
+      swatches: [
+        { id: 'cedar-natural', name: 'Natural Cedar', color: '#b87850' },
+        { id: 'cedar-rich', name: 'Rich Cedar', color: '#8a4a2e' },
+        { id: 'honey', name: 'Honey', color: '#a87e4a' },
+        { id: 'walnut', name: 'Walnut', color: '#5a3d2a' },
+        { id: 'driftwood', name: 'Driftwood', color: '#8a7868' },
+        { id: 'black', name: 'Modern Black', color: '#2a2a2a' },
+        { id: 'white', name: 'White', color: '#f0ece4' },
+        { id: 'pt-natural', name: 'Pressure-Treated', color: '#9a8060' },
+      ],
+      info: '<strong>Western Red Cedar</strong> is naturally rot-resistant and lasts 20 to 30 years in Texas weather. Untreated cedar weathers to a silvery grey over 1 to 2 years if you let nature do the work.'
+    },
+    height: {
+      label: 'Fence Height',
+      title: 'How tall should it be?',
+      help: '6 feet is the standard in most Austin backyards. If your neighborhood or HOA has rules, we\'ll check before we build.',
+      options: [
+        { id: '4ft', name: '4 feet', desc: 'Decorative, great for front yards' },
+        { id: '6ft', name: '6 feet', desc: 'Standard privacy. The Austin default.' },
+        { id: '8ft', name: '8 feet', desc: 'Maximum privacy. We verify local code.' },
+      ]
+    }
+  },
+  roof: {
+    material: {
+      label: 'Roof Material',
+      title: 'Pick your shingle type',
+      help: 'Most Austin roofs are architectural asphalt shingles. Metal is climbing fast thanks to the heat and the energy savings.',
+      options: [
+        { id: 'arch', name: 'Architectural Shingles', desc: 'Most popular. 30-year warranty.', info: '<strong>Architectural (dimensional) shingles</strong> are the standard for new roofs. Thicker than 3-tab, look like wood shake, and last 25 to 30 years. Great curb appeal at a fair price.' },
+        { id: '3tab', name: '3-Tab Shingles', desc: 'Budget option. 20-year life.', info: '<strong>3-tab shingles</strong> are flat and thinner. The budget option. Phasing out in a lot of neighborhoods. Lasts 15 to 20 years with limited color choices.' },
+        { id: 'luxury', name: 'Luxury / Designer', desc: 'High-end slate or shake look.', info: '<strong>Luxury shingles</strong> mimic real slate or wood shake. Thicker, heavier, and more durable. The most premium asphalt option, with curb appeal that\'s hard to beat.' },
+        { id: 'metal', name: 'Standing Seam Metal', desc: 'Modern. 50+ years. Reflects heat.', info: '<strong>Metal roofing</strong> reflects heat (a huge deal in Austin), lasts 50+ years, and looks striking. Higher cost upfront, but pays you back in cooling bills and lifespan.' },
+      ]
+    },
+    finish: {
+      label: 'Color',
+      title: 'Pick your shingle color',
+      help: 'Lighter colors reflect heat (better for our summers). Darker colors hide aging better. The Austin favorites: weathered wood and charcoal.',
+      swatches: [
+        { id: 'charcoal', name: 'Charcoal', color: '#2e3338' },
+        { id: 'driftwood', name: 'Driftwood', color: '#7a7068' },
+        { id: 'weathered', name: 'Weathered Wood', color: '#5a4a3a' },
+        { id: 'pewter', name: 'Pewter Grey', color: '#9aa0a6' },
+        { id: 'estate', name: 'Estate Grey', color: '#5a6068' },
+        { id: 'barkwood', name: 'Barkwood', color: '#3a2e26' },
+        { id: 'shakewood', name: 'Shakewood', color: '#6a5444' },
+        { id: 'slate', name: 'Slate Black', color: '#1a1e22' },
+      ],
+      info: '<strong>Heat tip:</strong> In Austin summers, lighter shingles can drop attic temperatures 10 to 20 degrees. Pair any color with proper attic ventilation for the biggest impact on your AC bill.'
+    },
+    addons: {
+      label: 'Add-Ons',
+      title: 'Anything else while we\'re up there?',
+      help: 'These items come up on most roof replacements. Bundle them now and save a return trip.',
+      multi: true,
+      options: [
+        { id: 'gutters', name: 'New Gutters', desc: 'Replace while the trucks are here' },
+        { id: 'ventilation', name: 'Ridge Vents', desc: 'Cooler attic, longer-lasting roof' },
+        { id: 'skylights', name: 'Skylight Repair', desc: 'Reseal or full replace' },
+        { id: 'flashing', name: 'New Flashing', desc: 'Around chimneys and vents' },
+        { id: 'leakguard', name: 'Leak Barrier', desc: 'Extra waterproofing layer' },
+        { id: 'solar', name: 'Solar-Ready Prep', desc: 'Wiring and mounts in place' },
+      ]
+    }
+  },
+  siding: {
+    material: {
+      label: 'Siding Material',
+      title: 'Pick your siding',
+      help: 'The Austin favorite: Hardie (fiber cement). It stands up to heat, hail, and time better than anything else in its price range.',
+      options: [
+        { id: 'hardie', name: 'Hardie / Fiber Cement', desc: 'Premium. Fire and storm resistant.', info: '<strong>Hardie board</strong> (fiber cement) is the gold standard in Austin. Won\'t rot, warp, or burn. Holds paint for 15+ years. Looks like wood without the maintenance headaches.' },
+        { id: 'vinyl', name: 'Vinyl', desc: 'Affordable. Truly low maintenance.', info: '<strong>Vinyl siding</strong> is the most budget-friendly choice. Never needs painting. Comes in plenty of colors and profiles. Holds up well in Texas heat.' },
+        { id: 'wood', name: 'Wood / Cedar', desc: 'Classic, beautiful, hands-on.', info: '<strong>Wood siding</strong> (cedar or pine) gives you that warm, natural look nothing else matches. Plan on staining or painting every 5 to 7 years. Premium feel.' },
+        { id: 'metal', name: 'Metal Panel', desc: 'Modern. Industrial. Bold.', info: '<strong>Metal siding</strong> (steel or aluminum) is on the rise for modern homes. Long lifespan, fire-resistant, low maintenance. A bold, contemporary statement.' },
+      ]
+    },
+    finish: {
+      label: 'Color',
+      title: 'Pick your siding color',
+      help: 'The Austin favorites this year: warm whites, soft greys, and earthy greens with crisp white trim.',
+      swatches: [
+        { id: 'white', name: 'Classic White', color: '#f4f0e8' },
+        { id: 'cream', name: 'Cream', color: '#e8dcc4' },
+        { id: 'sage', name: 'Sage Green', color: '#9aa890' },
+        { id: 'navy', name: 'Deep Navy', color: '#2a3848' },
+        { id: 'charcoal', name: 'Charcoal', color: '#3a3e44' },
+        { id: 'taupe', name: 'Warm Taupe', color: '#a89a86' },
+        { id: 'clay', name: 'Clay', color: '#a87060' },
+        { id: 'forest', name: 'Forest', color: '#445040' },
+      ],
+      info: '<strong>Hardie</strong> comes pre-finished with their ColorPlus paint that holds up for 15+ years. Or we can prime it and paint it any custom color you bring us.'
+    },
+    addons: {
+      label: 'Profile & Trim',
+      title: 'Pick your profile',
+      help: 'The way the siding is laid out shapes the whole personality of your home. Pick anything that fits the vibe.',
+      multi: true,
+      options: [
+        { id: 'lap', name: 'Lap (Horizontal)', desc: 'Classic, traditional, timeless' },
+        { id: 'bandb', name: 'Board & Batten', desc: 'Modern farmhouse, on trend' },
+        { id: 'shake', name: 'Shake / Shingle', desc: 'Coastal, great for accent areas' },
+        { id: 'vertical', name: 'Vertical Panel', desc: 'Modern, sleek, distinctive' },
+        { id: 'newtrim', name: 'New Trim & Soffits', desc: 'Complete exterior refresh' },
+        { id: 'newgutters', name: 'New Gutters', desc: 'Bundle and save a return trip' },
+      ]
+    }
+  },
+  pergola: {
+    material: {
+      label: 'Wood Type',
+      title: 'Pick your pergola wood',
+      help: 'Cedar is our top pick for the Texas climate. Naturally rot-resistant, no chemicals required.',
+      options: [
+        { id: 'cedar', name: 'Western Red Cedar', desc: 'Premium. Naturally rot-resistant.', info: '<strong>Cedar</strong> is the gold standard for pergolas. Beautiful warm tones, holds up to weather, and resists insects without any chemical treatment.' },
+        { id: 'pt', name: 'Pressure-Treated Pine', desc: 'Affordable. Stainable to match.', info: '<strong>Pressure-treated pine</strong> is the budget-friendly option. We can stain it any color to match your home, your deck, or other outdoor wood.' },
+        { id: 'composite', name: 'Composite Beams', desc: 'Modern. Maintenance-free.', info: '<strong>Composite pergolas</strong> are wood-plastic blends. Won\'t warp or fade. Crisp modern look at a premium price.' },
+      ]
+    },
+    finish: {
+      label: 'Stain',
+      title: 'Pick your stain',
+      help: 'Some folks love natural cedar weathering on its own. Others want a richer or darker tone to anchor the structure visually.',
+      swatches: [
+        { id: 'natural', name: 'Natural Cedar', color: '#c9a878' },
+        { id: 'honey', name: 'Honey', color: '#a87e4a' },
+        { id: 'walnut', name: 'Walnut', color: '#5a3d2a' },
+        { id: 'ebony', name: 'Ebony', color: '#2a201a' },
+        { id: 'driftwood', name: 'Driftwood', color: '#7a7068' },
+        { id: 'redwood', name: 'Redwood', color: '#7a3a2a' },
+        { id: 'weathered', name: 'Weathered Grey', color: '#8a7e72' },
+        { id: 'white', name: 'White', color: '#f0ece4' },
+      ],
+      info: '<strong>Maintenance:</strong> Sealing your pergola every 2 to 3 years keeps it looking brand new and adds years to its life.'
+    },
+    addons: {
+      label: 'Style & Features',
+      title: 'How should it feel?',
+      help: 'Pergolas range from totally open and airy to almost fully covered. Pick what fits your weather, your yard, and your daydreams.',
+      multi: true,
+      options: [
+        { id: 'open', name: 'Open (Slatted Top)', desc: 'Classic dappled shade' },
+        { id: 'covered', name: 'Solid Roof', desc: 'Full rain protection' },
+        { id: 'louvered', name: 'Louvered (Adjustable)', desc: 'Open or close the roof' },
+        { id: 'lights', name: 'Built-In Lighting', desc: 'String lights or recessed' },
+        { id: 'fan', name: 'Ceiling Fan Wired', desc: 'Texas summer essential' },
+        { id: 'curtains', name: 'Outdoor Curtains', desc: 'Privacy and wind shield' },
+      ]
+    }
+  },
+  hardscape: {
+    material: {
+      label: 'Hardscape Type',
+      title: 'What are you picturing?',
+      help: 'Hardscape covers every hard surface in the yard. Patios, walkways, retaining walls, fire features. Tap whatever you\'re dreaming up.',
+      options: [
+        { id: 'patio', name: 'Concrete Patio', desc: 'Versatile, durable, stainable.', info: '<strong>Stamped or stained concrete</strong> can mimic stone, brick, or wood at a fraction of the cost. Holds up incredibly well in Austin\'s climate.' },
+        { id: 'pavers', name: 'Paver Patio', desc: 'Stone or brick, laid in patterns.', info: '<strong>Paver patios</strong> use individual stones laid in patterns. Beautiful, fully customizable, and if one ever cracks we just replace that single stone. Premium look.' },
+        { id: 'walkway', name: 'Walkway / Path', desc: 'Connect the spaces in your yard.', info: '<strong>Walkways</strong> can be poured concrete, natural stone, or pavers. They define the path through your yard and add real resale value.' },
+        { id: 'wall', name: 'Retaining Wall', desc: 'For sloped yards or raised beds.', info: '<strong>Retaining walls</strong> stop erosion and carve out level outdoor rooms in sloped yards. Stone, block, or timber, built to last decades.' },
+        { id: 'firepit', name: 'Fire Pit / Feature', desc: 'Year-round outdoor focal point.', info: '<strong>Fire pits</strong> turn your yard into a year-round destination. Gas or wood-burning, built-in or freestanding, classic or sleek.' },
+      ]
+    },
+    finish: {
+      label: 'Material Color',
+      title: 'Pick your color',
+      help: 'Concrete can be stained almost any color you can dream up. Natural stone and pavers come in their own earthy tones.',
+      swatches: [
+        { id: 'natural', name: 'Natural Concrete', color: '#bab2a8' },
+        { id: 'limestone', name: 'Limestone', color: '#d8cfba' },
+        { id: 'sand', name: 'Sandstone', color: '#c9a878' },
+        { id: 'walnut', name: 'Walnut Stain', color: '#5a3d2a' },
+        { id: 'charcoal', name: 'Charcoal', color: '#3a3e44' },
+        { id: 'rust', name: 'Rust Brown', color: '#8a4a2e' },
+        { id: 'flagstone', name: 'Flagstone Mix', color: '#9a8878' },
+        { id: 'slate', name: 'Slate Grey', color: '#5a6068' },
+      ],
+      info: '<strong>Texas tip:</strong> Lighter colors stay cooler underfoot in the summer. Worth a thought if your patio is near a pool or a barefoot zone.'
+    },
+    addons: {
+      label: 'Features',
+      title: 'Want to add anything else?',
+      help: 'These extras help us put together a full proposal so there are no surprises later.',
+      multi: true,
+      options: [
+        { id: 'lighting', name: 'Landscape Lighting', desc: 'Path and accent lights' },
+        { id: 'firepit', name: 'Fire Pit', desc: 'Built-in or freestanding' },
+        { id: 'seating', name: 'Built-In Seating', desc: 'Stone or block bench walls' },
+        { id: 'planters', name: 'Planter Beds', desc: 'Greenery built right in' },
+        { id: 'drainage', name: 'Drainage Solution', desc: 'Stop water issues for good' },
+        { id: 'edging', name: 'Decorative Edging', desc: 'Clean borders and transitions' },
+      ]
+    }
+  }
+};
+
+const SCOPE_OPTIONS = {
+  deck: [
+    { id: 'small', name: 'Small (under 200 sqft)', desc: 'Patio-sized, single level' },
+    { id: 'med', name: 'Medium (200 to 500 sqft)', desc: 'Standard backyard deck' },
+    { id: 'large', name: 'Large (500+ sqft)', desc: 'Wrap-around or multi-level' },
+    { id: 'unsure', name: "I'm not sure yet", desc: "Show me what's possible for my space", unsure: true }
+  ],
+  fence: [
+    { id: 'small', name: 'Under 100 ft', desc: 'Side yard or section' },
+    { id: 'med', name: '100 to 200 ft', desc: 'Most Austin backyards' },
+    { id: 'large', name: '200+ ft', desc: 'Full property line' },
+    { id: 'unsure', name: "I'm not sure", desc: "We measure for free when we visit", unsure: true }
+  ],
+  roof: [
+    { id: 'small', name: 'Single-Story Home', desc: 'Under 1,800 sqft' },
+    { id: 'med', name: 'Average Austin Home', desc: '1,800 to 3,000 sqft' },
+    { id: 'large', name: 'Two-Story or Larger', desc: '3,000+ sqft' },
+    { id: 'unsure', name: "I'm not sure", desc: "We measure for free, no obligation", unsure: true }
+  ],
+  siding: [
+    { id: 'small', name: 'Partial / Repair', desc: 'One side or a single section' },
+    { id: 'med', name: 'Full Single-Story', desc: 'Entire home, one level' },
+    { id: 'large', name: 'Full Two-Story', desc: 'Whole house, multi-level' },
+    { id: 'unsure', name: "I'm not sure", desc: "We figure it out together on site", unsure: true }
+  ],
+  pergola: [
+    { id: 'small', name: 'Small (under 100 sqft)', desc: 'Garden nook or door-side' },
+    { id: 'med', name: 'Medium (100 to 200 sqft)', desc: 'Covers a patio' },
+    { id: 'large', name: 'Large (200+ sqft)', desc: 'Full outdoor room' },
+    { id: 'unsure', name: "I'm not sure yet", desc: "We suggest the right size for the space", unsure: true }
+  ],
+  hardscape: [
+    { id: 'small', name: 'Small Project', desc: 'Walkway or single feature' },
+    { id: 'med', name: 'Medium Project', desc: 'Patio or retaining wall' },
+    { id: 'large', name: 'Large Project', desc: 'Full backyard transformation' },
+    { id: 'unsure', name: "I'm not sure yet", desc: "Show me what's possible", unsure: true }
+  ]
+};
+
+let state = {
+  step: 1,
+  service: null,
+  lifestyle: null,
+  scope: null,
+  selections: {},
+  photosOfSpace: [],
+  photosOfInspo: [],
+};
+
+let savedDesigns = [];
+
+/* ===== From Inspiration tile click ===== */
+function startWithService(serviceId) {
+  state.service = serviceId;
+  state.lifestyle = null;
+  state.scope = null;
+  state.selections = {};
+  state.photosOfSpace = [];
+  state.photosOfInspo = [];
+  state.step = LIFESTYLE_SERVICES.includes(serviceId) ? 2 : 3;
+  render();
+}
+
+function hasLifestyle() {
+  return LIFESTYLE_SERVICES.includes(state.service);
+}
+
+function totalFlowSteps() {
+  return hasLifestyle() ? 7 : 6;
+}
+
+function displayStep() {
+  if (!hasLifestyle() && state.step >= 3) return state.step - 1;
+  return state.step;
+}
+
+function scrollToDesigner() {
+  setTimeout(() => {
+    document.getElementById('designer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+/* ===== Render functions ===== */
+function render() {
+  const sc = document.getElementById('step-content');
+  // Step order: 1=service, 2=lifestyle, 3=scope, 4=q1, 5=q2, 6=q3, 7=details, 8=success
+  // Lifestyle (step 2) is skipped for fence/roof/siding.
+
+  const total = totalFlowSteps();
+  const current = displayStep();
+  const progress = document.getElementById('progress');
+  if (progress) {
+    let dots = '';
+    for (let i = 1; i <= total; i++) {
+      const cls = i < current ? 'done' : (i === current ? 'active' : '');
+      dots += `<div class="progress-dot ${cls}"></div>`;
+    }
+    progress.innerHTML = dots;
+  }
+
+  const counterEl = document.getElementById('step-counter');
+  const backBtn = document.getElementById('back-btn');
+  if (state.step === 8) {
+    counterEl.textContent = 'All done!';
+    backBtn.style.display = 'none';
+  } else {
+    counterEl.textContent = `Step ${current} of ${total}`;
+    backBtn.style.display = '';
+    backBtn.disabled = (state.step === 1);
+  }
+
+  if (state.step === 1) renderServicePicker(sc);
+  else if (state.step === 2) renderLifestyle(sc);
+  else if (state.step === 3) renderScope(sc);
+  else if (state.step >= 4 && state.step <= 6) renderQuestion(sc, state.step - 4);
+  else if (state.step === 7) renderDetails(sc);
+  else if (state.step === 8) renderSuccess(sc);
+
+  updatePreview();
+}
+
+function renderServicePicker(sc) {
+  let html = `
+    <div class="designer-step-label">Step 1</div>
+    <div class="designer-step-title">What are we building?</div>
+    <div class="designer-step-help">Pick whatever\'s closest to what you have in mind. We can fine-tune the rest as we go.</div>
+    <div class="service-grid">`;
+  for (const [id, srv] of Object.entries(SERVICES)) {
+    html += `
+      <button class="service-tile ${state.service === id ? 'selected' : ''}" onclick="pickService('${id}')">
+        ${srv.icon}
+        <div class="service-tile-title">${srv.name}</div>
+      </button>`;
+  }
+  html += `</div>
+    <div class="designer-info"><strong>Got more than one project?</strong> Start with your biggest one. We\'ll cover the rest when we come walk the property. Prefer to talk it out? Call John at (512) 587-3914.</div>`;
+  sc.innerHTML = html;
+}
+
+function pickService(id) {
+  state.service = id;
+  state.lifestyle = null;
+  state.scope = null;
+  state.selections = {};
+  setTimeout(() => {
+    state.step = LIFESTYLE_SERVICES.includes(id) ? 2 : 3;
+    render();
+  }, 200);
+}
+
+function renderLifestyle(sc) {
+  let html = `
+    <div class="designer-step-label">Step 2</div>
+    <div class="designer-step-title">How will you actually use it?</div>
+    <div class="designer-step-help">Pick the one that sounds most like your weekends. We\'ll preselect the features that fit, and you can swap anything later.</div>
+    <div class="lifestyle-grid">`;
+  for (const [id, ls] of Object.entries(LIFESTYLES)) {
+    html += `
+      <button class="lifestyle-tile ${state.lifestyle === id ? 'selected' : ''}" onclick="pickLifestyle('${id}')">
+        <div class="lifestyle-emoji">${ls.emoji}</div>
+        <div class="lifestyle-info">
+          <div class="lifestyle-title">${ls.name}</div>
+          <div class="lifestyle-desc">${ls.desc}</div>
+        </div>
+      </button>`;
+  }
+  html += `</div>
+    <button class="btn-ghost" onclick="skipLifestyle()" style="width: 100%; margin-bottom: 18px;">Skip, I\'ll pick the features myself</button>
+    <div class="designer-info"><strong>How this works:</strong> We preselect the add-ons that match your pick. You can keep them, swap them, or add your own when we get to the features step. Nothing is locked in.</div>`;
+  sc.innerHTML = html;
+}
+
+function pickLifestyle(id) {
+  state.lifestyle = id;
+  // Auto-select add-ons matching this lifestyle for the current service
+  const ls = LIFESTYLES[id];
+  if (ls.addons[state.service]) {
+    state.selections.addons = [...ls.addons[state.service]];
+  }
+  setTimeout(() => { state.step = 3; render(); }, 220);
+}
+
+function skipLifestyle() {
+  state.lifestyle = null;
+  state.step = 3;
+  render();
+}
+
+function renderScope(sc) {
+  const opts = SCOPE_OPTIONS[state.service];
+  const stepNum = displayStep();
+  let html = `
+    <div class="designer-step-label">Step ${stepNum}</div>
+    <div class="designer-step-title">Roughly what size?</div>
+    <div class="designer-step-help">No need to measure anything. A rough guess is plenty. We bring the tape measure when we come out.</div>
+    <div class="option-grid col">`;
+  opts.forEach(o => {
+    const cls = o.unsure ? 'unsure' : '';
+    html += `
+      <button class="option-tile ${cls} ${state.scope === o.id ? 'selected' : ''}" onclick="pickScope('${o.id}')">
+        <div class="option-tile-title">${o.name}</div>
+        <div class="option-tile-desc">${o.desc}</div>
+      </button>`;
+  });
+  html += `</div>`;
+  sc.innerHTML = html;
+}
+
+function pickScope(id) {
+  state.scope = id;
+  setTimeout(() => { state.step = 4; render(); }, 200);
+}
+
+function renderQuestion(sc, qIdx) {
+  const stepKey = SERVICES[state.service].steps[qIdx];
+  const q = QUESTIONS[state.service][stepKey];
+  let html = `
+    <div class="designer-step-label">Step ${displayStep()}</div>
+    <div class="designer-step-title">${q.title}</div>
+    <div class="designer-step-help">${q.help}</div>`;
+
+  if (q.swatches) {
+    html += `<div class="swatch-grid">`;
+    q.swatches.forEach(s => {
+      html += `
+        <div class="swatch-wrap">
+          <button class="swatch ${state.selections[stepKey] === s.id ? 'selected' : ''}"
+                  style="background: ${s.color};"
+                  onclick="pickSwatch('${stepKey}', '${s.id}', '${s.color}')"
+                  title="${s.name}"></button>
+          <div class="swatch-label">${s.name}</div>
+        </div>`;
+    });
+    html += `</div>`;
+
+    html += `<button class="option-tile unsure ${state.selections[stepKey] === '__unsure' ? 'selected' : ''}"
+                style="margin-top: 14px; width: 100%;"
+                onclick="pickUnsureSwatch('${stepKey}')">
+        <div class="option-tile-title">Honestly? I want John\'s recommendation.</div>
+        <div class="option-tile-desc">We\'ll suggest the right color when we see your home in person.</div>
+      </button>`;
+
+    // Inspiration row for swatches: real photos for reference (no misleading auto-pick)
+    const photos = PHOTOS[state.service] || [];
+    if (photos.length) {
+      html += `<div class="unsure-panel">
+        <div class="unsure-panel-header"><strong>Need a reference?</strong> Here\'s a few of John\'s recent builds for inspiration.</div>
+        <div class="unsure-photos">`;
+      photos.forEach(p => {
+        html += `<div class="unsure-photo" style="cursor: default;">
+          <img src="${p.src}" alt="${p.label}">
+          <div class="photo-label">${p.label}</div>
+        </div>`;
+      });
+      html += `</div></div>`;
+    }
+  } else if (q.options) {
+    html += `<div class="option-grid ${q.multi ? 'three' : 'col'}">`;
+    q.options.forEach(o => {
+      const sel = q.multi
+        ? (state.selections[stepKey] || []).includes(o.id)
+        : state.selections[stepKey] === o.id;
+      html += `
+        <button class="option-tile ${sel ? 'selected' : ''}"
+                onclick="pickOption('${stepKey}', '${o.id}', ${q.multi})">
+          <div class="option-tile-title">${o.name}</div>
+          <div class="option-tile-desc">${o.desc}</div>
+        </button>`;
+    });
+    // "Not sure" option for non-multi questions
+    if (!q.multi) {
+      html += `
+        <button class="option-tile unsure ${state.selections[stepKey] === '__unsure' ? 'selected' : ''}"
+                onclick="pickOption('${stepKey}', '__unsure', false)">
+          <div class="option-tile-title">I want John\'s recommendation</div>
+          <div class="option-tile-desc">Show me what he\'s built recently for ideas</div>
+        </button>`;
+    }
+    html += `</div>`;
+
+    // If "not sure" picked, show inspiration photos and a Continue button
+    if (state.selections[stepKey] === '__unsure') {
+      const photos = PHOTOS[state.service] || [];
+      if (photos.length) {
+        let html2 = `<div class="unsure-panel"><div class="unsure-panel-header"><strong>Here are a few of John\'s recent builds.</strong> Use them as inspiration, or just tell us "I want something like this" when we visit.</div><div class="unsure-photos">`;
+        photos.forEach(p => {
+          html2 += `<div class="unsure-photo" style="cursor: default;">
+            <img src="${p.src}" alt="${p.label}">
+            <div class="photo-label">${p.label}</div>
+          </div>`;
+        });
+        html2 += `</div></div>`;
+        html += html2;
+      }
+      html += `<button class="btn btn-navy" style="margin-top: 14px; width: 100%;" onclick="nextStep()">Keep going →</button>`;
+    }
+  }
+
+  const selectedOpt = q.options ? q.options.find(o => o.id === state.selections[stepKey]) : null;
+  const infoText = (selectedOpt && selectedOpt.info) || q.info;
+  if (infoText) {
+    html += `<div class="designer-info">${infoText}</div>`;
+  }
+
+  if (q.multi) {
+    html += `<button class="btn btn-navy" style="margin-top: 20px; width: 100%;" onclick="nextStep()">Continue →</button>`;
+  }
+
+  sc.innerHTML = html;
+}
+
+function pickOption(key, id, multi) {
+  if (multi) {
+    if (!state.selections[key]) state.selections[key] = [];
+    const idx = state.selections[key].indexOf(id);
+    if (idx >= 0) state.selections[key].splice(idx, 1);
+    else state.selections[key].push(id);
+    render();
+  } else {
+    state.selections[key] = id;
+    render();
+    if (id !== '__unsure') {
+      setTimeout(() => nextStep(), 250);
+    }
+  }
+}
+
+function pickSwatch(key, id, color) {
+  state.selections[key] = id;
+  state.selections[key + '_color'] = color;
+  render();
+  setTimeout(() => nextStep(), 250);
+}
+
+function pickUnsureSwatch(key) {
+  state.selections[key] = '__unsure';
+  delete state.selections[key + '_color'];
+  render();
+  setTimeout(() => nextStep(), 250);
+}
+
+function nextStep() {
+  if (state.step < 7) {
+    state.step++;
+    render();
+  }
+}
+
+function goBack() {
+  if (state.step > 1) {
+    state.step--;
+    // Skip the lifestyle step on the way back for services that don\'t use it
+    if (state.step === 2 && !hasLifestyle()) {
+      state.step = 1;
+    }
+    render();
+  }
+}
+
+function renderDetails(sc) {
+  const srvName = SERVICES[state.service].name;
+  const scopeOpt = SCOPE_OPTIONS[state.service].find(o => o.id === state.scope);
+  const scopeName = scopeOpt ? scopeOpt.name : 'Not set';
+  const stepKeys = SERVICES[state.service].steps;
+  const q = QUESTIONS[state.service];
+
+  let summaryRows = `
+    <div class="summary-row"><span class="key">Project</span><span class="val">${srvName}</span></div>`;
+  if (state.lifestyle) {
+    summaryRows += `<div class="summary-row"><span class="key">Lifestyle</span><span class="val">${LIFESTYLES[state.lifestyle].emoji} ${LIFESTYLES[state.lifestyle].name}</span></div>`;
+  }
+  summaryRows += `<div class="summary-row"><span class="key">Size</span><span class="val">${scopeName}</span></div>`;
+
+  stepKeys.forEach(k => {
+    const sel = state.selections[k];
+    if (!sel) return;
+    const qData = q[k];
+    if (sel === '__unsure') {
+      summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">Open to suggestions</span></div>`;
+      return;
+    }
+    if (Array.isArray(sel)) {
+      const names = sel.map(id => qData.options.find(o => o.id === id)?.name).filter(Boolean).join(', ');
+      if (names) summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">${names}</span></div>`;
+    } else if (qData.swatches) {
+      const sw = qData.swatches.find(s => s.id === sel);
+      if (sw) summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">${sw.name}</span></div>`;
+    } else if (qData.options) {
+      const opt = qData.options.find(o => o.id === sel);
+      if (opt) summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">${opt.name}</span></div>`;
+    }
+  });
+
+  sc.innerHTML = `
+    <div class="designer-step-label">Almost there</div>
+    <div class="designer-step-title">Send your design to John</div>
+    <div class="designer-step-help">John reviews every submission personally and calls you back the same day to talk through your project. We&apos;ll set a time to come walk the space and write up an honest, line-itemed quote. No pressure, no fees, no obligation.</div>
+    <div class="summary-list">${summaryRows}</div>
+
+    <div style="font-size: 12px; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;">📸 Add photos (optional, but it helps a lot)</div>
+    <div class="photo-upload-row">
+      <label class="photo-upload ${state.photosOfSpace.length ? 'has-files' : ''}">
+        <div class="photo-upload-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9a2 2 0 0 1 2-2h.93a2 2 0 0 0 1.664-.89l.812-1.22A2 2 0 0 1 10.07 4h3.86a2 2 0 0 1 1.664.89l.812 1.22A2 2 0 0 0 18.07 7H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3"/></svg>
+        </div>
+        <div class="photo-upload-title">Photos of your space</div>
+        <div class="photo-upload-desc">${state.photosOfSpace.length ? state.photosOfSpace.length + ' photo' + (state.photosOfSpace.length === 1 ? '' : 's') + ' attached' : 'Tap to add a few photos'}</div>
+        <input type="file" accept="image/*" multiple onchange="handlePhotoUpload(event, 'space')">
+      </label>
+      <label class="photo-upload ${state.photosOfInspo.length ? 'has-files' : ''}">
+        <div class="photo-upload-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="photo-upload-title">Inspiration photos</div>
+        <div class="photo-upload-desc">${state.photosOfInspo.length ? state.photosOfInspo.length + ' photo' + (state.photosOfInspo.length === 1 ? '' : 's') + ' attached' : 'Pinterest pins, screenshots, anything'}</div>
+        <input type="file" accept="image/*" multiple onchange="handlePhotoUpload(event, 'inspo')">
+      </label>
+    </div>
+
+    <form id="dream-form" onsubmit="submitDream(event)">
+      <div class="form-grid">
+        <div>
+          <label for="b-name">Your Name</label>
+          <input type="text" id="b-name" name="name" required>
+        </div>
+        <div>
+          <label for="b-phone">Phone</label>
+          <input type="tel" id="b-phone" name="phone" required>
+        </div>
+        <div class="full">
+          <label for="b-email">Email</label>
+          <input type="email" id="b-email" name="email" required>
+        </div>
+        <div>
+          <label for="b-zip">Project Zip Code</label>
+          <input type="text" id="b-zip" name="zip" placeholder="78748" required>
+        </div>
+        <div>
+          <label for="b-timing">When are you hoping to start?</label>
+          <select id="b-timing" name="timing">
+            <option value="">No rush, exploring ideas</option>
+            <option value="asap">As soon as possible</option>
+            <option value="month">Within the next month</option>
+            <option value="3mo">In the next 1 to 3 months</option>
+            <option value="6mo">In the next 3 to 6 months</option>
+            <option value="future">Sometime this year</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="b-budget">Rough budget range (optional, helps us scope it)</label>
+          <select id="b-budget" name="budget">
+            <option value="">Not sure yet, would like guidance</option>
+            <option value="<5k">Under $5,000</option>
+            <option value="5-15k">$5,000 to $15,000</option>
+            <option value="15-30k">$15,000 to $30,000</option>
+            <option value="30-60k">$30,000 to $60,000</option>
+            <option value="60k+">$60,000+</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="b-notes">Anything else we should know?</label>
+          <textarea id="b-notes" name="notes" placeholder="Dream features, must-haves, things you're worried about, anything..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Send My Design to John →</button>
+      <div class="form-promise-row">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Same-day callback</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> No fees, no obligation</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Licensed & insured</span>
+      </div>
+      <div class="save-design-row">
+        <button type="button" class="btn-ghost" onclick="saveCurrentDesign()">💾 Save to Mood Board</button>
+        <button type="button" class="btn-ghost" onclick="startOver()">+ Design Another</button>
+      </div>
+      <p style="text-align: center; font-size: 12px; color: var(--slate-soft); margin-top: 14px;">We respect your inbox. No spam, no spammy follow-ups, ever.</p>
+    </form>
+  `;
+}
+
+function submitDream(e) {
+  e.preventDefault();
+  // Build a clean summary email for John so the lead actually lands in his inbox.
+  const form = e.target;
+  const name = form.name.value.trim();
+  const phone = form.phone.value.trim();
+  const email = form.email.value.trim();
+  const zip = form.zip.value.trim();
+  const timing = form.timing ? (form.timing.options[form.timing.selectedIndex].text || '') : '';
+  const budget = form.budget ? (form.budget.options[form.budget.selectedIndex].text || '') : '';
+  const notes = form.notes.value.trim();
+  const srvName = SERVICES[state.service] ? SERVICES[state.service].name : 'Project';
+  const lifestyleName = state.lifestyle ? LIFESTYLES[state.lifestyle].name : '';
+  const scopeOpt = SCOPE_OPTIONS[state.service] ? SCOPE_OPTIONS[state.service].find(o => o.id === state.scope) : null;
+  const scopeName = scopeOpt ? scopeOpt.name : '';
+
+  const lines = [];
+  lines.push('NEW DESIGN BUILDER LEAD');
+  lines.push('');
+  lines.push('Name:   ' + name);
+  lines.push('Phone:  ' + phone);
+  lines.push('Email:  ' + email);
+  lines.push('Zip:    ' + zip);
+  if (timing) lines.push('Timing: ' + timing);
+  if (budget) lines.push('Budget: ' + budget);
+  lines.push('');
+  lines.push('Project:   ' + srvName);
+  if (lifestyleName) lines.push('Lifestyle: ' + lifestyleName);
+  if (scopeName) lines.push('Size:      ' + scopeName);
+
+  const stepKeys = SERVICES[state.service].steps;
+  const q = QUESTIONS[state.service];
+  stepKeys.forEach(k => {
+    const sel = state.selections[k];
+    if (!sel) return;
+    if (sel === '__unsure') {
+      lines.push(q[k].label + ': Open to John\'s recommendation');
+      return;
+    }
+    if (Array.isArray(sel)) {
+      const names = sel.map(id => (q[k].options.find(o => o.id === id) || {}).name).filter(Boolean).join(', ');
+      if (names) lines.push(q[k].label + ': ' + names);
+    } else if (q[k].swatches) {
+      const sw = q[k].swatches.find(s => s.id === sel);
+      if (sw) lines.push(q[k].label + ': ' + sw.name);
+    } else if (q[k].options) {
+      const opt = q[k].options.find(o => o.id === sel);
+      if (opt) lines.push(q[k].label + ': ' + opt.name);
+    }
+  });
+
+  if (state.photosOfSpace.length) lines.push('Space photos: ' + state.photosOfSpace.length + ' attached separately (will text)');
+  if (state.photosOfInspo.length) lines.push('Inspo photos: ' + state.photosOfInspo.length + ' attached separately (will text)');
+
+  if (notes) {
+    lines.push('');
+    lines.push('Notes from customer:');
+    lines.push(notes);
+  }
+
+  const subject = 'New design from ' + (name || 'the website') + ' (' + srvName + ')';
+  const body = lines.join('\n');
+  const mailto = 'mailto:jbconstructionatx@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  // Open the user\'s email client so John actually receives the lead.
+  window.location.href = mailto;
+  state.step = 8;
+  render();
+}
+
+/* ===== Photo upload ===== */
+function handlePhotoUpload(event, kind) {
+  const files = Array.from(event.target.files);
+  if (kind === 'space') {
+    state.photosOfSpace = state.photosOfSpace.concat(files.map(f => f.name));
+  } else {
+    state.photosOfInspo = state.photosOfInspo.concat(files.map(f => f.name));
+  }
+  render();
+  showToast('Photos attached', '📸');
+}
+
+/* ===== Save / Mood Board ===== */
+function saveCurrentDesign() {
+  if (!state.service) return;
+  const stepKeys = SERVICES[state.service].steps;
+  const q = QUESTIONS[state.service];
+  const finKey = stepKeys[1];
+  const finishColor = state.selections[finKey + '_color'] || '#a87e4a';
+
+  // Build a snapshot
+  const snapshot = {
+    id: Date.now(),
+    service: state.service,
+    serviceName: SERVICES[state.service].name,
+    lifestyle: state.lifestyle,
+    scope: state.scope,
+    selections: JSON.parse(JSON.stringify(state.selections)),
+    finishColor,
+    savedAt: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+  };
+  savedDesigns.push(snapshot);
+  updateMoodboardCount();
+  showToast('Saved to your mood board', '✓');
+}
+
+function startOver() {
+  state.step = 1;
+  state.service = null;
+  state.lifestyle = null;
+  state.scope = null;
+  state.selections = {};
+  state.photosOfSpace = [];
+  state.photosOfInspo = [];
+  render();
+}
+
+function updateMoodboardCount() {
+  const countEl = document.getElementById('moodboard-count-nav');
+  if (savedDesigns.length > 0) {
+    countEl.textContent = savedDesigns.length;
+    countEl.classList.add('has');
+  } else {
+    countEl.classList.remove('has');
+  }
+}
+
+function showToast(msg, icon) {
+  const toast = document.getElementById('moodboard-toast');
+  document.getElementById('toast-msg').textContent = msg;
+  toast.querySelector('.check').textContent = icon || '✓';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2400);
+}
+
+function openMoodboard() {
+  const modal = document.getElementById('moodboard-modal');
+  const grid = document.getElementById('moodboard-grid');
+  if (savedDesigns.length === 0) {
+    grid.innerHTML = `
+      <div class="moodboard-empty" style="grid-column: 1 / -1;">
+        <div class="moodboard-empty-icon">🎨</div>
+        <div style="font-family: 'Fraunces', serif; font-size: 22px; color: var(--navy); margin-bottom: 6px;">Your mood board is empty</div>
+        <div>Design a project below, then tap "Save to Mood Board" to start collecting the looks you love.</div>
+      </div>`;
+  } else {
+    grid.innerHTML = savedDesigns.map(d => {
+      const previewSVG = renderPreviewSVG(d.service, d.finishColor, d.selections);
+      const lifestyle = d.lifestyle ? LIFESTYLES[d.lifestyle].name : '';
+      return `
+        <div class="saved-design">
+          <div class="saved-design-preview">${previewSVG}</div>
+          <div class="saved-design-body">
+            <div class="saved-design-tag">${d.serviceName} · Saved ${d.savedAt}</div>
+            <div class="saved-design-title">${lifestyle || 'Custom Design'}</div>
+            <div class="saved-design-meta">${countSelections(d)} customizations</div>
+            <div class="saved-design-actions">
+              <button class="btn-mini" onclick="loadDesign(${d.id})">Edit</button>
+              <button class="btn-mini" onclick="removeDesign(${d.id})">Remove</button>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+  modal.classList.add('open');
+}
+
+function countSelections(d) {
+  let count = 0;
+  Object.values(d.selections).forEach(v => {
+    if (Array.isArray(v)) count += v.length;
+    else if (v && !v.toString().startsWith('#')) count++;
+  });
+  return count;
+}
+
+function closeMoodboard() {
+  document.getElementById('moodboard-modal').classList.remove('open');
+}
+
+function loadDesign(id) {
+  const d = savedDesigns.find(x => x.id === id);
+  if (!d) return;
+  state.service = d.service;
+  state.lifestyle = d.lifestyle;
+  state.scope = d.scope;
+  state.selections = JSON.parse(JSON.stringify(d.selections));
+  state.step = 7;
+  closeMoodboard();
+  render();
+  setTimeout(() => {
+    document.getElementById('designer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
+}
+
+function removeDesign(id) {
+  savedDesigns = savedDesigns.filter(x => x.id !== id);
+  updateMoodboardCount();
+  openMoodboard();
+}
+
+// Close modal on background click
+document.getElementById('moodboard-modal').addEventListener('click', (e) => {
+  if (e.target.id === 'moodboard-modal') closeMoodboard();
+});
+
+function renderSuccess(sc) {
+  sc.innerHTML = `
+    <div class="designer-success">
+      <div class="check">✓</div>
+      <h3>Got it. Thanks for trusting us.</h3>
+      <p>Your design is on its way to John. He calls every lead back the same day, so keep an eye out for a (512) area code.</p>
+      <p>If you have photos of your space or inspiration shots, text them to <strong>(512) 587-3914</strong> so they\'re tied to your project.</p>
+      <div class="success-testimonial">
+        <div class="success-stars">★★★★★</div>
+        <p class="success-quote">"From the very first consultation to the final inspection, John made the process completely stress-free."</p>
+        <p class="success-attrib">Mary Bernard Pacheco · Roof Replacement</p>
+      </div>
+      <div style="margin-top: 22px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <button type="button" class="btn-ghost" onclick="startOver()">+ Design another project</button>
+        <a class="btn-ghost" href="tel:5125873914">📞 Or call John now</a>
+      </div>
+    </div>`;
+}
+
+/* Live Preview */
+function updatePreview() {
+  const titleEl = document.getElementById('preview-title');
+  const stage = document.getElementById('preview-stage');
+  const metaProject = document.getElementById('meta-project');
+  const metaMaterial = document.getElementById('meta-material');
+  const metaFinish = document.getElementById('meta-finish');
+
+  if (!state.service) {
+    titleEl.textContent = 'Your project';
+    stage.innerHTML = renderEmptyPreview();
+    metaProject.textContent = 'Pick one to start';
+    metaMaterial.textContent = '...';
+    metaFinish.textContent = '...';
+    return;
+  }
+
+  const srv = SERVICES[state.service];
+  titleEl.textContent = `Your ${srv.name.toLowerCase()}`;
+  metaProject.textContent = srv.name;
+
+  const stepKeys = srv.steps;
+  const q = QUESTIONS[state.service];
+  const matKey = stepKeys[0];
+  const finKey = stepKeys[1];
+  const matSel = state.selections[matKey];
+  const finSel = state.selections[finKey];
+  if (matSel && matSel !== '__unsure' && q[matKey].options) {
+    const opt = q[matKey].options.find(o => o.id === matSel);
+    metaMaterial.textContent = opt ? opt.name : '...';
+  } else {
+    metaMaterial.textContent = matSel === '__unsure' ? "John's pick" : '...';
+  }
+  if (finSel && finSel !== '__unsure' && q[finKey].swatches) {
+    const sw = q[finKey].swatches.find(s => s.id === finSel);
+    metaFinish.textContent = sw ? sw.name : '...';
+  } else {
+    metaFinish.textContent = finSel === '__unsure' ? "John's pick" : '...';
+  }
+
+  const finishColor = state.selections[finKey + '_color'] || '#a87e4a';
+  stage.innerHTML = renderPreviewSVG(state.service, finishColor, state.selections);
+}
+
+function renderEmptyPreview() {
+  return `
+    <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#e8eef4"/><stop offset="1" stop-color="#cdd5df"/>
+      </linearGradient></defs>
+      <rect width="400" height="280" fill="url(#bgGrad)"/>
+      <text x="200" y="140" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="16" fill="#6b7a8c">Pick a project to start designing</text>
+      <text x="200" y="165" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#8b9aac">Watch your design come to life right here</text>
+    </svg>`;
+}
+
+function renderPreviewSVG(service, color, sels) {
+  const generators = {
+    deck: renderDeckSVG,
+    fence: renderFenceSVG,
+    roof: renderRoofSVG,
+    siding: renderSidingSVG,
+    pergola: renderPergolaSVG,
+    hardscape: renderHardscapeSVG,
+  };
+  return generators[service](color, sels);
+}
+
+function shade(hex, percent) {
+  const num = parseInt(hex.slice(1), 16);
+  let r = (num >> 16) + Math.round(2.55 * percent);
+  let g = ((num >> 8) & 0x00FF) + Math.round(2.55 * percent);
+  let b = (num & 0x0000FF) + Math.round(2.55 * percent);
+  r = Math.max(0, Math.min(255, r));
+  g = Math.max(0, Math.min(255, g));
+  b = Math.max(0, Math.min(255, b));
+  return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
+}
+
+function renderDeckSVG(color, sels) {
+  const dark = shade(color, -15);
+  const hasRailing = (sels.addons || []).includes('railing');
+  const hasLighting = (sels.addons || []).includes('lighting');
+  const hasPergola = (sels.addons || []).includes('pergola');
+  const hasBenches = (sels.addons || []).includes('benches');
+  return `
+    <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfd9e3"/><stop offset="1" stop-color="#e8eef4"/></linearGradient></defs>
+      <rect width="400" height="280" fill="url(#sky)"/>
+      <rect x="0" y="220" width="400" height="60" fill="#9caf95"/>
+      <rect x="0" y="40" width="80" height="200" fill="#d8dde4"/>
+      <rect x="14" y="80" width="40" height="50" fill="#3a4554"/>
+      <rect x="14" y="150" width="40" height="80" fill="#5a4a3a"/>
+      ${hasPergola ? `<rect x="80" y="50" width="290" height="6" fill="${dark}"/>${[...Array(8)].map((_, i) => `<rect x="${100 + i * 35}" y="56" width="6" height="14" fill="${dark}"/>`).join('')}<rect x="80" y="55" width="6" height="125" fill="${dark}"/><rect x="365" y="55" width="6" height="125" fill="${dark}"/>` : ''}
+      <rect x="80" y="180" width="290" height="42" fill="${color}"/>
+      ${[...Array(13)].map((_, i) => `<line x1="80" y1="${183 + i * 3}" x2="370" y2="${183 + i * 3}" stroke="${dark}" stroke-width="0.3"/>`).join('')}
+      <g opacity="0.5">${[...Array(8)].map((_, i) => `<line x1="${110 + i * 32}" y1="180" x2="${110 + i * 32}" y2="222" stroke="${dark}" stroke-width="0.6"/>`).join('')}</g>
+      <rect x="80" y="218" width="290" height="6" fill="${dark}"/>
+      <rect x="180" y="222" width="6" height="38" fill="${shade(color, -25)}"/>
+      <rect x="280" y="222" width="6" height="38" fill="${shade(color, -25)}"/>
+      ${hasRailing ? `<rect x="80" y="160" width="290" height="3" fill="${dark}"/>${[...Array(20)].map((_, i) => `<rect x="${90 + i * 14}" y="163" width="2" height="20" fill="${dark}"/>`).join('')}` : ''}
+      ${hasBenches ? `<rect x="220" y="170" width="100" height="3" fill="${color}"/><rect x="220" y="170" width="3" height="13" fill="${dark}"/><rect x="317" y="170" width="3" height="13" fill="${dark}"/>` : ''}
+      ${hasLighting ? `<circle cx="120" cy="180" r="3" fill="#fef9c3" opacity="0.85"/><circle cx="120" cy="180" r="6" fill="#fef9c3" opacity="0.3"/><circle cx="220" cy="180" r="3" fill="#fef9c3" opacity="0.85"/><circle cx="220" cy="180" r="6" fill="#fef9c3" opacity="0.3"/><circle cx="320" cy="180" r="3" fill="#fef9c3" opacity="0.85"/><circle cx="320" cy="180" r="6" fill="#fef9c3" opacity="0.3"/>` : ''}
+      <ellipse cx="380" cy="175" rx="20" ry="40" fill="#7a8a72"/>
+      <rect x="378" y="200" width="4" height="20" fill="#5a4a3a"/>
+    </svg>`;
+}
+
+function renderFenceSVG(color, sels) {
+  const dark = shade(color, -20);
+  const light = shade(color, 8);
+  const style = sels.style || 'horizontal';
+  return `
+    <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs><linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfd9e3"/><stop offset="1" stop-color="#e8eef4"/></linearGradient></defs>
+      <rect width="400" height="280" fill="url(#sky2)"/>
+      <rect x="0" y="220" width="400" height="60" fill="#9caf95"/>
+      ${[40, 140, 240, 340].map(x => `<rect x="${x}" y="60" width="8" height="170" fill="${dark}"/>`).join('')}
+      ${(() => {
+        if (style === 'horizontal') return [...Array(10)].map((_, i) => `<rect x="48" y="${75 + i * 16}" width="292" height="13" fill="${i % 2 === 0 ? color : light}" stroke="${dark}" stroke-width="0.5"/>`).join('');
+        if (style === 'bob') { let h = ''; for (let i = 0; i < 30; i++) h += `<rect x="${48 + i * 10}" y="75" width="14" height="155" fill="${i % 2 === 0 ? color : dark}"/>`; return h; }
+        if (style === 'shadowbox') { let h = ''; for (let i = 0; i < 20; i++) h += `<rect x="${50 + i * 15}" y="75" width="10" height="155" fill="${color}"/>`; return h; }
+        if (style === 'picket') { let h = ''; for (let i = 0; i < 30; i++) { const x = 48 + i * 10; h += `<polygon points="${x},120 ${x + 7},112 ${x + 14},120 ${x + 14},230 ${x},230" fill="${color}" stroke="${dark}" stroke-width="0.4"/>`; } return h; }
+        let h = `<rect x="48" y="65" width="292" height="8" fill="${dark}"/>`;
+        for (let i = 0; i < 28; i++) h += `<rect x="${52 + i * 10.5}" y="75" width="9" height="155" fill="${color}"/>`;
+        h += `<rect x="48" y="225" width="292" height="6" fill="${dark}"/>`;
+        return h;
+      })()}
+      <ellipse cx="370" cy="175" rx="22" ry="42" fill="#7a8a72"/>
+      <rect x="368" y="200" width="4" height="22" fill="#5a4a3a"/>
+    </svg>`;
+}
+
+function renderRoofSVG(color, sels) {
+  const dark = shade(color, -20);
+  const light = shade(color, 12);
+  const isMetal = sels.material === 'metal';
+  return `
+    <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect width="400" height="280" fill="#e8eef4"/>
+      <rect x="0" y="240" width="400" height="40" fill="#9caf95"/>
+      <rect x="60" y="160" width="280" height="80" fill="#f0ece4"/>
+      <rect x="180" y="195" width="40" height="45" fill="#5a4a3a"/>
+      <rect x="80" y="180" width="30" height="30" fill="#a8b8c8"/>
+      <rect x="290" y="180" width="30" height="30" fill="#a8b8c8"/>
+      <polygon points="50,160 200,70 350,160" fill="${color}"/>
+      ${isMetal ? `${[...Array(8)].map((_, i) => `<line x1="${60 + i * 35}" y1="160" x2="${60 + i * 22 + 100}" y2="70" stroke="${dark}" stroke-width="1.5"/>`).join('')}` :
+        `${[...Array(7)].map((_, i) => { const y = 80 + i * 12; const xStart = 200 - (y - 70) * 1.65; const xEnd = 200 + (y - 70) * 1.65; let row = ''; for (let j = xStart; j < xEnd; j += 8) row += `<rect x="${j}" y="${y}" width="6.5" height="9" fill="${i % 2 === 0 ? color : light}" stroke="${dark}" stroke-width="0.3"/>`; return row; }).join('')}`}
+      <line x1="50" y1="160" x2="200" y2="70" stroke="${dark}" stroke-width="1"/>
+      <line x1="200" y1="70" x2="350" y2="160" stroke="${dark}" stroke-width="1"/>
+    </svg>`;
+}
+
+function renderSidingSVG(color, sels) {
+  const dark = shade(color, -15);
+  const light = shade(color, 10);
+  const profiles = sels.addons || [];
+  const isVertical = profiles.includes('vertical') || profiles.includes('bandb');
+  const isShake = profiles.includes('shake');
+  return `
+    <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect width="400" height="280" fill="#e8eef4"/>
+      <rect x="0" y="240" width="400" height="40" fill="#9caf95"/>
+      <polygon points="50,80 200,30 350,80" fill="#3a4554"/>
+      <rect x="60" y="80" width="280" height="160" fill="${color}"/>
+      ${isShake ?
+        `${[...Array(20)].map((_, row) => { let r = ''; for (let i = 0; i < 36; i++) { const xOff = (row % 2) * 4; r += `<rect x="${64 + i * 8 + xOff}" y="${85 + row * 8}" width="7" height="10" fill="${(i + row) % 2 === 0 ? color : light}" stroke="${dark}" stroke-width="0.3"/>`; } return r; }).join('')}` :
+       isVertical ?
+        `${[...Array(28)].map((_, i) => `<rect x="${60 + i * 10}" y="80" width="9" height="160" fill="${i % 2 === 0 ? color : light}"/>`).join('')}${profiles.includes('bandb') ? [...Array(14)].map((_, i) => `<rect x="${65 + i * 20}" y="80" width="3" height="160" fill="${dark}"/>`).join('') : ''}` :
+        `${[...Array(20)].map((_, i) => `<rect x="60" y="${82 + i * 8}" width="280" height="6.5" fill="${i % 2 === 0 ? color : light}" stroke="${dark}" stroke-width="0.3"/>`).join('')}`}
+      <rect x="180" y="190" width="40" height="50" fill="#3a2a1a"/>
+      <rect x="80" y="160" width="32" height="38" fill="#a8b8c8" stroke="#fff" stroke-width="2"/>
+      <rect x="290" y="160" width="32" height="38" fill="#a8b8c8" stroke="#fff" stroke-width="2"/>
+    </svg>`;
+}
+
+function renderPergolaSVG(color, sels) {
+  const dark = shade(color, -20);
+  const addons = sels.addons || [];
+  const isCovered = addons.includes('covered');
+  const isLouvered = addons.includes('louvered');
+  const hasLights = addons.includes('lights');
+  return `
+    <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs><linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfd9e3"/><stop offset="1" stop-color="#e8eef4"/></linearGradient></defs>
+      <rect width="400" height="280" fill="url(#sky3)"/>
+      <rect x="0" y="220" width="400" height="60" fill="#9caf95"/>
+      <rect x="40" y="220" width="320" height="14" fill="#bab2a8"/>
+      <rect x="60" y="80" width="14" height="145" fill="${dark}"/>
+      <rect x="326" y="80" width="14" height="145" fill="${dark}"/>
+      <rect x="50" y="78" width="300" height="12" fill="${color}"/>
+      <rect x="50" y="92" width="300" height="3" fill="${dark}"/>
+      ${isCovered ? `<rect x="50" y="78" width="300" height="22" fill="${color}"/><rect x="50" y="98" width="300" height="3" fill="${dark}"/>` :
+        isLouvered ? `${[...Array(14)].map((_, i) => `<rect x="${56 + i * 21}" y="74" width="14" height="22" fill="${color}" stroke="${dark}" stroke-width="0.5" transform="rotate(-15 ${63 + i * 21} 85)"/>`).join('')}` :
+        `${[...Array(15)].map((_, i) => `<rect x="${56 + i * 20}" y="68" width="6" height="22" fill="${color}" stroke="${dark}" stroke-width="0.4"/>`).join('')}`}
+      ${hasLights ? `${[100, 160, 220, 280].map(x => `<circle cx="${x}" cy="100" r="2.5" fill="#fef9c3"/><circle cx="${x}" cy="100" r="6" fill="#fef9c3" opacity="0.4"/>`).join('')}<line x1="74" y1="100" x2="326" y2="100" stroke="${dark}" stroke-width="0.5"/>` : ''}
+      <ellipse cx="380" cy="175" rx="18" ry="36" fill="#7a8a72"/>
+    </svg>`;
+}
+
+function renderHardscapeSVG(color, sels) {
+  const dark = shade(color, -15);
+  const light = shade(color, 10);
+  const hasFirepit = (sels.addons || []).includes('firepit');
+  const hasLighting = (sels.addons || []).includes('lighting');
+  const hasSeating = (sels.addons || []).includes('seating');
+  return `
+    <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs><linearGradient id="sky4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfd9e3"/><stop offset="1" stop-color="#e8eef4"/></linearGradient></defs>
+      <rect width="400" height="280" fill="url(#sky4)"/>
+      <rect x="0" y="180" width="400" height="100" fill="#9caf95"/>
+      <rect x="50" y="170" width="300" height="100" fill="${color}"/>
+      ${[...Array(5)].map((_, row) => { let r = ''; for (let col = 0; col < 6; col++) { const xOff = (row % 2) * 25; r += `<rect x="${55 + col * 50 + xOff}" y="${175 + row * 18}" width="48" height="16" fill="${(col + row) % 2 === 0 ? light : color}" stroke="${dark}" stroke-width="0.5"/>`; } return r; }).join('')}
+      ${hasFirepit ? `<ellipse cx="200" cy="220" rx="38" ry="14" fill="${shade(color, -30)}"/><ellipse cx="200" cy="216" rx="36" ry="12" fill="${shade(color, -10)}"/><path d="M188 216 Q190 200 200 198 Q210 200 212 216 Q210 208 200 210 Q190 208 188 216" fill="#b91c2c" opacity="0.85"/><path d="M195 216 Q197 206 200 205 Q203 206 205 216" fill="#fef9c3" opacity="0.9"/>` : ''}
+      ${hasSeating ? `<rect x="60" y="160" width="80" height="14" fill="${dark}"/><rect x="260" y="160" width="80" height="14" fill="${dark}"/>` : ''}
+      ${hasLighting ? `${[80, 160, 240, 320].map(x => `<circle cx="${x}" cy="170" r="2.5" fill="#fef9c3"/><circle cx="${x}" cy="170" r="6" fill="#fef9c3" opacity="0.4"/>`).join('')}` : ''}
+      <ellipse cx="60" cy="155" rx="22" ry="35" fill="#6a7a62"/>
+      <ellipse cx="350" cy="150" rx="26" ry="40" fill="#6a7a62"/>
+    </svg>`;
+}
+
+render();
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
