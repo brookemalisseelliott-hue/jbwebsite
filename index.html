@@ -1227,6 +1227,90 @@
     .reviews-grid { grid-template-columns: 1fr; }
   }
 
+  /* ===== FEATURED RESOURCES (mobile-friendly entry to blog) ===== */
+  .featured-blog {
+    background: var(--paper);
+    padding: 80px 28px 90px;
+    border-top: 1px solid var(--line);
+  }
+  .featured-blog .container { max-width: 1180px; margin: 0 auto; }
+  .featured-blog .section-header { text-align: center; max-width: 720px; margin: 0 auto 44px; }
+  .featured-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 32px;
+  }
+  .featured-blog-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .featured-blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+  }
+  .featured-blog-img {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .featured-blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .featured-blog-card:hover .featured-blog-img img { transform: scale(1.05); }
+  .featured-blog-body {
+    padding: 22px 22px 26px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .featured-blog-tag {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--copper);
+    margin-bottom: 10px;
+  }
+  .featured-blog-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .featured-blog-card p {
+    font-size: 14px;
+    color: var(--slate-soft);
+    line-height: 1.55;
+    flex: 1;
+    margin-bottom: 14px;
+  }
+  .featured-blog-card .read {
+    color: var(--copper);
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .featured-blog-cta {
+    text-align: center;
+  }
+  @media (max-width: 920px) {
+    .featured-blog { padding: 60px 20px 70px; }
+    .featured-blog-grid { grid-template-columns: 1fr; gap: 18px; margin-bottom: 28px; }
+    .featured-blog-card h3 { font-size: 22px; }
+  }
+
   /* ===== FINAL CTA ===== */
   .final-cta {
     background:
@@ -2195,6 +2279,49 @@
       <p class="why-text">Every deck, every roof, every fence we build is somebody's home. Somebody's Sunday morning coffee spot. Somebody's place where their kids will grow up. I never forget that. When I finish a project, I want it to be the kind of work I'd be proud to do on my own house, because the family living there matters as much as mine does.</p>
       <p class="why-text">That's the whole reason this business exists. Not to be the biggest contractor in Austin. Just to be the one your family trusts enough to call back the next time.</p>
       <div class="why-signoff">John & Brooke</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED RESOURCES -->
+<section class="featured-blog" id="resources">
+  <div class="container reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">Resources & Guides</span>
+      <h2>Helpful reads <em>before you build</em>.</h2>
+      <p>Real Austin pricing, decisions worth thinking through, and lessons from years of building. No fluff, no fear-mongering.</p>
+    </div>
+    <div class="featured-blog-grid">
+      <a class="featured-blog-card" href="blog-deck-cost-austin.html">
+        <div class="featured-blog-img"><img src="gallery-deck-build.jpg" alt="Custom pressure-treated deck build" loading="lazy"></div>
+        <div class="featured-blog-body">
+          <div class="featured-blog-tag">Decks · Pricing</div>
+          <h3>How much does a deck cost in Austin? (2026 guide)</h3>
+          <p>Real numbers for pressure-treated, cedar, and composite. What drives the price up, and where you can save without cutting corners.</p>
+          <div class="read">Read the guide →</div>
+        </div>
+      </a>
+      <a class="featured-blog-card" href="blog-storm-damage-roof-austin.html">
+        <div class="featured-blog-img"><img src="gallery-roof-golden.jpg" alt="Roof replacement at golden hour" loading="lazy"></div>
+        <div class="featured-blog-body">
+          <div class="featured-blog-tag">Roofing · Storms</div>
+          <h3>After the storm: when your Austin roof needs replacing</h3>
+          <p>Repair vs. replace, the insurance walkthrough, and the questions to ask any roofer before you sign anything.</p>
+          <div class="read">Read the guide →</div>
+        </div>
+      </a>
+      <a class="featured-blog-card" href="blog-best-privacy-fence-austin.html">
+        <div class="featured-blog-img"><img src="gallery-fence-stained.jpg" alt="Stained horizontal cedar fence" loading="lazy"></div>
+        <div class="featured-blog-body">
+          <div class="featured-blog-tag">Fences</div>
+          <h3>The best privacy fence for Austin backyards</h3>
+          <p>Cedar vs. pressure-treated, horizontal vs. vertical, real costs, lifespans, and stain advice from a local builder.</p>
+          <div class="read">Read the guide →</div>
+        </div>
+      </a>
+    </div>
+    <div class="featured-blog-cta">
+      <a href="blog.html" class="btn btn-outline-navy btn-large">See all guides →</a>
     </div>
   </div>
 </section>
