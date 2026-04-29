@@ -475,8 +475,15 @@
   /* ===== INSPIRATION (BEFORE DESIGNER) ===== */
   .inspo {
     background: var(--white);
-    padding: 120px 32px 100px;
+    padding: 64px 32px 60px;
   }
+  .inspo .section-header { margin-bottom: 32px; }
+  .inspo .section-header .section-eyebrow { margin-bottom: 10px; }
+  .inspo .section-header h2 {
+    font-size: clamp(26px, 3.2vw, 38px);
+    margin-bottom: 8px;
+  }
+  .inspo .section-header p { font-size: 15px; }
   .inspo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1131,11 +1138,57 @@
   }
 
   /* ===== GALLERY ===== */
+  #work { padding: 80px 32px; }
+  .gallery-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .gallery-filter-bar label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .gallery-filter-bar select {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    background: var(--white);
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 38px 10px 14px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%231e3a8a' d='M6 8L0 0h12z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    transition: border-color 0.2s;
+  }
+  .gallery-filter-bar select:hover { border-color: var(--navy); }
+  .gallery-filter-bar select:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12); }
+  .gallery-count {
+    font-size: 13px;
+    color: var(--slate-soft);
+    margin-left: auto;
+  }
+  .gallery-item.is-hidden { display: none; }
+  .gallery-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--slate-soft);
+    font-size: 15px;
+  }
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 14px;
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
   }
   .gallery-item {
     position: relative;
@@ -1143,6 +1196,7 @@
     border-radius: 8px;
     background: var(--mist);
     cursor: pointer;
+    aspect-ratio: 4/3;
   }
   .gallery-item img {
     width: 100%; height: 100%;
@@ -1153,26 +1207,22 @@
   .gallery-item .label {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    padding: 36px 22px 16px;
+    padding: 28px 16px 12px;
     background: linear-gradient(180deg, transparent, rgba(15, 28, 42, 0.92));
     color: var(--white);
     font-family: 'Fraunces', serif;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 500;
     opacity: 0;
     transform: translateY(8px);
     transition: all 0.3s;
   }
   .gallery-item:hover .label { opacity: 1; transform: translateY(0); }
-  .g-large { grid-column: span 6; grid-row: span 2; aspect-ratio: 1/1; }
-  .g-tall { grid-column: span 3; grid-row: span 2; aspect-ratio: 1/2; }
-  .g-wide { grid-column: span 6; aspect-ratio: 16/9; }
-  .g-square { grid-column: span 3; aspect-ratio: 1/1; }
   @media (max-width: 920px) {
-    .gallery-grid { grid-template-columns: repeat(6, 1fr); }
-    .g-large { grid-column: span 6; grid-row: span 1; aspect-ratio: 4/3; }
-    .g-tall { grid-column: span 3; grid-row: span 1; aspect-ratio: 4/3; }
-    .g-wide { grid-column: span 6; aspect-ratio: 4/3; }
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  }
+  @media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   }
 
   /* ===== REVIEWS ===== */
@@ -1810,6 +1860,7 @@
       <p class="hero-sub">Custom decks, roofing, siding, fences, and the outdoor spaces your family actually uses. Honest pricing, transparent communication, work backed by warranty. Same-day callback, every time.</p>
       <div class="hero-ctas">
         <a href="#designer" class="btn btn-primary btn-large">Design My Project →</a>
+        <a href="#work" class="btn btn-outline btn-large">See Our Work</a>
         <a href="tel:5125873914" class="btn btn-outline btn-large">Call (512) 587-3914</a>
       </div>
       <div class="hero-trust">
@@ -2092,7 +2143,7 @@
     <div class="section-header">
       <span class="section-eyebrow">Real Projects, Real Austin Homes</span>
       <h2>Find the project <em>you've been picturing</em>.</h2>
-      <p>Tap any project below to start designing yours in that style. Prefer to start from scratch? Skip ahead to the Designer.</p>
+      <p>Tap one to start designing yours — or <a href="#designer">skip to the Designer</a>.</p>
     </div>
     <div class="inspo-grid">
       <div class="inspo-card" onclick="startWithService('deck'); scrollToDesigner();">
@@ -2214,64 +2265,152 @@
       <h2>The work <em>speaks for itself</em>.</h2>
       <p>A handful of recent builds across Travis, Hays, Williamson, and the rest of greater Austin.</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item g-large">
+    <div class="gallery-filter-bar">
+      <label for="gallery-filter">Filter by:</label>
+      <select id="gallery-filter" onchange="filterGallery(this.value)">
+        <option value="all">All Projects</option>
+        <option value="deck">Decks</option>
+        <option value="fence">Fences</option>
+        <option value="pergola">Pergolas &amp; Covers</option>
+        <option value="roof">Roofing</option>
+        <option value="hardscape">Hardscape</option>
+      </select>
+      <span class="gallery-count" id="gallery-count"></span>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-item" data-category="pergola">
+        <img src="gallery-pergola-tg-ceiling.jpg" alt="Cedar tongue-and-groove patio cover ceiling with recessed lighting">
+        <div class="label">Cedar T&amp;G Patio Cover Ceiling</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img src="gallery-fence-sunset.jpg" alt="Cedar privacy fence at sunset with cactus garden">
+        <div class="label">Cedar Privacy Fence at Sunset</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img src="gallery-fence-splitrail.jpg" alt="Split-rail ranch fence in the Hill Country">
+        <div class="label">Hill Country Split-Rail Fence</div>
+      </div>
+      <div class="gallery-item" data-category="pergola">
+        <img src="gallery-pergola-cedar-stained.jpg" alt="Stained cedar pergola attached to home">
+        <div class="label">Stained Cedar Pergola</div>
+      </div>
+      <div class="gallery-item" data-category="pergola">
+        <img src="gallery-pergola-lattice-clear.jpg" alt="Cedar pergola with lattice walls and clear roof">
+        <div class="label">Cedar Pergola with Lattice Walls</div>
+      </div>
+      <div class="gallery-item" data-category="pergola">
+        <img src="gallery-pergola-wood-ceiling.jpg" alt="Patio cover with wood ceiling and white columns">
+        <div class="label">Patio Cover with Wood Ceiling</div>
+      </div>
+      <div class="gallery-item" data-category="pergola">
+        <img src="gallery-pergola-cedar-beams.jpg" alt="Patio cover from below with cedar beams and metal panels">
+        <div class="label">Cedar Beam Patio Cover</div>
+      </div>
+      <div class="gallery-item" data-category="pergola">
+        <img src="gallery-pergola-leanto.jpg" alt="Lean-to patio cover with corrugated metal roof">
+        <div class="label">Lean-To Patio Cover</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img src="gallery-fence-modern-horizontal.jpg" alt="Modern horizontal cedar fence with metal accent panels">
+        <div class="label">Modern Horizontal Cedar Fence</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img src="gallery-fence-cedar-privacy.jpg" alt="Cedar privacy fence build, backyard">
+        <div class="label">Cedar Privacy Fence Build</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img src="gallery-fence-side-gate.jpg" alt="Cedar side gate, Hill Country home">
+        <div class="label">Cedar Side Gate</div>
+      </div>
+      <div class="gallery-item" data-category="deck">
+        <img src="gallery-deck-wraparound-porch.jpg" alt="Wraparound porch build on a red farmhouse">
+        <div class="label">Wraparound Porch Build</div>
+      </div>
+      <div class="gallery-item" data-category="deck">
+        <img src="gallery-deck-hottub.jpg" alt="Backyard deck platform with hot tub">
+        <div class="label">Backyard Hot Tub Deck</div>
+      </div>
+      <div class="gallery-item" data-category="roof">
+        <img src="gallery-roof-shingle-replace.jpg" alt="Shingle roof replacement on a brick home">
+        <div class="label">Shingle Roof Replacement</div>
+      </div>
+      <div class="gallery-item" data-category="roof">
+        <img src="gallery-roof-stone-home.jpg" alt="Roof replacement on a stone home with cloudy sky">
+        <div class="label">Stone Home Roof Replacement</div>
+      </div>
+      <div class="gallery-item" data-category="roof">
+        <img src="gallery-roof-underlayment.jpg" alt="Synthetic underlayment installed on a roof">
+        <div class="label">Roof Underlayment Install</div>
+      </div>
+      <div class="gallery-item" data-category="roof">
+        <img src="gallery-roof-gutter-install.jpg" alt="Worker installing a new gutter on a brick home">
+        <div class="label">New Gutter Install</div>
+      </div>
+      <div class="gallery-item" data-category="hardscape">
+        <img src="gallery-hardscape-concrete-pad.jpg" alt="Poured concrete patio pad behind a home">
+        <div class="label">Concrete Patio Pad</div>
+      </div>
+      <div class="gallery-item" data-category="hardscape">
+        <img src="gallery-hardscape-cedar-garage-doors.jpg" alt="Custom cedar plank garage doors">
+        <div class="label">Custom Cedar Garage Doors</div>
+      </div>
+      <div class="gallery-item g-large" data-category="pergola">
         <img src="gallery-pergola-hill-country.jpg" alt="Cedar pergola with string lights, Hill Country view">
         <div class="label">Hill Country Pergola Cover</div>
       </div>
-      <div class="gallery-item g-tall">
+      <div class="gallery-item g-tall" data-category="roof">
         <img src="gallery-roof-golden.jpg" alt="Roof replacement photographed at golden hour">
         <div class="label">Roof Replacement at Golden Hour</div>
       </div>
-      <div class="gallery-item g-tall">
+      <div class="gallery-item g-tall" data-category="deck">
         <img src="gallery-deck-build.jpg" alt="Custom pressure-treated deck build">
         <div class="label">Pressure-Treated Deck Build</div>
       </div>
-      <div class="gallery-item g-square">
+      <div class="gallery-item g-square" data-category="deck">
         <img src="gallery-deck-sunset.jpg" alt="Backyard deck with built-in lighting at sunset">
         <div class="label">Sunset Deck with Lighting</div>
       </div>
-      <div class="gallery-item g-square">
+      <div class="gallery-item g-square" data-category="fence">
         <img src="gallery-fence-cedar.jpg" alt="Cedar privacy fence in a backyard">
         <div class="label">Cedar Privacy Fence</div>
       </div>
-      <div class="gallery-item g-square">
+      <div class="gallery-item g-square" data-category="pergola">
         <img src="gallery-pergola-cover.jpg" alt="Patio cover with concrete pad">
         <div class="label">Patio Cover with Concrete Pad</div>
       </div>
-      <div class="gallery-item g-square">
+      <div class="gallery-item g-square" data-category="hardscape">
         <img src="gallery-hardscape-paver.jpg" alt="Brick paver patio aerial view">
         <div class="label">Brick Paver Patio</div>
       </div>
-      <div class="gallery-item g-wide">
+      <div class="gallery-item g-wide" data-category="fence">
         <img src="gallery-fence-stained.jpg" alt="Stained horizontal cedar fence with curved planter wall">
         <div class="label">Stained Horizontal Cedar Fence</div>
       </div>
-      <div class="gallery-item g-wide">
+      <div class="gallery-item g-wide" data-category="roof">
         <img src="gallery-roof-metal.jpg" alt="Standing seam metal roof with solar">
         <div class="label">Standing Seam Metal Roof</div>
       </div>
-      <div class="gallery-item g-square">
+      <div class="gallery-item g-square" data-category="deck">
         <img src="gallery-deck-stairs.jpg" alt="New pressure-treated deck with stairs">
         <div class="label">Deck Build with Stairs</div>
       </div>
-      <div class="gallery-item g-square">
+      <div class="gallery-item g-square" data-category="fence">
         <img src="gallery-fence-gate.jpg" alt="Cedar privacy fence with gate">
         <div class="label">Cedar Fence with Gate</div>
       </div>
-      <div class="gallery-item g-square">
+      <div class="gallery-item g-square" data-category="pergola">
         <img src="gallery-pergola-night.jpg" alt="Covered pavilion with stone fireplace at night">
         <div class="label">Covered Pavilion with Fireplace</div>
       </div>
-      <div class="gallery-item g-square">
+      <div class="gallery-item g-square" data-category="roof">
         <img src="gallery-roof-workers.jpg" alt="Worker on shingle roof replacement">
         <div class="label">Shingle Roof Install Day</div>
       </div>
-      <div class="gallery-item g-wide">
+      <div class="gallery-item g-wide" data-category="deck">
         <img src="gallery-deck-hill.jpg" alt="Custom build framing with Hill Country view">
         <div class="label">Hill Country Custom Build</div>
       </div>
-      <div class="gallery-item g-wide">
+      <div class="gallery-item g-wide" data-category="fence">
         <img src="gallery-fence-vertical.jpg" alt="Tall vertical cedar privacy fence">
         <div class="label">Tall Cedar Privacy Fence</div>
       </div>
@@ -2862,6 +3001,36 @@ function scrollToDesigner() {
     document.getElementById('designer').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 100);
 }
+
+/* ===== Gallery filter ===== */
+function filterGallery(category) {
+  const items = document.querySelectorAll('#gallery-grid .gallery-item');
+  let visible = 0;
+  items.forEach(item => {
+    const match = category === 'all' || item.dataset.category === category;
+    item.classList.toggle('is-hidden', !match);
+    if (match) visible++;
+  });
+  const grid = document.getElementById('gallery-grid');
+  let empty = grid.querySelector('.gallery-empty');
+  if (visible === 0) {
+    if (!empty) {
+      empty = document.createElement('div');
+      empty.className = 'gallery-empty';
+      empty.textContent = 'No projects in this category yet — check back soon.';
+      grid.appendChild(empty);
+    }
+  } else if (empty) {
+    empty.remove();
+  }
+  const countEl = document.getElementById('gallery-count');
+  if (countEl) {
+    countEl.textContent = visible + (visible === 1 ? ' project' : ' projects');
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('gallery-grid')) filterGallery('all');
+});
 
 /* ===== Render functions ===== */
 function render() {
