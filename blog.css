@@ -13,8 +13,8 @@
   --offwhite: #fafbfd;
   --line: #dde3ec;
   --line-soft: #ecf0f6;
-  --copper: #2d5a3d;
-  --copper-dark: #1f4129;
+  --copper: #111827;
+  --copper-dark: #000000;
   --gold: #b6c2d4;
   --shadow-sm: 0 4px 12px rgba(15, 28, 42, 0.06);
   --shadow: 0 20px 50px -20px rgba(15, 28, 42, 0.22);
@@ -130,7 +130,7 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.005em;
 }
 .btn-primary { background: var(--copper); color: var(--white); }
-.btn-primary:hover { background: var(--copper-dark); transform: translateY(-1px); box-shadow: 0 8px 20px -8px rgba(45, 90, 61, 0.55); }
+.btn-primary:hover { background: var(--copper-dark); transform: translateY(-1px); box-shadow: 0 8px 20px -8px rgba(17, 24, 39, 0.55); }
 .btn-navy { background: var(--navy); color: var(--white); }
 .btn-navy:hover { background: var(--navy-dark); transform: translateY(-1px); }
 .btn-outline-navy {
@@ -163,7 +163,7 @@ button { font-family: inherit; cursor: pointer; }
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 80% 30%, rgba(45, 90, 61, 0.18), transparent 50%),
+  background: radial-gradient(ellipse at 80% 30%, rgba(17, 24, 39, 0.18), transparent 50%),
               radial-gradient(ellipse at 10% 90%, rgba(74, 91, 112, 0.4), transparent 50%);
   pointer-events: none;
 }
