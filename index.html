@@ -2278,11 +2278,11 @@
       <span class="gallery-count" id="gallery-count"></span>
     </div>
     <div class="gallery-grid" id="gallery-grid">
-      <div class="gallery-item" data-category="pergola">
+      <div class="gallery-item" data-category="pergola" data-featured="true">
         <img src="gallery-pergola-tg-ceiling.jpg" alt="Cedar tongue-and-groove patio cover ceiling with recessed lighting">
         <div class="label">Cedar T&amp;G Patio Cover Ceiling</div>
       </div>
-      <div class="gallery-item" data-category="fence">
+      <div class="gallery-item" data-category="fence" data-featured="true">
         <img src="gallery-fence-sunset.jpg" alt="Cedar privacy fence at sunset with cactus garden">
         <div class="label">Cedar Privacy Fence at Sunset</div>
       </div>
@@ -2290,7 +2290,7 @@
         <img src="gallery-fence-splitrail.jpg" alt="Split-rail ranch fence in the Hill Country">
         <div class="label">Hill Country Split-Rail Fence</div>
       </div>
-      <div class="gallery-item" data-category="pergola">
+      <div class="gallery-item" data-category="pergola" data-featured="true">
         <img src="gallery-pergola-cedar-stained.jpg" alt="Stained cedar pergola attached to home">
         <div class="label">Stained Cedar Pergola</div>
       </div>
@@ -2310,7 +2310,7 @@
         <img src="gallery-pergola-leanto.jpg" alt="Lean-to patio cover with corrugated metal roof">
         <div class="label">Lean-To Patio Cover</div>
       </div>
-      <div class="gallery-item" data-category="fence">
+      <div class="gallery-item" data-category="fence" data-featured="true">
         <img src="gallery-fence-modern-horizontal.jpg" alt="Modern horizontal cedar fence with metal accent panels">
         <div class="label">Modern Horizontal Cedar Fence</div>
       </div>
@@ -2322,7 +2322,7 @@
         <img src="gallery-fence-side-gate.jpg" alt="Cedar side gate, Hill Country home">
         <div class="label">Cedar Side Gate</div>
       </div>
-      <div class="gallery-item" data-category="deck">
+      <div class="gallery-item" data-category="deck" data-featured="true">
         <img src="gallery-deck-wraparound-porch.jpg" alt="Wraparound porch build on a red farmhouse">
         <div class="label">Wraparound Porch Build</div>
       </div>
@@ -2334,7 +2334,7 @@
         <img src="gallery-roof-shingle-replace.jpg" alt="Shingle roof replacement on a brick home">
         <div class="label">Shingle Roof Replacement</div>
       </div>
-      <div class="gallery-item" data-category="roof">
+      <div class="gallery-item" data-category="roof" data-featured="true">
         <img src="gallery-roof-stone-home.jpg" alt="Roof replacement on a stone home with cloudy sky">
         <div class="label">Stone Home Roof Replacement</div>
       </div>
@@ -2350,7 +2350,7 @@
         <img src="gallery-hardscape-concrete-pad.jpg" alt="Poured concrete patio pad behind a home">
         <div class="label">Concrete Patio Pad</div>
       </div>
-      <div class="gallery-item" data-category="hardscape">
+      <div class="gallery-item" data-category="hardscape" data-featured="true">
         <img src="gallery-hardscape-cedar-garage-doors.jpg" alt="Custom cedar plank garage doors">
         <div class="label">Custom Cedar Garage Doors</div>
       </div>
@@ -2366,7 +2366,7 @@
         <img src="gallery-deck-build.jpg" alt="Custom pressure-treated deck build">
         <div class="label">Pressure-Treated Deck Build</div>
       </div>
-      <div class="gallery-item g-square" data-category="deck">
+      <div class="gallery-item g-square" data-category="deck" data-featured="true">
         <img src="gallery-deck-sunset.jpg" alt="Backyard deck with built-in lighting at sunset">
         <div class="label">Sunset Deck with Lighting</div>
       </div>
@@ -3005,11 +3005,14 @@ function scrollToDesigner() {
 /* ===== Gallery filter ===== */
 function filterGallery(category) {
   const items = document.querySelectorAll('#gallery-grid .gallery-item');
+  const total = items.length;
   let visible = 0;
   items.forEach(item => {
-    const match = category === 'all' || item.dataset.category === category;
-    item.classList.toggle('is-hidden', !match);
-    if (match) visible++;
+    const isFeatured = item.dataset.featured === 'true';
+    const matchesCategory = item.dataset.category === category;
+    const shouldShow = category === 'all' ? isFeatured : matchesCategory;
+    item.classList.toggle('is-hidden', !shouldShow);
+    if (shouldShow) visible++;
   });
   const grid = document.getElementById('gallery-grid');
   let empty = grid.querySelector('.gallery-empty');
@@ -3025,7 +3028,11 @@ function filterGallery(category) {
   }
   const countEl = document.getElementById('gallery-count');
   if (countEl) {
-    countEl.textContent = visible + (visible === 1 ? ' project' : ' projects');
+    if (category === 'all') {
+      countEl.textContent = `Showing ${visible} featured · pick a category to see all ${total}`;
+    } else {
+      countEl.textContent = visible + (visible === 1 ? ' project' : ' projects');
+    }
   }
 }
 document.addEventListener('DOMContentLoaded', () => {
