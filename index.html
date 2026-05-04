@@ -1382,6 +1382,133 @@
   }
 
   /* ===== WHY / FAMILY ===== */
+  /* ===== LEAD MAGNET ===== */
+  .lead-magnet {
+    background: var(--paper);
+    padding: 80px 32px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .lead-magnet-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .lead-magnet-text .section-eyebrow {
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: inline-block;
+  }
+  .lead-magnet-text h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--navy);
+    line-height: 1.05;
+    margin-bottom: 18px;
+    letter-spacing: -0.025em;
+  }
+  .lead-magnet-text h2 em { font-style: italic; color: var(--slate); font-weight: 500; }
+  .lead-magnet-text > p {
+    font-size: 16px;
+    color: var(--slate);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 480px;
+  }
+  .lead-magnet-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .lead-magnet-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .lead-magnet-bullets .check {
+    color: var(--navy);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .lead-magnet-form {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 32px 32px 30px;
+    box-shadow: var(--shadow);
+  }
+  .lead-magnet-form h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .lead-magnet-form .form-subhead {
+    font-size: 13px;
+    color: var(--slate-soft);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .lead-magnet-form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    margin-top: 14px;
+  }
+  .lead-magnet-form input[type="text"],
+  .lead-magnet-form input[type="email"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--navy);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .lead-magnet-form input:focus {
+    outline: none;
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+  }
+  .lead-magnet-submit {
+    width: 100%;
+    margin-top: 22px;
+  }
+  .lead-magnet-success {
+    display: none;
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: rgba(30, 58, 138, 0.06);
+    border-left: 3px solid var(--navy);
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+  .lead-magnet-success.visible { display: block; }
+  .lead-magnet-success a { color: var(--navy); font-weight: 600; }
+  @media (max-width: 820px) {
+    .lead-magnet-inner { grid-template-columns: 1fr; gap: 36px; }
+    .lead-magnet { padding: 56px 22px; }
+  }
+
   .why {
     background: var(--navy-deep);
     color: var(--white);
@@ -2180,6 +2307,14 @@
     </div>
 
     <div class="mobile-drawer-section">
+      <div class="mobile-drawer-label">Service Areas</div>
+      <a href="round-rock-contractor.html" class="mobile-drawer-link">Round Rock</a>
+      <a href="cedar-park-contractor.html" class="mobile-drawer-link">Cedar Park</a>
+      <a href="lakeway-contractor.html" class="mobile-drawer-link">Lakeway</a>
+      <a href="dripping-springs-contractor.html" class="mobile-drawer-link">Dripping Springs</a>
+    </div>
+
+    <div class="mobile-drawer-section">
       <div class="mobile-drawer-label">Explore</div>
       <a href="#designer" class="mobile-drawer-link" onclick="closeMobileMenu()">Design Builder</a>
       <a href="#work" class="mobile-drawer-link" onclick="closeMobileMenu()">Project Gallery</a>
@@ -2675,6 +2810,42 @@
   </div>
 </section>
 
+<!-- LEAD MAGNET -->
+<section class="lead-magnet" id="playbook">
+  <div class="container">
+    <div class="lead-magnet-inner">
+      <div class="lead-magnet-text">
+        <span class="section-eyebrow">Free Homeowner's Playbook</span>
+        <h2>Don't hire <em>any</em> Austin contractor<br>until you've read this.</h2>
+        <p>The 12-point checklist, 8 red flags, and the questions to ask before signing anything. Written by a 5-star Austin contractor who's seen what bad ones look like, so you don't have to find out the hard way.</p>
+        <ul class="lead-magnet-bullets">
+          <li><span class="check">✓</span> The 12-Point Contractor Vetting Checklist</li>
+          <li><span class="check">✓</span> 8 Red Flags That Should Make You Walk Away</li>
+          <li><span class="check">✓</span> The Real Cost of Cheap (with real-dollar examples)</li>
+          <li><span class="check">✓</span> Project Scope Worksheet + Contract Safety Check</li>
+        </ul>
+      </div>
+      <div class="lead-magnet-form-wrap">
+        <form class="lead-magnet-form" id="lead-magnet-form" onsubmit="return submitLeadMagnet(event)">
+          <h3>Send me the Playbook</h3>
+          <p class="form-subhead">We'll email you the link and occasionally send tips. Unsubscribe anytime.</p>
+          <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
+          <input type="hidden" name="subject" value="New Hiring Playbook Download">
+          <input type="hidden" name="from_name" value="JB Hiring Playbook Form">
+          <label for="lm-name">Name</label>
+          <input type="text" id="lm-name" name="name" placeholder="Your name" required>
+          <label for="lm-email">Email</label>
+          <input type="email" id="lm-email" name="email" placeholder="you@email.com" required>
+          <button type="submit" class="btn btn-primary btn-large lead-magnet-submit">Send me the Playbook →</button>
+          <div class="lead-magnet-success" id="lead-magnet-success">
+            <strong>✓ Sent!</strong> Check your inbox. <a href="austin-contractor-hiring-playbook.html" target="_blank">Or read it now →</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHY -->
 <section class="why" id="why">
   <div class="container reveal">
@@ -2876,12 +3047,14 @@
       </ul>
     </div>
     <div>
-      <h4>Get in Touch</h4>
+      <h4>Service Areas</h4>
       <ul>
+        <li><a href="round-rock-contractor.html">Round Rock</a></li>
+        <li><a href="cedar-park-contractor.html">Cedar Park</a></li>
+        <li><a href="lakeway-contractor.html">Lakeway</a></li>
+        <li><a href="dripping-springs-contractor.html">Dripping Springs</a></li>
         <li><a href="tel:5125873914">(512) 587-3914</a></li>
         <li><a href="mailto:jbconstructionatx@gmail.com">jbconstructionatx@gmail.com</a></li>
-        <li>Travis · Hays · Williamson</li>
-        <li>and surrounding counties</li>
       </ul>
     </div>
   </div>
@@ -3346,6 +3519,43 @@ function scrollToDesigner() {
   setTimeout(() => {
     document.getElementById('designer').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 100);
+}
+
+/* ===== Lead magnet form ===== */
+function submitLeadMagnet(e) {
+  e.preventDefault();
+  const form = document.getElementById('lead-magnet-form');
+  const success = document.getElementById('lead-magnet-success');
+  const btn = form.querySelector('.lead-magnet-submit');
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  const data = new FormData(form);
+  fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+    .then(r => r.json())
+    .then(result => {
+      if (result && result.success) {
+        success.classList.add('visible');
+        btn.textContent = '✓ Sent. Check your email.';
+        // Open the guide in a new tab right away so they get value immediately
+        setTimeout(() => window.open('austin-contractor-hiring-playbook.html', '_blank'), 600);
+      } else {
+        // Fallback: still send them to the guide
+        success.classList.add('visible');
+        btn.textContent = originalText;
+        btn.disabled = false;
+        setTimeout(() => window.open('austin-contractor-hiring-playbook.html', '_blank'), 600);
+      }
+    })
+    .catch(() => {
+      // Network error: still give them the guide
+      success.classList.add('visible');
+      btn.textContent = originalText;
+      btn.disabled = false;
+      setTimeout(() => window.open('austin-contractor-hiring-playbook.html', '_blank'), 600);
+    });
+  return false;
 }
 
 /* ===== Mobile nav drawer ===== */
