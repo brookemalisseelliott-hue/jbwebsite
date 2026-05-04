@@ -319,10 +319,121 @@
   }
   .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
   .btn-large { padding: 17px 32px; font-size: 16px; }
+
+  /* ===== MOBILE NAV TOGGLE & DRAWER ===== */
+  .mobile-menu-toggle {
+    display: none;
+    background: var(--white);
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .mobile-menu-toggle:hover { border-color: var(--navy); }
+  .mobile-menu-toggle:active { background: var(--paper); }
+  .mobile-drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .mobile-drawer.is-open { pointer-events: auto; visibility: visible; }
+  .mobile-drawer-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 28, 42, 0);
+    transition: background 0.25s ease;
+  }
+  .mobile-drawer.is-open .mobile-drawer-overlay { background: rgba(15, 28, 42, 0.55); }
+  .mobile-drawer-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(86vw, 380px);
+    background: var(--white);
+    box-shadow: -20px 0 60px rgba(15, 28, 42, 0.25);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-drawer.is-open .mobile-drawer-panel { transform: translateX(0); }
+  .mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mobile-drawer-close {
+    background: none;
+    border: none;
+    color: var(--slate);
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-drawer-close:hover { color: var(--navy); }
+  .mobile-drawer-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mobile-drawer-cta .btn { width: 100%; }
+  .mobile-drawer-section {
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .mobile-drawer-section:last-of-type { border-bottom: none; }
+  .mobile-drawer-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--slate-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .mobile-drawer-link {
+    display: block;
+    padding: 12px 0;
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--line-soft);
+    transition: color 0.15s, padding-left 0.15s;
+  }
+  .mobile-drawer-link:last-child { border-bottom: none; }
+  .mobile-drawer-link:hover,
+  .mobile-drawer-link:active { color: var(--copper); padding-left: 6px; }
+  .mobile-drawer-footer {
+    margin-top: auto;
+    padding: 18px 22px;
+    background: var(--paper);
+    font-size: 12px;
+    color: var(--slate-soft);
+    line-height: 1.6;
+  }
+  body.drawer-open { overflow: hidden; }
+
   @media (max-width: 920px) {
     .nav { display: none; }
     .header-cta .phone-link { display: none; }
+    .header-cta .btn-primary { display: none; }
     .header { padding: 14px 20px; }
+    .mobile-menu-toggle { display: inline-flex; }
   }
 
   /* ===== HERO ===== */
@@ -1298,7 +1409,7 @@
     font-size: clamp(38px, 4.8vw, 58px);
     margin-bottom: 36px;
   }
-  .why h2 em { font-style: normal; color: var(--copper); font-weight: 600; }
+  .why h2 em { font-style: normal; color: var(--gold); font-weight: 600; }
   .why-text {
     font-size: 19px;
     line-height: 1.65;
@@ -2035,9 +2146,55 @@
         (512) 587-3914
       </a>
       <a href="#designer" class="btn btn-primary">Get Free Quote</a>
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+  <div class="mobile-drawer-overlay" onclick="closeMobileMenu()"></div>
+  <aside class="mobile-drawer-panel" role="dialog" aria-label="Site navigation">
+    <div class="mobile-drawer-header">
+      <img src="jb-logo-small.png" alt="JB Contracting ATX" style="height: 36px; width: auto;">
+      <button class="mobile-drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-cta">
+      <a href="#designer" class="btn btn-primary btn-large" onclick="closeMobileMenu()">Get Free Quote →</a>
+      <a href="tel:5125873914" class="btn btn-outline-navy btn-large">📞 (512) 587-3914</a>
+    </div>
+
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-label">Services</div>
+      <a href="decks-austin.html" class="mobile-drawer-link">Custom Decks</a>
+      <a href="roofing-austin.html" class="mobile-drawer-link">Roofing</a>
+      <a href="fences-austin.html" class="mobile-drawer-link">Cedar Fences</a>
+      <a href="pergolas-austin.html" class="mobile-drawer-link">Pergolas &amp; Patio Covers</a>
+      <a href="siding-austin.html" class="mobile-drawer-link">Siding</a>
+      <a href="hardscape-austin.html" class="mobile-drawer-link">Hardscape</a>
+    </div>
+
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-label">Explore</div>
+      <a href="#designer" class="mobile-drawer-link" onclick="closeMobileMenu()">Design Builder</a>
+      <a href="#work" class="mobile-drawer-link" onclick="closeMobileMenu()">Project Gallery</a>
+      <a href="#about" class="mobile-drawer-link" onclick="closeMobileMenu()">About John</a>
+      <a href="#process" class="mobile-drawer-link" onclick="closeMobileMenu()">Our Process</a>
+      <a href="#reviews" class="mobile-drawer-link" onclick="closeMobileMenu()">Reviews</a>
+      <a href="blog.html" class="mobile-drawer-link">Resources &amp; Guides</a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div>Serving Travis · Hays · Williamson</div>
+      <div>Licensed &amp; Insured · 5.0 on Google</div>
+    </div>
+  </aside>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -2679,7 +2836,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="jb-logo.png" alt="JB Contracting ATX" style="height: 78px; width: auto; margin-bottom: 18px;">
+      <img src="jb-logo.png" alt="JB Contracting ATX" style="height: 78px; width: auto; margin-bottom: 18px; filter: brightness(0) invert(1);">
       <p>Austin's family-owned contractor. Honest work, quality craftsmanship, and homes that feel like home.</p>
       <div class="social-row">
         <a href="https://www.facebook.com/profile.php?id=61581850651194" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
@@ -2701,10 +2858,10 @@
       <ul>
         <li><a href="decks-austin.html">Austin Deck Builder</a></li>
         <li><a href="roofing-austin.html">Austin Roofing</a></li>
-        <li><a href="#designer">Cedar Fences</a></li>
-        <li><a href="#designer">Pergolas &amp; Patio Covers</a></li>
-        <li><a href="#designer">Siding</a></li>
-        <li><a href="#designer">Hardscape</a></li>
+        <li><a href="fences-austin.html">Cedar Fences</a></li>
+        <li><a href="pergolas-austin.html">Pergolas &amp; Patio Covers</a></li>
+        <li><a href="siding-austin.html">Siding</a></li>
+        <li><a href="hardscape-austin.html">Hardscape</a></li>
       </ul>
     </div>
     <div>
@@ -3190,6 +3347,29 @@ function scrollToDesigner() {
     document.getElementById('designer').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 100);
 }
+
+/* ===== Mobile nav drawer ===== */
+function toggleMobileMenu() {
+  const drawer = document.getElementById('mobile-drawer');
+  const toggle = document.getElementById('mobile-menu-toggle');
+  if (!drawer) return;
+  const isOpen = drawer.classList.toggle('is-open');
+  drawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  if (toggle) toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  document.body.classList.toggle('drawer-open', isOpen);
+}
+function closeMobileMenu() {
+  const drawer = document.getElementById('mobile-drawer');
+  const toggle = document.getElementById('mobile-menu-toggle');
+  if (!drawer) return;
+  drawer.classList.remove('is-open');
+  drawer.setAttribute('aria-hidden', 'true');
+  if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('drawer-open');
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileMenu();
+});
 
 /* ===== Gallery filter ===== */
 function filterGallery(category) {
@@ -3990,16 +4170,15 @@ function renderEmptyPreview() {
     <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#bcd2e2"/><stop offset="0.55" stop-color="#dbe5ee"/><stop offset="1" stop-color="#cdd5df"/>
+          <stop offset="0" stop-color="#e8edf2"/><stop offset="0.55" stop-color="#f1f4f7"/><stop offset="1" stop-color="#e2e8ee"/>
         </linearGradient>
       </defs>
       <rect width="400" height="280" fill="url(#bgGrad)"/>
-      <circle cx="320" cy="78" r="34" fill="#fff" opacity="0.45"/>
-      <path d="M0 200 Q60 188 120 196 Q190 204 260 192 Q330 184 400 196 L400 230 L0 230 Z" fill="#7a9078" opacity="0.55"/>
-      <path d="M0 220 Q80 212 160 216 Q240 220 320 214 Q360 212 400 218 L400 250 L0 250 Z" fill="#5e7460" opacity="0.7"/>
-      <rect x="0" y="244" width="400" height="36" fill="#7c9070"/>
-      <text x="200" y="135" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="17" fill="#3a4554">Pick a project to start designing</text>
-      <text x="200" y="158" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#5a6a7c" letter-spacing="0.6">Your live preview appears right here</text>
+      <line x1="50" y1="180" x2="350" y2="180" stroke="#1e3a8a" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.35"/>
+      <line x1="200" y1="60" x2="200" y2="180" stroke="#1e3a8a" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.25"/>
+      <circle cx="200" cy="180" r="3" fill="#1e3a8a" opacity="0.4"/>
+      <text x="200" y="125" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="17" fill="#1e3a8a">Pick a project to start designing</text>
+      <text x="200" y="148" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#4a5b80" letter-spacing="1.2">YOUR LIVE PREVIEW APPEARS HERE</text>
     </svg>`;
 }
 
@@ -4036,17 +4215,17 @@ function shade(hex, percent) {
 function commonDefs(uid, color, dark, darker, light, isNight) {
   return `
     <linearGradient id="sky-${uid}" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="${isNight ? '#1d2a48' : '#7da6c9'}"/>
-      <stop offset="0.45" stop-color="${isNight ? '#324767' : '#bcd2e2'}"/>
-      <stop offset="1" stop-color="${isNight ? '#5d6c87' : '#e7eef5'}"/>
+      <stop offset="0" stop-color="${isNight ? '#1a2540' : '#c5d3df'}"/>
+      <stop offset="0.55" stop-color="${isNight ? '#2d3d5a' : '#dde6ed'}"/>
+      <stop offset="1" stop-color="${isNight ? '#4a5670' : '#eef2f5'}"/>
     </linearGradient>
-    <radialGradient id="sun-${uid}" cx="0.78" cy="0.22" r="0.18">
-      <stop offset="0" stop-color="${isNight ? '#fef3a4' : '#fff5cb'}" stop-opacity="0.95"/>
+    <radialGradient id="sun-${uid}" cx="0.82" cy="0.18" r="0.14">
+      <stop offset="0" stop-color="${isNight ? '#fef3a4' : '#fff'}" stop-opacity="${isNight ? '0.85' : '0.55'}"/>
       <stop offset="1" stop-color="#fff" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="grass-${uid}" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="${isNight ? '#3e5742' : '#9aaf85'}"/>
-      <stop offset="1" stop-color="${isNight ? '#26392b' : '#7c9070'}"/>
+      <stop offset="0" stop-color="${isNight ? '#384a3f' : '#a3b29a'}"/>
+      <stop offset="1" stop-color="${isNight ? '#22302a' : '#82917a'}"/>
     </linearGradient>
     <linearGradient id="fascia-${uid}" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="${dark}"/>
@@ -4076,17 +4255,16 @@ function sceneSky(uid) {
   return `
     <rect width="400" height="280" fill="url(#sky-${uid})"/>
     <rect width="400" height="280" fill="url(#sun-${uid})"/>
-    <ellipse cx="92" cy="58" rx="34" ry="6" fill="#fff" opacity="0.35"/>
-    <ellipse cx="172" cy="48" rx="22" ry="4" fill="#fff" opacity="0.28"/>
-    <ellipse cx="265" cy="68" rx="26" ry="5" fill="#fff" opacity="0.22"/>`;
+    <ellipse cx="118" cy="52" rx="28" ry="3.5" fill="#fff" opacity="0.18"/>
+    <ellipse cx="240" cy="44" rx="20" ry="2.8" fill="#fff" opacity="0.14"/>`;
 }
 
 function sceneHills(yBase, isNight) {
-  const c1 = isNight ? '#2c3a4d' : '#7e9684';
-  const c2 = isNight ? '#1c2738' : '#5e7460';
+  const c1 = isNight ? '#293848' : '#8a9b87';
+  const c2 = isNight ? '#1d2737' : '#6b7a68';
   return `
-    <path d="M0 ${yBase - 18} Q60 ${yBase - 28} 120 ${yBase - 22} Q180 ${yBase - 16} 240 ${yBase - 26} Q300 ${yBase - 32} 400 ${yBase - 24} L400 ${yBase} L0 ${yBase} Z" fill="${c1}" opacity="0.45"/>
-    <path d="M0 ${yBase - 8} Q70 ${yBase - 16} 140 ${yBase - 12} Q210 ${yBase - 6} 280 ${yBase - 14} Q340 ${yBase - 18} 400 ${yBase - 12} L400 ${yBase} L0 ${yBase} Z" fill="${c2}" opacity="0.65"/>`;
+    <path d="M0 ${yBase - 14} Q80 ${yBase - 22} 160 ${yBase - 18} Q240 ${yBase - 14} 320 ${yBase - 22} Q360 ${yBase - 26} 400 ${yBase - 20} L400 ${yBase} L0 ${yBase} Z" fill="${c1}" opacity="0.35"/>
+    <path d="M0 ${yBase - 6} Q90 ${yBase - 12} 180 ${yBase - 9} Q270 ${yBase - 5} 360 ${yBase - 11} Q380 ${yBase - 13} 400 ${yBase - 10} L400 ${yBase} L0 ${yBase} Z" fill="${c2}" opacity="0.55"/>`;
 }
 
 function sceneGround(uid, yStart) {
