@@ -461,6 +461,19 @@
     background-size: 28px 28px;
     pointer-events: none;
   }
+  .hero-horizon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @media (max-width: 920px) {
+    .hero-horizon { opacity: 0.85; }
+  }
   .hero-inner {
     max-width: 1340px;
     margin: 0 auto;
@@ -472,9 +485,9 @@
     z-index: 1;
   }
   .hero-logo {
-    height: 110px;
+    height: 72px;
     width: auto;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
     filter: brightness(0) invert(1);
     opacity: 0.95;
   }
@@ -489,9 +502,32 @@
     letter-spacing: 0.2em;
     margin-bottom: 24px;
   }
-  .hero-eyebrow::before {
-    content: ''; width: 36px; height: 1.5px; background: var(--gold);
+  /* Texas flag mini-emblem accent */
+  .hero-flag {
+    display: inline-flex;
+    width: 30px;
+    height: 18px;
+    border-radius: 2.5px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 0 0.5px rgba(255,255,255,0.15);
+    flex-shrink: 0;
   }
+  .hero-flag-blue {
+    flex: 1 1 38%;
+    background: #002868;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    line-height: 1;
+  }
+  .hero-flag-star {
+    font-size: 9px;
+    line-height: 1;
+    transform: translateY(-0.5px);
+  }
+  .hero-flag-white { flex: 1 1 31%; background: #ffffff; }
+  .hero-flag-red { flex: 1 1 31%; background: #BF0A30; }
   .hero h1 {
     font-size: clamp(40px, 5.4vw, 72px);
     margin-bottom: 14px;
@@ -543,67 +579,152 @@
     max-width: 520px;
     margin-left: auto;
   }
-  .hero-card {
+  .hero-trust-card {
     position: relative;
-    background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 14px;
-    padding: 40px 36px 0;
+    background: linear-gradient(165deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 18px;
+    padding: 32px 32px 28px;
     box-shadow: var(--shadow-lg);
     overflow: hidden;
-    backdrop-filter: blur(6px);
-    text-align: center;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
-  .hero-card-tag {
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--gold);
-    padding: 5px 14px;
-    border: 1px solid rgba(182, 194, 212, 0.35);
-    border-radius: 999px;
-    margin-bottom: 30px;
-  }
-  .hero-card-logo {
-    display: block;
-    width: 70%;
-    max-width: 320px;
-    margin: 0 auto 22px;
-    filter: brightness(0) invert(1);
-    opacity: 0.96;
-  }
-  .hero-card-tagline {
-    font-family: 'Fraunces', serif;
-    font-size: 17px;
-    font-weight: 500;
-    color: var(--mist);
-    letter-spacing: 0.01em;
-    margin-bottom: 28px;
-  }
-  .hero-skyline {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: -2px;
-  }
-  .hero-rating-badge {
+  .hero-trust-card::before {
+    content: '';
     position: absolute;
-    top: -22px;
-    right: -22px;
-    background: var(--white);
-    border-radius: 100px;
-    padding: 14px 22px;
-    box-shadow: var(--shadow-lg);
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(245, 198, 109, 0.16), transparent 55%),
+      radial-gradient(ellipse at 0% 100%, rgba(184, 196, 212, 0.12), transparent 55%);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  .hero-trust-card > * { position: relative; z-index: 1; }
+
+  .hero-rating-block {
     display: flex;
     align-items: center;
-    gap: 12px;
-    z-index: 2;
+    gap: 18px;
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.14);
+    margin-bottom: 22px;
+    transition: opacity 0.2s;
   }
-  .hero-rating-badge .stars { color: var(--copper); font-size: 14px; letter-spacing: 1.5px; }
-  .hero-rating-badge .label { font-size: 12px; font-weight: 600; color: var(--navy); }
-  .hero-rating-badge .label em { font-style: normal; color: var(--copper); font-weight: 600; }
+  .hero-rating-block:hover { opacity: 0.88; }
+  .hero-rating-num {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    line-height: 0.95;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.04em;
+  }
+  .hero-rating-stars {
+    color: #f5c66d;
+    font-size: 19px;
+    letter-spacing: 4px;
+    margin-bottom: 4px;
+  }
+  .hero-rating-source {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--fog);
+    font-weight: 500;
+  }
+  .hero-rating-source svg { flex-shrink: 0; }
+
+  .hero-quote-stage {
+    position: relative;
+    min-height: 140px;
+    margin-bottom: 22px;
+  }
+  .hero-quote {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+  }
+  .hero-quote.is-active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .hero-quote-mark {
+    color: rgba(245, 198, 109, 0.6);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .hero-quote p {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--white);
+    margin: 0 0 12px;
+    letter-spacing: -0.005em;
+  }
+  .hero-quote-attrib {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12.5px;
+    color: var(--fog);
+  }
+  .hero-quote-attrib strong {
+    color: var(--white);
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+  }
+  .hero-quote-attrib span::before {
+    content: '·';
+    margin-right: 8px;
+    opacity: 0.5;
+  }
+  .hero-quote-dots {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    display: flex;
+    gap: 6px;
+  }
+  .hero-quote-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, width 0.25s;
+  }
+  .hero-quote-dot.is-active { background: #f5c66d; width: 18px; border-radius: 3px; }
+  .hero-quote-dot:hover { background: rgba(255,255,255,0.55); }
+
+  .hero-trust-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.14);
+  }
+  .hero-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--mist);
+    letter-spacing: 0.01em;
+  }
+  .hero-chip svg { color: #f5c66d; flex-shrink: 0; }
   .hero-award {
     position: absolute;
     bottom: -28px;
@@ -625,12 +746,18 @@
   .hero-award img { display: block; width: 100%; height: auto; }
 
   @media (max-width: 920px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 90px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 70px; }
     .hero { padding: 60px 22px 90px; }
-    .hero-visual { margin: 0 auto; max-width: 380px; }
-    .hero-logo { height: 86px; }
-    .hero-award { width: 50%; bottom: -22px; right: -16px; }
-    .hero-award img { width: 100%; }
+    .hero-visual { margin: 0 auto; max-width: 460px; width: 100%; }
+    .hero-trust-card { padding: 26px 24px 22px; }
+    .hero-rating-num { font-size: 54px; }
+    .hero-quote p { font-size: 15.5px; }
+    .hero-quote-stage { min-height: 160px; }
+    .hero-award { width: 42%; max-width: 180px; bottom: -22px; right: -10px; }
+  }
+  @media (max-width: 480px) {
+    .hero-trust-chips { gap: 6px; }
+    .hero-chip { font-size: 11px; padding: 5px 10px; }
   }
 
   /* ===== STAT STRIP ===== */
@@ -2333,10 +2460,68 @@
 
 <!-- HERO -->
 <section class="hero">
+  <svg class="hero-horizon" viewBox="0 0 1600 280" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="horizonGlow" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f5c66d" stop-opacity="0"/>
+        <stop offset="55%" stop-color="#f5c66d" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#f5c66d" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1a2c52"/>
+        <stop offset="100%" stop-color="#0e1a35"/>
+      </linearGradient>
+      <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#152547"/>
+        <stop offset="100%" stop-color="#0a1428"/>
+      </linearGradient>
+      <linearGradient id="hillNear" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0c1a36"/>
+        <stop offset="100%" stop-color="#050b1c"/>
+      </linearGradient>
+    </defs>
+    <!-- Warm sunset glow band -->
+    <rect x="0" y="60" width="1600" height="140" fill="url(#horizonGlow)"/>
+    <!-- Far rolling Hill Country -->
+    <path fill="url(#hillFar)" d="M0,170 C120,148 220,162 340,156 C460,150 540,168 660,160 C780,152 880,170 1000,164 C1120,158 1220,172 1340,164 C1440,158 1520,166 1600,160 L1600,280 L0,280 Z"/>
+    <!-- Mid hills with cedar tree silhouettes -->
+    <path fill="url(#hillMid)" d="M0,200 C100,182 200,196 320,192 C440,188 540,206 660,200 C780,194 880,210 1000,204 C1120,198 1220,212 1340,206 C1440,200 1540,212 1600,206 L1600,280 L0,280 Z"/>
+    <!-- Cedar trees scattered along mid ridge -->
+    <g fill="#0a1428" opacity="0.85">
+      <ellipse cx="80" cy="194" rx="6" ry="9"/>
+      <ellipse cx="170" cy="190" rx="5" ry="8"/>
+      <ellipse cx="260" cy="194" rx="7" ry="10"/>
+      <ellipse cx="450" cy="198" rx="6" ry="9"/>
+      <ellipse cx="540" cy="200" rx="5" ry="7"/>
+      <ellipse cx="720" cy="200" rx="7" ry="10"/>
+      <ellipse cx="820" cy="198" rx="5" ry="8"/>
+      <ellipse cx="980" cy="200" rx="6" ry="9"/>
+      <ellipse cx="1120" cy="202" rx="7" ry="10"/>
+      <ellipse cx="1280" cy="202" rx="5" ry="8"/>
+      <ellipse cx="1380" cy="200" rx="6" ry="9"/>
+      <ellipse cx="1500" cy="202" rx="7" ry="10"/>
+    </g>
+    <!-- Tiny Texas star marker in the warm glow band -->
+    <g transform="translate(800 110)" fill="#f5c66d" opacity="0.55">
+      <polygon points="0,-8 2.4,-2.5 8,-2.5 3.4,1.2 5.2,7 0,3.4 -5.2,7 -3.4,1.2 -8,-2.5 -2.4,-2.5"/>
+    </g>
+    <!-- Near foreground hill -->
+    <path fill="url(#hillNear)" d="M0,232 C140,216 260,228 380,222 C500,216 600,232 720,228 C840,224 940,236 1060,232 C1180,228 1280,238 1400,232 C1480,228 1560,234 1600,230 L1600,280 L0,280 Z"/>
+    <!-- Subtle ground line -->
+    <line x1="0" y1="278" x2="1600" y2="278" stroke="#000" stroke-opacity="0.35" stroke-width="1"/>
+  </svg>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-eyebrow">Austin, TX · Family-Owned · Licensed &amp; Insured</div>
-      <h1>Austin's contractor for <em>decks, roofing, fences</em> &amp; outdoor living.</h1>
+      <img src="jb-logo.png" alt="JB Contracting ATX" class="hero-logo">
+      <div class="hero-eyebrow">
+        <span class="hero-flag" aria-hidden="true">
+          <span class="hero-flag-blue"><span class="hero-flag-star">★</span></span>
+          <span class="hero-flag-white"></span>
+          <span class="hero-flag-red"></span>
+        </span>
+        Serving Greater Austin · Family-Owned · Licensed &amp; Insured
+      </div>
+      <h1>Greater Austin's contractor for <em>decks, roofing, fences</em> &amp; outdoor living.</h1>
       <div class="hero-tagline">Built around you, by neighbors who care.</div>
       <p class="hero-sub">From <strong>custom decks</strong> and <strong>pergolas</strong> to <strong>roof replacement</strong>, <strong>cedar fences</strong>, <strong>siding</strong>, and <strong>hardscape</strong>. JB Contracting ATX serves homeowners across Travis, Hays, Williamson, and the rest of greater Austin with honest pricing, written warranties, and same-day callback when you reach out.</p>
       <div class="hero-ctas">
@@ -2351,95 +2536,57 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-card">
-        <div class="hero-card-tag">Austin, Texas</div>
-        <img src="jb-logo.png" alt="JB Contracting ATX" class="hero-card-logo">
-        <div class="hero-card-tagline">Built around you. Always.</div>
-        <svg class="hero-skyline" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#14245a" stop-opacity="0"/>
-              <stop offset="100%" stop-color="#2a3e6b" stop-opacity="0.85"/>
-            </linearGradient>
-          </defs>
-          <!-- Texas Hill Country layer -->
-          <path d="M0,180 L0,140 Q60,118 120,128 Q200,142 280,124 Q360,108 440,128 Q520,142 600,128 L600,180 Z" fill="#14245a" opacity="0.55"/>
-          <!-- Far buildings (low, soft) -->
-          <g fill="#2a3e6b" opacity="0.55">
-            <rect x="20" y="118" width="22" height="62"/>
-            <rect x="46" y="108" width="14" height="72"/>
-            <rect x="64" y="124" width="18" height="56"/>
-            <rect x="500" y="120" width="20" height="60"/>
-            <rect x="524" y="110" width="16" height="70"/>
-            <rect x="544" y="126" width="22" height="54"/>
-          </g>
-          <!-- Capitol building -->
-          <g fill="url(#sky)">
-            <rect x="92" y="118" width="44" height="62"/>
-            <polygon points="92,118 114,98 136,118"/>
-            <circle cx="114" cy="92" r="10"/>
-            <rect x="112" y="78" width="4" height="14"/>
-          </g>
-          <!-- Cluster: Independent (Jenga) -->
-          <g fill="url(#sky)">
-            <rect x="156" y="64" width="36" height="116"/>
-            <rect x="148" y="84" width="8" height="20"/>
-            <rect x="192" y="100" width="8" height="22"/>
-            <rect x="148" y="124" width="8" height="22"/>
-            <rect x="192" y="140" width="8" height="20"/>
-          </g>
-          <!-- Austonian (tall, tapered) -->
-          <g fill="url(#sky)">
-            <polygon points="222,180 222,52 232,46 250,46 260,52 260,180"/>
-            <rect x="238" y="36" width="6" height="14"/>
-            <circle cx="241" cy="33" r="3"/>
-          </g>
-          <!-- Frost Bank Tower (multi-faceted owl-eye top) -->
-          <g fill="url(#sky)">
-            <rect x="282" y="70" width="50" height="110"/>
-            <polygon points="282,70 282,56 296,40 318,40 332,56 332,70"/>
-            <polygon points="288,40 296,28 308,28 308,40"/>
-            <polygon points="306,40 306,28 318,28 326,40"/>
-          </g>
-          <!-- Mid building -->
-          <g fill="url(#sky)">
-            <rect x="346" y="92" width="34" height="88"/>
-            <polygon points="346,92 363,80 380,92"/>
-          </g>
-          <!-- 360 Condos -->
-          <g fill="url(#sky)">
-            <rect x="396" y="80" width="40" height="100"/>
-            <rect x="404" y="60" width="24" height="22"/>
-            <polygon points="404,60 416,48 428,60"/>
-          </g>
-          <!-- UT Tower -->
-          <g fill="url(#sky)">
-            <rect x="450" y="76" width="22" height="104"/>
-            <rect x="446" y="64" width="30" height="14"/>
-            <rect x="458" y="48" width="6" height="16"/>
-          </g>
-          <!-- Dotted window lights -->
-          <g fill="#b6c2d4" opacity="0.6">
-            <circle cx="240" cy="80" r="0.8"/><circle cx="246" cy="80" r="0.8"/><circle cx="252" cy="80" r="0.8"/>
-            <circle cx="240" cy="100" r="0.8"/><circle cx="246" cy="100" r="0.8"/><circle cx="252" cy="100" r="0.8"/>
-            <circle cx="294" cy="90" r="0.8"/><circle cx="302" cy="90" r="0.8"/><circle cx="310" cy="90" r="0.8"/><circle cx="318" cy="90" r="0.8"/>
-            <circle cx="294" cy="110" r="0.8"/><circle cx="302" cy="110" r="0.8"/><circle cx="310" cy="110" r="0.8"/><circle cx="318" cy="110" r="0.8"/>
-            <circle cx="166" cy="100" r="0.8"/><circle cx="174" cy="100" r="0.8"/><circle cx="182" cy="100" r="0.8"/>
-            <circle cx="166" cy="120" r="0.8"/><circle cx="174" cy="120" r="0.8"/><circle cx="182" cy="120" r="0.8"/>
-            <circle cx="408" cy="100" r="0.8"/><circle cx="416" cy="100" r="0.8"/><circle cx="424" cy="100" r="0.8"/>
-            <circle cx="408" cy="120" r="0.8"/><circle cx="416" cy="120" r="0.8"/><circle cx="424" cy="120" r="0.8"/>
-          </g>
-          <!-- Ground line -->
-          <line x1="0" y1="180" x2="600" y2="180" stroke="#0f2419" stroke-width="2"/>
-        </svg>
+      <div class="hero-trust-card">
+        <a href="https://share.google/FJ3Q5fyQ3lhUheeQw" target="_blank" rel="noopener" class="hero-rating-block" aria-label="Read our 5.0 reviews on Google">
+          <div class="hero-rating-num">5.0</div>
+          <div class="hero-rating-meta">
+            <div class="hero-rating-stars">★★★★★</div>
+            <div class="hero-rating-source">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" style="fill:#4285f4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" style="fill:#34a853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" style="fill:#fbbc04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" style="fill:#ea4335"/></svg>
+              Verified Google reviews
+            </div>
+          </div>
+        </a>
+
+        <div class="hero-quote-stage" id="hero-quote-stage" aria-live="polite">
+          <blockquote class="hero-quote is-active">
+            <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
+            <p>From the very first consultation to the final inspection, John made the process completely stress-free.</p>
+            <div class="hero-quote-attrib"><strong>Mary B.</strong><span>Roof Replacement</span></div>
+          </blockquote>
+          <blockquote class="hero-quote">
+            <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
+            <p>Whole job start to finish went smoothly. Crews were fantastic and professional, and John was in communication start to finish.</p>
+            <div class="hero-quote-attrib"><strong>Terry M.</strong><span>Full Property</span></div>
+          </blockquote>
+          <blockquote class="hero-quote">
+            <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
+            <p>Fair, reliable, and honest. They gave us an honest assessment and a great price, and fixed our fence in a timely manner.</p>
+            <div class="hero-quote-attrib"><strong>Reid C.</strong><span>Fence Repair</span></div>
+          </blockquote>
+          <blockquote class="hero-quote">
+            <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
+            <p>If I could give more stars I would. John was the only person who understood my request, quoted me a fair price, and did excellent work.</p>
+            <div class="hero-quote-attrib"><strong>Theresa B.</strong><span>Patio Cover</span></div>
+          </blockquote>
+          <div class="hero-quote-dots" id="hero-quote-dots">
+            <button class="hero-quote-dot is-active" aria-label="Review 1"></button>
+            <button class="hero-quote-dot" aria-label="Review 2"></button>
+            <button class="hero-quote-dot" aria-label="Review 3"></button>
+            <button class="hero-quote-dot" aria-label="Review 4"></button>
+          </div>
+        </div>
+
+        <div class="hero-trust-chips">
+          <span class="hero-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Licensed &amp; Insured</span>
+          <span class="hero-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Family-Owned</span>
+          <span class="hero-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Same-Day Callback</span>
+        </div>
       </div>
+
       <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx?utm_campaign=1777324347235&amp;share_action_id=697f0fe1-5856-4df6-9390-e112bc49870c" target="_blank" rel="noopener" class="hero-award" aria-label="Nextdoor Neighborhood Favorite 2025 Winner">
         <img loading="lazy" decoding="async" src="nextdoor-fave-2025.jpg" alt="Nextdoor Neighborhood Favorite 2025 Winner">
       </a>
-      <div class="hero-rating-badge">
-        <span class="stars">★★★★★</span>
-        <span class="label">Real Austin neighbors</span>
-      </div>
     </div>
   </div>
 </section>
@@ -2480,7 +2627,7 @@
         Facebook
       </div>
       <div class="verified-logo">
-        <svg viewBox="0 0 24 24" fill="#8ED500"><path d="M16.51 8.83c-1.66 0-3.07.79-3.96 2.04V9.13h-3.5v11.34h3.5v-6.13c0-1.45 1.18-2.62 2.62-2.62s2.62 1.18 2.62 2.62v6.13H21.3V13.4c0-2.52-2.04-4.57-4.79-4.57zM6.74 9.13H3.24v11.34h3.5V9.13zM4.99 7.81c1.13 0 2.04-.91 2.04-2.04 0-1.13-.91-2.04-2.04-2.04S2.95 4.64 2.95 5.77c0 1.13.91 2.04 2.04 2.04z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#00C44C"><path d="M12 2.5L2.5 11h2.5v9.5h5v-6h4v6h5V11h2.5z"/></svg>
         Nextdoor
       </div>
       <div class="verified-logo">
@@ -3011,9 +3158,8 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
         <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx?utm_campaign=1777324347235&amp;share_action_id=697f0fe1-5856-4df6-9390-e112bc49870c" target="_blank" rel="noopener" class="social-icon" aria-label="Nextdoor">
-          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-            <path d="M22.4 13.55c-1.93 0-3.36 1.04-4.18 2.16v-1.84H13.4v13.39h4.83V19.5c0-1.49 1.18-2.7 2.7-2.7s2.7 1.21 2.7 2.7v7.76h4.82v-9.27c0-3.16-2.43-4.44-6.05-4.44z"/>
-            <path d="M11.1 5.9c-.07.55-.55 4.4-3.55 4.4-2.13 0-3.18-1.55-3.55-3.18-.05-.18-.2-.31-.4-.31H2.2c-.25 0-.45.22-.43.47.18 1.85 1.32 9.1 9.33 9.1 8.46 0 9.45-9.16 9.45-9.16.02-.25-.18-.46-.43-.46h-1.45c-.2 0-.36.13-.4.31-.36 1.62-1.41 3.18-3.54 3.18-3 0-3.48-3.85-3.55-4.4-.04-.23-.23-.4-.46-.4h-.18c-.23 0-.42.17-.45.4z"/>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2.5L2.5 11h2.5v9.5h5v-6h4v6h5V11h2.5z"/>
           </svg>
         </a>
         <a href="https://share.google/kISJTkvyCmftlzo7p" target="_blank" rel="noopener" class="social-icon" aria-label="Google Business Profile">
@@ -3189,12 +3335,13 @@ const QUESTIONS = {
         { id: 'pt', name: 'Pressure-Treated Pine', desc: 'Most affordable. 20+ years with care.', info: '<strong>Pressure-treated pine</strong> is the most popular and budget-friendly option. Treated at the mill to resist rot and insects. Takes stain beautifully and can be painted any color you want.' },
         { id: 'cedar', name: 'Western Red Cedar', desc: 'Naturally beautiful, warm tones.', info: '<strong>Cedar</strong> is naturally rot- and insect-resistant, no chemicals required. Warm reddish-brown that weathers to a soft silver-grey. Roughly 25 to 30 percent more than pressure-treated, and worth every penny if you love the look.' },
         { id: 'composite', name: 'Composite (Trex / Fiberon)', desc: 'Zero maintenance. 25+ year warranty.', info: '<strong>Composite decking</strong> is wood fiber and recycled plastic. No staining, no sealing, ever. Won\'t warp, splinter, or rot. Premium price upfront, but you\'ll never touch it again.' },
+        { id: 'concrete', name: 'Concrete Slab', desc: 'Modern, low maintenance, lifetime durable.', info: '<strong>Concrete</strong> is the most durable option and virtually maintenance-free. Pour it flat for a sleek modern patio, or stamp and stain it to mimic stone or wood. Pairs perfectly with a pergola or covered patio. Great for ground-level outdoor living.' },
       ]
     },
     finish: {
       label: 'Stain Color',
       title: 'Pick your stain or finish',
-      help: 'This is where the personality comes in. Cedar can stay natural; pressure-treated almost always gets stained.',
+      help: 'This is where the personality comes in. Cedar can stay natural, pressure-treated almost always gets stained, and concrete can be poured natural or stained almost any color.',
       swatches: [
         { id: 'natural', name: 'Natural', color: '#c9a878' },
         { id: 'honey', name: 'Honey', color: '#a87e4a' },
@@ -3519,6 +3666,31 @@ function scrollToDesigner() {
 }
 
 /* ===== Lead magnet form ===== */
+/* ===== Hero quote carousel ===== */
+(function () {
+  const stage = document.getElementById('hero-quote-stage');
+  if (!stage) return;
+  const quotes = stage.querySelectorAll('.hero-quote');
+  const dots = stage.querySelectorAll('.hero-quote-dot');
+  if (quotes.length < 2) return;
+  let idx = 0;
+  let timer;
+  function show(i) {
+    quotes[idx].classList.remove('is-active');
+    dots[idx] && dots[idx].classList.remove('is-active');
+    idx = (i + quotes.length) % quotes.length;
+    quotes[idx].classList.add('is-active');
+    dots[idx] && dots[idx].classList.add('is-active');
+  }
+  function tick() { show(idx + 1); }
+  function start() { stop(); timer = setInterval(tick, 7000); }
+  function stop() { if (timer) clearInterval(timer); }
+  dots.forEach((d, i) => d.addEventListener('click', () => { show(i); start(); }));
+  stage.addEventListener('mouseenter', stop);
+  stage.addEventListener('mouseleave', start);
+  start();
+})();
+
 function submitLeadMagnet(e) {
   e.preventDefault();
   const form = document.getElementById('lead-magnet-form');
@@ -4479,6 +4651,9 @@ function sceneShadow(cx, cy, rx) {
 
 /* ============== DECK ============== */
 function renderDeckSVG(color, sels) {
+  const isConcrete = sels.material === 'concrete';
+  // Concrete defaults to a neutral cool grey if user hasn't picked a finish color
+  if (isConcrete && (!sels.finish || sels.finish === '__unsure')) color = '#bab2a8';
   const dark = shade(color, -22);
   const darker = shade(color, -38);
   const light = shade(color, 8);
@@ -4520,25 +4695,49 @@ function renderDeckSVG(color, sels) {
         <rect x="364" y="78" width="8" height="115" fill="${darker}"/>
       ` : ''}
 
-      <!-- Deck top (perspective hint) -->
-      <polygon points="92,176 372,176 380,182 84,182" fill="${light}"/>
-      <polygon points="92,176 372,176 380,182 84,182" fill="${color}" opacity="0.65"/>
-      <!-- Deck face (front) -->
-      <rect x="84" y="182" width="296" height="42" fill="url(#wood-${uid})"/>
-      <rect x="84" y="182" width="296" height="42" fill="url(#surface-${uid})" opacity="0.45"/>
-      <!-- Plank seams running front-to-back -->
-      ${[...Array(9)].map((_, i) => `<line x1="${110 + i * 32}" y1="182" x2="${110 + i * 32}" y2="222" stroke="${darker}" stroke-width="0.7" opacity="0.32"/>`).join('')}
-      <!-- Fascia / skirt -->
-      <rect x="84" y="222" width="296" height="9" fill="url(#fascia-${uid})"/>
-      <rect x="84" y="222" width="296" height="2" fill="rgba(0,0,0,0.25)"/>
-      <!-- Posts under deck -->
-      <rect x="160" y="231" width="6" height="32" fill="${darker}"/>
-      <rect x="280" y="231" width="6" height="32" fill="${darker}"/>
-      <rect x="158" y="261" width="10" height="3" fill="rgba(0,0,0,0.35)"/>
-      <rect x="278" y="261" width="10" height="3" fill="rgba(0,0,0,0.35)"/>
+      ${isConcrete ? `
+        <!-- Concrete slab top (subtle perspective, sits on grade) -->
+        <polygon points="92,196 372,196 380,202 84,202" fill="${light}"/>
+        <polygon points="92,196 372,196 380,202 84,202" fill="${color}" opacity="0.6"/>
+        <!-- Slab face (thin since slab sits low) -->
+        <rect x="84" y="202" width="296" height="14" fill="${color}"/>
+        <rect x="84" y="202" width="296" height="14" fill="url(#surface-${uid})" opacity="0.55"/>
+        <rect x="84" y="202" width="296" height="2" fill="rgba(0,0,0,0.18)"/>
+        <!-- Concrete texture: subtle aggregate speckles -->
+        <g fill="${darker}" opacity="0.18">
+          <circle cx="118" cy="200" r="0.7"/><circle cx="142" cy="199" r="0.5"/><circle cx="168" cy="201" r="0.8"/>
+          <circle cx="194" cy="200" r="0.6"/><circle cx="220" cy="199" r="0.7"/><circle cx="246" cy="201" r="0.5"/>
+          <circle cx="272" cy="200" r="0.8"/><circle cx="298" cy="199" r="0.6"/><circle cx="324" cy="201" r="0.7"/>
+          <circle cx="350" cy="200" r="0.5"/>
+          <circle cx="130" cy="208" r="0.6"/><circle cx="180" cy="210" r="0.5"/><circle cx="240" cy="208" r="0.7"/>
+          <circle cx="290" cy="209" r="0.5"/><circle cx="340" cy="208" r="0.6"/>
+        </g>
+        <!-- Score lines (control joints) every ~80px -->
+        <line x1="180" y1="196" x2="184" y2="216" stroke="${darker}" stroke-width="0.6" opacity="0.35"/>
+        <line x1="280" y1="196" x2="284" y2="216" stroke="${darker}" stroke-width="0.6" opacity="0.35"/>
+        <!-- Soft ground shadow at base -->
+        <ellipse cx="232" cy="218" rx="160" ry="3.5" fill="rgba(0,0,0,0.22)"/>
+      ` : `
+        <!-- Deck top (perspective hint) -->
+        <polygon points="92,176 372,176 380,182 84,182" fill="${light}"/>
+        <polygon points="92,176 372,176 380,182 84,182" fill="${color}" opacity="0.65"/>
+        <!-- Deck face (front) -->
+        <rect x="84" y="182" width="296" height="42" fill="url(#wood-${uid})"/>
+        <rect x="84" y="182" width="296" height="42" fill="url(#surface-${uid})" opacity="0.45"/>
+        <!-- Plank seams running front-to-back -->
+        ${[...Array(9)].map((_, i) => `<line x1="${110 + i * 32}" y1="182" x2="${110 + i * 32}" y2="222" stroke="${darker}" stroke-width="0.7" opacity="0.32"/>`).join('')}
+        <!-- Fascia / skirt -->
+        <rect x="84" y="222" width="296" height="9" fill="url(#fascia-${uid})"/>
+        <rect x="84" y="222" width="296" height="2" fill="rgba(0,0,0,0.25)"/>
+        <!-- Posts under deck -->
+        <rect x="160" y="231" width="6" height="32" fill="${darker}"/>
+        <rect x="280" y="231" width="6" height="32" fill="${darker}"/>
+        <rect x="158" y="261" width="10" height="3" fill="rgba(0,0,0,0.35)"/>
+        <rect x="278" y="261" width="10" height="3" fill="rgba(0,0,0,0.35)"/>
+      `}
 
       <!-- Railing -->
-      ${hasRailing ? `
+      ${hasRailing && !isConcrete ? `
         <rect x="84" y="158" width="296" height="3.5" fill="${darker}"/>
         <rect x="84" y="178" width="296" height="2" fill="${darker}"/>
         ${[...Array(38)].map((_, i) => `<rect x="${92 + i * 7.6}" y="161" width="1.6" height="19" fill="${darker}"/>`).join('')}
@@ -4546,37 +4745,37 @@ function renderDeckSVG(color, sels) {
         <rect x="374" y="155" width="6" height="9" fill="${darker}"/>
       ` : ''}
 
-      <!-- Built-in benches -->
+      <!-- Built-in benches (y-shifted +20 for concrete slab) -->
       ${hasBenches ? `
-        <rect x="200" y="172" width="120" height="4" fill="${color}"/>
-        <rect x="200" y="172" width="120" height="1.5" fill="${darker}" opacity="0.5"/>
-        <rect x="200" y="172" width="3" height="14" fill="${darker}"/>
-        <rect x="317" y="172" width="3" height="14" fill="${darker}"/>
-        <rect x="200" y="156" width="120" height="16" fill="${dark}" opacity="0.55"/>
-        ${[...Array(8)].map((_, i) => `<line x1="${204 + i * 14}" y1="156" x2="${204 + i * 14}" y2="172" stroke="${darker}" stroke-width="0.4" opacity="0.6"/>`).join('')}
+        <rect x="200" y="${172 + (isConcrete ? 20 : 0)}" width="120" height="4" fill="${color}"/>
+        <rect x="200" y="${172 + (isConcrete ? 20 : 0)}" width="120" height="1.5" fill="${darker}" opacity="0.5"/>
+        <rect x="200" y="${172 + (isConcrete ? 20 : 0)}" width="3" height="14" fill="${darker}"/>
+        <rect x="317" y="${172 + (isConcrete ? 20 : 0)}" width="3" height="14" fill="${darker}"/>
+        <rect x="200" y="${156 + (isConcrete ? 20 : 0)}" width="120" height="16" fill="${dark}" opacity="0.55"/>
+        ${[...Array(8)].map((_, i) => `<line x1="${204 + i * 14}" y1="${156 + (isConcrete ? 20 : 0)}" x2="${204 + i * 14}" y2="${172 + (isConcrete ? 20 : 0)}" stroke="${darker}" stroke-width="0.4" opacity="0.6"/>`).join('')}
       ` : ''}
 
       <!-- Built-in planters with greenery -->
       ${hasPlanters ? `
-        <rect x="100" y="166" width="22" height="16" fill="${darker}"/>
-        <rect x="100" y="166" width="22" height="3" fill="${dark}"/>
-        <ellipse cx="111" cy="164" rx="13" ry="6" fill="${isNight ? '#3e5742' : '#6a8a4a'}"/>
-        <ellipse cx="106" cy="159" rx="3" ry="5" fill="${isNight ? '#516947' : '#88a55a'}"/>
-        <ellipse cx="116" cy="158" rx="3.5" ry="6" fill="${isNight ? '#516947' : '#88a55a'}"/>
-        <rect x="335" y="166" width="22" height="16" fill="${darker}"/>
-        <rect x="335" y="166" width="22" height="3" fill="${dark}"/>
-        <ellipse cx="346" cy="164" rx="13" ry="6" fill="${isNight ? '#3e5742' : '#6a8a4a'}"/>
-        <ellipse cx="341" cy="158" rx="3" ry="5" fill="${isNight ? '#516947' : '#88a55a'}"/>
-        <ellipse cx="351" cy="159" rx="3.5" ry="6" fill="${isNight ? '#516947' : '#88a55a'}"/>
+        <rect x="100" y="${166 + (isConcrete ? 20 : 0)}" width="22" height="16" fill="${darker}"/>
+        <rect x="100" y="${166 + (isConcrete ? 20 : 0)}" width="22" height="3" fill="${dark}"/>
+        <ellipse cx="111" cy="${164 + (isConcrete ? 20 : 0)}" rx="13" ry="6" fill="${isNight ? '#3e5742' : '#6a8a4a'}"/>
+        <ellipse cx="106" cy="${159 + (isConcrete ? 20 : 0)}" rx="3" ry="5" fill="${isNight ? '#516947' : '#88a55a'}"/>
+        <ellipse cx="116" cy="${158 + (isConcrete ? 20 : 0)}" rx="3.5" ry="6" fill="${isNight ? '#516947' : '#88a55a'}"/>
+        <rect x="335" y="${166 + (isConcrete ? 20 : 0)}" width="22" height="16" fill="${darker}"/>
+        <rect x="335" y="${166 + (isConcrete ? 20 : 0)}" width="22" height="3" fill="${dark}"/>
+        <ellipse cx="346" cy="${164 + (isConcrete ? 20 : 0)}" rx="13" ry="6" fill="${isNight ? '#3e5742' : '#6a8a4a'}"/>
+        <ellipse cx="341" cy="${159 + (isConcrete ? 20 : 0)}" rx="3" ry="5" fill="${isNight ? '#516947' : '#88a55a'}"/>
+        <ellipse cx="351" cy="${158 + (isConcrete ? 20 : 0)}" rx="3.5" ry="6" fill="${isNight ? '#516947' : '#88a55a'}"/>
       ` : ''}
 
       <!-- Fire pit -->
       ${hasFirepit ? `
-        <ellipse cx="232" cy="178" rx="22" ry="6" fill="${darker}"/>
-        <ellipse cx="232" cy="176" rx="20" ry="5" fill="#1a0e08"/>
-        <path d="M223 176 Q226 167 232 166 Q238 167 241 176" fill="#b91c2c" opacity="0.9"/>
-        <path d="M227 176 Q229 170 232 169 Q235 170 237 176" fill="#fef9c3" opacity="0.95"/>
-        ${isNight ? `<circle cx="232" cy="172" r="22" fill="#fb923c" opacity="0.18"/>` : ''}
+        <ellipse cx="232" cy="${178 + (isConcrete ? 20 : 0)}" rx="22" ry="6" fill="${darker}"/>
+        <ellipse cx="232" cy="${176 + (isConcrete ? 20 : 0)}" rx="20" ry="5" fill="#1a0e08"/>
+        <path d="M223 ${176 + (isConcrete ? 20 : 0)} Q226 ${167 + (isConcrete ? 20 : 0)} 232 ${166 + (isConcrete ? 20 : 0)} Q238 ${167 + (isConcrete ? 20 : 0)} 241 ${176 + (isConcrete ? 20 : 0)}" fill="#b91c2c" opacity="0.9"/>
+        <path d="M227 ${176 + (isConcrete ? 20 : 0)} Q229 ${170 + (isConcrete ? 20 : 0)} 232 ${169 + (isConcrete ? 20 : 0)} Q235 ${170 + (isConcrete ? 20 : 0)} 237 ${176 + (isConcrete ? 20 : 0)}" fill="#fef9c3" opacity="0.95"/>
+        ${isNight ? `<circle cx="232" cy="${172 + (isConcrete ? 20 : 0)}" r="22" fill="#fb923c" opacity="0.18"/>` : ''}
       ` : ''}
 
       <!-- String lights between pergola posts (only when both lighting and pergola) -->
@@ -4591,9 +4790,9 @@ function renderDeckSVG(color, sels) {
       <!-- Step lights along the deck edge (lighting without pergola) -->
       ${hasLighting && !hasPergola ? `
         ${[120, 200, 280, 340].map(x => `
-          <circle cx="${x}" cy="180" r="2.4" fill="#fff8b0"/>
-          <circle cx="${x}" cy="180" r="6" fill="#fef08a" opacity="0.5"/>
-          <circle cx="${x}" cy="180" r="13" fill="#fef08a" opacity="0.18"/>
+          <circle cx="${x}" cy="${180 + (isConcrete ? 20 : 0)}" r="2.4" fill="#fff8b0"/>
+          <circle cx="${x}" cy="${180 + (isConcrete ? 20 : 0)}" r="6" fill="#fef08a" opacity="0.5"/>
+          <circle cx="${x}" cy="${180 + (isConcrete ? 20 : 0)}" r="13" fill="#fef08a" opacity="0.18"/>
         `).join('')}
       ` : ''}
 
