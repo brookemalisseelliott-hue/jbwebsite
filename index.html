@@ -2827,8 +2827,8 @@
       </div>
       <div class="lead-magnet-form-wrap">
         <form class="lead-magnet-form" id="lead-magnet-form" onsubmit="return submitLeadMagnet(event)">
-          <h3>Send me the Playbook</h3>
-          <p class="form-subhead">We'll email you the link and occasionally send tips. Unsubscribe anytime.</p>
+          <h3>Get the Playbook</h3>
+          <p class="form-subhead">Read it instantly. We'll occasionally send Austin homeowner tips. Unsubscribe anytime.</p>
           <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
           <input type="hidden" name="subject" value="New Hiring Playbook Download">
           <input type="hidden" name="from_name" value="JB Hiring Playbook Form">
@@ -2836,10 +2836,7 @@
           <input type="text" id="lm-name" name="name" placeholder="Your name" required>
           <label for="lm-email">Email</label>
           <input type="email" id="lm-email" name="email" placeholder="you@email.com" required>
-          <button type="submit" class="btn btn-primary btn-large lead-magnet-submit">Send me the Playbook →</button>
-          <div class="lead-magnet-success" id="lead-magnet-success">
-            <strong>✓ Sent!</strong> Check your inbox. <a href="austin-contractor-hiring-playbook.html" target="_blank">Or read it now →</a>
-          </div>
+          <button type="submit" class="btn btn-primary btn-large lead-magnet-submit">Read the Playbook →</button>
         </form>
       </div>
     </div>
@@ -3525,36 +3522,16 @@ function scrollToDesigner() {
 function submitLeadMagnet(e) {
   e.preventDefault();
   const form = document.getElementById('lead-magnet-form');
-  const success = document.getElementById('lead-magnet-success');
   const btn = form.querySelector('.lead-magnet-submit');
-  const originalText = btn.textContent;
   btn.disabled = true;
-  btn.textContent = 'Sending...';
+  btn.textContent = 'Opening Playbook...';
 
   const data = new FormData(form);
-  fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
-    .then(r => r.json())
-    .then(result => {
-      if (result && result.success) {
-        success.classList.add('visible');
-        btn.textContent = '✓ Sent. Check your email.';
-        // Open the guide in a new tab right away so they get value immediately
-        setTimeout(() => window.open('austin-contractor-hiring-playbook.html', '_blank'), 600);
-      } else {
-        // Fallback: still send them to the guide
-        success.classList.add('visible');
-        btn.textContent = originalText;
-        btn.disabled = false;
-        setTimeout(() => window.open('austin-contractor-hiring-playbook.html', '_blank'), 600);
-      }
-    })
-    .catch(() => {
-      // Network error: still give them the guide
-      success.classList.add('visible');
-      btn.textContent = originalText;
-      btn.disabled = false;
-      setTimeout(() => window.open('austin-contractor-hiring-playbook.html', '_blank'), 600);
-    });
+  // Submit the lead in the background. Don't make the user wait for it before delivering value.
+  fetch('https://api.web3forms.com/submit', { method: 'POST', body: data }).catch(() => {});
+
+  // Take them straight to the Playbook in the same tab so it works reliably on mobile.
+  setTimeout(() => { window.location.href = 'austin-contractor-hiring-playbook.html'; }, 250);
   return false;
 }
 
