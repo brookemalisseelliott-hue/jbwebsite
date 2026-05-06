@@ -457,10 +457,22 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
     background-size: 28px 28px;
     pointer-events: none;
   }
+  /* Texas flag gradient strip at top of hero */
+  .hero-texas-strip {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right,
+      #002868 0%, #002868 33%,
+      #ffffff 33%, #ffffff 66%,
+      #BF0A30 66%, #BF0A30 100%);
+    z-index: 2;
+  }
+
   .hero-horizon {
     position: absolute;
     left: 0;
@@ -492,58 +504,121 @@
     opacity: 0.95;
   }
   .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+    display: block;
     font-size: 11px;
     font-weight: 600;
-    color: var(--gold);
+    color: rgba(255,255,255,0.6);
     text-transform: uppercase;
     letter-spacing: 0.2em;
     margin-bottom: 24px;
   }
-  /* Texas flag mini-emblem accent */
-  .hero-flag {
+  /* Texas Built badge — clean stamp style in brand palette */
+  .hero-texas-badge {
     display: inline-flex;
-    width: 30px;
-    height: 18px;
-    border-radius: 2.5px;
-    overflow: hidden;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.25), 0 0 0 0.5px rgba(255,255,255,0.15);
-    flex-shrink: 0;
-  }
-  .hero-flag-blue {
-    flex: 1 1 38%;
-    background: #002868;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    color: white;
-    line-height: 1;
+    gap: 14px;
+    padding: 10px 20px 10px 16px;
+    border: 1.5px solid rgba(255, 255, 255, 0.28);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    margin-bottom: 22px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
-  .hero-flag-star {
-    font-size: 9px;
-    line-height: 1;
-    transform: translateY(-0.5px);
-  }
-  .hero-flag-white { flex: 1 1 31%; background: #ffffff; }
-  .hero-flag-red { flex: 1 1 31%; background: #BF0A30; }
-  .hero h1 {
-    font-size: clamp(40px, 5.4vw, 72px);
-    margin-bottom: 14px;
+  .hero-texas-badge-star {
+    width: 30px;
+    height: 30px;
     color: var(--white);
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35));
+  }
+  .hero-texas-badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    line-height: 1;
+  }
+  .hero-texas-badge-main {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
     font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .hero-texas-badge-sub {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  @media (max-width: 480px) {
+    .hero-texas-badge { gap: 11px; padding: 8px 16px 8px 13px; }
+    .hero-texas-badge-star { width: 26px; height: 26px; }
+    .hero-texas-badge-main { font-size: 17px; }
+    .hero-texas-badge-sub { font-size: 9.5px; }
+  }
+  .hero h1 {
+    margin-bottom: 16px;
+    color: var(--white);
+    line-height: 1;
     letter-spacing: -0.025em;
   }
-  .hero h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .hero-h1-pre {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(13px, 1.2vw, 16px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 14px;
+  }
+  .hero-h1-main {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(42px, 5.8vw, 78px);
+    font-weight: 600;
+    line-height: 1.02;
+    color: var(--white);
+    letter-spacing: -0.028em;
+  }
+  .hero-h1-main em {
+    font-style: normal;
+    color: var(--mist);
+    font-weight: 500;
+  }
+  .hero-h1-services {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    margin: 18px 0 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(12px, 1vw, 14px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.85);
+  }
+  .hero-h1-services .dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+  }
   .hero-tagline {
     font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: clamp(18px, 1.6vw, 22px);
+    font-style: normal;
+    font-size: clamp(17px, 1.5vw, 21px);
     color: var(--gold);
-    margin-bottom: 26px;
+    margin-bottom: 24px;
     font-weight: 400;
+    letter-spacing: 0.005em;
   }
+  .hero-quote p { font-style: normal !important; }
   .hero-sub {
     font-size: 17px;
     color: var(--fog);
@@ -623,7 +698,7 @@
     letter-spacing: -0.04em;
   }
   .hero-rating-stars {
-    color: #f5c66d;
+    color: var(--white);
     font-size: 19px;
     letter-spacing: 4px;
     margin-bottom: 4px;
@@ -640,8 +715,8 @@
 
   .hero-quote-stage {
     position: relative;
-    min-height: 140px;
-    margin-bottom: 22px;
+    min-height: 200px;
+    margin-bottom: 28px;
   }
   .hero-quote {
     position: absolute;
@@ -654,17 +729,17 @@
   }
   .hero-quote.is-active { opacity: 1; transform: translateY(0); pointer-events: auto; }
   .hero-quote-mark {
-    color: rgba(245, 198, 109, 0.6);
-    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 10px;
     display: block;
   }
   .hero-quote p {
     font-family: 'Fraunces', serif;
     font-size: 17px;
-    font-style: italic;
-    line-height: 1.45;
+    font-style: normal;
+    line-height: 1.5;
     color: var(--white);
-    margin: 0 0 12px;
+    margin: 0 0 14px;
     letter-spacing: -0.005em;
   }
   .hero-quote-attrib {
@@ -701,7 +776,7 @@
     padding: 0;
     transition: background 0.2s, width 0.25s;
   }
-  .hero-quote-dot.is-active { background: #f5c66d; width: 18px; border-radius: 3px; }
+  .hero-quote-dot.is-active { background: var(--white); width: 18px; border-radius: 3px; }
   .hero-quote-dot:hover { background: rgba(255,255,255,0.55); }
 
   .hero-trust-chips {
@@ -2439,6 +2514,9 @@
       <a href="cedar-park-contractor.html" class="mobile-drawer-link">Cedar Park</a>
       <a href="lakeway-contractor.html" class="mobile-drawer-link">Lakeway</a>
       <a href="dripping-springs-contractor.html" class="mobile-drawer-link">Dripping Springs</a>
+      <a href="buda-contractor.html" class="mobile-drawer-link">Buda</a>
+      <a href="kyle-contractor.html" class="mobile-drawer-link">Kyle</a>
+      <a href="manchaca-contractor.html" class="mobile-drawer-link">Manchaca</a>
     </div>
 
     <div class="mobile-drawer-section">
@@ -2460,12 +2538,14 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-texas-strip" aria-hidden="true"></div>
+
   <svg class="hero-horizon" viewBox="0 0 1600 280" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <defs>
       <linearGradient id="horizonGlow" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#f5c66d" stop-opacity="0"/>
-        <stop offset="55%" stop-color="#f5c66d" stop-opacity="0.10"/>
-        <stop offset="100%" stop-color="#f5c66d" stop-opacity="0"/>
+        <stop offset="0%" stop-color="#b8c4d4" stop-opacity="0"/>
+        <stop offset="55%" stop-color="#b8c4d4" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#b8c4d4" stop-opacity="0"/>
       </linearGradient>
       <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#1a2c52"/>
@@ -2501,9 +2581,25 @@
       <ellipse cx="1380" cy="200" rx="6" ry="9"/>
       <ellipse cx="1500" cy="202" rx="7" ry="10"/>
     </g>
-    <!-- Tiny Texas star marker in the warm glow band -->
-    <g transform="translate(800 110)" fill="#f5c66d" opacity="0.55">
-      <polygon points="0,-8 2.4,-2.5 8,-2.5 3.4,1.2 5.2,7 0,3.4 -5.2,7 -3.4,1.2 -8,-2.5 -2.4,-2.5"/>
+    <!-- Texas flag flying on a hilltop pole -->
+    <g transform="translate(810 188)" opacity="0.95">
+      <!-- Flagpole -->
+      <line x1="0" y1="0" x2="0" y2="-100" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Pole finial ball -->
+      <circle cx="0" cy="-103" r="3" fill="#d4af37"/>
+      <!-- Flag (proper Texas flag, 2:3 ratio, hoisted from pole) -->
+      <g transform="translate(2 -98)">
+        <!-- Blue field (left third) -->
+        <rect x="0" y="0" width="14" height="28" fill="#002868"/>
+        <!-- White Lone Star, properly sized in blue field -->
+        <polygon points="7,5 8.7,10.4 14.4,10.4 9.85,13.7 11.55,19 7,15.6 2.45,19 4.15,13.7 -0.4,10.4 5.3,10.4" fill="#ffffff"/>
+        <!-- White stripe (top right two-thirds) -->
+        <rect x="14" y="0" width="28" height="14" fill="#ffffff"/>
+        <!-- Red stripe (bottom right two-thirds) -->
+        <rect x="14" y="14" width="28" height="14" fill="#BF0A30"/>
+        <!-- Subtle drop shadow at base of flag -->
+        <ellipse cx="21" cy="29" rx="20" ry="0.8" fill="rgba(0,0,0,0.3)"/>
+      </g>
     </g>
     <!-- Near foreground hill -->
     <path fill="url(#hillNear)" d="M0,232 C140,216 260,228 380,222 C500,216 600,232 720,228 C840,224 940,236 1060,232 C1180,228 1280,238 1400,232 C1480,228 1560,234 1600,230 L1600,280 L0,280 Z"/>
@@ -2513,17 +2609,24 @@
   <div class="hero-inner">
     <div class="hero-text">
       <img src="jb-logo.png" alt="JB Contracting ATX" class="hero-logo">
-      <div class="hero-eyebrow">
-        <span class="hero-flag" aria-hidden="true">
-          <span class="hero-flag-blue"><span class="hero-flag-star">★</span></span>
-          <span class="hero-flag-white"></span>
-          <span class="hero-flag-red"></span>
-        </span>
-        Serving Greater Austin · Family-Owned · Licensed &amp; Insured
+      <div class="hero-texas-badge" aria-label="Texas Built · Family Owned">
+        <svg class="hero-texas-badge-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <polygon points="12,2 14.4,9.4 22,9.4 15.8,14 18.2,21.4 12,16.8 5.8,21.4 8.2,14 2,9.4 9.6,9.4"/>
+        </svg>
+        <div class="hero-texas-badge-text">
+          <span class="hero-texas-badge-main">Texas Built</span>
+          <span class="hero-texas-badge-sub">Family Owned · Greater Austin</span>
+        </div>
       </div>
-      <h1>Greater Austin's contractor for <em>decks, roofing, fences</em> &amp; outdoor living.</h1>
+      <h1>
+        <span class="hero-h1-pre">Greater Austin's contractor for</span>
+        <span class="hero-h1-main">Outdoor Living, Done Right.</span>
+      </h1>
+      <div class="hero-h1-services">
+        <span>Decks</span><span class="dot"></span><span>Roofing</span><span class="dot"></span><span>Fences</span><span class="dot"></span><span>Pergolas</span><span class="dot"></span><span>Siding</span><span class="dot"></span><span>Hardscape</span>
+      </div>
       <div class="hero-tagline">Built around you, by neighbors who care.</div>
-      <p class="hero-sub">From <strong>custom decks</strong> and <strong>pergolas</strong> to <strong>roof replacement</strong>, <strong>cedar fences</strong>, <strong>siding</strong>, and <strong>hardscape</strong>. JB Contracting ATX serves homeowners across Travis, Hays, Williamson, and the rest of greater Austin with honest pricing, written warranties, and same-day callback when you reach out.</p>
+      <p class="hero-sub"><strong>Custom decks, fences, pergolas, roofing, siding, and hardscape</strong> across the greater Austin area. Honest pricing, written warranties, same-day callback. Family-owned and built right here in Texas.</p>
       <div class="hero-ctas">
         <a href="#designer" class="btn btn-primary btn-large">Design My Project →</a>
         <a href="#work" class="btn btn-outline btn-large">See Our Work</a>
@@ -2577,11 +2680,6 @@
           </div>
         </div>
 
-        <div class="hero-trust-chips">
-          <span class="hero-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Licensed &amp; Insured</span>
-          <span class="hero-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Family-Owned</span>
-          <span class="hero-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Same-Day Callback</span>
-        </div>
       </div>
 
       <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx?utm_campaign=1777324347235&amp;share_action_id=697f0fe1-5856-4df6-9390-e112bc49870c" target="_blank" rel="noopener" class="hero-award" aria-label="Nextdoor Neighborhood Favorite 2025 Winner">
@@ -2648,7 +2746,7 @@
     </div>
     <div class="inspo-grid">
       <div class="inspo-card" onclick="startWithService('deck'); scrollToDesigner();">
-        <img src="inspo-deck.jpg" alt="Custom backyard deck in Austin at sunset with built-in lighting">
+        <img src="new-deck-covered-hillcountry.jpg" alt="Custom covered deck with Hill Country view in greater Austin">
         <div class="inspo-overlay">
           <div class="inspo-tag">Decks & Patios</div>
           <div class="inspo-title">The deck your weekends need</div>
@@ -2656,7 +2754,7 @@
         </div>
       </div>
       <div class="inspo-card" onclick="startWithService('fence'); scrollToDesigner();">
-        <img src="inspo-fence.jpg" alt="Stained horizontal cedar fence on an Austin home">
+        <img src="new-fence-horizontal-cedar-hill.jpg" alt="Modern horizontal cedar privacy fence with Austin Hill Country view">
         <div class="inspo-overlay">
           <div class="inspo-tag">Fences</div>
           <div class="inspo-title">Privacy that still has style</div>
@@ -2664,7 +2762,7 @@
         </div>
       </div>
       <div class="inspo-card" onclick="startWithService('pergola'); scrollToDesigner();">
-        <img src="inspo-pergola.jpg" alt="Cedar pergola with string lights at sunset, Austin Hill Country">
+        <img src="new-pergola-pavilion-golden.jpg" alt="Custom cedar pavilion with lattice walls at golden hour, Austin TX">
         <div class="inspo-overlay">
           <div class="inspo-tag">Pergolas</div>
           <div class="inspo-title">Beat the Texas heat in style</div>
@@ -2688,7 +2786,7 @@
         </div>
       </div>
       <div class="inspo-card" onclick="startWithService('hardscape'); scrollToDesigner();">
-        <img src="inspo-hardscape.jpg" alt="Concrete patio with cover, Austin backyard">
+        <img src="new-fence-cedar-paver-combo.jpg" alt="Cedar privacy fence with paver patio hardscape, Austin TX">
         <div class="inspo-overlay">
           <div class="inspo-tag">Hardscape</div>
           <div class="inspo-title">Patios, walkways, fire features</div>
@@ -2817,7 +2915,75 @@
       <span class="gallery-count" id="gallery-count"></span>
     </div>
     <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-item" data-category="deck" data-featured="true">
+        <img loading="lazy" decoding="async" src="new-deck-covered-hillcountry.jpg" alt="Custom covered deck with Hill Country view, greater Austin TX">
+        <div class="label">Hill Country Covered Deck</div>
+      </div>
       <div class="gallery-item" data-category="pergola" data-featured="true">
+        <img loading="lazy" decoding="async" src="new-pergola-pavilion-golden.jpg" alt="Custom cedar pavilion at golden hour, Austin TX">
+        <div class="label">Cedar Pavilion at Golden Hour</div>
+      </div>
+      <div class="gallery-item" data-category="fence" data-featured="true">
+        <img loading="lazy" decoding="async" src="new-fence-horizontal-cedar-hill.jpg" alt="Modern horizontal cedar fence on an Austin Hill Country home">
+        <div class="label">Modern Horizontal Cedar Fence</div>
+      </div>
+      <div class="gallery-item" data-category="fence" data-featured="true">
+        <img loading="lazy" decoding="async" src="new-fence-cedar-paver-combo.jpg" alt="Cedar privacy fence with stained finish and paver patio combo, Austin TX">
+        <div class="label">Cedar Fence + Paver Patio</div>
+      </div>
+      <div class="gallery-item" data-category="deck" data-featured="true">
+        <img loading="lazy" decoding="async" src="new-deck-cattle-rail.jpg" alt="Cedar deck with cattle panel railings, Austin TX">
+        <div class="label">Cedar Deck with Cattle Panel Rails</div>
+      </div>
+      <div class="gallery-item" data-category="pergola" data-featured="true">
+        <img loading="lazy" decoding="async" src="new-pergola-pavilion-evening.jpg" alt="Custom cedar pavilion with lattice walls in the evening, Austin TX">
+        <div class="label">Cedar Pavilion with Lattice Walls</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img loading="lazy" decoding="async" src="new-fence-splitrail-stone-posts.jpg" alt="Hill Country split-rail fence with stone post pillars, Dripping Springs TX">
+        <div class="label">Hill Country Split-Rail with Stone Posts</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img loading="lazy" decoding="async" src="new-fence-splitrail-cedar.jpg" alt="Cedar split-rail ranch fence in the Texas Hill Country">
+        <div class="label">Cedar Split-Rail Ranch Fence</div>
+      </div>
+      <div class="gallery-item" data-category="deck">
+        <img loading="lazy" decoding="async" src="new-deck-pt-metal-rail.jpg" alt="Pressure-treated backyard deck with metal railings, Austin TX">
+        <div class="label">Pressure-Treated Deck with Metal Rails</div>
+      </div>
+      <div class="gallery-item" data-category="deck">
+        <img loading="lazy" decoding="async" src="new-deck-wraparound-farmhouse.jpg" alt="Wraparound porch build on a red Texas farmhouse">
+        <div class="label">Texas Farmhouse Wraparound Porch</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img loading="lazy" decoding="async" src="new-fence-double-drive-gate.jpg" alt="Custom cedar double drive gate with decorative hinges, Austin TX">
+        <div class="label">Cedar Double Drive Gate</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img loading="lazy" decoding="async" src="new-fence-gate-decorative.jpg" alt="Cedar privacy fence with decorative hardware and gate, Austin TX">
+        <div class="label">Cedar Fence with Decorative Hardware</div>
+      </div>
+      <div class="gallery-item" data-category="pergola">
+        <img loading="lazy" decoding="async" src="new-pergola-leanto-metal.jpg" alt="Lean-to patio cover with corrugated metal roof, Austin TX">
+        <div class="label">Lean-To Patio Cover</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img loading="lazy" decoding="async" src="new-fence-stained-dogear.jpg" alt="Stained cedar dog-ear privacy fence in Austin, TX">
+        <div class="label">Stained Cedar Dog-Ear Fence</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img loading="lazy" decoding="async" src="new-fence-pt-privacy.jpg" alt="Pressure-treated privacy fence in Austin, TX">
+        <div class="label">Pressure-Treated Privacy Fence</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img loading="lazy" decoding="async" src="new-fence-cedar-corner.jpg" alt="Custom cedar privacy fence corner, Austin TX">
+        <div class="label">Cedar Privacy Fence Corner</div>
+      </div>
+      <div class="gallery-item" data-category="fence">
+        <img loading="lazy" decoding="async" src="new-fence-cedar-dusk.jpg" alt="Cedar privacy fence at dusk with side gate, Austin TX">
+        <div class="label">Cedar Fence at Dusk</div>
+      </div>
+      <div class="gallery-item" data-category="pergola">
         <img loading="lazy" decoding="async" src="gallery-pergola-tg-ceiling.jpg" alt="Cedar tongue-and-groove patio cover ceiling with recessed lighting">
         <div class="label">Cedar T&amp;G Patio Cover Ceiling</div>
       </div>
@@ -3196,8 +3362,10 @@
         <li><a href="cedar-park-contractor.html">Cedar Park</a></li>
         <li><a href="lakeway-contractor.html">Lakeway</a></li>
         <li><a href="dripping-springs-contractor.html">Dripping Springs</a></li>
+        <li><a href="buda-contractor.html">Buda</a></li>
+        <li><a href="kyle-contractor.html">Kyle</a></li>
+        <li><a href="manchaca-contractor.html">Manchaca</a></li>
         <li><a href="tel:5125873914">(512) 587-3914</a></li>
-        <li><a href="mailto:jbconstructionatx@gmail.com">jbconstructionatx@gmail.com</a></li>
       </ul>
     </div>
   </div>
