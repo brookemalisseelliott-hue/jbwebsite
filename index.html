@@ -877,9 +877,36 @@
   .hero-form-success a { color: var(--navy, #1e3a8a); }
 
   @media (max-width: 760px) {
-    .hero-quote-form { padding: 22px 20px 20px; }
-    .hero-form-title { font-size: 24px; }
-    .hero-form-row.two { grid-template-columns: 1fr; }
+    .hero-quote-form { padding: 20px 18px 18px; border-radius: 12px; }
+    .hero-form-eyebrow { font-size: 12.5px; margin-bottom: 10px; }
+    .hero-form-title { font-size: 24px; margin-bottom: 4px; }
+    .hero-form-sub { font-size: 13.5px; margin-bottom: 14px; }
+    .hero-form-row.two { grid-template-columns: 1fr; gap: 0; }
+    .hero-form-field { margin-bottom: 12px; }
+    .hero-form-field label { font-size: 11.5px; margin-bottom: 5px; }
+    /* Bigger tap targets (iOS HIG 44px min) and 16px font to disable iOS zoom-on-focus */
+    .hero-form-field input,
+    .hero-form-field select,
+    .hero-form-field textarea {
+      font-size: 16px;
+      padding: 12px 13px;
+      min-height: 46px;
+    }
+    .hero-form-field textarea { min-height: 72px; }
+    .hero-form-submit {
+      padding: 16px 18px;
+      font-size: 17px;
+      min-height: 52px;
+    }
+    .hero-form-promise {
+      justify-content: center;
+      gap: 4px 12px;
+      font-size: 11.5px;
+      margin-top: 10px;
+    }
+    .hero-form-or { margin-top: 18px; padding-top: 18px; }
+    .hero-form-or a { padding: 14px 16px; font-size: 14.5px; }
+    .hero-form-or-sub { font-size: 12px; }
   }
   .hero-trust {
     display: flex;
@@ -1145,46 +1172,18 @@
   .hero-award img { display: block; width: 100%; height: auto; }
 
   @media (max-width: 920px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 28px; }
-    .hero { padding: 28px 18px 60px; }
-    .hero-visual { margin: 0 auto; max-width: 520px; width: 100%; order: -1; }
-    .hero-text { text-align: center; }
+    .hero-inner { grid-template-columns: 1fr; gap: 70px; }
+    .hero { padding: 60px 22px 90px; }
+    .hero-visual { margin: 0 auto; max-width: 460px; width: 100%; }
     .hero-trust-card { padding: 26px 24px 22px; }
     .hero-rating-num { font-size: 54px; }
     .hero-quote p { font-size: 15.5px; }
     .hero-quote-stage { min-height: 160px; }
     .hero-award { width: 42%; max-width: 180px; bottom: -22px; right: -10px; }
-
-    /* Strip the hero-text down to the essentials on mobile.
-       Form is now first; everything below it is supporting context. */
-    .hero-logo { display: none; }            /* Already in the header */
-    .hero-texas-badge { display: none; }     /* Visual noise on small screens */
-    .hero-tagline { display: none; }
-    .hero-sub { display: none; }             /* Long paragraph hurts scroll */
-    .hero-h1-services { font-size: 12px; gap: 8px; margin-bottom: 14px; }
-    .hero-trust { justify-content: center; gap: 16px 22px; font-size: 12.5px; }
-
-    h1 .hero-h1-pre { font-size: 14px; }
-    h1 .hero-h1-main { font-size: 30px; line-height: 1.1; }
-
-    /* Make the phone block compact and centered on mobile */
-    .hero-phone-block {
-      margin: 0 auto 16px;
-      padding: 16px 18px;
-      max-width: 420px;
-    }
-    .hero-phone-eyebrow { font-size: 11px; letter-spacing: 0.1em; }
-    .hero-phone-link { font-size: 28px; gap: 10px; }
-    .hero-phone-icon { width: 24px; height: 24px; }
   }
   @media (max-width: 480px) {
     .hero-trust-chips { gap: 6px; }
     .hero-chip { font-size: 11px; padding: 5px 10px; }
-    .hero { padding: 22px 14px 48px; }
-    .hero-quote-form { padding: 20px 18px 18px; }
-    .hero-form-title { font-size: 22px; }
-    .hero-form-sub { font-size: 13.5px; margin-bottom: 14px; }
-    h1 .hero-h1-main { font-size: 26px; }
   }
 
   /* ===== STAT STRIP ===== */
@@ -6203,13 +6202,22 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     font-size: 16px; text-decoration: none; letter-spacing: 0.2px;
     border: none;
   }
-  .jb-mobile-cta a.call { background: #c8451c; }
-  .jb-mobile-cta a.text { background: #1f3a5f; }
-  .jb-mobile-cta a.quote { background: #0f1a2b; border-left: 1px solid rgba(255,255,255,0.12); }
+  /* Tone the bar down: unified dark navy palette, no copper. Each button
+     is just a slight tint of the same color so it reads as a single bar
+     with three actions rather than three competing CTAs. */
+  .jb-mobile-cta a.call { background: #14253d; }
+  .jb-mobile-cta a.text { background: #0f1a2b; border-left: 1px solid rgba(255,255,255,0.08); }
+  .jb-mobile-cta a.quote { background: #0a1422; border-left: 1px solid rgba(255,255,255,0.08); }
+  .jb-mobile-cta a.call svg { color: #f3b015; }   /* Phone icon in gold (warm accent) */
+  .jb-mobile-cta a.text svg { color: #b3c4dc; }   /* Chat icon in soft mist */
+  .jb-mobile-cta a:active { background: #1e3a5f; }
   .jb-mobile-cta svg { width: 18px; height: 18px; flex: 0 0 auto; }
   @media (max-width: 760px) {
     .jb-mobile-cta { display: flex; }
-    body { padding-bottom: 64px; }
+    /* Bar height: ~14px top padding + ~22px content + ~14px bottom padding +
+       iOS safe-area inset (home indicator). Adds up to ~84px on modern iPhones.
+       Add 20px buffer so the very last button on the page isn't tap-blocked. */
+    body { padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px)); }
   }
 </style>
 <div class="jb-mobile-cta" role="navigation" aria-label="Contact JB Contracting">
