@@ -1145,18 +1145,46 @@
   .hero-award img { display: block; width: 100%; height: auto; }
 
   @media (max-width: 920px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 70px; }
-    .hero { padding: 60px 22px 90px; }
-    .hero-visual { margin: 0 auto; max-width: 460px; width: 100%; }
+    .hero-inner { grid-template-columns: 1fr; gap: 28px; }
+    .hero { padding: 28px 18px 60px; }
+    .hero-visual { margin: 0 auto; max-width: 520px; width: 100%; order: -1; }
+    .hero-text { text-align: center; }
     .hero-trust-card { padding: 26px 24px 22px; }
     .hero-rating-num { font-size: 54px; }
     .hero-quote p { font-size: 15.5px; }
     .hero-quote-stage { min-height: 160px; }
     .hero-award { width: 42%; max-width: 180px; bottom: -22px; right: -10px; }
+
+    /* Strip the hero-text down to the essentials on mobile.
+       Form is now first; everything below it is supporting context. */
+    .hero-logo { display: none; }            /* Already in the header */
+    .hero-texas-badge { display: none; }     /* Visual noise on small screens */
+    .hero-tagline { display: none; }
+    .hero-sub { display: none; }             /* Long paragraph hurts scroll */
+    .hero-h1-services { font-size: 12px; gap: 8px; margin-bottom: 14px; }
+    .hero-trust { justify-content: center; gap: 16px 22px; font-size: 12.5px; }
+
+    h1 .hero-h1-pre { font-size: 14px; }
+    h1 .hero-h1-main { font-size: 30px; line-height: 1.1; }
+
+    /* Make the phone block compact and centered on mobile */
+    .hero-phone-block {
+      margin: 0 auto 16px;
+      padding: 16px 18px;
+      max-width: 420px;
+    }
+    .hero-phone-eyebrow { font-size: 11px; letter-spacing: 0.1em; }
+    .hero-phone-link { font-size: 28px; gap: 10px; }
+    .hero-phone-icon { width: 24px; height: 24px; }
   }
   @media (max-width: 480px) {
     .hero-trust-chips { gap: 6px; }
     .hero-chip { font-size: 11px; padding: 5px 10px; }
+    .hero { padding: 22px 14px 48px; }
+    .hero-quote-form { padding: 20px 18px 18px; }
+    .hero-form-title { font-size: 22px; }
+    .hero-form-sub { font-size: 13.5px; margin-bottom: 14px; }
+    h1 .hero-h1-main { font-size: 26px; }
   }
 
   /* ===== STAT STRIP ===== */
