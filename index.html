@@ -1497,6 +1497,15 @@
   }
   .option-grid.three { grid-template-columns: repeat(3, 1fr); }
   .option-grid.col { grid-template-columns: 1fr; }
+  /* On phones, 3-column grids overflow horizontally and cut off the right
+     edge cards. Collapse to 2 columns, then 1 on very narrow screens. */
+  @media (max-width: 760px) {
+    .option-grid.three { grid-template-columns: repeat(2, 1fr); }
+    .option-grid { gap: 8px; }
+  }
+  @media (max-width: 420px) {
+    .option-grid.three { grid-template-columns: 1fr; }
+  }
 
   /* Multi-select hint banner */
   .multi-hint {
@@ -6214,10 +6223,10 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   .jb-mobile-cta svg { width: 18px; height: 18px; flex: 0 0 auto; }
   @media (max-width: 760px) {
     .jb-mobile-cta { display: flex; }
-    /* Bar height: ~14px top padding + ~22px content + ~14px bottom padding +
-       iOS safe-area inset (home indicator). Adds up to ~84px on modern iPhones.
-       Add 20px buffer so the very last button on the page isn't tap-blocked. */
-    body { padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px)); }
+    /* The sticky bar plus iOS home indicator runs ~80–90px tall on modern
+       iPhones. Give a generous buffer so NO button at the bottom of any
+       section (Back, Continue, Save, etc.) gets covered. */
+    body { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
   }
 </style>
 <div class="jb-mobile-cta" role="navigation" aria-label="Contact JB Contracting">
