@@ -512,7 +512,7 @@
     letter-spacing: 0.2em;
     margin-bottom: 24px;
   }
-  /* Texas Built badge — clean stamp style in brand palette */
+  /* Texas Built badge, clean stamp style in brand palette */
   .hero-texas-badge {
     display: inline-flex;
     align-items: center;
@@ -628,6 +628,259 @@
   }
   .hero-sub strong { color: var(--white); font-weight: 600; }
   .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
+
+  /* --- Hero phone block (replaces the old CTA button row) --- */
+  .hero-phone-block {
+    margin-bottom: 36px;
+    padding: 22px 26px;
+    background: linear-gradient(165deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    max-width: 480px;
+  }
+  .hero-phone-eyebrow {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--mist);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+  }
+  .hero-phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Fraunces', serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    transition: color 0.2s;
+  }
+  .hero-phone-link:hover { color: var(--gold); }
+  .hero-phone-icon { color: var(--gold); flex-shrink: 0; }
+  .hero-phone-sub {
+    display: block;
+    font-size: 13px;
+    color: var(--mist);
+    line-height: 1.5;
+  }
+  @media (max-width: 760px) {
+    .hero-phone-link { font-size: 30px; gap: 10px; }
+    .hero-phone-icon { width: 26px; height: 26px; }
+  }
+
+  /* --- Hero quick-quote form (replaces the old review carousel card) --- */
+  .hero-quote-form {
+    position: relative;
+    background: var(--white);
+    border-radius: 14px;
+    padding: 28px 28px 24px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.28), 0 4px 12px rgba(0,0,0,0.12);
+    color: var(--ink, #1a2540);
+    max-width: 480px;
+    margin-left: auto;
+  }
+  .hero-form-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13px;
+    color: var(--slate, #4a5b80);
+    margin-bottom: 14px;
+  }
+  .hero-form-stars { color: #f3b015; letter-spacing: 1px; font-size: 14px; }
+  .hero-form-eyebrow-text strong { color: var(--navy, #1e3a8a); font-weight: 700; }
+  .hero-form-title {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    line-height: 1.15;
+    color: var(--navy, #1e3a8a);
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+  }
+  .hero-form-sub {
+    font-size: 14px;
+    color: var(--slate, #4a5b80);
+    line-height: 1.5;
+    margin: 0 0 18px;
+  }
+  .hero-form-row.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .hero-form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    min-width: 0;
+  }
+  .hero-form-field label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy, #1e3a8a);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .hero-form-opt {
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--slate-soft, #7a8aa8);
+    font-weight: 500;
+  }
+  .hero-form-field input,
+  .hero-form-field select,
+  .hero-form-field textarea {
+    font: inherit;
+    font-size: 15px;
+    padding: 10px 12px;
+    border: 1.5px solid var(--line, #d6dbe4);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--ink, #1a2540);
+    transition: border-color 0.15s, box-shadow 0.15s;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .hero-form-field textarea { resize: vertical; min-height: 56px; font-family: inherit; }
+  .hero-form-field input:focus,
+  .hero-form-field select:focus,
+  .hero-form-field textarea:focus {
+    outline: none;
+    border-color: var(--navy, #1e3a8a);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+  }
+  .hero-form-submit {
+    width: 100%;
+    padding: 14px 18px;
+    margin-top: 6px;
+    background: var(--copper, #c8451c);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.05s;
+  }
+  .hero-form-submit:hover { background: #b03c19; }
+  .hero-form-submit:active { transform: translateY(1px); }
+  .hero-form-submit[disabled] { opacity: 0.7; cursor: wait; }
+  .hero-form-promise {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--slate, #4a5b80);
+  }
+  .hero-form-promise span { display: inline-flex; align-items: center; gap: 5px; }
+  .hero-form-promise svg { color: #4f9d4f; flex-shrink: 0; }
+  /* Secondary CTA: "or design it yourself". Styled as a clear bordered pill
+     so it reads as a real alternate path, not a tiny disclaimer link. */
+  .hero-form-or {
+    position: relative;
+    margin: 22px -4px 0;
+    padding-top: 22px;
+    text-align: center;
+  }
+  .hero-form-or::before {
+    content: "or";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--slate-soft, #7a8aa8);
+  }
+  .hero-form-or::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--line, #d6dbe4);
+  }
+  .hero-form-or a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 18px;
+    background: rgba(30, 58, 138, 0.06);
+    border: 1.5px solid var(--navy, #1e3a8a);
+    border-radius: 8px;
+    color: var(--navy, #1e3a8a);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    box-sizing: border-box;
+    transition: background 0.15s, color 0.15s, transform 0.05s;
+  }
+  .hero-form-or a:hover {
+    background: var(--navy, #1e3a8a);
+    color: #fff;
+  }
+  .hero-form-or a:active { transform: translateY(1px); }
+  .hero-form-or-sub {
+    display: block;
+    margin-top: 8px;
+    font-size: 12.5px;
+    color: var(--slate-soft, #7a8aa8);
+    line-height: 1.4;
+  }
+
+  /* Success state replaces form body in-place. */
+  .hero-form-success {
+    text-align: center;
+    padding: 22px 4px 6px;
+  }
+  .hero-form-success-icon {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: #4f9d4f;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+  .hero-form-success h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--navy, #1e3a8a);
+    margin: 0 0 6px;
+  }
+  .hero-form-success p {
+    color: var(--slate, #4a5b80);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .hero-form-success a { color: var(--navy, #1e3a8a); }
+
+  @media (max-width: 760px) {
+    .hero-quote-form { padding: 22px 20px 20px; }
+    .hero-form-title { font-size: 24px; }
+    .hero-form-row.two { grid-template-columns: 1fr; }
+  }
   .hero-trust {
     display: flex;
     gap: 28px;
@@ -712,6 +965,77 @@
     font-weight: 500;
   }
   .hero-rating-source svg { flex-shrink: 0; }
+
+  /* --- Reviews band (moved out of hero, sits directly below) --- */
+  .reviews-band {
+    background: linear-gradient(180deg, #f7f5ee 0%, #efece2 100%);
+    border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 36px 20px;
+  }
+  .reviews-band-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 36px;
+    align-items: center;
+  }
+  .reviews-band-rating {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--ink, #1a2540);
+    padding: 14px 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .reviews-band-rating:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
+  .reviews-band-num {
+    font-family: 'Fraunces', serif;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--navy, #1e3a8a);
+    font-weight: 700;
+  }
+  .reviews-band-stars { color: #f3b015; font-size: 18px; letter-spacing: 2px; margin-bottom: 2px; }
+  .reviews-band-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--slate, #4a5b80);
+    font-weight: 500;
+  }
+  .reviews-band-quote-stage {
+    position: relative;
+    min-height: 110px;
+    padding: 0 10px;
+  }
+  /* Override hero-quote colors to look right on the light band */
+  .reviews-band .hero-quote p { color: var(--ink, #1a2540); font-size: 16px; }
+  .reviews-band .hero-quote-mark { color: var(--copper, #c8451c); opacity: 0.5; }
+  .reviews-band .hero-quote-attrib strong { color: var(--navy, #1e3a8a); }
+  .reviews-band .hero-quote-attrib span { color: var(--slate, #4a5b80); }
+  .reviews-band .hero-quote-dots { justify-content: flex-start; padding-left: 32px; }
+  .reviews-band .hero-quote-dot { background: rgba(30, 58, 138, 0.25); }
+  .reviews-band .hero-quote-dot.is-active { background: var(--navy, #1e3a8a); }
+  .reviews-band-award {
+    display: block;
+    max-width: 140px;
+    transition: transform 0.2s;
+  }
+  .reviews-band-award:hover { transform: scale(1.04); }
+  .reviews-band-award img { width: 100%; height: auto; display: block; }
+  @media (max-width: 900px) {
+    .reviews-band-inner { grid-template-columns: 1fr; gap: 22px; text-align: center; }
+    .reviews-band-rating { justify-self: center; }
+    .reviews-band .hero-quote-dots { justify-content: center; padding-left: 0; }
+    .reviews-band-award { justify-self: center; max-width: 120px; }
+  }
 
   .hero-quote-stage {
     position: relative;
@@ -1038,6 +1362,32 @@
     background: var(--paper);
     position: relative;
   }
+  /* Designer section primary CTA, sits at the top of the Project Designer
+     so visitors who scrolled here have an obvious one-tap entry point
+     instead of having to figure out the multi-step card below. */
+  .designer-top-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px 18px;
+    margin-top: 22px;
+    margin-bottom: 6px;
+  }
+  .designer-top-cta-btn {
+    box-shadow: 0 10px 28px rgba(200, 69, 28, 0.32);
+  }
+  .designer-top-cta-aux {
+    font-size: 14px;
+    color: var(--slate, #4a5b80);
+  }
+  .designer-top-cta-aux a {
+    color: var(--navy, #1e3a8a);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+  }
+  .designer-top-cta-aux a:hover { color: var(--copper, #c8451c); }
   .designer-trust-bar {
     display: flex;
     flex-wrap: wrap;
@@ -1120,6 +1470,66 @@
   }
   .option-grid.three { grid-template-columns: repeat(3, 1fr); }
   .option-grid.col { grid-template-columns: 1fr; }
+
+  /* Multi-select hint banner */
+  .multi-hint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    background: rgba(30, 58, 138, 0.06);
+    border: 1px dashed rgba(30, 58, 138, 0.3);
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.4;
+  }
+  .multi-hint-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+  .multi-hint strong { color: var(--navy); }
+
+  /* Multi-select checkbox indicator. Use full padding shorthand here so the
+     later .option-tile { padding: 14px 16px } rule can't clobber padding-left
+     via the CSS cascade (same specificity, later wins). */
+  .option-tile-multi { padding: 14px 16px 14px 44px !important; }
+  .option-checkbox {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--line);
+    border-radius: 4px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.15s;
+  }
+  .option-tile-multi.selected .option-checkbox {
+    background: var(--navy);
+    border-color: var(--navy);
+  }
+  .option-tile-multi.selected::after { display: none; }
+  .option-tile-multi.selected {
+    border-color: var(--navy);
+    background: rgba(30, 58, 138, 0.04);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.10);
+  }
   .option-tile {
     border: 1.5px solid var(--line);
     border-radius: 6px;
@@ -1292,18 +1702,19 @@
     letter-spacing: -0.02em;
   }
   .preview-stage {
-    flex: 1;
+    width: 100%;
+    aspect-ratio: 400 / 280;
     background: var(--white);
     border-radius: 10px;
     box-shadow: var(--shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
-    min-height: 340px;
     position: relative;
   }
-  .preview-stage svg { width: 100%; height: 100%; display: block; }
+  .preview-stage svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
   .preview-meta {
     margin-top: 22px;
     background: var(--white);
@@ -1377,7 +1788,26 @@
     font-weight: 600;
     font-family: 'Fraunces', serif;
     text-align: right;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
   }
+  .summary-edit {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--navy);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px 9px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .summary-edit:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
   .form-grid {
     display: grid;
@@ -1467,7 +1897,7 @@
       z-index: 10;
       border-bottom: 1px solid var(--line);
     }
-    .preview-stage { min-height: 180px; }
+    .preview-stage { aspect-ratio: 400 / 280; }
     .preview-meta { display: none; }
     .preview-title { font-size: 20px; margin-bottom: 14px; }
     .designer-controls { border-right: none; padding: 26px 22px; }
@@ -2374,7 +2804,7 @@
   }
   .saved-design:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
   .saved-design-preview {
-    aspect-ratio: 16/10;
+    aspect-ratio: 400 / 280;
     background: linear-gradient(180deg, #e8eef4, #cdd5df);
     overflow: hidden;
   }
@@ -2444,6 +2874,64 @@
   }
   .moodboard-count.has { display: inline-block; }
 </style>
+
+<!-- ============================================================
+     ANALYTICS & VERIFICATION
+     Replace the placeholder IDs below with your real ones, then
+     re-deploy. Search Console + GA4 will start collecting data
+     within ~24 hours.
+     ============================================================ -->
+
+<!-- Google Search Console verification.
+     1. Go to https://search.google.com/search-console
+     2. Add property: jbcontractingatx.com (Domain property is best)
+     3. Choose "HTML tag" verification, copy the content="..." value,
+        paste it below in place of REPLACE_WITH_GSC_TOKEN. -->
+<meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN">
+
+<!-- Bing Webmaster Tools verification (optional but free traffic).
+     https://www.bing.com/webmasters -->
+<meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN">
+
+<!-- Google Analytics 4.
+     1. Go to https://analytics.google.com → Admin → Create property
+     2. Set up a "Web" data stream for https://jbcontractingatx.com
+     3. Copy your Measurement ID (format: G-QEZESKC3B6) and replace
+        BOTH occurrences of G-QEZESKC3B6 below. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QEZESKC3B6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QEZESKC3B6', {
+    'anonymize_ip': true,
+    'send_page_view': true
+  });
+  // Helper: fire conversion events from anywhere on the site.
+  // Usage: jbTrack('lead_form_submit', { service: 'deck' });
+  window.jbTrack = function(eventName, params){
+    try { gtag('event', eventName, params || {}); } catch(e) {}
+  };
+  // Auto-track all phone-link taps as the "phone_call_click" event.
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (a) { window.jbTrack('phone_call_click', { phone: a.getAttribute('href') }); }
+  }, true);
+</script>
+
+<!-- Microsoft Clarity, FREE session recordings + heatmaps.
+     This is the single highest-ROI tool for figuring out why
+     visitors don't convert: you can literally watch their screen.
+     1. Go to https://clarity.microsoft.com → New project
+     2. Copy your Project ID and replace REPLACE_WITH_CLARITY_ID below. -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "REPLACE_WITH_CLARITY_ID");
+</script>
+
 </head>
 <body>
 
@@ -2608,7 +3096,7 @@
   </svg>
   <div class="hero-inner">
     <div class="hero-text">
-      <img src="jb-logo.png" alt="JB Contracting ATX" class="hero-logo">
+      <img src="jb-logo.png" alt="JB Contracting ATX" class="hero-logo" fetchpriority="high" decoding="async" width="320" height="120">
       <div class="hero-texas-badge" aria-label="Texas Built · Family Owned">
         <svg class="hero-texas-badge-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <polygon points="12,2 14.4,9.4 22,9.4 15.8,14 18.2,21.4 12,16.8 5.8,21.4 8.2,14 2,9.4 9.6,9.4"/>
@@ -2627,10 +3115,15 @@
       </div>
       <div class="hero-tagline">Built around you, by neighbors who care.</div>
       <p class="hero-sub"><strong>Custom decks, fences, pergolas, roofing, siding, and hardscape</strong> across the greater Austin area. Honest pricing, written warranties, same-day callback. Family-owned and built right here in Texas.</p>
-      <div class="hero-ctas">
-        <a href="#designer" class="btn btn-primary btn-large">Design My Project →</a>
-        <a href="#work" class="btn btn-outline btn-large">See Our Work</a>
-        <a href="tel:5125873914" class="btn btn-outline btn-large">Call (512) 587-3914</a>
+      <div class="hero-phone-block">
+        <span class="hero-phone-eyebrow">Talk to John direct, or use the form &rarr;</span>
+        <a href="tel:5125873914" class="hero-phone-link" aria-label="Call JB Contracting at 512-587-3914">
+          <svg class="hero-phone-icon" width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          (512) 587-3914
+        </a>
+        <span class="hero-phone-sub">Call or text anytime</span>
       </div>
       <div class="hero-trust">
         <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Same-Day Callback</div>
@@ -2638,103 +3131,136 @@
         <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Licensed & Insured</div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-trust-card">
-        <a href="https://share.google/FJ3Q5fyQ3lhUheeQw" target="_blank" rel="noopener" class="hero-rating-block" aria-label="Read our 5.0 reviews on Google">
-          <div class="hero-rating-num">5.0</div>
-          <div class="hero-rating-meta">
-            <div class="hero-rating-stars">★★★★★</div>
-            <div class="hero-rating-source">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" style="fill:#4285f4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" style="fill:#34a853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" style="fill:#fbbc04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" style="fill:#ea4335"/></svg>
-              Verified Google reviews
-            </div>
-          </div>
-        </a>
+    <aside class="hero-visual">
+      <form class="hero-quote-form" id="hero-quote-form" onsubmit="return submitHeroQuote(event)" novalidate>
+        <div class="hero-form-eyebrow">
+          <span class="hero-form-stars" aria-hidden="true">★★★★★</span>
+          <span class="hero-form-eyebrow-text"><strong>5.0 on Google</strong> · Same-day callback</span>
+        </div>
+        <h2 class="hero-form-title">Get a free quote.</h2>
+        <p class="hero-form-sub">Tell us about your project, John calls every lead back personally, same day.</p>
 
-        <div class="hero-quote-stage" id="hero-quote-stage" aria-live="polite">
-          <blockquote class="hero-quote is-active">
-            <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
-            <p>From the very first consultation to the final inspection, John made the process completely stress-free.</p>
-            <div class="hero-quote-attrib"><strong>Mary B.</strong><span>Roof Replacement</span></div>
-          </blockquote>
-          <blockquote class="hero-quote">
-            <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
-            <p>Whole job start to finish went smoothly. Crews were fantastic and professional, and John was in communication start to finish.</p>
-            <div class="hero-quote-attrib"><strong>Terry M.</strong><span>Full Property</span></div>
-          </blockquote>
-          <blockquote class="hero-quote">
-            <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
-            <p>Fair, reliable, and honest. They gave us an honest assessment and a great price, and fixed our fence in a timely manner.</p>
-            <div class="hero-quote-attrib"><strong>Reid C.</strong><span>Fence Repair</span></div>
-          </blockquote>
-          <blockquote class="hero-quote">
-            <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
-            <p>If I could give more stars I would. John was the only person who understood my request, quoted me a fair price, and did excellent work.</p>
-            <div class="hero-quote-attrib"><strong>Theresa B.</strong><span>Patio Cover</span></div>
-          </blockquote>
-          <div class="hero-quote-dots" id="hero-quote-dots">
-            <button class="hero-quote-dot is-active" aria-label="Review 1"></button>
-            <button class="hero-quote-dot" aria-label="Review 2"></button>
-            <button class="hero-quote-dot" aria-label="Review 3"></button>
-            <button class="hero-quote-dot" aria-label="Review 4"></button>
+        <!-- Web3Forms config -->
+        <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
+        <input type="hidden" name="subject" value="New Hero Quote Request">
+        <input type="hidden" name="from_name" value="JB Website, Hero Quote Form">
+        <!-- Honeypot -->
+        <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
+
+        <div class="hero-form-row two">
+          <div class="hero-form-field">
+            <label for="hq-name">Your name</label>
+            <input type="text" id="hq-name" name="name" required autocomplete="name">
+          </div>
+          <div class="hero-form-field">
+            <label for="hq-phone">Phone</label>
+            <input type="tel" id="hq-phone" name="phone" placeholder="(512) 555-1234" required autocomplete="tel" oninput="formatPhone(this)" maxlength="14">
           </div>
         </div>
 
-      </div>
+        <div class="hero-form-row two">
+          <div class="hero-form-field">
+            <label for="hq-service">What are we building?</label>
+            <select id="hq-service" name="project" required>
+              <option value="">Pick one…</option>
+              <option>Deck or covered patio</option>
+              <option>Roof replacement or repair</option>
+              <option>Fence (cedar, privacy, gate)</option>
+              <option>Pergola or patio cover</option>
+              <option>Siding</option>
+              <option>Hardscape (patio, walkway, firepit)</option>
+              <option>Multiple / Not sure yet</option>
+            </select>
+          </div>
+          <div class="hero-form-field">
+            <label for="hq-zip">Project zip</label>
+            <input type="text" id="hq-zip" name="zip" placeholder="78748" required autocomplete="postal-code" maxlength="10" inputmode="numeric">
+          </div>
+        </div>
 
-      <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx?utm_campaign=1777324347235&amp;share_action_id=697f0fe1-5856-4df6-9390-e112bc49870c" target="_blank" rel="noopener" class="hero-award" aria-label="Nextdoor Neighborhood Favorite 2025 Winner">
-        <img loading="lazy" decoding="async" src="nextdoor-fave-2025.jpg" alt="Nextdoor Neighborhood Favorite 2025 Winner">
-      </a>
-    </div>
+        <div class="hero-form-field">
+          <label for="hq-notes">Anything else? <span class="hero-form-opt">(optional)</span></label>
+          <textarea id="hq-notes" name="notes" rows="2" placeholder="Dream features, timeline, must-haves…"></textarea>
+        </div>
+
+        <button type="submit" class="hero-form-submit">Send to John →</button>
+
+        <div class="hero-form-promise">
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Same-day callback</span>
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> No fees, no obligation</span>
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Licensed &amp; insured</span>
+        </div>
+
+        <div class="hero-form-or">
+          <a href="#designer" onclick="if(window.jbTrack)jbTrack('hero_designer_link_click');">
+            Use the interactive Project Designer &rarr;
+          </a>
+          <span class="hero-form-or-sub">Pick materials, finishes, and features. Build your project on screen.</span>
+        </div>
+
+        <div class="hero-form-success" id="hero-form-success" hidden>
+          <div class="hero-form-success-icon" aria-hidden="true">✓</div>
+          <h3>Got it, John has your details.</h3>
+          <p>You'll hear back today. If it's urgent, call <a href="tel:5125873914"><strong>(512) 587-3914</strong></a>.</p>
+        </div>
+      </form>
+    </aside>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <div class="stat-num">Decades<em>.</em></div>
-      <div class="stat-label">Of Experience</div>
+<!-- REVIEWS BAND, moved out of hero so the form sits front-and-center -->
+<section class="reviews-band">
+  <div class="reviews-band-inner">
+    <a href="https://share.google/FJ3Q5fyQ3lhUheeQw" target="_blank" rel="noopener" class="reviews-band-rating" aria-label="Read our 5.0 reviews on Google">
+      <div class="reviews-band-num">5.0</div>
+      <div>
+        <div class="reviews-band-stars">★★★★★</div>
+        <div class="reviews-band-source">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" style="fill:#4285f4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" style="fill:#34a853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" style="fill:#fbbc04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" style="fill:#ea4335"/></svg>
+          Verified Google reviews
+        </div>
+      </div>
+    </a>
+
+    <div class="reviews-band-quote-stage" id="hero-quote-stage" aria-live="polite">
+      <blockquote class="hero-quote is-active">
+        <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
+        <p>From the very first consultation to the final inspection, John made the process completely stress-free.</p>
+        <div class="hero-quote-attrib"><strong>Mary B.</strong><span>Roof Replacement</span></div>
+      </blockquote>
+      <blockquote class="hero-quote">
+        <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
+        <p>Whole job start to finish went smoothly. Crews were fantastic and professional, and John was in communication start to finish.</p>
+        <div class="hero-quote-attrib"><strong>Terry M.</strong><span>Full Property</span></div>
+      </blockquote>
+      <blockquote class="hero-quote">
+        <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
+        <p>Fair, reliable, and honest. They gave us an honest assessment and a great price, and fixed our fence in a timely manner.</p>
+        <div class="hero-quote-attrib"><strong>Reid C.</strong><span>Fence Repair</span></div>
+      </blockquote>
+      <blockquote class="hero-quote">
+        <svg class="hero-quote-mark" width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true"><path d="M0 18V9C0 4.5 2.5 1 7 0v3.5C5 4.5 4 6 4 9h3v9H0zm12 0V9c0-4.5 2.5-8 7-9v3.5c-2 1-3 2.5-3 5.5h3v9h-7z"/></svg>
+        <p>If I could give more stars I would. John was the only person who understood my request, quoted me a fair price, and did excellent work.</p>
+        <div class="hero-quote-attrib"><strong>Theresa B.</strong><span>Patio Cover</span></div>
+      </blockquote>
+      <div class="hero-quote-dots" id="hero-quote-dots">
+        <button class="hero-quote-dot is-active" aria-label="Review 1"></button>
+        <button class="hero-quote-dot" aria-label="Review 2"></button>
+        <button class="hero-quote-dot" aria-label="Review 3"></button>
+        <button class="hero-quote-dot" aria-label="Review 4"></button>
+      </div>
     </div>
-    <div class="stat-item">
-      <div class="stat-num">5.0<em>★</em></div>
-      <div class="stat-label">Google Rated</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">Same<em>-day</em></div>
-      <div class="stat-label">Callback, Always</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">100<em>%</em></div>
-      <div class="stat-label">Licensed & Insured</div>
-    </div>
+
+    <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx?utm_campaign=1777324347235&amp;share_action_id=697f0fe1-5856-4df6-9390-e112bc49870c" target="_blank" rel="noopener" class="reviews-band-award" aria-label="Nextdoor Neighborhood Favorite 2025 Winner">
+      <img loading="lazy" decoding="async" src="nextdoor-fave-2025.jpg" alt="Nextdoor Neighborhood Favorite 2025 Winner">
+    </a>
   </div>
 </section>
 
-<!-- VERIFIED / TRUSTED ON -->
-<section class="verified">
-  <div class="verified-inner">
-    <div class="verified-label">As verified on</div>
-    <div class="verified-logos">
-      <a href="https://share.google/FJ3Q5fyQ3lhUheeQw" target="_blank" rel="noopener" class="verified-logo">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" class="ico" style="fill: #4285f4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" class="ico" style="fill: #34a853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" class="ico" style="fill: #fbbc04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" class="ico" style="fill: #ea4335"/></svg>
-        Google
-      </a>
-      <div class="verified-logo">
-        <svg viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Facebook
-      </div>
-      <div class="verified-logo">
-        <svg viewBox="0 0 24 24" fill="#00C44C"><path d="M12 2.5L2.5 11h2.5v9.5h5v-6h4v6h5V11h2.5z"/></svg>
-        Nextdoor
-      </div>
-      <div class="verified-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ico"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        Licensed & Insured
-      </div>
-    </div>
-  </div>
-</section>
+<!-- STATS + VERIFIED bands removed: signals were already repeated in the hero
+     (Texas Built badge, 5.0 Google Reviews card, "same-day callback" trust row)
+     and again in the reviews band below. Cutting redundancy keeps the page
+     moving toward the next real CTA. -->
 
 <!-- INSPIRATION -->
 <section class="inspo">
@@ -2742,11 +3268,11 @@
     <div class="section-header">
       <span class="section-eyebrow">Real Projects, Real Austin Homes</span>
       <h2>Find the project <em>you've been picturing</em>.</h2>
-      <p>Tap one to start designing yours, or <a href="#designer">skip to the Designer</a>.</p>
+      <p>Tap one to tell John what you're after, or <a href="#designer">design it yourself</a> first.</p>
     </div>
     <div class="inspo-grid">
       <div class="inspo-card" onclick="startWithService('deck'); scrollToDesigner();">
-        <img src="new-deck-covered-hillcountry.jpg" alt="Custom covered deck with Hill Country view in greater Austin">
+        <img src="new-deck-covered-hillcountry.jpg" alt="Custom covered deck with Hill Country view in greater Austin" loading="lazy" decoding="async" width="800" height="600">
         <div class="inspo-overlay">
           <div class="inspo-tag">Decks & Patios</div>
           <div class="inspo-title">The deck your weekends need</div>
@@ -2754,7 +3280,7 @@
         </div>
       </div>
       <div class="inspo-card" onclick="startWithService('fence'); scrollToDesigner();">
-        <img src="new-fence-horizontal-cedar-hill.jpg" alt="Modern horizontal cedar privacy fence with Austin Hill Country view">
+        <img src="new-fence-horizontal-cedar-hill.jpg" alt="Modern horizontal cedar privacy fence with Austin Hill Country view" loading="lazy" decoding="async" width="800" height="600">
         <div class="inspo-overlay">
           <div class="inspo-tag">Fences</div>
           <div class="inspo-title">Privacy that still has style</div>
@@ -2762,7 +3288,7 @@
         </div>
       </div>
       <div class="inspo-card" onclick="startWithService('pergola'); scrollToDesigner();">
-        <img src="new-pergola-pavilion-golden.jpg" alt="Custom cedar pavilion with lattice walls at golden hour, Austin TX">
+        <img src="new-pergola-pavilion-golden.jpg" alt="Custom cedar pavilion with lattice walls at golden hour, Austin TX" loading="lazy" decoding="async" width="800" height="600">
         <div class="inspo-overlay">
           <div class="inspo-tag">Pergolas</div>
           <div class="inspo-title">Beat the Texas heat in style</div>
@@ -2770,7 +3296,7 @@
         </div>
       </div>
       <div class="inspo-card" onclick="startWithService('roof'); scrollToDesigner();">
-        <img src="inspo-roof.jpg" alt="Standing seam metal roof with solar panels on an Austin home">
+        <img src="inspo-roof.jpg" alt="Standing seam metal roof with solar panels on an Austin home" loading="lazy" decoding="async" width="800" height="600">
         <div class="inspo-overlay">
           <div class="inspo-tag">Roofing</div>
           <div class="inspo-title">A roof built for Texas storms</div>
@@ -2778,7 +3304,7 @@
         </div>
       </div>
       <div class="inspo-card" onclick="startWithService('siding'); scrollToDesigner();">
-        <img src="inspo-siding.jpg" alt="Hardie fiber cement siding replacement on an Austin home">
+        <img src="inspo-siding.jpg" alt="Hardie fiber cement siding replacement on an Austin home" loading="lazy" decoding="async" width="800" height="600">
         <div class="inspo-overlay">
           <div class="inspo-tag">Siding</div>
           <div class="inspo-title">Curb appeal that turns heads</div>
@@ -2786,7 +3312,7 @@
         </div>
       </div>
       <div class="inspo-card" onclick="startWithService('hardscape'); scrollToDesigner();">
-        <img src="new-fence-cedar-paver-combo.jpg" alt="Cedar privacy fence with paver patio hardscape, Austin TX">
+        <img src="new-fence-cedar-paver-combo.jpg" alt="Cedar privacy fence with paver patio hardscape, Austin TX" loading="lazy" decoding="async" width="800" height="600">
         <div class="inspo-overlay">
           <div class="inspo-tag">Hardscape</div>
           <div class="inspo-title">Patios, walkways, fire features</div>
@@ -2800,9 +3326,13 @@
 <section class="designer" id="designer">
   <div class="container reveal">
     <div class="section-header">
-      <span class="section-eyebrow">Free Design Builder · Takes 90 Seconds</span>
-      <h2>Picture it. We'll <em>build it</em>.</h2>
-      <p>Pick your project, materials, and finishes, and watch your design come to life on the right. Save the looks you love, snap photos of your space, and send the full vision to John. He calls every lead back the same day. No pressure, no fees, no awkward sales pitch.</p>
+      <span class="section-eyebrow">Optional &middot; For homeowners who like to plan</span>
+      <h2>Or <em>design it yourself</em> first.</h2>
+      <p>Prefer to map things out before talking? Use the Project Designer to pick your materials and finishes, save the looks you love, and send the full vision to John. Totally optional, you can always just <a href="tel:5125873914">call (512) 587-3914</a> or fill the form at the top instead.</p>
+      <div class="designer-top-cta">
+        <a href="#designer-card" class="btn btn-primary btn-large designer-top-cta-btn" onclick="if(window.jbTrack)jbTrack('designer_top_cta_click');">Start the Project Designer &rarr;</a>
+        <span class="designer-top-cta-aux">or <a href="tel:5125873914">call (512) 587-3914</a></span>
+      </div>
     </div>
 
     <div class="designer-trust-bar">
@@ -3084,8 +3614,8 @@
         <div class="label">Patio Cover with Concrete Pad</div>
       </div>
       <div class="gallery-item g-square" data-category="hardscape">
-        <img loading="lazy" decoding="async" src="gallery-hardscape-paver.jpg" alt="Brick paver patio aerial view">
-        <div class="label">Brick Paver Patio</div>
+        <img loading="lazy" decoding="async" src="new-fence-cedar-paver-combo.jpg" alt="Cedar privacy fence with paver patio hardscape in Austin TX">
+        <div class="label">Cedar Fence & Paver Hardscape</div>
       </div>
       <div class="gallery-item g-wide" data-category="fence">
         <img loading="lazy" decoding="async" src="gallery-fence-stained.jpg" alt="Stained horizontal cedar fence with curved planter wall">
@@ -3145,6 +3675,8 @@
           <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
           <input type="hidden" name="subject" value="New Hiring Playbook Download">
           <input type="hidden" name="from_name" value="JB Hiring Playbook Form">
+          <!-- Honeypot: invisible to humans, almost always tripped by spam bots. -->
+          <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
           <label for="lm-name">Name</label>
           <input type="text" id="lm-name" name="name" placeholder="Your name" required>
           <label for="lm-email">Email</label>
@@ -3450,8 +3982,10 @@ const PHOTOS = {
   hardscape: [{src: 'db-hardscape-1.jpg', label: 'Concrete Patio Cover'},    {src: 'db-hardscape-2.jpg', label: 'Pressure-Treated Stair Build'}],
 };
 
-/* Services that get the "lifestyle" step (outdoor living projects) */
-const LIFESTYLE_SERVICES = ['deck', 'pergola', 'hardscape'];
+/* Lifestyle step removed by request, every project now skips straight from
+   service pick to scope/material. Keeping the empty array (rather than ripping
+   out every reference) keeps hasLifestyle() returning false everywhere. */
+const LIFESTYLE_SERVICES = [];
 
 /* LIFESTYLES: pre-pick add-ons based on how the family actually uses the space */
 const LIFESTYLES = {
@@ -3790,7 +4324,42 @@ const SCOPE_OPTIONS = {
   ]
 };
 
-let state = {
+/* ===== State persistence to localStorage ===== */
+const DRAFT_KEY = 'jb-designer-draft';
+function loadDraft() {
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY);
+    if (!raw) return null;
+    const d = JSON.parse(raw);
+    // Validate the shape, bail on garbage
+    if (typeof d !== 'object' || typeof d.step !== 'number') return null;
+    // Don't restore the success step or anything past details
+    if (d.step >= 8) return null;
+    return d;
+  } catch (e) { return null; }
+}
+function saveDraft() {
+  try {
+    // Don't save photos to localStorage, File objects don't serialize
+    const snapshot = {
+      step: state.step,
+      service: state.service,
+      lifestyle: state.lifestyle,
+      scope: state.scope,
+      selections: state.selections,
+    };
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(snapshot));
+  } catch (e) { /* localStorage may be unavailable */ }
+}
+function clearDraft() {
+  try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+}
+
+const _restored = loadDraft();
+let state = _restored ? Object.assign({
+  step: 1, service: null, lifestyle: null, scope: null,
+  selections: {}, photosOfSpace: [], photosOfInspo: [],
+}, _restored, { photosOfSpace: [], photosOfInspo: [] }) : {
   step: 1,
   service: null,
   lifestyle: null,
@@ -3870,8 +4439,75 @@ function submitLeadMagnet(e) {
   // Submit the lead in the background. Don't make the user wait for it before delivering value.
   fetch('https://api.web3forms.com/submit', { method: 'POST', body: data }).catch(() => {});
 
+  // Fire conversion event, this is a "soft lead" (cost-guide download), tracked
+  // separately from the main quote-request form.
+  if (window.jbTrack) {
+    window.jbTrack('lead_magnet_download', { value: 1, currency: 'USD' });
+  }
+
   // Take them straight to the Playbook in the same tab so it works reliably on mobile.
   setTimeout(() => { window.location.href = 'austin-contractor-hiring-playbook.html'; }, 250);
+  return false;
+}
+
+/* ===== Hero quick-quote form =====
+ * This is the primary conversion path on the homepage. Sends to Web3Forms,
+ * shows a thank-you state on success, falls back gracefully if the API fails. */
+async function submitHeroQuote(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.hero-form-submit');
+  const successEl = form.querySelector('#hero-form-success');
+
+  // Basic client validation, required fields the browser would have caught
+  // anyway, but we use novalidate so we control the UX.
+  const required = ['name', 'phone', 'project', 'zip'];
+  for (const k of required) {
+    const f = form.querySelector(`[name="${k}"]`);
+    if (f && !String(f.value || '').trim()) {
+      f.focus();
+      f.style.borderColor = '#c8451c';
+      return false;
+    }
+  }
+
+  if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+  try {
+    const fd = new FormData(form);
+    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || data.success === false) {
+      throw new Error(data.message || ('Web3Forms returned ' + res.status));
+    }
+
+    // Conversion event, mark this as a "lead" conversion in GA4.
+    if (window.jbTrack) {
+      window.jbTrack('generate_lead', {
+        service: form.querySelector('[name="project"]').value || 'unknown',
+        zip: form.querySelector('[name="zip"]').value || '',
+        source: 'hero_quick_quote',
+        value: 1,
+        currency: 'USD'
+      });
+    }
+
+    // Hide form children, show success block in place.
+    Array.from(form.children).forEach(el => {
+      if (el !== successEl) el.style.display = 'none';
+    });
+    if (successEl) {
+      successEl.hidden = false;
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  } catch (err) {
+    console.error('Hero quote submit failed:', err);
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = 'Send to John →';
+    }
+    alert("Something hiccuped sending the form, please call John direct at (512) 587-3914, or text us a quick note. Sorry about that.");
+  }
   return false;
 }
 
@@ -3972,6 +4608,8 @@ function render() {
   else if (state.step === 8) renderSuccess(sc);
 
   updatePreview();
+  // Persist progress so refreshes don't lose work
+  if (state.step >= 1 && state.step <= 7) saveDraft();
 }
 
 function renderServicePicker(sc) {
@@ -4000,7 +4638,7 @@ function pickService(id) {
   setTimeout(() => {
     state.step = LIFESTYLE_SERVICES.includes(id) ? 2 : 3;
     render();
-  }, 200);
+  }, 550);
 }
 
 function renderLifestyle(sc) {
@@ -4032,7 +4670,7 @@ function pickLifestyle(id) {
   if (ls.addons[state.service]) {
     state.selections.addons = [...ls.addons[state.service]];
   }
-  setTimeout(() => { state.step = 3; render(); }, 220);
+  setTimeout(() => { state.step = 3; render(); }, 550);
 }
 
 function skipLifestyle() {
@@ -4063,7 +4701,7 @@ function renderScope(sc) {
 
 function pickScope(id) {
   state.scope = id;
-  setTimeout(() => { state.step = 4; render(); }, 200);
+  setTimeout(() => { state.step = 4; render(); }, 550);
 }
 
 function renderQuestion(sc, qIdx) {
@@ -4096,14 +4734,19 @@ function renderQuestion(sc, qIdx) {
       </button>`;
 
   } else if (q.options) {
+    if (q.multi) {
+      const picked = (state.selections[stepKey] || []).length;
+      html += `<div class="multi-hint"><span class="multi-hint-badge">✓ Multi-select</span> Pick all that apply${picked ? ` &middot; <strong>${picked} selected</strong>` : ''}</div>`;
+    }
     html += `<div class="option-grid ${q.multi ? 'three' : 'col'}">`;
     q.options.forEach(o => {
       const sel = q.multi
         ? (state.selections[stepKey] || []).includes(o.id)
         : state.selections[stepKey] === o.id;
       html += `
-        <button class="option-tile ${sel ? 'selected' : ''}"
+        <button class="option-tile ${q.multi ? 'option-tile-multi' : ''} ${sel ? 'selected' : ''}"
                 onclick="pickOption('${stepKey}', '${o.id}', ${q.multi})">
+          ${q.multi ? `<span class="option-checkbox" aria-hidden="true">${sel ? '✓' : ''}</span>` : ''}
           <div class="option-tile-title">${o.name}</div>
           <div class="option-tile-desc">${o.desc}</div>
         </button>`;
@@ -4149,7 +4792,7 @@ function pickOption(key, id, multi) {
     state.selections[key] = id;
     render();
     if (id !== '__unsure') {
-      setTimeout(() => nextStep(), 250);
+      setTimeout(() => nextStep(), 550);
     }
   }
 }
@@ -4158,14 +4801,14 @@ function pickSwatch(key, id, color) {
   state.selections[key] = id;
   state.selections[key + '_color'] = color;
   render();
-  setTimeout(() => nextStep(), 250);
+  setTimeout(() => nextStep(), 550);
 }
 
 function pickUnsureSwatch(key) {
   state.selections[key] = '__unsure';
   delete state.selections[key + '_color'];
   render();
-  setTimeout(() => nextStep(), 250);
+  setTimeout(() => nextStep(), 550);
 }
 
 function nextStep() {
@@ -4173,6 +4816,29 @@ function nextStep() {
     state.step++;
     render();
   }
+}
+
+/* ===== Jump back to a specific step from the summary ===== */
+function jumpToStep(step) {
+  // Skip lifestyle if this service doesn't use it
+  if (step === 2 && !hasLifestyle()) step = 3;
+  state.step = step;
+  render();
+  // Smooth scroll the designer into view
+  setTimeout(() => {
+    const el = document.getElementById('designer');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 50);
+}
+
+/* ===== Phone auto-format: (XXX) XXX-XXXX ===== */
+function formatPhone(input) {
+  let digits = input.value.replace(/\D/g, '').slice(0, 10);
+  let out = digits;
+  if (digits.length > 6) out = '(' + digits.slice(0,3) + ') ' + digits.slice(3,6) + '-' + digits.slice(6);
+  else if (digits.length > 3) out = '(' + digits.slice(0,3) + ') ' + digits.slice(3);
+  else if (digits.length > 0) out = '(' + digits;
+  input.value = out;
 }
 
 function goBack() {
@@ -4193,30 +4859,35 @@ function renderDetails(sc) {
   const stepKeys = SERVICES[state.service].steps;
   const q = QUESTIONS[state.service];
 
-  let summaryRows = `
-    <div class="summary-row"><span class="key">Project</span><span class="val">${srvName}</span></div>`;
-  if (state.lifestyle) {
-    summaryRows += `<div class="summary-row"><span class="key">Lifestyle</span><span class="val">${LIFESTYLES[state.lifestyle].emoji} ${LIFESTYLES[state.lifestyle].name}</span></div>`;
-  }
-  summaryRows += `<div class="summary-row"><span class="key">Size</span><span class="val">${scopeName}</span></div>`;
+  // Each row gets an "Edit" jump-back link. Step numbers:
+  // 1=service, 2=lifestyle, 3=scope, 4/5/6=questions
+  const editLink = (step, label) => `<button type="button" class="summary-edit" onclick="jumpToStep(${step})" aria-label="Edit ${label}">Edit</button>`;
 
-  stepKeys.forEach(k => {
+  let summaryRows = `
+    <div class="summary-row"><span class="key">Project</span><span class="val">${srvName} ${editLink(1, 'project')}</span></div>`;
+  if (state.lifestyle) {
+    summaryRows += `<div class="summary-row"><span class="key">Lifestyle</span><span class="val">${LIFESTYLES[state.lifestyle].emoji} ${LIFESTYLES[state.lifestyle].name} ${editLink(2, 'lifestyle')}</span></div>`;
+  }
+  summaryRows += `<div class="summary-row"><span class="key">Size</span><span class="val">${scopeName} ${editLink(3, 'size')}</span></div>`;
+
+  stepKeys.forEach((k, idx) => {
     const sel = state.selections[k];
     if (!sel) return;
     const qData = q[k];
+    const editStep = 4 + idx; // 4, 5, or 6
     if (sel === '__unsure') {
-      summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">Open to suggestions</span></div>`;
+      summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">Open to suggestions ${editLink(editStep, qData.label)}</span></div>`;
       return;
     }
     if (Array.isArray(sel)) {
       const names = sel.map(id => qData.options.find(o => o.id === id)?.name).filter(Boolean).join(', ');
-      if (names) summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">${names}</span></div>`;
+      if (names) summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">${names} ${editLink(editStep, qData.label)}</span></div>`;
     } else if (qData.swatches) {
       const sw = qData.swatches.find(s => s.id === sel);
-      if (sw) summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">${sw.name}</span></div>`;
+      if (sw) summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">${sw.name} ${editLink(editStep, qData.label)}</span></div>`;
     } else if (qData.options) {
       const opt = qData.options.find(o => o.id === sel);
-      if (opt) summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">${opt.name}</span></div>`;
+      if (opt) summaryRows += `<div class="summary-row"><span class="key">${qData.label}</span><span class="val">${opt.name} ${editLink(editStep, qData.label)}</span></div>`;
     }
   });
 
@@ -4249,6 +4920,8 @@ function renderDetails(sc) {
     </div>
 
     <form id="dream-form" onsubmit="submitDream(event)">
+      <!-- Honeypot: real visitors won't fill this; bots usually will. Web3Forms blocks the submit when "botcheck" is non-empty. -->
+      <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
       <div class="form-grid">
         <div>
           <label for="b-name">Your Name</label>
@@ -4256,7 +4929,7 @@ function renderDetails(sc) {
         </div>
         <div>
           <label for="b-phone">Phone</label>
-          <input type="tel" id="b-phone" name="phone" required>
+          <input type="tel" id="b-phone" name="phone" placeholder="(512) 555-1234" oninput="formatPhone(this)" maxlength="14" required>
         </div>
         <div class="full">
           <label for="b-email">Email</label>
@@ -4415,6 +5088,9 @@ async function submitDream(e) {
     try {
       const fd = new FormData();
       fd.append('access_key', WEB3FORMS_ACCESS_KEY);
+      // Honeypot, passed through so Web3Forms can reject obvious bot fills.
+      const hp = form.querySelector('input[name="botcheck"]');
+      fd.append('botcheck', hp && hp.checked ? '1' : '');
       fd.append('from_name', lead.name || 'JB Contracting Website');
       fd.append('replyto', lead.email);
       fd.append('subject', subject);
@@ -4450,7 +5126,18 @@ async function submitDream(e) {
       if (!res.ok || data.success === false) {
         throw new Error(data.message || ('Web3Forms returned ' + res.status));
       }
-      state.step = 8; render(); return;
+      // Fire conversion event for GA4, this is the "lead" event you'll mark
+      // as a conversion in Analytics > Admin > Events.
+      if (window.jbTrack) {
+        window.jbTrack('generate_lead', {
+          service: lead.srvName || 'unknown',
+          timing: lead.timing || '',
+          budget: lead.budget || '',
+          value: 1,
+          currency: 'USD'
+        });
+      }
+      clearDraft(); state.step = 8; render(); return;
     } catch (err) {
       console.error('Web3Forms submit failed, falling back to mailto:', err);
       // fall through to mailto fallback
@@ -5150,12 +5837,20 @@ function renderRoofSVG(color, sels) {
       <rect x="280" y="92" width="16" height="38" fill="#9a7a55"/>
       <rect x="278" y="90" width="20" height="4" fill="#7a5a35"/>
 
-      <!-- Ridge vent -->
-      ${hasVent ? `<rect x="120" y="60" width="160" height="4" fill="${darker}"/><rect x="120" y="60" width="160" height="1.5" fill="${dark}"/>` : ''}
+      <!-- Ridge vent: a real ridge runs INTO the page on a gable roof, so
+           in side-view we just show a small dark cap right at the peak point
+           rather than a floating horizontal bar above the roof. -->
+      ${hasVent ? `
+        <rect x="194" y="58" width="12" height="5" fill="${darker}"/>
+        <rect x="195" y="59" width="10" height="1.5" fill="${dark}" opacity="0.7"/>
+        <rect x="196" y="61" width="8" height="0.8" fill="${light}" opacity="0.5"/>
+      ` : ''}
 
-      <!-- Solar panels -->
+      <!-- Solar panels: 4x2 grid sitting on the roof's lower half.
+           Panel grid is ~58×34 after transform, narrow enough that
+           every corner stays inside the roof triangle at every height. -->
       ${hasSolar ? `
-        <g transform="translate(232,98) skewX(-15) scale(1, 0.95)">
+        <g transform="translate(170, 108) skewX(-8) scale(0.9, 0.78)">
           ${[...Array(2)].map((_, row) => [...Array(4)].map((_, col) => `
             <rect x="${col * 18}" y="${row * 22}" width="16" height="20" fill="#1f2a3d" stroke="#000" stroke-width="0.4"/>
             <line x1="${col * 18}" y1="${row * 22 + 10}" x2="${col * 18 + 16}" y2="${row * 22 + 10}" stroke="#3b4d6b" stroke-width="0.5"/>
@@ -5464,5 +6159,44 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+
+<!-- Sticky mobile call/text bar, highest-converting element for
+     contractor sites. Visible only on small screens. -->
+<style>
+  .jb-mobile-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999;
+    display: none; gap: 0;
+    background: #0f1a2b; box-shadow: 0 -4px 18px rgba(0,0,0,0.22);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  .jb-mobile-cta a {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    gap: 8px; padding: 14px 8px; color: #fff; font-weight: 700;
+    font-size: 16px; text-decoration: none; letter-spacing: 0.2px;
+    border: none;
+  }
+  .jb-mobile-cta a.call { background: #c8451c; }
+  .jb-mobile-cta a.text { background: #1f3a5f; }
+  .jb-mobile-cta a.quote { background: #0f1a2b; border-left: 1px solid rgba(255,255,255,0.12); }
+  .jb-mobile-cta svg { width: 18px; height: 18px; flex: 0 0 auto; }
+  @media (max-width: 760px) {
+    .jb-mobile-cta { display: flex; }
+    body { padding-bottom: 64px; }
+  }
+</style>
+<div class="jb-mobile-cta" role="navigation" aria-label="Contact JB Contracting">
+  <a class="call" href="tel:+15125873914" aria-label="Call JB Contracting at 512-587-3914">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .7-.3 1l-2.2 2.3z"/></svg>
+    Call John
+  </a>
+  <a class="text" href="sms:+15125873914" aria-label="Text JB Contracting at 512-587-3914">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H8l-4 4V6c0-1.1.9-2 2-2zm2 5h12v2H6V9zm0 4h9v2H6v-2z"/></svg>
+    Text
+  </a>
+  <a class="quote" href="#designer" onclick="if(window.jbTrack)jbTrack('mobile_cta_quote_click');" aria-label="Get a free quote">
+    Free Quote
+  </a>
+</div>
+
 </body>
 </html>
