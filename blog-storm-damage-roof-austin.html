@@ -32,10 +32,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="blog.css">
+<!-- Analytics & verification (replace placeholder IDs once, then re-deploy) -->
+<meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN">
+<meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QEZESKC3B6"></script>
+<script src="analytics.js" defer></script>
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","REPLACE_WITH_CLARITY_ID");
+</script>
+
 </head>
 <body>
 <div class="announce">
-  ⭐ Now booking <span>Spring 2026 projects</span> · Same-day callback, always · <a href="index.html#designer">Design yours →</a>
+  ⭐ Now booking <span>Summer 2026 projects</span> · Call or text anytime · <a href="index.html#designer">Design yours →</a>
 </div>
 <header class="header">
   <div class="header-inner">
@@ -54,9 +63,84 @@
         (512) 587-3914
       </a>
       <a href="index.html#designer" class="btn btn-primary">Get Free Quote</a>
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+  <div class="mobile-drawer-overlay" onclick="closeMobileMenu()"></div>
+  <aside class="mobile-drawer-panel" role="dialog" aria-label="Site navigation">
+    <div class="mobile-drawer-header">
+      <img src="jb-logo-small.png" alt="JB Contracting ATX" style="height: 36px; width: auto;">
+      <button class="mobile-drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-drawer-cta">
+      <a href="index.html#designer" class="btn btn-primary btn-large">Get Free Quote →</a>
+      <a href="tel:5125873914" class="btn btn-outline-navy btn-large">&#128222; (512) 587-3914</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-label">Services</div>
+      <a href="decks-austin.html" class="mobile-drawer-link">Custom Decks</a>
+      <a href="roofing-austin.html" class="mobile-drawer-link">Roofing</a>
+      <a href="fences-austin.html" class="mobile-drawer-link">Cedar Fences</a>
+      <a href="pergolas-austin.html" class="mobile-drawer-link">Pergolas &amp; Patio Covers</a>
+      <a href="siding-austin.html" class="mobile-drawer-link">Siding</a>
+      <a href="hardscape-austin.html" class="mobile-drawer-link">Hardscape</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-label">Service Areas</div>
+      <a href="round-rock-contractor.html" class="mobile-drawer-link">Round Rock</a>
+      <a href="cedar-park-contractor.html" class="mobile-drawer-link">Cedar Park</a>
+      <a href="lakeway-contractor.html" class="mobile-drawer-link">Lakeway</a>
+      <a href="dripping-springs-contractor.html" class="mobile-drawer-link">Dripping Springs</a>
+      <a href="buda-contractor.html" class="mobile-drawer-link">Buda</a>
+      <a href="kyle-contractor.html" class="mobile-drawer-link">Kyle</a>
+      <a href="manchaca-contractor.html" class="mobile-drawer-link">Manchaca</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-label">Explore</div>
+      <a href="index.html#designer" class="mobile-drawer-link">Design Builder</a>
+      <a href="index.html#work" class="mobile-drawer-link">Project Gallery</a>
+      <a href="index.html#about" class="mobile-drawer-link">About John</a>
+      <a href="index.html#process" class="mobile-drawer-link">Our Process</a>
+      <a href="index.html#reviews" class="mobile-drawer-link">Reviews</a>
+      <a href="blog.html" class="mobile-drawer-link">Resources &amp; Guides</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <div>Serving Travis · Hays · Williamson</div>
+      <div>Licensed &amp; Insured · 5.0 on Google</div>
+    </div>
+  </aside>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  var d = document.getElementById('mobile-drawer');
+  var t = document.getElementById('mobile-menu-toggle');
+  if (!d) return;
+  var open = d.classList.toggle('is-open');
+  d.setAttribute('aria-hidden', open ? 'false' : 'true');
+  if (t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.body.classList.toggle('drawer-open', open);
+}
+function closeMobileMenu() {
+  var d = document.getElementById('mobile-drawer');
+  var t = document.getElementById('mobile-menu-toggle');
+  if (!d) return;
+  d.classList.remove('is-open');
+  d.setAttribute('aria-hidden', 'true');
+  if (t) t.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('drawer-open');
+}
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMobileMenu(); });
+</script>
+
 
 <section class="blog-hero">
   <div class="blog-hero-inner">
@@ -148,14 +232,14 @@
 <p>If your roof is doing its job and not actively leaking, you can usually wait until you have a storm event that triggers an insurance claim or until the roof reaches end-of-life. <strong>Don't replace a perfectly functioning roof out of fear.</strong> But also don't wait through three obvious leaks hoping it'll stop on its own. The damage to drywall, framing, and insulation usually costs more than the new roof would have.</p>
 
 <div class="pull-cta">
-  <p><strong>Not sure where you stand?</strong> A free, no-obligation inspection takes about 30 minutes and you'll get an honest answer either way. Same-day callback when you reach out.</p>
+  <p><strong>Not sure where you stand?</strong> A free, no-obligation inspection takes about 30 minutes and you'll get an honest answer either way. Call or text anytime when you reach out.</p>
   <a href="index.html#designer" class="btn btn-primary">Get a free inspection →</a>
 </div>
 
 </article>
 <section class="blog-end-cta">
   <h2>Got a project in mind? <em>Let's talk.</em></h2>
-  <p>The Design Builder takes about 90 seconds. Pick what you want, send it to John, and we'll call you back the same day.</p>
+  <p>The Design Builder takes about 90 seconds. Pick what you want, send it to John, and we'll call or text back as soon as we can.</p>
   <div class="btn-row">
     <a href="index.html#designer" class="btn btn-primary btn-large">Design My Project →</a>
     <a href="tel:5125873914" class="btn btn-outline-light btn-large">Call (512) 587-3914</a>
@@ -173,13 +257,13 @@
         <div class="read">Read the guide →</div>
       </div>
     </a>
-    <a class="blog-card" href="blog-best-privacy-fence-austin.html">
-      <div class="blog-card-img"><img src="gallery-fence-stained.jpg" alt="The Best Privacy Fence for Austin Backyards (Cedar vs. Pressure-Treated)" loading="lazy"></div>
+    <a class="blog-card" href="blog-hardie-siding-cost-austin.html">
+      <div class="blog-card-img"><img src="inspo-siding.jpg" alt="Hardie Board Siding Cost in Austin (2026 Guide)" loading="lazy"></div>
       <div class="blog-card-body">
-        <div class="blog-card-tag">Fences</div>
-        <h3>The Best Privacy Fence for Austin Backyards (Cedar vs. Pressure-Treated)</h3>
-        <p>Cedar or pressure-treated? Horizontal or vertical? Stain or let it weather? An honest, opinionated look at picking the right backyard fence in Austin.</p>
-        <div class="read">Read the guide →</div>
+        <div class="blog-card-tag">Siding</div>
+        <h3>Hardie Board Siding Cost in Austin (2026 Guide)</h3>
+        <p>Real numbers on Hardie fiber cement siding. Lap, panel, shake, and trim pricing, plus Hardie vs. vinyl vs. stucco vs. LP.</p>
+        <div class="read">Read the guide &rarr;</div>
       </div>
     </a>
   </div>
@@ -216,13 +300,13 @@
       <ul>
         <li><a href="tel:5125873914">(512) 587-3914</a></li>
         <li><a href="mailto:jbconstructionatx@gmail.com">jbconstructionatx@gmail.com</a></li>
-        <li>Travis &middot; Hays &middot; Williamson</li>
+        <li>Travis · Hays · Williamson</li>
         <li>and surrounding counties</li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div>&copy; 2026 JB Contracting ATX &middot; Licensed &amp; Insured</div>
+    <div>&copy; 2026 JB Contracting ATX · Licensed &amp; Insured</div>
     <div>Built with care in Austin, Texas</div>
   </div>
 </footer>

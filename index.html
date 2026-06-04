@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1a2b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Austin Contractor | Decks, Roofing, Fences & Pergolas | JB Contracting ATX</title>
-<meta name="description" content="Family-owned Austin contractor for custom decks, roof replacement, cedar fences, pergolas, siding & hardscape. Licensed, insured, 5-star Google rated. Same-day callback. Call (512) 587-3914.">
+<meta name="description" content="Family-owned Austin contractor for custom decks, roof replacement, cedar fences, pergolas, siding & hardscape. Licensed, insured, 5-star Google rated. Call or text anytime. Call (512) 587-3914.">
 <meta name="keywords" content="Austin contractor, Austin deck builder, Austin roofing, Austin fence company, Austin pergola builder, Austin siding contractor, hardscape Austin, Travis County contractor, Hays County contractor, Williamson County contractor">
 <meta name="author" content="JB Contracting ATX">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -15,7 +18,7 @@
 <meta property="og:url" content="https://jbcontractingatx.com/">
 <meta property="og:site_name" content="JB Contracting ATX">
 <meta property="og:title" content="Austin Contractor | Decks, Roofing, Fences & Pergolas | JB Contracting ATX">
-<meta property="og:description" content="Family-owned Austin contractor for custom decks, roofing, cedar fences, pergolas, siding & hardscape. Licensed, insured, 5-star rated. Same-day callback.">
+<meta property="og:description" content="Family-owned Austin contractor for custom decks, roofing, cedar fences, pergolas, siding & hardscape. Licensed, insured, 5-star rated. Call or text anytime.">
 <meta property="og:image" content="https://jbcontractingatx.com/hero-pergola-hill-country.jpg">
 <meta property="og:image:alt" content="Cedar pergola with Hill Country view, built by JB Contracting ATX">
 <meta property="og:locale" content="en_US">
@@ -23,7 +26,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Austin Contractor | Decks, Roofing, Fences & Pergolas | JB Contracting ATX">
-<meta name="twitter:description" content="Family-owned Austin contractor for decks, roofing, fences, pergolas, siding & hardscape. 5-star Google rated. Same-day callback.">
+<meta name="twitter:description" content="Family-owned Austin contractor for decks, roofing, fences, pergolas, siding & hardscape. 5-star Google rated. Call or text anytime.">
 <meta name="twitter:image" content="https://jbcontractingatx.com/hero-pergola-hill-country.jpg">
 
 <!-- LocalBusiness JSON-LD schema -->
@@ -154,7 +157,7 @@
       "name": "How fast do you respond to estimate requests?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "John calls every lead back the same day. You can request a quote through the Design Builder on our site, by texting photos of your space to (512) 587-3914, or by calling directly."
+        "text": "Call or text us anytime, we'll get back to you as soon as we can. You can request a quote through the Design Builder on our site, by texting photos of your space to (512) 587-3914, or by calling directly."
       }
     }
   ]
@@ -1057,6 +1060,92 @@
   }
   .reviews-band-award:hover { transform: scale(1.04); }
   .reviews-band-award img { width: 100%; height: auto; display: block; }
+
+  /* ===== RECENT BUILDS =====
+     Desktop: responsive grid. Mobile: horizontal swipe carousel so the
+     section stays compact and visitors flick through photos like a phone
+     gallery. Each tile is a tappable link to the hero quote form. */
+  .recent-builds { background: var(--white); padding: 80px 22px; }
+  .recent-builds .section-header { margin-bottom: 36px; }
+  .recent-builds-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .recent-build {
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--paper);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .recent-build:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.14);
+  }
+  .recent-build img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .recent-build:hover img { transform: scale(1.05); }
+  .recent-build-overlay {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 16px 14px 14px;
+    background: linear-gradient(180deg, transparent 0%, rgba(15, 26, 43, 0.85) 100%);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .recent-build:hover .recent-build-overlay,
+  .recent-build:focus-visible .recent-build-overlay { opacity: 1; }
+  .recent-build-cta {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+  .recent-builds-footer { text-align: center; margin-top: 32px; }
+
+  @media (max-width: 1024px) {
+    .recent-builds-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 760px) {
+    .recent-builds { padding: 56px 0 48px; }
+    .recent-builds .section-header { padding: 0 22px; margin-bottom: 22px; }
+    /* Horizontal-scroll snap carousel on phones */
+    .recent-builds-grid {
+      display: flex;
+      grid-template-columns: none;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 22px 16px;
+      margin: 0;
+      max-width: 100%;
+      scrollbar-width: none;
+    }
+    .recent-builds-grid::-webkit-scrollbar { display: none; }
+    .recent-build {
+      flex: 0 0 78%;
+      scroll-snap-align: center;
+      aspect-ratio: 4 / 3;
+    }
+    /* Always show the overlay on mobile - no hover state */
+    .recent-build-overlay { opacity: 1; padding: 14px 12px 12px; }
+    .recent-builds-footer { padding: 0 22px; margin-top: 22px; }
+  }
   @media (max-width: 900px) {
     .reviews-band-inner { grid-template-columns: 1fr; gap: 22px; text-align: center; }
     .reviews-band-rating { justify-self: center; }
@@ -2972,7 +3061,7 @@
 <body>
 
 <div class="announce">
-  ⭐ Now booking <span>Spring 2026 projects</span> · Same-day callback, always · <a href="#designer">Design yours →</a>
+  Now booking <span>Summer 2026 projects</span> &middot; Call or text anytime &middot; <a href="#designer">Get a free quote &rarr;</a>
 </div>
 
 <header class="header">
@@ -3133,36 +3222,36 @@
   <div class="hero-inner">
     <div class="hero-text">
       <img src="jb-logo.png" alt="JB Contracting ATX" class="hero-logo" fetchpriority="high" decoding="async" width="320" height="120">
-      <div class="hero-texas-badge" aria-label="Texas Built · Family Owned">
+      <div class="hero-texas-badge" aria-label="Now booking Summer 2026 projects">
         <svg class="hero-texas-badge-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <polygon points="12,2 14.4,9.4 22,9.4 15.8,14 18.2,21.4 12,16.8 5.8,21.4 8.2,14 2,9.4 9.6,9.4"/>
         </svg>
         <div class="hero-texas-badge-text">
-          <span class="hero-texas-badge-main">Texas Built</span>
-          <span class="hero-texas-badge-sub">Family Owned · Greater Austin</span>
+          <span class="hero-texas-badge-main">Now Booking Summer 2026</span>
+          <span class="hero-texas-badge-sub">Family Owned &middot; Licensed &amp; Insured</span>
         </div>
       </div>
       <h1>
-        <span class="hero-h1-pre">Greater Austin's contractor for</span>
-        <span class="hero-h1-main">Outdoor Living, Done Right.</span>
+        <span class="hero-h1-pre">Austin Contractor</span>
+        <span class="hero-h1-main">Decks, Roofing, Fences &amp; <em>Outdoor Living</em>.</span>
       </h1>
       <div class="hero-h1-services">
         <span>Decks</span><span class="dot"></span><span>Roofing</span><span class="dot"></span><span>Fences</span><span class="dot"></span><span>Pergolas</span><span class="dot"></span><span>Siding</span><span class="dot"></span><span>Hardscape</span>
       </div>
-      <div class="hero-tagline">Built around you, by neighbors who care.</div>
-      <p class="hero-sub"><strong>Custom decks, fences, pergolas, roofing, siding, and hardscape</strong> across the greater Austin area. Honest pricing, written warranties, same-day callback. Family-owned and built right here in Texas.</p>
+      <div class="hero-tagline">Family-owned. Built across greater Austin.</div>
+      <p class="hero-sub">Custom <strong>decks, roof replacement, cedar fences, pergolas, siding, and hardscape</strong> across Travis, Hays, and Williamson counties. Free estimates, written warranties, and we're reachable by call or text whenever you need us.</p>
       <div class="hero-phone-block">
-        <span class="hero-phone-eyebrow">Talk to John direct, or use the form &rarr;</span>
+        <span class="hero-phone-eyebrow">Call or text</span>
         <a href="tel:5125873914" class="hero-phone-link" aria-label="Call JB Contracting at 512-587-3914">
           <svg class="hero-phone-icon" width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
           (512) 587-3914
         </a>
-        <span class="hero-phone-sub">Call or text anytime</span>
+        <span class="hero-phone-sub">Available anytime, day or night.</span>
       </div>
       <div class="hero-trust">
-        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Same-Day Callback</div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Call or Text Anytime</div>
         <a href="https://share.google/FJ3Q5fyQ3lhUheeQw" target="_blank" rel="noopener" class="hero-trust-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 5.0 on Google</a>
         <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Licensed & Insured</div>
       </div>
@@ -3171,10 +3260,10 @@
       <form class="hero-quote-form" id="hero-quote-form" onsubmit="return submitHeroQuote(event)" novalidate>
         <div class="hero-form-eyebrow">
           <span class="hero-form-stars" aria-hidden="true">★★★★★</span>
-          <span class="hero-form-eyebrow-text"><strong>5.0 on Google</strong> · Same-day callback</span>
+          <span class="hero-form-eyebrow-text"><strong>5.0 on Google</strong> · Call or text anytime</span>
         </div>
-        <h2 class="hero-form-title">Get a free quote.</h2>
-        <p class="hero-form-sub">Tell us about your project, John calls every lead back personally, same day.</p>
+        <h2 class="hero-form-title">Request a free estimate.</h2>
+        <p class="hero-form-sub">Tell us about your project. Call or text anytime on every quote.</p>
 
         <!-- Web3Forms config -->
         <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
@@ -3222,7 +3311,7 @@
         <button type="submit" class="hero-form-submit">Send to John →</button>
 
         <div class="hero-form-promise">
-          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Same-day callback</span>
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Call or text anytime</span>
           <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> No fees, no obligation</span>
           <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Licensed &amp; insured</span>
         </div>
@@ -3294,9 +3383,59 @@
 </section>
 
 <!-- STATS + VERIFIED bands removed: signals were already repeated in the hero
-     (Texas Built badge, 5.0 Google Reviews card, "same-day callback" trust row)
+     (Texas Built badge, 5.0 Google Reviews card, "call or text anytime" trust row)
      and again in the reviews band below. Cutting redundancy keeps the page
      moving toward the next real CTA. -->
+
+<!-- RECENT BUILDS -->
+<section class="recent-builds" id="recent-builds">
+  <div class="container reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">Fresh off the truck</span>
+      <h2>Recent <em>builds</em>.</h2>
+      <p>A handful of projects we wrapped recently across greater Austin. Tap any photo to start a quote like this one.</p>
+    </div>
+
+    <!-- Horizontal-scroll on mobile, grid on desktop. Each tile is a tappable
+         link straight to the quote form so a photo can convert directly. -->
+    <div class="recent-builds-grid" role="list">
+      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-1' });">
+        <img loading="lazy" decoding="async" src="recent-build-1.jpg" alt="Recent custom build by JB Contracting in greater Austin TX" width="1400" height="1050">
+        <div class="recent-build-overlay">
+          <span class="recent-build-cta">Quote one like this &rarr;</span>
+        </div>
+      </a>
+      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-2' });">
+        <img loading="lazy" decoding="async" src="recent-build-2.jpg" alt="Recent custom build by JB Contracting in greater Austin TX" width="1400" height="1050">
+        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
+      </a>
+      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-3' });">
+        <img loading="lazy" decoding="async" src="recent-build-3.jpg" alt="Recent custom build by JB Contracting in greater Austin TX" width="1400" height="1050">
+        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
+      </a>
+      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-4' });">
+        <img loading="lazy" decoding="async" src="recent-build-4.jpg" alt="Recent custom build by JB Contracting in greater Austin TX" width="1400" height="1050">
+        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
+      </a>
+      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-5' });">
+        <img loading="lazy" decoding="async" src="recent-build-5.jpg" alt="Recent custom build by JB Contracting in greater Austin TX" width="1400" height="1050">
+        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
+      </a>
+      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-6' });">
+        <img loading="lazy" decoding="async" src="recent-build-6.jpg" alt="Recent custom build by JB Contracting in greater Austin TX" width="1400" height="1050">
+        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
+      </a>
+      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-7' });">
+        <img loading="lazy" decoding="async" src="recent-build-7.jpg" alt="Recent custom build by JB Contracting in greater Austin TX" width="1400" height="1050">
+        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
+      </a>
+    </div>
+
+    <div class="recent-builds-footer">
+      <a href="#work" class="btn btn-outline-navy">See the full project gallery &rarr;</a>
+    </div>
+  </div>
+</section>
 
 <!-- INSPIRATION -->
 <section class="inspo">
@@ -3374,7 +3513,7 @@
     <div class="designer-trust-bar">
       <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Free, no fees</div>
       <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> No obligation</div>
-      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Same-day callback</div>
+      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Call or text anytime</div>
       <div><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 5.0 on Google</div>
     </div>
 
@@ -3433,7 +3572,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <h4>Tell Us Your Vision</h4>
-        <p>Use the Design Builder, give us a call, or text us photos of your space. John calls every lead back the same day, and you can have him out walking the project as soon as your schedule allows.</p>
+        <p>Use the Design Builder, give us a call, or text us photos of your space. Call or text us anytime. We'll get back to you as soon as we can, and have John out walking the project as soon as your schedule allows.</p>
       </div>
       <div class="process-step">
         <div class="icon">
@@ -3481,6 +3620,38 @@
       <span class="gallery-count" id="gallery-count"></span>
     </div>
     <div class="gallery-grid" id="gallery-grid">
+      <!-- Recent builds (HEIC originals from John's phone, converted to web JPEG).
+           Categorized 'deck' as default so they show under the 'Decks' filter
+           and in 'All Projects'. Update category + alt text if a photo is
+           actually a different project type. -->
+      <div class="gallery-item" data-category="deck" data-featured="true">
+        <img loading="lazy" decoding="async" src="recent-build-1.jpg" alt="Recent custom build by JB Contracting, greater Austin TX" width="1400" height="1050">
+        <div class="label">Recent Build</div>
+      </div>
+      <div class="gallery-item" data-category="deck" data-featured="true">
+        <img loading="lazy" decoding="async" src="recent-build-2.jpg" alt="Recent custom build by JB Contracting, greater Austin TX" width="1400" height="1050">
+        <div class="label">Recent Build</div>
+      </div>
+      <div class="gallery-item" data-category="deck" data-featured="true">
+        <img loading="lazy" decoding="async" src="recent-build-3.jpg" alt="Recent custom build by JB Contracting, greater Austin TX" width="1400" height="1050">
+        <div class="label">Recent Build</div>
+      </div>
+      <div class="gallery-item" data-category="deck" data-featured="true">
+        <img loading="lazy" decoding="async" src="recent-build-4.jpg" alt="Recent custom build by JB Contracting, greater Austin TX" width="1400" height="1050">
+        <div class="label">Recent Build</div>
+      </div>
+      <div class="gallery-item" data-category="deck" data-featured="true">
+        <img loading="lazy" decoding="async" src="recent-build-5.jpg" alt="Recent custom build by JB Contracting, greater Austin TX" width="1400" height="1050">
+        <div class="label">Recent Build</div>
+      </div>
+      <div class="gallery-item" data-category="deck" data-featured="true">
+        <img loading="lazy" decoding="async" src="recent-build-6.jpg" alt="Recent custom build by JB Contracting, greater Austin TX" width="1400" height="1050">
+        <div class="label">Recent Build</div>
+      </div>
+      <div class="gallery-item" data-category="deck" data-featured="true">
+        <img loading="lazy" decoding="async" src="recent-build-7.jpg" alt="Recent custom build by JB Contracting, greater Austin TX" width="1400" height="1050">
+        <div class="label">Recent Build</div>
+      </div>
       <div class="gallery-item" data-category="deck" data-featured="true">
         <img loading="lazy" decoding="async" src="new-deck-covered-hillcountry.jpg" alt="Custom covered deck with Hill Country view, greater Austin TX">
         <div class="label">Hill Country Covered Deck</div>
@@ -3878,7 +4049,7 @@
       <a href="#designer" class="btn btn-primary btn-large">Design My Project</a>
       <a href="tel:5125873914" class="btn btn-outline btn-large">Call (512) 587-3914</a>
     </div>
-    <div style="margin-top: 18px; font-size: 13px; opacity: 0.85;">Same-day callback · No obligation · Licensed & insured</div>
+    <div style="margin-top: 18px; font-size: 13px; opacity: 0.85;">Call or text anytime · No obligation · Licensed & insured</div>
   </div>
 </section>
 
@@ -3959,10 +4130,8 @@
   <span class="check">✓</span><span id="toast-msg">Saved to your mood board</span>
 </div>
 
-<div class="mobile-cta">
-  <a href="tel:5125873914" class="btn btn-outline-navy">📞 Call</a>
-  <a href="#designer" class="btn btn-primary">Free Quote</a>
-</div>
+<!-- Old white mobile-cta removed: it was stacking behind the new dark navy
+     .jb-mobile-cta bar at the bottom of the page, peeking through on mobile. -->
 
 <script>
 /* ============== DREAM DESIGNER (v5) ============== */
@@ -4930,7 +5099,7 @@ function renderDetails(sc) {
   sc.innerHTML = `
     <div class="designer-step-label">Almost there</div>
     <div class="designer-step-title">Send your design to John</div>
-    <div class="designer-step-help">John reviews every submission personally and calls you back the same day to talk through your project. We&apos;ll set a time to come walk the space and write up an honest, line-itemed quote. No pressure, no fees, no obligation.</div>
+    <div class="designer-step-help">John personally reviews every submission. Call or text anytime to talk through your project. We&apos;ll set a time to come walk the space and write up an honest, line-itemed quote. No pressure, no fees, no obligation.</div>
     <div class="summary-list">${summaryRows}</div>
 
     <div style="font-size: 12px; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;">📸 Add photos (optional, but it helps a lot)</div>
@@ -5004,7 +5173,7 @@ function renderDetails(sc) {
       </div>
       <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Send My Design to John →</button>
       <div class="form-promise-row">
-        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Same-day callback</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Call or text anytime</span>
         <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> No fees, no obligation</span>
         <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Licensed & insured</span>
       </div>
@@ -5357,7 +5526,7 @@ function renderSuccess(sc) {
     <div class="designer-success">
       <div class="check">✓</div>
       <h3>Got it. Thanks for trusting us.</h3>
-      <p>Your design is on its way to John. He calls every lead back the same day, so keep an eye out for a (512) area code.</p>
+      <p>Your design is on its way to John. Call or text (512) 587-3914 anytime, he'll be in touch soon.</p>
       <p>If you have photos of your space or inspiration shots, text them to <strong>(512) 587-3914</strong> so they\'re tied to your project.</p>
       <div class="success-testimonial">
         <div class="success-stars">★★★★★</div>
