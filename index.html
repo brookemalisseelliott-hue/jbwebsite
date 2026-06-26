@@ -932,6 +932,37 @@
   .hero-trust > a:hover { color: var(--white); border-bottom-color: var(--white); }
   .hero-trust svg { color: var(--gold); flex-shrink: 0; }
 
+  /* Secondary path in the hero: visitors who want to verify quality
+     before committing get a one-tap anchor to the gallery. */
+  .hero-see-work {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    padding: 9px 16px 9px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background 0.18s, border-color 0.18s, transform 0.05s;
+  }
+  .hero-see-work:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.32);
+  }
+  .hero-see-work:active { transform: translateY(1px); }
+  .hero-see-work svg { color: var(--gold); flex-shrink: 0; }
+  .hero-see-work-arrow {
+    color: var(--gold);
+    font-weight: 700;
+    transition: transform 0.18s;
+  }
+  .hero-see-work:hover .hero-see-work-arrow { transform: translateX(3px); }
+
   .hero-visual {
     position: relative;
     max-width: 520px;
@@ -3072,7 +3103,6 @@
     <nav class="nav">
       <a href="#designer">Design Yours</a>
       <a href="#about">About</a>
-      <a href="#process">Process</a>
       <a href="#work">Our Work</a>
       <a href="#reviews">Reviews</a>
       <a href="blog.html">Resources</a>
@@ -3137,7 +3167,6 @@
       <a href="#designer" class="mobile-drawer-link" onclick="closeMobileMenu()">Design Builder</a>
       <a href="#work" class="mobile-drawer-link" onclick="closeMobileMenu()">Project Gallery</a>
       <a href="#about" class="mobile-drawer-link" onclick="closeMobileMenu()">About John</a>
-      <a href="#process" class="mobile-drawer-link" onclick="closeMobileMenu()">Our Process</a>
       <a href="#reviews" class="mobile-drawer-link" onclick="closeMobileMenu()">Reviews</a>
       <a href="blog.html" class="mobile-drawer-link">Resources &amp; Guides</a>
     </div>
@@ -3255,6 +3284,11 @@
         <a href="https://share.google/FJ3Q5fyQ3lhUheeQw" target="_blank" rel="noopener" class="hero-trust-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 5.0 on Google</a>
         <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Licensed & Insured</div>
       </div>
+      <a href="#work" class="hero-see-work" onclick="if(window.jbTrack)jbTrack('hero_see_work_click');">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        See our recent work
+        <span class="hero-see-work-arrow" aria-hidden="true">&rarr;</span>
+      </a>
     </div>
     <aside class="hero-visual">
       <form class="hero-quote-form" id="hero-quote-form" onsubmit="return submitHeroQuote(event)" novalidate>
@@ -3263,7 +3297,7 @@
           <span class="hero-form-eyebrow-text"><strong>5.0 on Google</strong> · Call or text anytime</span>
         </div>
         <h2 class="hero-form-title">Request a free estimate.</h2>
-        <p class="hero-form-sub">Tell us about your project. Call or text anytime on every quote.</p>
+        <p class="hero-form-sub">Tell us about your project. We'll call or text back as soon as we can.</p>
 
         <!-- Web3Forms config -->
         <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
@@ -3308,7 +3342,7 @@
           <textarea id="hq-notes" name="notes" rows="2" placeholder="Dream features, timeline, must-haves…"></textarea>
         </div>
 
-        <button type="submit" class="hero-form-submit">Send to John →</button>
+        <button type="submit" class="hero-form-submit">Get my free quote &rarr;</button>
 
         <div class="hero-form-promise">
           <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Call or text anytime</span>
@@ -3387,117 +3421,6 @@
      and again in the reviews band below. Cutting redundancy keeps the page
      moving toward the next real CTA. -->
 
-<!-- RECENT BUILDS -->
-<section class="recent-builds" id="recent-builds">
-  <div class="container reveal">
-    <div class="section-header">
-      <span class="section-eyebrow">Fresh off the truck</span>
-      <h2>Recent <em>builds</em>.</h2>
-      <p>A handful of projects we wrapped recently across greater Austin. Tap any photo to start a quote like this one.</p>
-    </div>
-
-    <!-- Horizontal-scroll on mobile, grid on desktop. Each tile is a tappable
-         link straight to the quote form so a photo can convert directly. -->
-    <div class="recent-builds-grid" role="list">
-      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-1' });">
-        <img loading="lazy" decoding="async" src="recent-build-1.jpg" alt="Custom pine tongue-and-groove patio cover ceiling viewed from below, built by JB Contracting in greater Austin TX" width="1400" height="1050">
-        <div class="recent-build-overlay">
-          <span class="recent-build-cta">Quote one like this &rarr;</span>
-        </div>
-      </a>
-      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-2' });">
-        <img loading="lazy" decoding="async" src="recent-build-2.jpg" alt="Stained horizontal cedar privacy fence with square paver patio, built by JB Contracting in Austin TX" width="1400" height="1050">
-        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
-      </a>
-      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-3' });">
-        <img loading="lazy" decoding="async" src="recent-build-3.jpg" alt="Clear corrugated polycarbonate roof panels installed on a custom patio cover frame, built by JB Contracting in Austin TX" width="1400" height="1050">
-        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
-      </a>
-      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-4' });">
-        <img loading="lazy" decoding="async" src="recent-build-4.jpg" alt="Custom poured concrete patio with stepping-stone walkway and covered patio behind an Austin home, built by JB Contracting" width="1400" height="1050">
-        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
-      </a>
-      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-5' });">
-        <img loading="lazy" decoding="async" src="recent-build-5.jpg" alt="Large poured concrete patio behind a two-story Austin home with covered patio area and decorative walkway, built by JB Contracting" width="1400" height="1050">
-        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
-      </a>
-      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-6' });">
-        <img loading="lazy" decoding="async" src="recent-build-6.jpg" alt="Close-up of a custom knotty pine tongue-and-groove patio cover ceiling installed by JB Contracting in Austin TX" width="1400" height="1050">
-        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
-      </a>
-      <a href="#hero-quote-form" class="recent-build" role="listitem" onclick="if(window.jbTrack)jbTrack('recent_build_click', { photo: 'recent-build-7' });">
-        <img loading="lazy" decoding="async" src="recent-build-7.jpg" alt="Custom horizontal cedar privacy fence with paver hardscape patio, built by JB Contracting in greater Austin TX" width="1400" height="1050">
-        <div class="recent-build-overlay"><span class="recent-build-cta">Quote one like this &rarr;</span></div>
-      </a>
-    </div>
-
-    <div class="recent-builds-footer">
-      <a href="#work" class="btn btn-outline-navy">See the full project gallery &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- INSPIRATION -->
-<section class="inspo">
-  <div class="container reveal">
-    <div class="section-header">
-      <span class="section-eyebrow">Real Projects, Real Austin Homes</span>
-      <h2>Find the project <em>you've been picturing</em>.</h2>
-      <p>Tap one to tell John what you're after, or <a href="#designer">design it yourself</a> first.</p>
-    </div>
-    <div class="inspo-grid">
-      <div class="inspo-card" onclick="startWithService('deck'); scrollToDesigner();">
-        <img src="new-deck-covered-hillcountry.jpg" alt="Custom covered deck with Hill Country view in greater Austin" loading="lazy" decoding="async" width="800" height="600">
-        <div class="inspo-overlay">
-          <div class="inspo-tag">Decks & Patios</div>
-          <div class="inspo-title">The deck your weekends need</div>
-          <div class="inspo-cta">Design a deck like this →</div>
-        </div>
-      </div>
-      <div class="inspo-card" onclick="startWithService('fence'); scrollToDesigner();">
-        <img src="new-fence-horizontal-cedar-hill.jpg" alt="Modern horizontal cedar privacy fence with Austin Hill Country view" loading="lazy" decoding="async" width="800" height="600">
-        <div class="inspo-overlay">
-          <div class="inspo-tag">Fences</div>
-          <div class="inspo-title">Privacy that still has style</div>
-          <div class="inspo-cta">Design a fence like this →</div>
-        </div>
-      </div>
-      <div class="inspo-card" onclick="startWithService('pergola'); scrollToDesigner();">
-        <img src="new-pergola-pavilion-golden.jpg" alt="Custom cedar pavilion with lattice walls at golden hour, Austin TX" loading="lazy" decoding="async" width="800" height="600">
-        <div class="inspo-overlay">
-          <div class="inspo-tag">Pergolas</div>
-          <div class="inspo-title">Beat the Texas heat in style</div>
-          <div class="inspo-cta">Design a pergola like this →</div>
-        </div>
-      </div>
-      <div class="inspo-card" onclick="startWithService('roof'); scrollToDesigner();">
-        <img src="inspo-roof.jpg" alt="Standing seam metal roof with solar panels on an Austin home" loading="lazy" decoding="async" width="800" height="600">
-        <div class="inspo-overlay">
-          <div class="inspo-tag">Roofing</div>
-          <div class="inspo-title">A roof built for Texas storms</div>
-          <div class="inspo-cta">Design a roof like this →</div>
-        </div>
-      </div>
-      <div class="inspo-card" onclick="startWithService('siding'); scrollToDesigner();">
-        <img src="inspo-siding.jpg" alt="Hardie fiber cement siding replacement on an Austin home" loading="lazy" decoding="async" width="800" height="600">
-        <div class="inspo-overlay">
-          <div class="inspo-tag">Siding</div>
-          <div class="inspo-title">Curb appeal that turns heads</div>
-          <div class="inspo-cta">Design siding like this →</div>
-        </div>
-      </div>
-      <div class="inspo-card" onclick="startWithService('hardscape'); scrollToDesigner();">
-        <img src="new-fence-cedar-paver-combo.jpg" alt="Cedar privacy fence with paver patio hardscape, Austin TX" loading="lazy" decoding="async" width="800" height="600">
-        <div class="inspo-overlay">
-          <div class="inspo-tag">Hardscape</div>
-          <div class="inspo-title">Patios, walkways, fire features</div>
-          <div class="inspo-cta">Design hardscape like this →</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="designer" id="designer">
   <div class="container reveal">
     <div class="section-header">
@@ -3549,51 +3472,11 @@
       </div>
       <div>
         <span class="section-eyebrow">Meet John</span>
-        <h2>Hi, I'm John. I built this business on <em>honest work</em>.</h2>
-        <p>JB Contracting is a mom-and-pop operation built on hard work, honesty, and treating customers like family. When you hire us, you're not just getting a contractor. You're getting a neighbor who genuinely cares how your home turns out.</p>
-        <p>I've spent decades in this trade, from small home repairs to full roof replacements to backyard transformations the whole neighborhood notices. The thing I'll never compromise on is transparency. You'll always know what's happening with your project, what it costs, and why. No surprises, no upcharges, no games. Just honest work I'd be proud to put my name on.</p>
-        <div class="about-signature">John Bernard, Owner</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process" id="process">
-  <div class="container reveal">
-    <div class="section-header">
-      <span class="section-eyebrow">How It Works</span>
-      <h2>Simple, transparent, <em>no surprises</em>.</h2>
-      <p>From the first call to the final walkthrough, here's exactly what working with us looks like.</p>
-    </div>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <h4>Tell Us Your Vision</h4>
-        <p>Use the Design Builder, give us a call, or text us photos of your space. Call or text us anytime. We'll get back to you as soon as we can, and have John out walking the project as soon as your schedule allows.</p>
-      </div>
-      <div class="process-step">
-        <div class="icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
-        </div>
-        <h4>Free On-Site Estimate</h4>
-        <p>We come out, walk the project with you, and write up an honest, line-itemed quote. No pressure, no hidden fees, no obligation to book.</p>
-      </div>
-      <div class="process-step">
-        <div class="icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 21l3-3m0 0l9-9m-9 9V3a9 9 0 1018 0v18l-3-3"/><path d="M14 8a4 4 0 100-8 4 4 0 000 8z"/></svg>
-        </div>
-        <h4>Build Day</h4>
-        <p>Our crew shows up on time and gets to work. John texts you daily updates with photos so you always know exactly where the project stands.</p>
-      </div>
-      <div class="process-step">
-        <div class="icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h4>Walkthrough & Warranty</h4>
-        <p>We finish, clean up after ourselves, and walk every detail with you. Every job is backed by warranty. If something isn't right, we make it right.</p>
+        <h2>I'm John. We build work I'd be <em>proud to put my name on</em>.</h2>
+        <p>JB Contracting is me, my wife Brooke, and our crew. We build decks, roofs, fences, pergolas, siding, and hardscape across greater Austin. Licensed, insured, and 5.0 on Google.</p>
+        <p>We keep the business small on purpose. That's how we keep our standards where they need to be on every project. When you call, you talk to me. When the crew shows up to your property, they're the same people we work with project after project.</p>
+        <p>The goal isn't to be the biggest contractor in Austin. The goal is to be the one your family trusts enough to call back the next time.</p>
+        <div class="about-signature">John &amp; Brooke Bernard, Owners</div>
       </div>
     </div>
   </div>
@@ -3860,41 +3743,6 @@
   </div>
 </section>
 
-<!-- LEAD MAGNET -->
-<section class="lead-magnet" id="playbook">
-  <div class="container">
-    <div class="lead-magnet-inner">
-      <div class="lead-magnet-text">
-        <span class="section-eyebrow">Free Homeowner's Playbook</span>
-        <h2>Don't hire <em>any</em> Austin contractor<br>until you've read this.</h2>
-        <p>The 12-point checklist, 8 red flags, and the questions to ask before signing anything. Written by a 5-star Austin contractor who's seen what bad ones look like, so you don't have to find out the hard way.</p>
-        <ul class="lead-magnet-bullets">
-          <li><span class="check">✓</span> The 12-Point Contractor Vetting Checklist</li>
-          <li><span class="check">✓</span> 8 Red Flags That Should Make You Walk Away</li>
-          <li><span class="check">✓</span> The Real Cost of Cheap (with real-dollar examples)</li>
-          <li><span class="check">✓</span> Project Scope Worksheet + Contract Safety Check</li>
-        </ul>
-      </div>
-      <div class="lead-magnet-form-wrap">
-        <form class="lead-magnet-form" id="lead-magnet-form" onsubmit="return submitLeadMagnet(event)">
-          <h3>Get the Playbook</h3>
-          <p class="form-subhead">Read it instantly. We'll occasionally send Austin homeowner tips. Unsubscribe anytime.</p>
-          <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
-          <input type="hidden" name="subject" value="New Hiring Playbook Download">
-          <input type="hidden" name="from_name" value="JB Hiring Playbook Form">
-          <!-- Honeypot: invisible to humans, almost always tripped by spam bots. -->
-          <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
-          <label for="lm-name">Name</label>
-          <input type="text" id="lm-name" name="name" placeholder="Your name" required>
-          <label for="lm-email">Email</label>
-          <input type="email" id="lm-email" name="email" placeholder="you@email.com" required>
-          <button type="submit" class="btn btn-primary btn-large lead-magnet-submit">Read the Playbook →</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- WHY -->
 <section class="why" id="why">
   <div class="container reveal">
@@ -3997,49 +3845,6 @@
   </div>
 </section>
 
-<!-- FEATURED RESOURCES -->
-<section class="featured-blog" id="resources">
-  <div class="container reveal">
-    <div class="section-header">
-      <span class="section-eyebrow">Resources & Guides</span>
-      <h2>Helpful reads <em>before you build</em>.</h2>
-      <p>Real Austin pricing, decisions worth thinking through, and lessons from years of building. No fluff, no fear-mongering.</p>
-    </div>
-    <div class="featured-blog-grid">
-      <a class="featured-blog-card" href="blog-deck-cost-austin.html">
-        <div class="featured-blog-img"><img src="gallery-deck-build.jpg" alt="Custom pressure-treated deck build" loading="lazy"></div>
-        <div class="featured-blog-body">
-          <div class="featured-blog-tag">Decks · Pricing</div>
-          <h3>How much does a deck cost in Austin? (2026 guide)</h3>
-          <p>Real numbers for pressure-treated, cedar, and composite. What drives the price up, and where you can save without cutting corners.</p>
-          <div class="read">Read the guide →</div>
-        </div>
-      </a>
-      <a class="featured-blog-card" href="blog-storm-damage-roof-austin.html">
-        <div class="featured-blog-img"><img src="gallery-roof-golden.jpg" alt="Roof replacement at golden hour" loading="lazy"></div>
-        <div class="featured-blog-body">
-          <div class="featured-blog-tag">Roofing · Storms</div>
-          <h3>After the storm: when your Austin roof needs replacing</h3>
-          <p>Repair vs. replace, the insurance walkthrough, and the questions to ask any roofer before you sign anything.</p>
-          <div class="read">Read the guide →</div>
-        </div>
-      </a>
-      <a class="featured-blog-card" href="blog-best-privacy-fence-austin.html">
-        <div class="featured-blog-img"><img src="gallery-fence-stained.jpg" alt="Stained horizontal cedar fence" loading="lazy"></div>
-        <div class="featured-blog-body">
-          <div class="featured-blog-tag">Fences</div>
-          <h3>The best privacy fence for Austin backyards</h3>
-          <p>Cedar vs. pressure-treated, horizontal vs. vertical, real costs, lifespans, and stain advice from a local builder.</p>
-          <div class="read">Read the guide →</div>
-        </div>
-      </a>
-    </div>
-    <div class="featured-blog-cta">
-      <a href="blog.html" class="btn btn-outline-navy btn-large">See all guides →</a>
-    </div>
-  </div>
-</section>
-
 <!-- FINAL CTA -->
 <section class="final-cta" id="contact">
   <div class="container reveal">
@@ -4087,7 +3892,6 @@
       <h4>Company</h4>
       <ul>
         <li><a href="#about">About John</a></li>
-        <li><a href="#process">Our Process</a></li>
         <li><a href="#why">Our Story</a></li>
         <li><a href="#work">Our Work</a></li>
         <li><a href="#reviews">Reviews</a></li>
