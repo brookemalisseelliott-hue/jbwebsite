@@ -5234,6 +5234,13 @@ function startOver() {
   state.photosOfSpace = [];
   state.photosOfInspo = [];
   render();
+  // Without this, the viewport stays scrolled to wherever the user clicked
+  // "Design Another" (usually the bottom of the builder, after submitting).
+  // Jump them back up to the start of the designer so step 1 is in view.
+  var designer = document.getElementById('designer');
+  if (designer && designer.scrollIntoView) {
+    designer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 function updateMoodboardCount() {
@@ -5621,18 +5628,35 @@ function renderDeckSVG(color, sels) {
       ${sceneHills(195, isNight)}
       ${sceneGround(uid, 198)}
 
-      <!-- House on left -->
-      <rect x="0" y="78" width="92" height="160" fill="${isNight ? '#7e8090' : '#e8e4d8'}"/>
-      <polygon points="0,78 46,42 92,78" fill="${isNight ? '#26303f' : '#3d4654'}"/>
-      <polygon points="0,78 46,42 0,42" fill="${isNight ? '#1d2533' : '#2f3744'}"/>
-      <rect x="0" y="78" width="92" height="160" fill="url(#house-${uid})"/>
-      <rect x="14" y="100" width="36" height="44" fill="${isNight ? '#fef3a4' : '#5a7a9a'}" opacity="${isNight ? '0.85' : '0.7'}"/>
-      <line x1="32" y1="100" x2="32" y2="144" stroke="#fff" stroke-width="1.2" opacity="0.55"/>
-      <line x1="14" y1="122" x2="50" y2="122" stroke="#fff" stroke-width="1.2" opacity="0.55"/>
-      <rect x="14" y="100" width="36" height="44" fill="none" stroke="#fff" stroke-width="1.4" opacity="0.5"/>
-      <rect x="60" y="156" width="28" height="78" fill="${isNight ? '#1f1612' : '#3a2a1a'}"/>
-      <rect x="62" y="158" width="24" height="74" fill="${isNight ? '#2c2218' : '#5a4a3a'}"/>
-      <circle cx="83" cy="195" r="1.2" fill="#9aa5b3"/>
+      <!-- House wall section. Implied to continue off the left edge of the
+           canvas. No visible roof peak (the old version showed a roof point
+           at x=46 which made the home read as a tiny standalone box). Just a
+           wall with eave trim at top, a baseboard at bottom, a window, and
+           a door with proper proportions. -->
+      <rect x="0" y="56" width="92" height="182" fill="${isNight ? '#7e8090' : '#e8e4d8'}"/>
+      <!-- Eave/soffit trim at top -->
+      <rect x="0" y="56" width="92" height="5" fill="${isNight ? '#5a606e' : '#c8b896'}"/>
+      <rect x="0" y="60" width="92" height="2" fill="${isNight ? '#3a414b' : '#a8a094'}" opacity="0.7"/>
+      <!-- Subtle vertical edge shadow -->
+      <rect x="0" y="56" width="92" height="182" fill="url(#house-${uid})"/>
+      <!-- Baseboard / wall foundation line -->
+      <rect x="0" y="234" width="92" height="4" fill="${isNight ? '#3a414b' : '#a8a094'}" opacity="0.7"/>
+
+      <!-- Window with white frame trim -->
+      <rect x="12" y="94" width="40" height="50" fill="${isNight ? '#1a2030' : '#fff'}"/>
+      <rect x="14" y="96" width="36" height="46" fill="${isNight ? '#fef3a4' : '#5a7a9a'}" opacity="${isNight ? '0.85' : '0.7'}"/>
+      <line x1="32" y1="96" x2="32" y2="142" stroke="${isNight ? '#1a2030' : '#fff'}" stroke-width="1.2" opacity="0.7"/>
+      <line x1="14" y1="119" x2="50" y2="119" stroke="${isNight ? '#1a2030' : '#fff'}" stroke-width="1.2" opacity="0.7"/>
+      <rect x="12" y="94" width="40" height="50" fill="none" stroke="${isNight ? '#3a4050' : '#fff'}" stroke-width="1.8" opacity="0.55"/>
+
+      <!-- Door with proper proportions (was 78px tall in the old version;
+           now 64px so it doesn't dwarf the window). Panel divisions added
+           for craftsman feel. Knob sits at typical doorknob height. -->
+      <rect x="56" y="170" width="32" height="68" fill="${isNight ? '#1f1612' : '#3a2a1a'}"/>
+      <rect x="58" y="172" width="28" height="64" fill="${isNight ? '#2c2218' : '#5a4a3a'}"/>
+      <rect x="62" y="178" width="20" height="22" fill="none" stroke="${isNight ? '#0f0a06' : '#2a1c0e'}" stroke-width="0.8" opacity="0.6"/>
+      <rect x="62" y="206" width="20" height="24" fill="none" stroke="${isNight ? '#0f0a06' : '#2a1c0e'}" stroke-width="0.8" opacity="0.6"/>
+      <circle cx="82" cy="206" r="1.4" fill="#c8a878"/>
 
       ${sizeOpen}
       <!-- Pergola overhead -->
@@ -5875,7 +5899,10 @@ function renderRoofSVG(color, sels) {
   const dark = shade(color, -22);
   const darker = shade(color, -36);
   const light = shade(color, 14);
-  const isMetal = sels.material === 'metal';
+  const isMetal   = sels.material === 'metal';
+  const is3Tab    = sels.material === '3tab';
+  const isLuxury  = sels.material === 'luxury';
+  const isArch    = !isMetal && !is3Tab && !isLuxury; // default
   const a = sels.addons || [];
   const hasGutters = a.includes('gutters');
   const hasSolar = a.includes('solar');
@@ -5924,14 +5951,61 @@ function renderRoofSVG(color, sels) {
 
       <!-- Roof -->
       <polygon points="40,170 200,62 360,170" fill="url(#roof-${uid})"/>
-      ${isMetal ?
-        `${[...Array(11)].map((_, i) => {
+      ${isMetal ? `
+        <!-- Standing seam metal: vertical seam lines running down the slopes -->
+        ${[...Array(11)].map((_, i) => {
           const xBottom = 50 + i * 30;
           const xTop = 200 + (xBottom - 200) * 0.31;
           return `<line x1="${xBottom}" y1="170" x2="${xTop}" y2="${74 + Math.abs(xBottom - 200) * 0.06}" stroke="${darker}" stroke-width="1.4"/>
                   <line x1="${xBottom + 2}" y1="170" x2="${xTop + 1}" y2="${74 + Math.abs(xBottom - 200) * 0.06}" stroke="${light}" stroke-width="0.5" opacity="0.7"/>`;
-        }).join('')}` :
-        `${[...Array(9)].map((_, i) => {
+        }).join('')}
+      ` : is3Tab ? `
+        <!-- 3-tab shingles: flat horizontal strips with 3 visible tab cuts
+             per shingle. Wider, less staggered, lower contrast than arch. -->
+        ${[...Array(8)].map((_, i) => {
+          const y = 80 + i * 12;
+          const w = (y - 62) / (170 - 62);
+          const xStart = 200 - 160 * w;
+          const xEnd = 200 + 160 * w;
+          let row = `<rect x="${xStart}" y="${y}" width="${xEnd - xStart}" height="10" fill="${i % 2 === 0 ? color : light}" opacity="0.9"/>`;
+          // Tab cuts every 10 px to suggest 3-tab pattern
+          for (let j = xStart + 10; j < xEnd; j += 10) {
+            row += `<line x1="${j}" y1="${y}" x2="${j}" y2="${y + 10}" stroke="${darker}" stroke-width="0.5" opacity="0.55"/>`;
+          }
+          // Bottom edge shadow line
+          row += `<line x1="${xStart}" y1="${y + 10}" x2="${xEnd}" y2="${y + 10}" stroke="${darker}" stroke-width="0.6" opacity="0.6"/>`;
+          return row;
+        }).join('')}
+      ` : isLuxury ? `
+        <!-- Luxury / Designer (slate or shake look): irregular widths and
+             pronounced bottom-edge shadows that read as dimensional/heavy. -->
+        ${[...Array(7)].map((_, i) => {
+          const y = 80 + i * 13;
+          const w = (y - 62) / (170 - 62);
+          const xStart = 200 - 160 * w;
+          const xEnd = 200 + 160 * w;
+          let row = '';
+          let j = xStart;
+          let idx = 0;
+          while (j < xEnd) {
+            // Irregular widths: 13, 16, 11, 15 alternating
+            const widths = [13, 16, 11, 15, 12, 14];
+            const segW = widths[idx % widths.length];
+            const offset = i % 2 === 0 ? 0 : 7;
+            const xPos = j + offset;
+            const fill = ((idx + i) % 3 === 0) ? color : (idx % 2 === 0 ? light : dark);
+            row += `<rect x="${xPos}" y="${y}" width="${Math.min(segW, xEnd - xPos)}" height="13" fill="${fill}" stroke="${darker}" stroke-width="0.35" opacity="0.95"/>`;
+            // Heavy bottom-edge shadow to suggest thick dimensional shingle
+            row += `<rect x="${xPos}" y="${y + 10}" width="${Math.min(segW, xEnd - xPos)}" height="3" fill="${darker}" opacity="0.45"/>`;
+            j += segW;
+            idx++;
+          }
+          return row;
+        }).join('')}
+      ` : `
+        <!-- Architectural (default): staggered small shingles with subtle
+             tonal alternation, the standard Austin look. -->
+        ${[...Array(9)].map((_, i) => {
           const y = 78 + i * 11;
           const w = (y - 62) / (170 - 62);
           const xStart = 200 - 160 * w;
@@ -5942,7 +6016,8 @@ function renderRoofSVG(color, sels) {
             row += `<rect x="${j + offset}" y="${y}" width="7.5" height="9" fill="${i % 2 === 0 ? color : light}" stroke="${darker}" stroke-width="0.25" opacity="0.95"/>`;
           }
           return row;
-        }).join('')}`}
+        }).join('')}
+      `}
       <!-- Roof edge highlights -->
       <line x1="40" y1="170" x2="200" y2="62" stroke="${darker}" stroke-width="1.2"/>
       <line x1="200" y1="62" x2="360" y2="170" stroke="${darker}" stroke-width="1.2"/>
