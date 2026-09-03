@@ -23,18 +23,20 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Archivo', system-ui, -apple-system, sans-serif;
   color: var(--navy);
   background: var(--white);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  font-optical-sizing: auto;
 }
 h1, h2, h3, h4 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
   color: var(--navy);
+  text-wrap: balance;
 }
 img { display: block; max-width: 100%; height: auto; }
 a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
@@ -73,7 +75,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .header-inner { max-width: 1340px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .logo {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   font-weight: 700;
   font-size: 22px;
   letter-spacing: -0.015em;
@@ -94,16 +96,16 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 700;
   font-size: 14px;
   box-shadow: var(--shadow-sm);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
 }
 .logo-mark .amp { color: var(--gold); font-style: italic; }
 .logo-text { display: flex; flex-direction: column; line-height: 1.05; }
 .logo-text span:first-child { font-size: 18px; }
 .logo-text span:last-child {
   font-size: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Archivo', system-ui, -apple-system, sans-serif;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.11em;
   color: var(--slate-soft);
   text-transform: uppercase;
   margin-top: 2px;
@@ -240,7 +242,7 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 600;
   color: var(--slate-soft);
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.11em;
   margin-bottom: 12px;
 }
 .mobile-drawer-link {
@@ -291,7 +293,7 @@ body.drawer-open { overflow: hidden; }
 .blog-hero-inner { max-width: 880px; margin: 0 auto; position: relative; }
 .blog-eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.11em;
   font-size: 12px;
   font-weight: 700;
   color: var(--gold);
@@ -325,7 +327,11 @@ body.drawer-open { overflow: hidden; }
 }
 
 .blog-body {
-  max-width: 760px;
+  /* 760px put ~85 characters on a line. Comfortable reading tops out around
+     65-75; past that the eye loses its place on the return sweep. 680px lands
+     at ~75 for these long cost guides, which are the pages people actually
+     sit and read. */
+  max-width: 680px;
   margin: 0 auto;
   padding: 60px 28px 80px;
   font-size: 17px;
@@ -365,7 +371,7 @@ body.drawer-open { overflow: hidden; }
   text-align: left;
   border-bottom: 1px solid var(--line-soft);
 }
-.cost-table th { background: var(--paper); font-family: 'Roboto Slab', serif; font-weight: 600; color: var(--navy); }
+.cost-table th { background: var(--paper); font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 600; color: var(--navy); }
 .cost-table tr:last-child td { border-bottom: none; }
 
 .blog-end-cta {
@@ -406,7 +412,7 @@ body.drawer-open { overflow: hidden; }
 .blog-index-header { text-align: center; margin-bottom: 50px; }
 .blog-index-header .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.11em;
   font-size: 12px;
   font-weight: 700;
   color: var(--copper);
@@ -487,7 +493,7 @@ footer {
 .footer-brand p { font-size: 14px; line-height: 1.6; max-width: 340px; opacity: 0.85; margin-bottom: 18px; }
 footer h4 {
   color: var(--white);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Archivo', system-ui, -apple-system, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 12px;
@@ -539,7 +545,7 @@ footer a:hover { opacity: 1; color: var(--white); }
 .faq-item > summary {
   cursor: pointer;
   padding: 18px 22px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   font-size: 16.5px;
   font-weight: 600;
   color: var(--navy);
@@ -583,7 +589,7 @@ footer a:hover { opacity: 1; color: var(--white); }
    card the same size at 4-across, 2-across, and single column. */
 .price-callout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 14px;
   margin: 26px 0 30px;
 }
@@ -603,7 +609,7 @@ footer a:hover { opacity: 1; color: var(--white); }
   margin-bottom: 6px;
 }
 .price-callout-value {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   font-size: 25px;
   font-weight: 700;
   color: var(--navy);
@@ -612,3 +618,100 @@ footer a:hover { opacity: 1; color: var(--white); }
 }
 .price-callout-unit { font-size: 14px; font-weight: 400; color: var(--slate-soft); }
 .price-note { font-size: 14px; color: var(--slate-soft); margin: -14px 0 30px; }
+
+/* ---------------------------------------------------------------------------
+   Inline quote form.
+   Previously these pages had no way to take a lead; every CTA pushed the
+   visitor to the homepage designer. This lets someone convert on the page
+   they arrived on.
+--------------------------------------------------------------------------- */
+.quote-form-wrap {
+  max-width: 680px;
+  margin: 48px auto 0;
+  padding: 0 28px;
+}
+.quote-form {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--copper);
+  border-radius: 12px;
+  padding: 30px 30px 26px;
+  box-shadow: var(--shadow-sm);
+}
+.quote-form-eyebrow {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--slate-soft); margin-bottom: 10px;
+}
+.quote-form-eyebrow .stars { color: var(--gold); letter-spacing: 1px; }
+.quote-form-eyebrow strong { color: var(--navy); font-weight: 600; }
+.quote-form h2 {
+  font-size: 27px;
+  margin: 0 0 6px;
+  color: var(--navy);
+}
+.quote-form-sub {
+  font-size: 15.5px; color: var(--slate-soft);
+  margin: 0 0 22px; line-height: 1.6;
+}
+.quote-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.quote-form-field { display: flex; flex-direction: column; }
+.quote-form-field.full { grid-column: 1 / -1; }
+.quote-form label {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--slate); margin-bottom: 6px;
+}
+.quote-form label .opt { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--slate-soft); }
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+  font-family: inherit;
+  font-size: 16px; /* 16px stops iOS Safari zooming the page on focus */
+  padding: 12px 13px;
+  border: 1.5px solid var(--line);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--navy);
+  width: 100%;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+  outline: none;
+  border-color: var(--copper);
+  box-shadow: 0 0 0 3px rgba(184, 80, 31, 0.12);
+}
+.quote-form textarea { resize: vertical; min-height: 62px; }
+.quote-form-submit {
+  width: 100%;
+  margin-top: 6px;
+  padding: 16px 24px;
+  background: var(--copper);
+  color: var(--white);
+  border: none; border-radius: 7px;
+  font-family: inherit; font-size: 16.5px; font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s;
+}
+.quote-form-submit:hover:not(:disabled) { background: var(--copper-dark); transform: translateY(-1px); }
+.quote-form-submit:disabled { opacity: 0.65; cursor: default; }
+.quote-form-trust {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px;
+  margin-top: 15px; font-size: 13px; color: var(--slate-soft);
+}
+.quote-form-trust span { display: inline-flex; align-items: center; gap: 5px; }
+.quote-form-trust .tick { color: var(--copper); font-weight: 700; }
+.quote-form-alt {
+  text-align: center; margin-top: 15px; font-size: 15px; color: var(--slate-soft);
+}
+.quote-form-alt a { color: var(--navy); font-weight: 600; }
+.quote-form-success { text-align: center; padding: 12px 4px; }
+.quote-form-success h2 { margin-bottom: 10px; }
+.quote-form-success p { color: var(--slate-soft); font-size: 15.5px; margin: 0 0 8px; }
+
+@media (max-width: 620px) {
+  .quote-form-wrap { padding: 0 18px; }
+  .quote-form { padding: 24px 20px 22px; border-radius: 10px; }
+  .quote-form-row { grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
+  .quote-form h2 { font-size: 23px; }
+}

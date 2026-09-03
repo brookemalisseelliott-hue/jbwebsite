@@ -231,7 +231,7 @@
       "name": "How fast do you respond to estimate requests?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Call or text us anytime, we'll get back to you as soon as we can. You can request a quote through the Design Builder on our site, by texting photos of your space to (512) 587-3914, or by calling directly."
+        "text": "Call or text us anytime and John gets back to you the same day. You can request a quote through the Design Builder on our site, by texting photos of your space to (512) 587-3914, or by calling directly."
       }
     }
   ]
@@ -240,7 +240,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #16293d;
@@ -267,18 +267,30 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
     color: var(--navy);
     background: var(--white);
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    /* Fraunces carries an optical-size axis. Letting the browser drive it means
+       the hero renders with true display proportions (finer joins, tighter fit)
+       while a 15px heading renders with text proportions, instead of one text
+       drawing scaled up and down. This is most of what separates considered
+       type from a face dropped into a template. */
+    font-optical-sizing: auto;
   }
   h1, h2, h3, h4 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-weight: 600;
     line-height: 1.05;
-    letter-spacing: -0.025em;
+    /* Gentler than the -0.025em the old slab needed: optical sizing already
+       tightens the fit at display sizes, so stacking heavy negative tracking
+       on top collides the serifs. */
+    letter-spacing: -0.014em;
+    /* Stops a heading dropping its last word alone onto a second line
+       ("...say about / us."). Browsers without support just wrap normally. */
+    text-wrap: balance;
   }
   img { display: block; max-width: 100%; height: auto; }
   button { font-family: inherit; cursor: pointer; }
@@ -314,7 +326,7 @@
     gap: 20px;
   }
   .logo {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-weight: 700;
     font-size: 22px;
     letter-spacing: -0.015em;
@@ -342,9 +354,9 @@
   .logo-text span:first-child { font-size: 18px; }
   .logo-text span:last-child {
     font-size: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
     font-weight: 600;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.11em;
     color: var(--slate-soft);
     text-transform: uppercase;
     margin-top: 2px;
@@ -587,7 +599,7 @@
     font-weight: 600;
     color: rgba(255,255,255,0.6);
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.12em;
     margin-bottom: 24px;
   }
   /* Texas Built badge, clean stamp style in brand palette */
@@ -617,7 +629,7 @@
     line-height: 1;
   }
   .hero-texas-badge-main {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 19px;
     font-weight: 600;
     color: var(--white);
@@ -628,39 +640,43 @@
     font-size: 10px;
     font-weight: 600;
     color: rgba(255,255,255,0.65);
-    letter-spacing: 0.18em;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
   }
   @media (max-width: 480px) {
     .hero-texas-badge { gap: 11px; padding: 8px 16px 8px 13px; }
     .hero-texas-badge-star { width: 26px; height: 26px; }
-    .hero-texas-badge-main { font-size: 17px; }
+    .hero-texas-badge-main { font-size: 15px; letter-spacing: 0; white-space: nowrap; }
     .hero-texas-badge-sub { font-size: 9.5px; }
   }
   .hero h1 {
     margin-bottom: 16px;
     color: var(--white);
     line-height: 1;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.016em;
+    /* "balance" evens line lengths, which on this three-line hero produced a
+       stubby middle line ("Fences &"). "pretty" only guards the last line, so
+       the rag stays full. */
+    text-wrap: pretty;
   }
   .hero-h1-pre {
     display: block;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
     font-size: clamp(13px, 1.2vw, 16px);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.11em;
     color: rgba(255,255,255,0.7);
     margin-bottom: 14px;
   }
   .hero-h1-main {
     display: block;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: clamp(42px, 5.8vw, 78px);
     font-weight: 600;
     line-height: 1.02;
     color: var(--white);
-    letter-spacing: -0.028em;
+    letter-spacing: -0.016em;
   }
   .hero-h1-main em {
     font-style: normal;
@@ -673,7 +689,7 @@
     align-items: center;
     gap: 10px 14px;
     margin: 18px 0 8px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
     font-size: clamp(12px, 1vw, 14px);
     font-weight: 600;
     text-transform: uppercase;
@@ -688,7 +704,7 @@
     background: rgba(255,255,255,0.45);
   }
   .hero-tagline {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-size: clamp(17px, 1.5vw, 21px);
     color: var(--gold);
@@ -729,7 +745,7 @@
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 38px;
     font-weight: 600;
     color: var(--white);
@@ -774,7 +790,7 @@
   .hero-form-stars { color: #f3b015; letter-spacing: 1px; font-size: 14px; }
   .hero-form-eyebrow-text strong { color: var(--navy, #16293d); font-weight: 700; }
   .hero-form-title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 28px;
     line-height: 1.15;
     color: var(--navy, #16293d);
@@ -881,7 +897,7 @@
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.11em;
     color: var(--slate-soft, #7a8aa8);
   }
   .hero-form-or::after {
@@ -941,7 +957,7 @@
     margin-bottom: 14px;
   }
   .hero-form-success h3 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 22px;
     color: var(--navy, #16293d);
     margin: 0 0 6px;
@@ -1079,7 +1095,7 @@
   }
   .hero-rating-block:hover { opacity: 0.88; }
   .hero-rating-num {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 64px;
     line-height: 0.95;
     font-weight: 600;
@@ -1131,7 +1147,7 @@
   }
   .reviews-band-rating:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
   .reviews-band-num {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 44px;
     line-height: 1;
     color: var(--navy, #16293d);
@@ -1280,7 +1296,7 @@
     display: block;
   }
   .hero-quote p {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
     font-size: 17px;
     font-style: normal;
     line-height: 1.5;
@@ -1298,7 +1314,7 @@
   .hero-quote-attrib strong {
     color: var(--white);
     font-weight: 600;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
   }
   .hero-quote-attrib span::before {
     content: '·';
@@ -1402,7 +1418,7 @@
   }
   .stat-item:last-child { border-right: none; }
   .stat-num {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 40px;
     font-weight: 600;
     color: var(--navy);
@@ -1461,7 +1477,7 @@
     align-items: center;
     gap: 8px;
     color: var(--slate);
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-weight: 600;
     font-size: 18px;
     letter-spacing: -0.01em;
@@ -1485,17 +1501,17 @@
     font-weight: 600;
     color: var(--copper);
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.12em;
     margin-bottom: 18px;
   }
   .section-header h2 {
     font-size: clamp(40px, 5.2vw, 68px);
     margin-bottom: 20px;
-    max-width: 860px;
+    max-width: 940px;
     margin-left: auto;
     margin-right: auto;
     color: var(--navy);
-    letter-spacing: -0.028em;
+    letter-spacing: -0.016em;
   }
   .section-header.left h2 { margin-left: 0; margin-right: 0; }
   .section-header h2 em { font-style: normal; color: var(--copper); font-weight: 600; }
@@ -1556,7 +1572,7 @@
     margin-bottom: 8px;
   }
   .inspo-title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 4px;
@@ -1671,7 +1687,7 @@
     margin-bottom: 8px;
   }
   .designer-step-title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 30px;
     color: var(--navy);
     margin-bottom: 8px;
@@ -1785,7 +1801,7 @@
     font-size: 14px;
   }
   .option-tile-title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-weight: 600;
     font-size: 16px;
     color: var(--navy);
@@ -1926,7 +1942,7 @@
     margin-bottom: 8px;
   }
   .preview-title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 26px;
     color: var(--navy);
     margin-bottom: 24px;
@@ -1990,7 +2006,7 @@
   }
   .service-tile.selected svg { color: var(--copper); }
   .service-tile-title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 16px;
     font-weight: 600;
     color: var(--navy);
@@ -2017,7 +2033,7 @@
   .summary-list .summary-row .val {
     color: var(--navy);
     font-weight: 600;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     text-align: right;
     display: inline-flex;
     align-items: center;
@@ -2025,7 +2041,7 @@
     justify-content: flex-end;
   }
   .summary-edit {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
@@ -2102,7 +2118,7 @@
     margin: 0 auto 26px;
     font-size: 30px;
   }
-  .designer-success h3 { font-family: 'Roboto Slab', serif; font-size: 32px; color: var(--navy); margin-bottom: 14px; }
+  .designer-success h3 { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-size: 32px; color: var(--navy); margin-bottom: 14px; }
   .designer-success p { color: var(--slate-soft); max-width: 480px; margin: 0 auto 10px; }
   .success-testimonial {
     margin: 26px auto 0;
@@ -2114,7 +2130,7 @@
     text-align: left;
   }
   .success-stars { color: var(--copper); letter-spacing: 2px; font-size: 14px; margin-bottom: 8px; }
-  .success-quote { font-family: 'Roboto Slab', serif; font-style: italic; color: var(--navy); font-size: 17px; line-height: 1.45; margin: 0 0 10px !important; }
+  .success-quote { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-style: italic; color: var(--navy); font-size: 17px; line-height: 1.45; margin: 0 0 10px !important; }
   .success-attrib { font-size: 13px; color: var(--slate-soft); margin: 0 !important; }
 
   @media (max-width: 920px) {
@@ -2157,7 +2173,7 @@
     margin-bottom: 26px;
     margin-top: 14px;
     color: var(--navy);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.016em;
   }
   .about h2 em { font-style: normal; color: var(--copper); font-weight: 600; }
   .about p {
@@ -2167,7 +2183,7 @@
     line-height: 1.65;
   }
   .about-signature {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -2205,7 +2221,7 @@
   .process-step::before {
     counter-increment: step;
     content: counter(step, decimal-leading-zero);
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 14px;
     font-weight: 600;
     color: var(--copper);
@@ -2226,7 +2242,7 @@
   }
   .process-step:hover .icon { background: var(--copper); color: var(--white); }
   .process-step h4 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 22px;
     color: var(--navy);
     margin-bottom: 10px;
@@ -2264,18 +2280,18 @@
     color: var(--navy);
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-bottom: 14px;
     display: inline-block;
   }
   .lead-magnet-text h2 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: clamp(32px, 4vw, 48px);
     color: var(--navy);
     line-height: 1.05;
     margin-bottom: 18px;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.016em;
   }
   .lead-magnet-text h2 em { font-style: italic; color: var(--slate); font-weight: 500; }
   .lead-magnet-text > p {
@@ -2313,7 +2329,7 @@
     box-shadow: var(--shadow);
   }
   .lead-magnet-form h3 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 22px;
     color: var(--navy);
     margin-bottom: 6px;
@@ -2407,7 +2423,7 @@
     margin-bottom: 26px;
   }
   .why-signoff {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -2432,7 +2448,7 @@
     letter-spacing: 0.12em;
   }
   .gallery-filter-bar select {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: var(--navy);
@@ -2488,7 +2504,7 @@
     padding: 28px 16px 12px;
     background: linear-gradient(180deg, transparent, rgba(15, 28, 42, 0.92));
     color: var(--white);
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 14px;
     font-weight: 500;
     opacity: 0;
@@ -2505,6 +2521,102 @@
 
   /* ===== REVIEWS ===== */
   .reviews { background: var(--paper); }
+
+  /* ---- Lead-gated pricing -------------------------------------------------
+     Published prices are the wedge no competitor in this market offers, so
+     they buy something: the ranges sit behind a two-field gate and unlock in
+     place on submit. No "check your email" promise a static site can't keep.
+  ------------------------------------------------------------------------ */
+  .pricing { background: var(--paper); }
+  .pricing-card {
+    max-width: 860px; margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  /* The blurred sample sits behind as a backdrop layer; the form is in normal
+     flow so the panel is always as tall as the form, never clipping it. */
+  .pricing-locked { position: relative; }
+  .pricing-preview {
+    position: absolute; inset: 0;
+    padding: 30px 34px; filter: blur(6px); user-select: none; opacity: 0.55;
+    overflow: hidden;
+  }
+  .pricing-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 13px 0; border-bottom: 1px solid var(--line-soft);
+    font-size: 16px; color: var(--slate);
+  }
+  .pricing-row:last-child { border-bottom: none; }
+  .pricing-row b { color: var(--navy); font-family: 'Fraunces', Georgia, serif; }
+  .pricing-form {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.96) 38%);
+    padding: 34px 20px;
+  }
+  .pricing-form-inner { width: 100%; max-width: 430px; text-align: center; }
+  .pricing-lock { width: 30px; height: 30px; color: var(--copper); margin-bottom: 10px; }
+  .pricing-form-inner h3 { font-size: 24px; color: var(--navy); margin-bottom: 8px; }
+  .pricing-form-inner > p { font-size: 15px; color: var(--slate-soft); margin-bottom: 20px; line-height: 1.6; }
+  .pricing-form-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .pricing-field { display: flex; flex-direction: column; text-align: left; margin-bottom: 12px; }
+  .pricing-field label {
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--slate); margin-bottom: 5px;
+  }
+  .pricing-field label .opt { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--slate-soft); }
+  .pricing-field input, .pricing-field select {
+    font-family: inherit; font-size: 16px; padding: 11px 12px;
+    border: 1.5px solid var(--line); border-radius: 7px; background: var(--white); color: var(--navy);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .pricing-field input:focus, .pricing-field select:focus {
+    outline: none; border-color: var(--copper); box-shadow: 0 0 0 3px rgba(184,80,31,0.12);
+  }
+  .pricing-submit {
+    width: 100%; padding: 15px 22px; margin-top: 2px;
+    background: var(--copper); color: var(--white); border: none; border-radius: 7px;
+    font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;
+    transition: background 0.18s, transform 0.18s;
+  }
+  .pricing-submit:hover:not(:disabled) { background: var(--copper-dark); transform: translateY(-1px); }
+  .pricing-submit:disabled { opacity: 0.65; cursor: default; }
+  .pricing-fineprint { font-size: 12.5px; color: var(--slate-soft); margin-top: 10px; }
+
+  .pricing-unlocked { padding: 34px; }
+  .pricing-unlocked-head { text-align: center; margin-bottom: 22px; }
+  .pricing-badge {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--copper);
+    background: rgba(184,80,31,0.09); border-radius: 999px; padding: 5px 12px; margin-bottom: 12px;
+  }
+  .pricing-unlocked-head h3 { font-size: 27px; color: var(--navy); margin-bottom: 8px; }
+  .pricing-unlocked-head p { font-size: 15px; color: var(--slate-soft); line-height: 1.65; max-width: 620px; margin: 0 auto; }
+  .pricing-table { width: 100%; border-collapse: collapse; margin: 6px 0 14px; font-size: 15.5px; }
+  .pricing-table th {
+    text-align: left; padding: 11px 12px; background: var(--paper);
+    font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--navy); font-size: 14px;
+  }
+  .pricing-table td { padding: 11px 12px; border-bottom: 1px solid var(--line-soft); color: var(--slate); }
+  .pricing-table td:last-child { text-align: right; white-space: nowrap; font-weight: 600; color: var(--navy); }
+  .pricing-table tr:last-child td { border-bottom: none; }
+  .pricing-note { font-size: 13.5px; color: var(--slate-soft); line-height: 1.6; margin-bottom: 22px; }
+  .pricing-cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+  @media (max-width: 760px) {
+    .pricing-preview { padding: 22px 20px; }
+    .pricing-form { padding: 26px 18px; }
+    .pricing-locked .pricing-preview { display: none; }
+    .pricing-form-fields { grid-template-columns: 1fr; }
+    .pricing-unlocked { padding: 24px 18px; }
+    .pricing-table { font-size: 14.5px; }
+    .pricing-table td, .pricing-table th { padding: 10px 8px; }
+    .pricing-cta-row .btn { width: 100%; }
+  }
+
 
   /* FAQ. These six questions previously existed only inside FAQPage JSON-LD,
      so no visitor could read them and the markup described content that was
@@ -2524,7 +2636,7 @@
   .faq-item > summary {
     cursor: pointer;
     padding: 20px 26px;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 17px;
     font-weight: 600;
     color: var(--navy);
@@ -2541,7 +2653,7 @@
   .faq-item > summary::after {
     content: "+";
     flex-shrink: 0;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 1;
@@ -2600,7 +2712,7 @@
   }
   .review-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
   .review-card .quote-mark {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 100px;
     line-height: 1;
     color: var(--copper);
@@ -2611,8 +2723,8 @@
   }
   .review-stars { color: var(--copper); font-size: 16px; letter-spacing: 2px; margin-bottom: 16px; }
   .review-text {
-    font-family: 'Roboto Slab', serif;
-    font-size: 19px;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
+    font-size: 17.5px;
     line-height: 1.55;
     color: var(--navy);
     margin-bottom: 24px;
@@ -2695,7 +2807,7 @@
     margin-bottom: 10px;
   }
   .featured-blog-card h3 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 20px;
     line-height: 1.2;
     color: var(--navy);
@@ -2794,10 +2906,10 @@
   .social-icon:hover { background: var(--copper); border-color: var(--copper); transform: translateY(-2px); }
   .social-icon svg { width: 16px; height: 16px; }
   footer h4 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 18px;
@@ -2886,7 +2998,7 @@
   }
   .lifestyle-info { flex: 1; }
   .lifestyle-title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-weight: 600;
     font-size: 16px;
     color: var(--navy);
@@ -2930,7 +3042,7 @@
     margin-bottom: 8px;
   }
   .photo-upload-title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 15px;
     font-weight: 600;
     color: var(--navy);
@@ -3065,7 +3177,7 @@
   }
   .moodboard-close:hover { background: var(--mist); }
   .moodboard-content h2 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 32px;
     color: var(--navy);
     margin-bottom: 8px;
@@ -3112,7 +3224,7 @@
     margin-bottom: 4px;
   }
   .saved-design-title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 18px;
     color: var(--navy);
     font-weight: 600;
@@ -3435,7 +3547,7 @@
           <span class="hero-form-eyebrow-text"><strong>5.0 on Google</strong> · Call or text anytime</span>
         </div>
         <h2 class="hero-form-title">Request a free estimate.</h2>
-        <p class="hero-form-sub">Tell us about your project. We'll call or text back as soon as we can.</p>
+        <p class="hero-form-sub">Tell us about your project. John calls or texts back the same day.</p>
 
         <!-- Web3Forms config -->
         <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
@@ -3551,72 +3663,6 @@
     <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx?utm_campaign=1777324347235&amp;share_action_id=697f0fe1-5856-4df6-9390-e112bc49870c" target="_blank" rel="noopener" class="reviews-band-award" aria-label="Nextdoor Neighborhood Favorite 2025 Winner">
       <img loading="lazy" decoding="async" src="nextdoor-fave-2025.jpg" alt="Nextdoor Neighborhood Favorite 2025 Winner">
     </a>
-  </div>
-</section>
-
-<!-- STATS + VERIFIED bands removed: signals were already repeated in the hero
-     (Texas Built badge, 5.0 Google Reviews card, "call or text anytime" trust row)
-     and again in the reviews band below. Cutting redundancy keeps the page
-     moving toward the next real CTA. -->
-
-<section class="designer" id="designer">
-  <div class="container reveal">
-    <div class="section-header">
-      <span class="section-eyebrow">Optional &middot; For homeowners who like to plan</span>
-      <h2>Or <em>design it yourself</em> first.</h2>
-      <p>Prefer to map things out before talking? Use the Project Designer to pick your materials and finishes, save the looks you love, and send the full vision to John. Totally optional, you can always just <a href="tel:5125873914">call (512) 587-3914</a> or fill the form at the top instead.</p>
-      <div class="designer-top-cta">
-        <a href="#designer-card" class="btn btn-primary btn-large designer-top-cta-btn" onclick="if(window.jbTrack)jbTrack('designer_top_cta_click');">Start the Project Designer &rarr;</a>
-        <span class="designer-top-cta-aux">or <a href="tel:5125873914">call (512) 587-3914</a></span>
-      </div>
-    </div>
-
-    <div class="designer-trust-bar">
-      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Free, no fees</div>
-      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> No obligation</div>
-      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Call or text anytime</div>
-      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 5.0 on Google</div>
-    </div>
-
-    <div class="designer-card" id="designer-card">
-      <div class="designer-controls">
-        <div class="designer-progress" id="progress"></div>
-        <div id="step-content"></div>
-        <div class="designer-nav">
-          <button class="btn-back" onclick="goBack()" id="back-btn" disabled>← Back</button>
-          <span style="font-size: 13px; color: var(--slate-soft);" id="step-counter">Step 1 of 5</span>
-        </div>
-      </div>
-      <div class="designer-preview">
-        <div class="preview-label">Live Preview</div>
-        <div class="preview-title" id="preview-title">Your project</div>
-        <div class="preview-stage" id="preview-stage"></div>
-        <div class="preview-meta" id="preview-meta">
-          <div class="preview-meta-row"><span class="label">Project</span><span class="value" id="meta-project">Pick one to start</span></div>
-          <div class="preview-meta-row"><span class="label">Material</span><span class="value" id="meta-material">...</span></div>
-          <div class="preview-meta-row"><span class="label">Finish</span><span class="value" id="meta-finish">...</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="container reveal">
-    <div class="about-grid">
-      <div class="about-photo">
-        <img loading="lazy" decoding="async" src="about-john.jpg" alt="John Bernard, owner of JB Contracting ATX">
-      </div>
-      <div>
-        <span class="section-eyebrow">Meet John</span>
-        <h2>I'm John. We build work I'd be <em>proud to put my name on</em>.</h2>
-        <p>JB Contracting ATX is me, my wife Brooke, and our crew. We build decks, roofs, fences, pergolas, siding, and hardscape across greater Austin. Licensed, insured, and 5.0 on Google.</p>
-        <p>We keep the business small on purpose. That's how we keep our standards where they need to be on every project. When you call, you talk to me. When the crew shows up to your property, they're the same people we work with project after project.</p>
-        <p>The goal isn't to be the biggest contractor in Austin. The goal is to be the one your family trusts enough to call back the next time.</p>
-        <div class="about-signature">John &amp; Brooke Bernard, Owners</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -3881,6 +3927,125 @@
   </div>
 </section>
 
+<!-- PRICING (lead-gated) -->
+<section class="pricing" id="pricing">
+  <div class="container reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">2026 Austin Pricing</span>
+      <h2>What this <em>actually costs</em> in Austin.</h2>
+      <p>Every contractor in town says "it depends." It does &mdash; but you still deserve a number before you invite anyone into your backyard. Here are the ranges we actually build to.</p>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-locked" id="pricing-locked">
+        <div class="pricing-preview" aria-hidden="true">
+          <div class="pricing-row"><span>Cedar deck, installed</span><b>$00&ndash;$00 / sq ft</b></div>
+          <div class="pricing-row"><span>6&#39; cedar privacy fence</span><b>$00&ndash;$00 / linear ft</b></div>
+          <div class="pricing-row"><span>Attached cedar pergola</span><b>$00,000&ndash;$00,000</b></div>
+          <div class="pricing-row"><span>Roof replacement</span><b>$00,000&ndash;$00,000</b></div>
+          <div class="pricing-row"><span>Stamped concrete patio</span><b>$00&ndash;$00 / sq ft</b></div>
+        </div>
+
+        <form class="pricing-form" id="pricing-form" onsubmit="return jbUnlockPricing(event)" novalidate>
+          <div class="pricing-form-inner">
+            <svg class="pricing-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+            </svg>
+            <h3>See the 2026 Austin price sheet</h3>
+            <p>Real ranges for decks, fences, pergolas, patios, and roofs across Travis and Hays County. Unlocks right here &mdash; no waiting on an email.</p>
+
+            <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
+            <input type="hidden" name="subject" value="Price sheet unlocked &mdash; homepage">
+            <input type="hidden" name="from_name" value="JB Website &mdash; Price Sheet">
+            <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
+
+            <div class="pricing-form-fields">
+              <div class="pricing-field">
+                <label for="pf-name">First name</label>
+                <input type="text" id="pf-name" name="name" required autocomplete="given-name">
+              </div>
+              <div class="pricing-field">
+                <label for="pf-email">Email</label>
+                <input type="email" id="pf-email" name="email" required autocomplete="email" placeholder="you@email.com">
+              </div>
+            </div>
+            <div class="pricing-field">
+              <label for="pf-project">What are you thinking about? <span class="opt">(optional)</span></label>
+              <select id="pf-project" name="project">
+                <option value="">Just browsing for now</option>
+                <option>Deck or covered patio</option>
+                <option>Roof replacement or repair</option>
+                <option>Fence (cedar, privacy, gate)</option>
+                <option>Pergola or patio cover</option>
+                <option>Siding</option>
+                <option>Hardscape (patio, walkway, firepit)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="pricing-submit">Unlock the price sheet &rarr;</button>
+            <p class="pricing-fineprint">No spam. We&#39;ll send seasonal pricing updates and you can stop them any time.</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="pricing-unlocked" id="pricing-unlocked" hidden>
+        <div class="pricing-unlocked-head">
+          <span class="pricing-badge">Unlocked</span>
+          <h3>2026 Austin ranges, installed</h3>
+          <p>These are full-build ranges for quality materials and a licensed crew &mdash; not a stripped-down teaser number. Where your project lands depends on slope, rock, access, height, and finish level.</p>
+        </div>
+
+        <table class="pricing-table">
+          <thead>
+            <tr><th>Project</th><th>Typical Austin range</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Deck</strong> &mdash; pressure-treated pine</td><td>$35&ndash;$50 / sq ft</td></tr>
+            <tr><td><strong>Deck</strong> &mdash; Western Red Cedar</td><td>$50&ndash;$75 / sq ft</td></tr>
+            <tr><td><strong>Deck</strong> &mdash; composite / PVC</td><td>$65&ndash;$95 / sq ft</td></tr>
+            <tr><td><strong>Cedar privacy fence</strong> &mdash; 6&#39; standard</td><td>$40&ndash;$58 / linear ft</td></tr>
+            <tr><td><strong>Cedar fence</strong> &mdash; horizontal slat</td><td>$55&ndash;$80 / linear ft</td></tr>
+            <tr><td><strong>Gates</strong> &mdash; walk / double drive</td><td>$300&ndash;$600 / $800&ndash;$1,800</td></tr>
+            <tr><td><strong>Cedar pergola</strong> &mdash; attached, ~12&times;16</td><td>$14,000&ndash;$24,000</td></tr>
+            <tr><td><strong>Pavilion</strong> &mdash; freestanding, roofed</td><td>$26,000&ndash;$45,000</td></tr>
+            <tr><td><strong>Concrete patio</strong> &mdash; broom finish</td><td>$14&ndash;$22 / sq ft</td></tr>
+            <tr><td><strong>Concrete patio</strong> &mdash; stamped or stained</td><td>$22&ndash;$34 / sq ft</td></tr>
+            <tr><td><strong>Roof</strong> &mdash; architectural asphalt</td><td>$14,000&ndash;$22,000</td></tr>
+            <tr><td><strong>Roof</strong> &mdash; Class 4 impact-resistant</td><td>$18,000&ndash;$28,000</td></tr>
+            <tr><td><strong>Roof</strong> &mdash; standing seam metal</td><td>$28,000&ndash;$48,000</td></tr>
+          </tbody>
+        </table>
+
+        <p class="pricing-note">Roof ranges assume a 2,000&ndash;2,500 sq ft roof. Rock, steep grade, tear-off of a second layer, and tight access all move the number, which is why we measure before we quote.</p>
+
+        <div class="pricing-cta-row">
+          <a href="#hero-quote-form" class="btn btn-primary btn-large" onclick="if(window.jbTrack)jbTrack('pricing_cta_quote');">Get my exact number &rarr;</a>
+          <a href="blog.html" class="btn btn-outline-navy btn-large">Read the full cost guides</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container reveal">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img loading="lazy" decoding="async" src="about-john.jpg" alt="John Bernard, owner of JB Contracting ATX">
+      </div>
+      <div>
+        <span class="section-eyebrow">Meet John</span>
+        <h2>I'm John. We build work I'd be <em>proud to put my name on</em>.</h2>
+        <p>JB Contracting ATX is me, my wife Brooke, and our crew. We build decks, roofs, fences, pergolas, siding, and hardscape across greater Austin. Licensed, insured, and 5.0 on Google.</p>
+        <p>We keep the business small on purpose. That's how we keep our standards where they need to be on every project. When you call, you talk to me. When the crew shows up to your property, they're the same people we work with project after project.</p>
+        <p>The goal isn't to be the biggest contractor in Austin. The goal is to be the one your family trusts enough to call back the next time.</p>
+        <div class="about-signature">John &amp; Brooke Bernard, Owners</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHY -->
 <section class="why" id="why">
   <div class="container reveal">
@@ -4025,11 +4190,58 @@
         <details class="faq-item">
           <summary>How fast do you respond to estimate requests?</summary>
           <div class="faq-answer">
-            <p>Call or text us anytime, we'll get back to you as soon as we can. You can request a quote through the Design Builder on our site, by texting photos of your space to (512) 587-3914, or by calling directly.</p>
+            <p>Call or text us anytime and John gets back to you the same day. You can request a quote through the Design Builder on our site, by texting photos of your space to (512) 587-3914, or by calling directly.</p>
           </div>
         </details>
     </div>
     <p class="faq-footnote">Still deciding? <a href="austin-outdoor-living-cost-guide.html">Read the full Austin outdoor living cost guide &rarr;</a></p>
+  </div>
+</section>
+
+<!-- STATS + VERIFIED bands removed: signals were already repeated in the hero
+     (Texas Built badge, 5.0 Google Reviews card, "call or text anytime" trust row)
+     and again in the reviews band below. Cutting redundancy keeps the page
+     moving toward the next real CTA. -->
+
+<section class="designer" id="designer">
+  <div class="container reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">Optional &middot; For homeowners who like to plan</span>
+      <h2>Or <em>design it yourself</em> first.</h2>
+      <p>Prefer to map things out before talking? Use the Project Designer to pick your materials and finishes, save the looks you love, and send the full vision to John. Totally optional, you can always just <a href="tel:5125873914">call (512) 587-3914</a> or fill the form at the top instead.</p>
+      <div class="designer-top-cta">
+        <a href="#designer-card" class="btn btn-primary btn-large designer-top-cta-btn" onclick="if(window.jbTrack)jbTrack('designer_top_cta_click');">Start the Project Designer &rarr;</a>
+        <span class="designer-top-cta-aux">or <a href="tel:5125873914">call (512) 587-3914</a></span>
+      </div>
+    </div>
+
+    <div class="designer-trust-bar">
+      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Free, no fees</div>
+      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> No obligation</div>
+      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Call or text anytime</div>
+      <div><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 5.0 on Google</div>
+    </div>
+
+    <div class="designer-card" id="designer-card">
+      <div class="designer-controls">
+        <div class="designer-progress" id="progress"></div>
+        <div id="step-content"></div>
+        <div class="designer-nav">
+          <button class="btn-back" onclick="goBack()" id="back-btn" disabled>← Back</button>
+          <span style="font-size: 13px; color: var(--slate-soft);" id="step-counter">Step 1 of 5</span>
+        </div>
+      </div>
+      <div class="designer-preview">
+        <div class="preview-label">Live Preview</div>
+        <div class="preview-title" id="preview-title">Your project</div>
+        <div class="preview-stage" id="preview-stage"></div>
+        <div class="preview-meta" id="preview-meta">
+          <div class="preview-meta-row"><span class="label">Project</span><span class="value" id="meta-project">Pick one to start</span></div>
+          <div class="preview-meta-row"><span class="label">Material</span><span class="value" id="meta-material">...</span></div>
+          <div class="preview-meta-row"><span class="label">Finish</span><span class="value" id="meta-finish">...</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -4106,6 +4318,74 @@
     <div>Built with care in Austin, Texas</div>
   </div>
 </footer>
+
+
+<script>
+/* Lead-gated price sheet. Captures the lead through the same Web3Forms
+   endpoint as every other form, fires the GA4 conversion, then reveals the
+   ranges in place. Unlock is remembered so a returning visitor is not gated
+   twice; if storage is unavailable the gate simply shows again. */
+function jbUnlockPricing(e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = form.querySelector('.pricing-submit');
+  var name = form.querySelector('[name="name"]');
+  var email = form.querySelector('[name="email"]');
+
+  var missing = [name, email].filter(function (f) { return !String(f.value || '').trim(); });
+  if (missing.length) {
+    missing[0].focus();
+    missing[0].style.borderColor = '#b8501f';
+    return false;
+  }
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())) {
+    email.focus();
+    email.style.borderColor = '#b8501f';
+    return false;
+  }
+
+  if (btn) { btn.disabled = true; btn.textContent = 'Unlocking…'; }
+
+  fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
+    .then(function (r) { return r.json().catch(function () { return {}; }); })
+    .then(function () {
+      if (window.jbTrack) {
+        window.jbTrack('generate_lead', {
+          source: 'homepage_price_sheet',
+          service: (form.querySelector('[name="project"]') || {}).value || 'browsing',
+          value: 1, currency: 'USD'
+        });
+      }
+      jbRevealPricing();
+      try { localStorage.setItem('jbPriceSheet', '1'); } catch (err) { /* private mode */ }
+    })
+    .catch(function (err) {
+      console.error('Price sheet unlock failed:', err);
+      // The lead may not have sent, but do not hold the content hostage to it.
+      jbRevealPricing();
+    });
+
+  return false;
+}
+
+function jbRevealPricing() {
+  var locked = document.getElementById('pricing-locked');
+  var open_ = document.getElementById('pricing-unlocked');
+  if (locked) { locked.hidden = true; locked.style.display = 'none'; }
+  if (open_) {
+    open_.hidden = false;
+    open_.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+(function () {
+  try {
+    if (localStorage.getItem('jbPriceSheet') === '1') {
+      document.addEventListener('DOMContentLoaded', jbRevealPricing);
+    }
+  } catch (err) { /* storage blocked, leave the gate up */ }
+})();
+</script>
 
 <!-- MOODBOARD MODAL -->
 <div class="moodboard-modal" id="moodboard-modal">
@@ -5457,7 +5737,7 @@ function openMoodboard() {
     grid.innerHTML = `
       <div class="moodboard-empty" style="grid-column: 1 / -1;">
         <div class="moodboard-empty-icon">🎨</div>
-        <div style="font-family: 'Roboto Slab', serif; font-size: 22px; color: var(--navy); margin-bottom: 6px;">Your mood board is empty</div>
+        <div style="font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-size: 22px; color: var(--navy); margin-bottom: 6px;">Your mood board is empty</div>
         <div>Design a project below, then tap "Save to Mood Board" to start collecting the looks you love.</div>
       </div>`;
   } else {
@@ -5603,7 +5883,7 @@ function renderEmptyPreview() {
       <line x1="50" y1="180" x2="350" y2="180" stroke="#16293d" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.35"/>
       <line x1="200" y1="60" x2="200" y2="180" stroke="#16293d" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.25"/>
       <circle cx="200" cy="180" r="3" fill="#16293d" opacity="0.4"/>
-      <text x="200" y="125" text-anchor="middle" font-family="Roboto Slab, serif" font-style="italic" font-size="17" fill="#16293d">Pick a project to start designing</text>
+      <text x="200" y="125" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="17" fill="#16293d">Pick a project to start designing</text>
       <text x="200" y="148" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#5b6b7c" letter-spacing="1.2">YOUR LIVE PREVIEW APPEARS HERE</text>
     </svg>`;
 }
@@ -6677,7 +6957,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     margin-bottom: 10px;
   }
   .jb-popup h2 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-size: 26px;
     line-height: 1.18;
     color: var(--navy, #16293d);

@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resources & Guides for Austin Homeowners | JB Contracting ATX</title>
-<meta name="description" content="Honest, no-fluff guides for Austin homeowners. Real pricing, real timelines, real advice from a local family-owned contractor.">
+<title>Austin Deck, Fence &amp; Roofing Cost Guides (2026) | JB Contracting ATX</title>
+<meta name="description" content="2026 cost guides for Austin decks, cedar fences, pergolas, concrete patios, siding and roof replacement. Price ranges per square foot, build timelines, and how permits and HOA review work.">
 <link rel="canonical" href="https://www.jbcontractingatx.com/blog.html">
 <meta name="theme-color" content="#16293d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="blog.css">
 <!-- Analytics & verification (replace placeholder IDs once, then re-deploy) -->
 <meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN">
@@ -43,7 +43,7 @@
 </head>
 <body>
 <div class="announce">
-  ⭐ Now scheduling <span>fall 2026 builds</span> · Call or text anytime · <a href="index.html#designer">Design yours →</a>
+  ⭐ Now scheduling <span>fall 2026 builds</span> · Call or text anytime · <a href="#quote">Design yours →</a>
 </div>
 <header class="header">
   <div class="header-inner">
@@ -60,7 +60,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         (512) 587-3914
       </a>
-      <a href="index.html#designer" class="btn btn-primary">Get Free Quote</a>
+      <a href="#quote" class="btn btn-primary">Get Free Quote</a>
       <button class="mobile-menu-toggle" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -79,7 +79,7 @@
       </button>
     </div>
     <div class="mobile-drawer-cta">
-      <a href="index.html#designer" class="btn btn-primary btn-large">Get Free Quote →</a>
+      <a href="#quote" class="btn btn-primary btn-large">Get Free Quote →</a>
       <a href="tel:5125873914" class="btn btn-outline-navy btn-large">&#128222; (512) 587-3914</a>
     </div>
     <div class="mobile-drawer-section">
@@ -143,8 +143,8 @@ document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeM
 <section class="blog-index">
   <div class="blog-index-header">
     <span class="eyebrow">Resources &amp; Guides</span>
-    <h1>Honest answers, <em>no fluff</em>.</h1>
-    <p>Real pricing, real timelines, real advice from a contractor who lives here. No keyword stuffing, no fake guarantees. Just the things we wish more Austin homeowners knew before they hired.</p>
+    <h1>Austin deck, fence &amp; roofing <em>cost guides</em>.</h1>
+    <p>Price ranges, build timelines, and the permit and HOA steps for the projects Austin homeowners ask us about most: decks, cedar privacy fences, pergolas and patio covers, concrete patios, Hardie siding, and roof replacement. Written by John, who builds them.</p>
   </div>
   <div class="blog-grid">
     <a class="blog-card" href="blog-best-time-to-build-austin.html">
@@ -279,10 +279,87 @@ document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeM
   <h2>Ready to <em>start your project</em>?</h2>
   <p>Skip the guesswork. Use the Design Builder to map out exactly what you want, then send it to John for a free, line-itemed quote.</p>
   <div class="btn-row">
-    <a href="index.html#designer" class="btn btn-primary btn-large">Design My Project →</a>
+    <a href="#quote" class="btn btn-primary btn-large">Design My Project →</a>
     <a href="tel:5125873914" class="btn btn-outline-light btn-large">Call (512) 587-3914</a>
   </div>
 </section>
+
+<div class="quote-form-wrap" id="quote">
+  <form class="quote-form" data-source="blog" onsubmit="return jbSubmitQuote(event)" novalidate>
+    <div class="quote-form-eyebrow">
+      <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span><strong>5.0 on Google</strong> &middot; Call or text anytime</span>
+    </div>
+    <h2>Get a free estimate.</h2>
+    <p class="quote-form-sub">Tell us about the project. John walks it, measures, and writes up an honest, line-itemed quote. No cost, no obligation.</p>
+
+    <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
+    <input type="hidden" name="subject" value="New quote request &mdash; blog">
+    <input type="hidden" name="from_name" value="JB Website &mdash; blog">
+    <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
+
+    <div class="quote-form-row">
+      <div class="quote-form-field">
+        <label for="qf-name-blog">Your name</label>
+        <input type="text" id="qf-name-blog" name="name" required autocomplete="name">
+      </div>
+      <div class="quote-form-field">
+        <label for="qf-phone-blog">Phone</label>
+        <input type="tel" id="qf-phone-blog" name="phone" placeholder="(512) 555-1234" required autocomplete="tel" maxlength="14">
+      </div>
+    </div>
+
+    <div class="quote-form-row">
+      <div class="quote-form-field">
+        <label for="qf-service-blog">What are we building?</label>
+        <select id="qf-service-blog" name="project" required>
+        <option value="">Pick one&hellip;</option>
+        <option>Deck or covered patio</option>
+        <option>Roof replacement or repair</option>
+        <option>Fence (cedar, privacy, gate)</option>
+        <option>Pergola or patio cover</option>
+        <option>Siding</option>
+        <option>Hardscape (patio, walkway, firepit)</option>
+        <option>Multiple / Not sure yet</option>
+        </select>
+      </div>
+      <div class="quote-form-field">
+        <label for="qf-zip-blog">Project zip</label>
+        <input type="text" id="qf-zip-blog" name="zip" placeholder="78748" required autocomplete="postal-code" maxlength="10" inputmode="numeric">
+      </div>
+    </div>
+
+    <div class="quote-form-row">
+      <div class="quote-form-field full">
+        <label for="qf-email-blog">Email <span class="opt">(optional, for the written quote)</span></label>
+        <input type="email" id="qf-email-blog" name="email" autocomplete="email">
+      </div>
+    </div>
+
+    <div class="quote-form-row">
+      <div class="quote-form-field full">
+        <label for="qf-notes-blog">Anything else? <span class="opt">(optional)</span></label>
+        <textarea id="qf-notes-blog" name="notes" rows="2" placeholder="Size, timeline, must-haves&hellip;"></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="quote-form-submit">Get my free quote &rarr;</button>
+
+    <div class="quote-form-trust">
+      <span><span class="tick">&#10003;</span> Free &amp; no obligation</span>
+      <span><span class="tick">&#10003;</span> Line-itemed quote</span>
+      <span><span class="tick">&#10003;</span> Licensed &amp; insured</span>
+    </div>
+    <p class="quote-form-alt">Rather not fill this out? <a href="tel:5125873914">Call (512) 587-3914</a> or <a href="sms:+15125873914?&amp;body=Hi%20John%2C%20I%27d%20like%20a%20quote%20for%20a%20project.%20">text John</a> &mdash; a photo of the space is plenty to start.</p>
+
+    <div class="quote-form-success" hidden>
+      <h2>Got it &mdash; thanks.</h2>
+      <p>Your request is with John. He'll call or text you back about the project.</p>
+      <p>Need it sooner? Call or text <a href="tel:5125873914">(512) 587-3914</a>.</p>
+    </div>
+  </form>
+</div>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -365,7 +442,7 @@ document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeM
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H8l-4 4V6c0-1.1.9-2 2-2zm2 5h12v2H6V9zm0 4h9v2H6v-2z"/></svg>
     Text
   </a>
-  <a class="quote" href="index.html#designer" onclick="if(window.jbTrack)jbTrack('mobile_cta_quote_click');" aria-label="Get a free quote">
+  <a class="quote" href="#quote" onclick="if(window.jbTrack)jbTrack('mobile_cta_quote_click');" aria-label="Get a free quote">
     Free Quote
   </a>
 </div>
