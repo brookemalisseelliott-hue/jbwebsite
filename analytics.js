@@ -65,10 +65,12 @@
 
       var project = form.querySelector('[name="project"]');
       var zip = form.querySelector('[name="zip"]');
+      var emailField = form.querySelector('[name="email"]');
       window.jbTrack('generate_lead', {
         service: (project && project.value) || 'unknown',
         zip: (zip && zip.value) || '',
         lead_source: leadSource,
+        has_email: (emailField && emailField.value.trim()) ? 'yes' : 'no',
         value: 1,
         currency: 'USD'
       });

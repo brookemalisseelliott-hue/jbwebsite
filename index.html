@@ -3520,6 +3520,11 @@
         </div>
 
         <div class="hero-form-field">
+          <label for="hq-email">Email <span class="hero-form-opt">(optional, if you'd rather we write)</span></label>
+          <input type="email" id="hq-email" name="email" autocomplete="email" placeholder="you@email.com">
+        </div>
+
+        <div class="hero-form-field">
           <label for="hq-notes">Anything else? <span class="hero-form-opt">(optional)</span></label>
           <textarea id="hq-notes" name="notes" rows="2" placeholder="Dream features, timeline, must-haves…"></textarea>
         </div>
@@ -4250,6 +4255,7 @@
         <li><a href="kyle-contractor.html">Kyle</a></li>
         <li><a href="manchaca-contractor.html">Manchaca</a></li>
         <li><a href="tel:5125873914">(512) 587-3914</a></li>
+        <li><a href="mailto:jbconstructionatx@gmail.com">jbconstructionatx@gmail.com</a></li>
       </ul>
     </div>
   </div>
@@ -4905,6 +4911,7 @@ async function submitHeroQuote(e) {
         service: form.querySelector('[name="project"]').value || 'unknown',
         zip: form.querySelector('[name="zip"]').value || '',
         lead_source: 'hero_quick_quote',
+        has_email: form.querySelector('[name="email"]').value.trim() ? 'yes' : 'no',
         value: 1,
         currency: 'USD'
       });
@@ -6920,6 +6927,12 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     letter-spacing: 0.06em;
     margin-bottom: 4px;
   }
+  .jb-popup-opt {
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--slate-soft, #7a8aa8);
+    font-weight: 500;
+  }
   .jb-popup-form input,
   .jb-popup-form select {
     width: 100%;
@@ -7024,8 +7037,13 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         </select>
       </div>
 
+      <div class="jb-popup-field">
+        <label for="pop-email">Email <span class="jb-popup-opt">(optional)</span></label>
+        <input type="email" id="pop-email" name="email" autocomplete="email" placeholder="you@email.com">
+      </div>
+
       <button type="submit" class="jb-popup-submit">Get my free quote &rarr;</button>
-      <p class="jb-popup-or">Prefer to call? <a href="tel:5125873914">(512) 587-3914</a></p>
+      <p class="jb-popup-or">Prefer to call? <a href="tel:5125873914">(512) 587-3914</a> &middot; Prefer email? <a href="mailto:jbconstructionatx@gmail.com">jbconstructionatx@gmail.com</a></p>
 
       <div class="jb-popup-success" id="jb-popup-success" hidden>
         <div class="jb-popup-success-icon" aria-hidden="true">&check;</div>
@@ -7127,6 +7145,7 @@ async function submitPopupQuote(e) {
       window.jbTrack('generate_lead', {
         service: form.querySelector('[name="project"]').value || 'unknown',
         lead_source: 'popup',
+        has_email: form.querySelector('[name="email"]').value.trim() ? 'yes' : 'no',
         value: 1,
         currency: 'USD'
       });
