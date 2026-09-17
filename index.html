@@ -532,11 +532,36 @@
 
   /* ===== HERO ===== */
   .hero {
-    background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 100%);
+    background: var(--navy-deep);
     color: var(--white);
     padding: 100px 32px 120px;
     position: relative;
     overflow: hidden;
+  }
+  /* Real finished work behind the hero. A contractor's first screen should
+     show what they build, not a gradient. The scrim keeps the headline and
+     the form label text at full contrast over it. */
+  .hero-photo {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 58% 38%;
+    z-index: 0;
+  }
+  .hero-scrim {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      linear-gradient(95deg, rgba(8,20,33,0.93) 0%, rgba(8,20,33,0.86) 30%, rgba(8,20,33,0.52) 62%, rgba(8,20,33,0.34) 100%),
+      linear-gradient(180deg, rgba(8,20,33,0.42) 0%, rgba(8,20,33,0.16) 40%, rgba(8,20,33,0.58) 100%);
+  }
+  @media (max-width: 900px) {
+    /* On mobile the text stacks full-width, so the scrim has to carry more. */
+    .hero-scrim {
+      background: linear-gradient(180deg,
+        rgba(8,20,33,0.42) 0%, rgba(8,20,33,0.72) 18%,
+        rgba(8,20,33,0.90) 38%, rgba(8,20,33,0.94) 100%);
+    }
+    .hero-photo { object-position: 60% 30%; }
   }
   .hero::before {
     content: '';
@@ -3408,76 +3433,11 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-texas-strip" aria-hidden="true"></div>
+  <img class="hero-photo" src="new-deck-covered-hillcountry.jpg" alt="Covered cedar deck with hill country views built by JB Contracting ATX near Austin, TX" fetchpriority="high" decoding="async" width="2207" height="1668">
+  <div class="hero-scrim" aria-hidden="true"></div>
 
-  <svg class="hero-horizon" viewBox="0 0 1600 280" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <defs>
-      <linearGradient id="horizonGlow" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#b9c3cc" stop-opacity="0"/>
-        <stop offset="55%" stop-color="#b9c3cc" stop-opacity="0.10"/>
-        <stop offset="100%" stop-color="#b9c3cc" stop-opacity="0"/>
-      </linearGradient>
-      <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#22374a"/>
-        <stop offset="100%" stop-color="#16293d"/>
-      </linearGradient>
-      <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#1c3044"/>
-        <stop offset="100%" stop-color="#10202f"/>
-      </linearGradient>
-      <linearGradient id="hillNear" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#142331"/>
-        <stop offset="100%" stop-color="#0b1826"/>
-      </linearGradient>
-    </defs>
-    <!-- Warm sunset glow band -->
-    <rect x="0" y="60" width="1600" height="140" fill="url(#horizonGlow)"/>
-    <!-- Far rolling Hill Country -->
-    <path fill="url(#hillFar)" d="M0,170 C120,148 220,162 340,156 C460,150 540,168 660,160 C780,152 880,170 1000,164 C1120,158 1220,172 1340,164 C1440,158 1520,166 1600,160 L1600,280 L0,280 Z"/>
-    <!-- Mid hills with cedar tree silhouettes -->
-    <path fill="url(#hillMid)" d="M0,200 C100,182 200,196 320,192 C440,188 540,206 660,200 C780,194 880,210 1000,204 C1120,198 1220,212 1340,206 C1440,200 1540,212 1600,206 L1600,280 L0,280 Z"/>
-    <!-- Cedar trees scattered along mid ridge -->
-    <g fill="#10202f" opacity="0.85">
-      <ellipse cx="80" cy="194" rx="6" ry="9"/>
-      <ellipse cx="170" cy="190" rx="5" ry="8"/>
-      <ellipse cx="260" cy="194" rx="7" ry="10"/>
-      <ellipse cx="450" cy="198" rx="6" ry="9"/>
-      <ellipse cx="540" cy="200" rx="5" ry="7"/>
-      <ellipse cx="720" cy="200" rx="7" ry="10"/>
-      <ellipse cx="820" cy="198" rx="5" ry="8"/>
-      <ellipse cx="980" cy="200" rx="6" ry="9"/>
-      <ellipse cx="1120" cy="202" rx="7" ry="10"/>
-      <ellipse cx="1280" cy="202" rx="5" ry="8"/>
-      <ellipse cx="1380" cy="200" rx="6" ry="9"/>
-      <ellipse cx="1500" cy="202" rx="7" ry="10"/>
-    </g>
-    <!-- Texas flag flying on a hilltop pole -->
-    <g transform="translate(810 188)" opacity="0.95">
-      <!-- Flagpole -->
-      <line x1="0" y1="0" x2="0" y2="-100" stroke="#d4af37" stroke-width="2.2" stroke-linecap="round"/>
-      <!-- Pole finial ball -->
-      <circle cx="0" cy="-103" r="3" fill="#d4af37"/>
-      <!-- Flag (proper Texas flag, 2:3 ratio, hoisted from pole) -->
-      <g transform="translate(2 -98)">
-        <!-- Blue field (left third) -->
-        <rect x="0" y="0" width="14" height="28" fill="#002868"/>
-        <!-- White Lone Star, properly sized in blue field -->
-        <polygon points="7,5 8.7,10.4 14.4,10.4 9.85,13.7 11.55,19 7,15.6 2.45,19 4.15,13.7 -0.4,10.4 5.3,10.4" fill="#ffffff"/>
-        <!-- White stripe (top right two-thirds) -->
-        <rect x="14" y="0" width="28" height="14" fill="#ffffff"/>
-        <!-- Red stripe (bottom right two-thirds) -->
-        <rect x="14" y="14" width="28" height="14" fill="#BF0A30"/>
-        <!-- Subtle drop shadow at base of flag -->
-        <ellipse cx="21" cy="29" rx="20" ry="0.8" fill="rgba(0,0,0,0.3)"/>
-      </g>
-    </g>
-    <!-- Near foreground hill -->
-    <path fill="url(#hillNear)" d="M0,232 C140,216 260,228 380,222 C500,216 600,232 720,228 C840,224 940,236 1060,232 C1180,228 1280,238 1400,232 C1480,228 1560,234 1600,230 L1600,280 L0,280 Z"/>
-    <!-- Subtle ground line -->
-    <line x1="0" y1="278" x2="1600" y2="278" stroke="#000" stroke-opacity="0.35" stroke-width="1"/>
-  </svg>
   <div class="hero-inner">
     <div class="hero-text">
-      <img src="jb-logo.png" alt="JB Contracting ATX" class="hero-logo" fetchpriority="high" decoding="async" width="320" height="120">
       <div class="hero-texas-badge" aria-label="Now scheduling fall 2026 builds">
         <svg class="hero-texas-badge-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <polygon points="12,2 14.4,9.4 22,9.4 15.8,14 18.2,21.4 12,16.8 5.8,21.4 8.2,14 2,9.4 9.6,9.4"/>
@@ -3491,11 +3451,8 @@
         <span class="hero-h1-pre">Austin Contractor</span>
         <span class="hero-h1-main">Decks, Roofing, Fences &amp; <em>Outdoor Living</em>.</span>
       </h1>
-      <div class="hero-h1-services">
-        <span>Decks</span><span class="dot"></span><span>Roofing</span><span class="dot"></span><span>Fences</span><span class="dot"></span><span>Pergolas</span><span class="dot"></span><span>Siding</span><span class="dot"></span><span>Hardscape</span>
-      </div>
       <div class="hero-tagline">Family-owned. Built across greater Austin.</div>
-      <p class="hero-sub">Custom <strong>decks, roof replacement, cedar fences, pergolas, siding, and hardscape</strong> across Travis, Hays, and Williamson counties. Free estimates, written warranties, and we're reachable by call or text whenever you need us.</p>
+      <p class="hero-sub">Family-owned, working across Travis, Hays, and Williamson counties. <strong>John walks your project himself</strong>, writes a line-itemed quote on the spot, and texts you a photo every day the crew is out. Free estimates, written warranty, and somebody actually answers the phone.</p>
       <div class="hero-phone-block">
         <span class="hero-phone-eyebrow">Call or text</span>
         <a href="tel:5125873914" class="hero-phone-link" aria-label="Call JB Contracting ATX at 512-587-3914">
@@ -3865,7 +3822,7 @@
         <div class="label">Patio Cover with Concrete Pad</div>
       </div>
       <div class="gallery-item g-square" data-category="hardscape">
-        <img loading="lazy" decoding="async" src="new-fence-cedar-paver-combo.jpg" alt="Cedar privacy fence with paver patio hardscape in Austin TX" width="1800" height="1350">
+        <img loading="lazy" decoding="async" src="gallery-hardscape-paver.jpg" alt="Paver patio hardscape installed in Austin TX" width="1500" height="1125">
         <div class="label">Cedar Fence & Paver Hardscape</div>
       </div>
       <div class="gallery-item g-wide" data-category="fence">
@@ -3909,7 +3866,7 @@
   <div class="container reveal">
     <div class="section-header">
       <span class="section-eyebrow">2026 Austin Pricing</span>
-      <h2>What this <em>actually costs</em> in Austin.</h2>
+      <h2>Real numbers, before you call.</h2>
       <p>Every contractor in town says "it depends." It does, but you still deserve a number before you invite anyone into your backyard. Here are the ranges we actually build to.</p>
     </div>
 
@@ -4028,7 +3985,7 @@
   <div class="container reveal">
     <div class="why-inner">
       <span class="section-eyebrow">Our Story</span>
-      <h2>Why we do <em>this</em>.</h2>
+      <h2>Why we do this</h2>
       <p class="why-text">My wife Brooke and I built JB Contracting ATX together, the same way we're building our life. With our hands, with care, and with the people we love at the center of every decision.</p>
       <p class="why-text">Every deck, every roof, every fence we build is somebody's home. Somebody's Sunday morning coffee spot. Somebody's place where their kids will grow up. I never forget that. When I finish a project, I want it to be the kind of work I'd be proud to do on my own house, because the family living there matters as much as mine does.</p>
       <p class="why-text">That's the whole reason this business exists. Not to be the biggest contractor in Austin. Just to be the one your family trusts enough to call back the next time.</p>
@@ -4130,7 +4087,7 @@
   <div class="container reveal">
     <div class="section-header">
       <span class="section-eyebrow">Straight Answers</span>
-      <h2>Questions we get <em>every week</em>.</h2>
+      <h2>Questions we get every week</h2>
       <p>If yours isn't here, just call or text. John answers the phone.</p>
     </div>
     <div class="faq-list">
@@ -4184,7 +4141,7 @@
   <div class="container reveal">
     <div class="section-header">
       <span class="section-eyebrow">Optional &middot; For homeowners who like to plan</span>
-      <h2>Or <em>design it yourself</em> first.</h2>
+      <h2>Rather sketch it out first?</h2>
       <p>Prefer to map things out before talking? Use the Project Designer to pick your materials and finishes, save the looks you love, and send the full vision to John. Totally optional, you can always just <a href="tel:5125873914">call (512) 587-3914</a> or fill the form at the top instead.</p>
       <div class="designer-top-cta">
         <a href="#designer-card" class="btn btn-primary btn-large designer-top-cta-btn" onclick="if(window.jbTrack)jbTrack('designer_top_cta_click');">Start the Project Designer &rarr;</a>
@@ -4225,7 +4182,7 @@
 <!-- FINAL CTA -->
 <section class="final-cta" id="contact">
   <div class="container reveal">
-    <h2>Ready to start your <em>next project</em>?</h2>
+    <h2>Ready when you are.</h2>
     <p>Free estimates. Honest pricing. Every job warrantied. Tell us what you're picturing and we'll take it from there.</p>
     <div class="final-cta-buttons">
       <a href="#designer" class="btn btn-primary btn-large">Design My Project</a>
