@@ -2433,14 +2433,28 @@
     margin-top: 24px;
   }
   @media (max-width: 920px) {
-    /* Stacked and full-width on phones, so the scrim has to carry the contrast. */
-    .why-scrim {
-      background: linear-gradient(180deg,
-        rgba(8,20,33,0.30) 0%, rgba(8,20,33,0.58) 24%,
-        rgba(8,20,33,0.80) 46%, rgba(8,20,33,0.88) 100%);
+    /* A phone viewport is far taller than the 3:2 photo, so cover() would crop
+       it to a sliver of background. Instead the couple get their own band at
+       the top, framed the way they read on desktop, and the band fades into
+       the navy the copy sits on so it still reads as one photo-backed section. */
+    .why { padding-top: calc(min(67vw, 380px) + 24px); }
+    .why-photo {
+      inset: 0 0 auto 0;
+      /* 67vw is the photo's own 3:2 ratio, so narrow phones show it uncropped;
+         past ~570px the cap takes over and the crop comes off the bottom. */
+      height: min(67vw, 380px);
+      object-position: 50% 22%;
     }
-    .why-photo { object-position: 50% 26%; }
+    .why-scrim {
+      inset: 0 0 auto 0;
+      height: min(67vw, 380px);
+      background: linear-gradient(180deg,
+        rgba(8,20,33,0.08) 0%, rgba(8,20,33,0.12) 42%,
+        rgba(8,20,33,0.58) 80%, rgba(8,20,33,1) 100%);
+    }
     .why-inner { max-width: 100%; }
+    .why h2 { font-size: clamp(30px, 8vw, 40px); margin-bottom: 24px; }
+    .why-text { font-size: 17px; }
   }
 
   /* ===== GALLERY ===== */
