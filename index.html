@@ -559,14 +559,21 @@
       linear-gradient(95deg, rgba(8,20,33,0.93) 0%, rgba(8,20,33,0.86) 30%, rgba(8,20,33,0.52) 62%, rgba(8,20,33,0.34) 100%),
       linear-gradient(180deg, rgba(8,20,33,0.42) 0%, rgba(8,20,33,0.16) 40%, rgba(8,20,33,0.58) 100%);
   }
-  @media (max-width: 900px) {
-    /* On mobile the text stacks full-width, so the scrim has to carry more. */
-    .hero-scrim {
-      background: linear-gradient(180deg,
-        rgba(8,20,33,0.42) 0%, rgba(8,20,33,0.72) 18%,
-        rgba(8,20,33,0.90) 38%, rgba(8,20,33,0.94) 100%);
+  @media (max-width: 920px) {
+    /* A phone viewport is so tall that object-fit: cover crops a landscape
+       photo down to a ~12% vertical sliver and nothing in it is legible.
+       So on mobile the photo gets its own band across the top at its real
+       aspect ratio, and the copy sits below it on solid navy. */
+    .hero-photo {
+      height: 300px;
+      object-position: 50% 52%;
     }
-    .hero-photo { object-position: 60% 30%; }
+    .hero-scrim {
+      height: 300px;
+      background: linear-gradient(180deg,
+        rgba(8,20,33,0.10) 0%, rgba(8,20,33,0.14) 55%,
+        rgba(8,20,33,0.72) 88%, var(--navy-deep) 100%);
+    }
   }
   .hero::before {
     content: '';
@@ -1418,7 +1425,7 @@
 
   @media (max-width: 920px) {
     .hero-inner { grid-template-columns: 1fr; gap: 70px; }
-    .hero { padding: 60px 22px 90px; }
+    .hero { padding: 288px 22px 90px; }   /* top clears the photo band */
     .hero-visual { margin: 0 auto; max-width: 460px; width: 100%; }
     .hero-trust-card { padding: 26px 24px 22px; }
     .hero-rating-num { font-size: 54px; }
@@ -2423,46 +2430,62 @@
   }
 
   .why {
-    background: var(--navy-deep);
-    color: var(--white);
     position: relative;
     overflow: hidden;
+    background: var(--navy-deep);
+    color: var(--white);
   }
-  .why::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+  /* John and Brooke sit centre-frame, so the copy runs down the left and the
+     scrim is weighted left-to-right to keep them visible rather than buried. */
+  .why-photo {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 50% 38%;
+    z-index: 0;
+  }
+  .why-scrim {
+    position: absolute; inset: 0; z-index: 0;
     background:
-      radial-gradient(ellipse at 80% 20%, rgba(22, 41, 61, 0.15), transparent 50%),
-      radial-gradient(ellipse at 20% 80%, rgba(74, 91, 112, 0.3), transparent 50%);
-    pointer-events: none;
+      linear-gradient(90deg, rgba(8,20,33,0.94) 0%, rgba(8,20,33,0.90) 34%, rgba(8,20,33,0.58) 60%, rgba(8,20,33,0.34) 100%),
+      linear-gradient(180deg, rgba(8,20,33,0.42) 0%, rgba(8,20,33,0.20) 45%, rgba(8,20,33,0.60) 100%);
   }
   .why .container { position: relative; z-index: 1; }
   .why-inner {
-    max-width: 820px;
-    margin: 0 auto;
-    text-align: center;
+    max-width: 620px;
+    margin: 0;
+    text-align: left;
   }
   .why .section-eyebrow { color: var(--gold); }
   .why h2 {
     color: var(--white);
-    font-size: clamp(38px, 4.8vw, 58px);
-    margin-bottom: 36px;
+    font-size: clamp(34px, 4.2vw, 52px);
+    margin-bottom: 30px;
   }
   .why h2 em { font-style: normal; color: var(--gold); font-weight: 600; }
   .why-text {
-    font-size: 19px;
+    font-size: 18.5px;
     line-height: 1.65;
-    color: rgba(255, 255, 255, 0.88);
-    margin-bottom: 26px;
+    color: rgba(255, 255, 255, 0.90);
+    margin-bottom: 22px;
   }
   .why-signoff {
     font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 23px;
     color: var(--gold);
-    margin-top: 22px;
+    margin-top: 24px;
+  }
+  @media (max-width: 920px) {
+    /* Stacked and full-width on phones, so the scrim has to carry the contrast. */
+    .why-scrim {
+      background: linear-gradient(180deg,
+        rgba(8,20,33,0.50) 0%, rgba(8,20,33,0.82) 26%,
+        rgba(8,20,33,0.92) 52%, rgba(8,20,33,0.95) 100%);
+    }
+    .why-photo { object-position: 50% 26%; }
+    .why-inner { max-width: 100%; }
   }
 
   /* ===== GALLERY ===== */
@@ -3438,7 +3461,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-texas-strip" aria-hidden="true"></div>
-  <img class="hero-photo" src="new-deck-covered-hillcountry.jpg" alt="Covered cedar deck with hill country views built by JB Contracting ATX near Austin, TX" fetchpriority="high" decoding="async" width="2207" height="1668">
+  <img class="hero-photo" src="new-deck-pt-railing-oaks.jpg" alt="Custom pressure-treated deck with picket railing built by JB Contracting ATX in Austin, TX" fetchpriority="high" decoding="async" width="1800" height="1125">
   <div class="hero-scrim" aria-hidden="true"></div>
 
   <div class="hero-inner">
@@ -3653,10 +3676,6 @@
       <div class="gallery-item" data-category="pergola">
         <img loading="lazy" decoding="async" src="recent-build-1.jpg" alt="Custom pine tongue-and-groove patio cover ceiling viewed from below, built by JB Contracting ATX in greater Austin TX" width="1400" height="1050">
         <div class="label">Cedar Patio Cover Ceiling</div>
-      </div>
-      <div class="gallery-item" data-category="fence" data-featured="true">
-        <img loading="lazy" decoding="async" src="recent-build-2.jpg" alt="Stained horizontal cedar privacy fence with square paver patio, built by JB Contracting ATX in Austin TX" width="1400" height="1050">
-        <div class="label">Cedar Privacy Fence + Paver Patio</div>
       </div>
       <div class="gallery-item" data-category="pergola">
         <img loading="lazy" decoding="async" src="recent-build-3.jpg" alt="Clear corrugated polycarbonate roof panels installed on a custom patio cover frame, built by JB Contracting ATX in Austin TX" width="1400" height="1050">
@@ -3987,34 +4006,21 @@
 </section>
 
 <!-- ABOUT -->
-<section class="about" id="about">
-  <div class="container reveal">
-    <div class="about-grid">
-      <div class="about-photo">
-        <img loading="lazy" decoding="async" src="about-john.jpg" alt="John Bernard, owner of JB Contracting ATX" width="1200" height="1286">
-      </div>
-      <div>
-        <span class="section-eyebrow">Meet John</span>
-        <h2>I'm John. We build work I'd be <em>proud to put my name on</em>.</h2>
-        <p>JB Contracting ATX is me, my wife Brooke, and our crew. We build decks, roofs, fences, pergolas, siding, and hardscape across greater Austin. Licensed, insured, and 5.0 across 25 Google reviews.</p>
-        <p>We keep the business small on purpose. That's how we keep our standards where they need to be on every project. When you call, you talk to me. When the crew shows up to your property, they're the same people we work with project after project.</p>
-        <p>The goal isn't to be the biggest contractor in Austin. The goal is to be the one your family trusts enough to call back the next time.</p>
-        <div class="about-signature">John &amp; Brooke Bernard, Owners</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- WHY -->
-<section class="why" id="why">
+<section class="why" id="about">
+  <span id="why" aria-hidden="true"></span>
+  <img class="why-photo" src="about-john-brooke.jpg" alt="John and Brooke Bernard, owners of JB Contracting ATX" loading="lazy" decoding="async" width="1616" height="1080">
+  <div class="why-scrim" aria-hidden="true"></div>
   <div class="container reveal">
     <div class="why-inner">
-      <span class="section-eyebrow">Our Story</span>
-      <h2>Why we do this</h2>
-      <p class="why-text">My wife Brooke and I built JB Contracting ATX together, the same way we're building our life. With our hands, with care, and with the people we love at the center of every decision.</p>
-      <p class="why-text">Every deck, every roof, every fence we build is somebody's home. Somebody's Sunday morning coffee spot. Somebody's place where their kids will grow up. I never forget that. When I finish a project, I want it to be the kind of work I'd be proud to do on my own house, because the family living there matters as much as mine does.</p>
-      <p class="why-text">That's the whole reason this business exists. Not to be the biggest contractor in Austin. Just to be the one your family trusts enough to call back the next time.</p>
-      <div class="why-signoff">John & Brooke</div>
+      <span class="section-eyebrow">Meet John &amp; Brooke</span>
+      <h2>I'm John. We build work I'd be <em>proud to put my name on</em>.</h2>
+      <p class="why-text">JB Contracting ATX is me, my wife Brooke, and our crew. We build decks, roofs, fences, pergolas, siding, and hardscape across greater Austin. Licensed, insured, and 5.0 across 25 Google reviews.</p>
+      <p class="why-text">We keep it small on purpose. When you call, you talk to me. When the crew shows up at your house, they're the same people we work with project after project.</p>
+      <p class="why-text">Every deck, every roof, every fence we build is somebody's home. Somebody's Sunday morning coffee spot. Somebody's place where their kids grow up. I want it to be the kind of work I'd be proud to do on my own house, because the family living there matters as much as mine does.</p>
+      <p class="why-text">The goal isn't to be the biggest contractor in Austin. It's to be the one your family trusts enough to call back.</p>
+      <div class="why-signoff">John &amp; Brooke Bernard, Owners</div>
     </div>
   </div>
 </section>
