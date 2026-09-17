@@ -3285,22 +3285,8 @@
 </style>
 
 <!-- ============================================================
-     ANALYTICS & VERIFICATION
-     Replace the placeholder IDs below with your real ones, then
-     re-deploy. Search Console + GA4 will start collecting data
-     within ~24 hours.
+     ANALYTICS
      ============================================================ -->
-
-<!-- Google Search Console verification.
-     1. Go to https://search.google.com/search-console
-     2. Add property: jbcontractingatx.com (Domain property is best)
-     3. Choose "HTML tag" verification, copy the content="..." value,
-        paste it below in place of REPLACE_WITH_GSC_TOKEN. -->
-<meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN">
-
-<!-- Bing Webmaster Tools verification (optional but free traffic).
-     https://www.bing.com/webmasters -->
-<meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN">
 
 <!-- Google Analytics 4.
      1. Go to https://analytics.google.com → Admin → Create property
@@ -3326,19 +3312,6 @@
     var a = e.target.closest && e.target.closest('a[href^="tel:"]');
     if (a) { window.jbTrack('phone_call_click', { phone: a.getAttribute('href') }); }
   }, true);
-</script>
-
-<!-- Microsoft Clarity, FREE session recordings + heatmaps.
-     This is the single highest-ROI tool for figuring out why
-     visitors don't convert: you can literally watch their screen.
-     1. Go to https://clarity.microsoft.com → New project
-     2. Copy your Project ID and replace REPLACE_WITH_CLARITY_ID below. -->
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "REPLACE_WITH_CLARITY_ID");
 </script>
 
 </head>
@@ -3943,11 +3916,11 @@
     <div class="pricing-card">
       <div class="pricing-locked" id="pricing-locked">
         <div class="pricing-preview" aria-hidden="true">
-          <div class="pricing-row"><span>Cedar deck, installed</span><b>$00&ndash;$00 / sq ft</b></div>
-          <div class="pricing-row"><span>6&#39; cedar privacy fence</span><b>$00&ndash;$00 / linear ft</b></div>
-          <div class="pricing-row"><span>Attached cedar pergola</span><b>$00,000&ndash;$00,000</b></div>
-          <div class="pricing-row"><span>Roof replacement</span><b>$00,000&ndash;$00,000</b></div>
-          <div class="pricing-row"><span>Stamped concrete patio</span><b>$00&ndash;$00 / sq ft</b></div>
+          <div class="pricing-row"><span>Cedar deck, installed</span><b>$50&ndash;$75 / sq ft</b></div>
+          <div class="pricing-row"><span>6&#39; cedar privacy fence</span><b>$32&ndash;$55 / linear ft</b></div>
+          <div class="pricing-row"><span>Attached cedar pergola</span><b>$10,500&ndash;$26,000</b></div>
+          <div class="pricing-row"><span>Roof replacement</span><b>$11,000&ndash;$18,000</b></div>
+          <div class="pricing-row"><span>Stamped concrete patio</span><b>$15&ndash;$25 / sq ft</b></div>
         </div>
 
         <form class="pricing-form" id="pricing-form" onsubmit="return jbUnlockPricing(event)" novalidate>
@@ -4308,9 +4281,11 @@
         <li><a href="south-austin-contractor.html">South Austin</a></li>
         <li><a href="round-rock-contractor.html">Round Rock</a></li>
         <li><a href="cedar-park-contractor.html">Cedar Park</a></li>
+        <li><a href="pergolas-cedar-park.html">Pergolas in Cedar Park</a></li>
         <li><a href="lakeway-contractor.html">Lakeway</a></li>
         <li><a href="dripping-springs-contractor.html">Dripping Springs</a></li>
         <li><a href="buda-contractor.html">Buda</a></li>
+        <li><a href="deck-builder-buda.html">Deck Builder in Buda</a></li>
         <li><a href="kyle-contractor.html">Kyle</a></li>
         <li><a href="manchaca-contractor.html">Manchaca</a></li>
         <li><a href="tel:5125873914">(512) 587-3914</a></li>
@@ -4355,7 +4330,7 @@ function jbUnlockPricing(e) {
     .then(function () {
       if (window.jbTrack) {
         window.jbTrack('generate_lead', {
-          source: 'homepage_price_sheet',
+          lead_source: 'homepage_price_sheet',
           service: (form.querySelector('[name="project"]') || {}).value || 'browsing',
           value: 1, currency: 'USD'
         });
@@ -4968,7 +4943,7 @@ async function submitHeroQuote(e) {
       window.jbTrack('generate_lead', {
         service: form.querySelector('[name="project"]').value || 'unknown',
         zip: form.querySelector('[name="zip"]').value || '',
-        source: 'hero_quick_quote',
+        lead_source: 'hero_quick_quote',
         value: 1,
         currency: 'USD'
       });
@@ -7138,7 +7113,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden', 'false');
     if (window.jbTrack) {
-      window.jbTrack('popup_shown', { source: source || 'unknown' });
+      window.jbTrack('popup_shown', { trigger: source || 'unknown' });
     }
   }
   function closePopup() {
@@ -7190,7 +7165,7 @@ async function submitPopupQuote(e) {
     if (window.jbTrack) {
       window.jbTrack('generate_lead', {
         service: form.querySelector('[name="project"]').value || 'unknown',
-        source: 'popup',
+        lead_source: 'popup',
         value: 1,
         currency: 'USD'
       });

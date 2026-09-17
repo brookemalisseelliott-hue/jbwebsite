@@ -3,9 +3,6 @@
  * IMPORTANT: replace the placeholder IDs in BOTH the script tag in your HTML
  * and the gtag('config', ...) call below with your real Google Analytics 4
  * Measurement ID (format: G-QEZESKC3B6).
- *
- * Microsoft Clarity loads from each page's <head> separately because it
- * requires inline-tag initialization with your project ID.
  */
 (function () {
   window.dataLayer = window.dataLayer || [];
