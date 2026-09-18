@@ -2437,20 +2437,20 @@
        it to a sliver of background. Instead the couple get their own band at
        the top, framed the way they read on desktop, and the band fades into
        the navy the copy sits on so it still reads as one photo-backed section. */
-    .why { padding-top: calc(min(67vw, 380px) + 24px); }
+    .why { padding-top: calc(min(47vw, 330px) + 24px); }
     .why-photo {
       inset: 0 0 auto 0;
-      /* 67vw is the photo's own 3:2 ratio, so narrow phones show it uncropped;
-         past ~570px the cap takes over and the crop comes off the bottom. */
-      height: min(67vw, 380px);
-      object-position: 50% 22%;
+      /* 47vw is the photo's own 2.15:1 ratio, so narrow phones show it
+         uncropped; past ~700px the cap takes over. */
+      height: min(47vw, 330px);
+      object-position: 50% 30%;
     }
     .why-scrim {
       inset: 0 0 auto 0;
-      height: min(67vw, 380px);
+      height: min(47vw, 330px);
       background: linear-gradient(180deg,
-        rgba(8,20,33,0.66) 0%, rgba(8,20,33,0.70) 42%,
-        rgba(8,20,33,0.85) 80%, rgba(8,20,33,1) 100%);
+        rgba(8,20,33,0.34) 0%, rgba(8,20,33,0.40) 42%,
+        rgba(8,20,33,0.70) 80%, rgba(8,20,33,1) 100%);
     }
     .why-inner { max-width: 100%; }
     .why h2 { font-size: clamp(30px, 8vw, 40px); margin-bottom: 24px; }
@@ -3985,7 +3985,10 @@
 <!-- WHY -->
 <section class="why" id="about">
   <span id="why" aria-hidden="true"></span>
-  <img class="why-photo" src="about-john-brooke.jpg" alt="John Bernard, owner of JB Contracting ATX, with his wife Brooke" loading="lazy" decoding="async" width="1616" height="1080">
+  <picture>
+    <source media="(max-width: 920px)" srcset="about-john-brooke-crop.jpg" width="1163" height="540">
+    <img class="why-photo" src="about-john-brooke.jpg" alt="John Bernard, owner of JB Contracting ATX, with his wife Brooke" loading="lazy" decoding="async" width="1616" height="1080">
+  </picture>
   <div class="why-scrim" aria-hidden="true"></div>
   <div class="container reveal">
     <div class="why-inner">
