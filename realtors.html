@@ -245,6 +245,15 @@ document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeM
 
 <p>You have a listing that needs work before it goes live, and a seller asking what it'll cost. You need a number fast, from someone who will actually show up and won't embarrass you in front of your client. That's the whole job we're offering to do for you.</p>
 
+<div class="agent-offer">
+  <div>
+    <h3>Take our <em>pre-listing cheat sheet</em> with you.</h3>
+    <p>One page on the five exterior conditions sellers ask about, including the two where our honest advice is to spend nothing. Written for agents, and clean enough to forward straight to a client.</p>
+    <p class="meta">Free PDF &middot; No email required &middot; Nothing signs you up for anything</p>
+  </div>
+  <a class="dl" href="jb-pre-listing-guide.pdf" download onclick="if(window.jbTrack)jbTrack('lead_magnet_download',{asset:'pre_listing_guide',lead_source:'realtors_page'});">&#8681;&nbsp; Download the one-pager</a>
+</div>
+
 <h2>What we do differently for agents</h2>
 <ul>
   <li><strong>Written estimate within 48 hours of the walkthrough.</strong> Line-itemed, so you can hand it straight to your seller and they can see exactly what each piece costs. No "I'll get back to you next week."</li>
@@ -284,9 +293,19 @@ document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeM
   <a href="#quote" class="btn btn-primary">Book a pre-listing walkthrough →</a>
 </div>
 
-<h2>Bring us to your next sales meeting</h2>
-<p>We'll bring lunch for the office and John will do twenty minutes on what actually adds value before a listing and what's a waste of a seller's money. No pitch, no sign-up sheet, no slide deck full of logos. Just a contractor answering the questions your agents get asked every week, so they have a straight answer ready.</p>
-<p>If that's useful to your office, email or call and we'll find a Tuesday.</p>
+<h2>We'll bring lunch to your next sales meeting</h2>
+<div class="lunch-box">
+  <h3>Lunch and twenty minutes, on us.</h3>
+  <p>John brings lunch for the office and spends twenty minutes on what actually adds value before a listing and what wastes a seller's money. Your agents ask him anything they want.</p>
+  <ul>
+    <li><strong>We buy lunch.</strong> Tell us the headcount and any allergies.</li>
+    <li><strong>Twenty minutes, then questions.</strong> No slide deck, no sign-up sheet, no logos.</li>
+    <li><strong>Everyone leaves with the one-pager above</strong>, so they have a straight answer ready the next time a seller asks.</li>
+    <li><strong>Tuesdays and Wednesdays suit us best</strong>, but tell us your meeting day and we will work around it.</li>
+  </ul>
+  <p>Offices of any size. We have done four agents around a kitchen table and we have done thirty.</p>
+  <a href="#quote" class="btn btn-primary" onclick="if(window.jbTrack)jbTrack('lunch_request_click',{lead_source:'realtors_page'});">Book a lunch &amp; learn &rarr;</a>
+</div>
 
 <h2>Who you'd be recommending</h2>
 <p>JB Contracting ATX is John Bernard, his wife Brooke, and their crew. Licensed and insured, 5.0 across 25 Google reviews, and small on purpose &mdash; when you call, you get John, not a call centre.</p>
@@ -422,6 +441,39 @@ document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeM
 
 <!-- Sticky mobile call/text bar, highest-converting element for
      contractor sites. Visible only on small screens. -->
+<style>
+  .agent-offer {
+    display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: center;
+    background: var(--navy, #16293d); color: #fff;
+    border-radius: 14px; padding: 30px 32px; margin: 34px 0 6px;
+  }
+  .agent-offer h3 {
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-size: 25px; line-height: 1.2; margin: 0 0 10px; color: #fff;
+  }
+  .agent-offer h3 em { font-style: normal; color: var(--gold, #c9a227); }
+  .agent-offer p { margin: 0 0 6px; color: rgba(255,255,255,0.88); font-size: 16px; line-height: 1.6; }
+  .agent-offer .meta { font-size: 13.5px; color: rgba(255,255,255,0.62); margin-top: 12px; }
+  .agent-offer .dl {
+    display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;
+    background: var(--gold, #c9a227); color: #16293d; font-weight: 700; font-size: 15px;
+    padding: 15px 22px; border-radius: 9px; text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+  }
+  .agent-offer .dl:hover { filter: brightness(1.07); }
+  @media (max-width: 760px) {
+    .agent-offer { grid-template-columns: 1fr; gap: 20px; padding: 26px 22px; }
+    .agent-offer h3 { font-size: 22px; }
+    .agent-offer .dl { justify-content: center; }
+  }
+  .lunch-box {
+    border: 2px solid var(--line, #dfe5ec); border-left: 5px solid var(--gold, #c9a227);
+    border-radius: 12px; padding: 26px 28px; margin: 12px 0 30px; background: #fff;
+  }
+  .lunch-box h3 { font-family: 'Fraunces', Georgia, serif; font-size: 22px; margin: 0 0 10px; }
+  .lunch-box ul { margin: 14px 0 18px; padding-left: 20px; }
+  .lunch-box li { margin-bottom: 7px; }
+</style>
 <style>
   .jb-mobile-cta {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999;
