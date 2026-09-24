@@ -443,6 +443,11 @@
     z-index: 1000;
     pointer-events: none;
     visibility: hidden;
+    /* The closed panel is parked at translateX(100%), which sat 21px past the
+       right edge and gave the whole page a sideways scroll on a phone. Clip
+       rather than hidden: clip contains it without creating a scroll container,
+       so position: sticky elsewhere on the page keeps working. */
+    overflow: clip;
   }
   .mobile-drawer.is-open { pointer-events: auto; visibility: visible; }
   .mobile-drawer-overlay {
@@ -2965,6 +2970,11 @@
   @media (max-width: 920px) {
     .footer-inner { grid-template-columns: 1fr 1fr; gap: 30px; }
   }
+  /* Two footer columns need ~448px. Below that they ran off the right edge and
+     gave the homepage a sideways scroll on a phone. */
+  @media (max-width: 560px) {
+    .footer-inner { grid-template-columns: 1fr; gap: 26px; }
+  }
 
   .mobile-cta {
     display: none;
@@ -3396,7 +3406,8 @@
       <a href="decks-austin.html" class="mobile-drawer-link">Custom Decks</a>
       <a href="roofing-austin.html" class="mobile-drawer-link">Roofing</a>
       <a href="fences-austin.html" class="mobile-drawer-link">Cedar Fences</a>
-      <a href="pergolas-austin.html" class="mobile-drawer-link">Pergolas &amp; Patio Covers</a>
+      <a href="pergolas-austin.html" class="mobile-drawer-link">Pergolas</a>
+      <a href="patio-covers-austin.html" class="mobile-drawer-link">Patio Covers</a>
       <a href="siding-austin.html" class="mobile-drawer-link">Siding</a>
       <a href="hardscape-austin.html" class="mobile-drawer-link">Hardscape</a>
     </div>
@@ -4300,7 +4311,8 @@
         <li><a href="deck-builder-round-rock.html">Deck Builders in Round Rock</a></li>
         <li><a href="cedar-park-contractor.html">Cedar Park</a></li>
         <li><a href="pergolas-cedar-park.html">Pergolas in Cedar Park</a></li>
-        <li><a href="siding-cedar-park.html">Siding installation in Cedar Park</a></li>
+        <li><a href="patio-covers-austin.html">Patio Covers in Austin</a></li>
+<li><a href="siding-cedar-park.html">Siding installation in Cedar Park</a></li>
         <li><a href="deck-builder-cedar-park.html">Deck Builder in Cedar Park</a></li>
         <li><a href="lakeway-contractor.html">Lakeway</a></li>
         <li><a href="dripping-springs-contractor.html">Dripping Springs</a></li>
