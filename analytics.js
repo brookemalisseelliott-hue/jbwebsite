@@ -90,6 +90,60 @@
     return false;
   };
 
+  // jbSubmitApplication: the careers form. Deliberately separate from
+  // jbSubmitQuote because an applicant is not a sales lead: firing
+  // generate_lead here would inflate the conversion count and poison any
+  // cost-per-lead maths later. Fires job_application instead.
+  window.jbSubmitApplication = async function (e) {
+    e.preventDefault();
+    var form = e.target;
+    var btn = form.querySelector('.quote-form-submit');
+    var successEl = form.querySelector('.quote-form-success');
+
+    var required = ['name', 'phone'];
+    for (var i = 0; i < required.length; i++) {
+      var field = form.querySelector('[name="' + required[i] + '"]');
+      if (field && !String(field.value || '').trim()) {
+        field.focus();
+        field.style.borderColor = '#3d7a63';
+        return false;
+      }
+    }
+
+    var original = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending\u2026'; }
+
+    try {
+      var res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form)
+      });
+      var data = await res.json().catch(function () { return {}; });
+      if (!res.ok || data.success === false) {
+        throw new Error(data.message || ('Web3Forms returned ' + res.status));
+      }
+
+      var trade = form.querySelector('[name="trade"]');
+      window.jbTrack('job_application', {
+        trade: (trade && trade.value) || 'unspecified',
+        lead_source: 'careers_form'
+      });
+
+      Array.prototype.forEach.call(form.children, function (el) {
+        if (el !== successEl) { el.style.display = 'none'; }
+      });
+      if (successEl) {
+        successEl.hidden = false;
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } catch (err) {
+      console.error('Application submit failed:', err);
+      if (btn) { btn.disabled = false; btn.textContent = original; }
+      alert('Something hiccuped sending that. Email us direct at jbconstructionatx@gmail.com and we will get it. Sorry about that.');
+    }
+    return false;
+  };
+
   // Auto-track every SMS-link click.
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href^="sms:"]');
