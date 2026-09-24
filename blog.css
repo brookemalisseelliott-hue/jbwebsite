@@ -380,6 +380,17 @@ body.drawer-open { overflow: hidden; }
 .cost-table th { background: var(--paper); font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 600; color: var(--navy); }
 .cost-table tr:last-child td { border-bottom: none; }
 
+/* Narrow screens: let a wide cost table scroll itself instead of the page. */
+@media (max-width: 560px) {
+  .cost-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 13.5px;
+  }
+  .cost-table th, .cost-table td { padding: 11px 11px; }
+}
+
 .blog-end-cta {
   background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 100%);
   color: var(--white);
