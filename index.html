@@ -32,7 +32,8 @@
 <meta name="twitter:image" content="https://www.jbcontractingatx.com/hero-pergola-hill-country.jpg">
 
 <!-- LocalBusiness JSON-LD schema -->
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "GeneralContractor",
   "foundingDate": "2023",
@@ -157,7 +158,9 @@
     ]
   },
   "sameAs": [
-    "https://share.google/FJ3Q5fyQ3lhUheeQw"
+    "https://maps.google.com/maps?cid=9345226548475232967",
+    "https://www.facebook.com/profile.php?id=61581850651194",
+    "https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx/"
   ],
   "openingHoursSpecification": [
     {
@@ -185,8 +188,30 @@
     "reviewCount": "25",
     "bestRating": "5",
     "worstRating": "1"
-  }
-}</script>
+  },
+  "hasMap": "https://maps.google.com/maps?cid=9345226548475232967",
+  "email": "jbconstructionatx@gmail.com",
+  "founder": {
+    "@type": "Person",
+    "name": "John Bernard",
+    "jobTitle": "Owner"
+  },
+  "knowsAbout": [
+    "Deck building",
+    "Patio covers",
+    "Pergolas",
+    "Screened porches",
+    "Privacy fences",
+    "Fence repair",
+    "Roof replacement",
+    "Storm damage roof repair",
+    "James Hardie siding",
+    "Siding repair",
+    "Concrete patios",
+    "Retaining walls"
+  ]
+}
+</script>
 
 <!-- FAQ schema for People-Also-Ask rich results -->
 <script type="application/ld+json">
@@ -3333,10 +3358,13 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-QEZESKC3B6', {
-    'anonymize_ip': true,
-    'send_page_view': true
-  });
+  // Only the live domain reports, so local tests never count as leads.
+  if (/(^|\.)jbcontractingatx\.com$/.test(location.hostname)) {
+    gtag('config', 'G-QEZESKC3B6', {
+      'anonymize_ip': true,
+      'send_page_view': true
+    });
+  }
   // Helper: fire conversion events from anywhere on the site.
   // Usage: jbTrack('lead_form_submit', { service: 'deck' });
   window.jbTrack = function(eventName, params){

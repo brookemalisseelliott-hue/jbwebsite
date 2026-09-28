@@ -1,18 +1,21 @@
 /* JB Contracting ATX, shared analytics + conversion tracking.
  *
- * IMPORTANT: replace the placeholder IDs in BOTH the script tag in your HTML
- * and the gtag('config', ...) call below with your real Google Analytics 4
- * Measurement ID (format: G-QEZESKC3B6).
+ * GA4 property G-QEZESKC3B6. Only the live domain reports: local previews,
+ * test servers and file:// pages still get a working jbTrack, they just never
+ * configure the tag, so test submissions cannot land in the lead counts.
+ * (Five fake generate_lead events from 127.0.0.1 on 3 Sep 2026 are why.)
  */
 (function () {
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
   gtag('js', new Date());
-  gtag('config', 'G-QEZESKC3B6', {
-    anonymize_ip: true,
-    send_page_view: true
-  });
+  if (/(^|\.)jbcontractingatx\.com$/.test(location.hostname)) {
+    gtag('config', 'G-QEZESKC3B6', {
+      anonymize_ip: true,
+      send_page_view: true
+    });
+  }
 
   // jbTrack: site-wide conversion helper. Call from form submits, button taps,
   // anywhere you want to record an event.
