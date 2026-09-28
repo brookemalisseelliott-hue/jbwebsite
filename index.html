@@ -273,7 +273,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Fraunces:opsz,wght@9..144,400..700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Fraunces:opsz,wght@9..144,400..700&display=swap"></noscript>
 <style>
   :root {
     --navy: #16293d;
@@ -1246,9 +1247,9 @@
   .reviews-band .hero-quote-mark { color: var(--accent, #3d7a63); opacity: 0.5; }
   .reviews-band .hero-quote-attrib strong { color: var(--navy, #16293d); }
   .reviews-band .hero-quote-attrib span { color: var(--slate, #5b6b7c); }
-  .reviews-band .hero-quote-dots { justify-content: flex-start; padding-left: 32px; }
-  .reviews-band .hero-quote-dot { background: rgba(22, 41, 61, 0.25); }
-  .reviews-band .hero-quote-dot.is-active { background: var(--navy, #16293d); }
+  .reviews-band .hero-quote-dots { justify-content: flex-start; padding-left: 23px; }
+  .reviews-band .hero-quote-dot { background-color: rgba(22, 41, 61, 0.25); }
+  .reviews-band .hero-quote-dot.is-active { background-color: var(--navy, #16293d); }
   .reviews-band-award {
     display: block;
     max-width: 140px;
@@ -1397,23 +1398,27 @@
   }
   .hero-quote-dots {
     position: absolute;
-    bottom: -8px;
-    left: 0;
+    bottom: -17px;      /* dots grew a 9px invisible tap margin; keep them where they were */
+    left: -9px;
     display: flex;
-    gap: 6px;
+    gap: 0;
   }
   .hero-quote-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.25);
+    background-color: rgba(255,255,255,0.25);
     border: none;
     cursor: pointer;
-    padding: 0;
+    /* 24px tap target around a 6px dot: padding is the hit area, the
+       background is clipped to the content box so the dot looks unchanged */
+    box-sizing: content-box;
+    padding: 9px;
+    background-clip: content-box;
     transition: background 0.2s, width 0.25s;
   }
-  .hero-quote-dot.is-active { background: var(--white); width: 18px; border-radius: 3px; }
-  .hero-quote-dot:hover { background: rgba(255,255,255,0.55); }
+  .hero-quote-dot.is-active { background-color: var(--white); width: 18px; border-radius: 12px; }
+  .hero-quote-dot:hover { background-color: rgba(255,255,255,0.55); }
 
   .hero-trust-chips {
     display: flex;
@@ -2991,7 +2996,7 @@
     flex-wrap: wrap;
     gap: 12px;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.72);
   }
   @media (max-width: 920px) {
     .footer-inner { grid-template-columns: 1fr 1fr; gap: 30px; }
@@ -3387,7 +3392,7 @@
 <header class="header">
   <div class="header-inner">
     <a href="#" class="logo">
-      <img src="jb-logo-small.png" alt="JB Contracting ATX" style="height: 52px; width: auto;" width="450" height="284">
+      <img src="jb-logo-small.png" alt="JB Contracting ATX" style="height: 52px; width: auto;" width="180" height="114">
     </a>
     <nav class="nav">
       <a href="#designer">Design Yours</a>
@@ -3419,7 +3424,7 @@
   <div class="mobile-drawer-overlay" onclick="closeMobileMenu()"></div>
   <aside class="mobile-drawer-panel" role="dialog" aria-label="Site navigation">
     <div class="mobile-drawer-header">
-      <img src="jb-logo-small.png" alt="JB Contracting ATX" style="height: 36px; width: auto;" width="450" height="284">
+      <img src="jb-logo-small.png" alt="JB Contracting ATX" style="height: 36px; width: auto;" width="180" height="114">
       <button class="mobile-drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
@@ -3476,7 +3481,10 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-texas-strip" aria-hidden="true"></div>
-  <img class="hero-photo" src="new-deck-pt-railing-oaks.jpg" alt="Custom pressure-treated deck with picket railing built by JB Contracting ATX in Austin, TX" fetchpriority="high" decoding="async" width="1600" height="1000">
+  <picture>
+    <source type="image/webp" srcset="new-deck-pt-railing-oaks-800.webp 800w, new-deck-pt-railing-oaks-1200.webp 1200w, new-deck-pt-railing-oaks-1600.webp 1600w" sizes="(max-width: 700px) 480px, 100vw">
+    <img class="hero-photo" src="new-deck-pt-railing-oaks.jpg" alt="Custom pressure-treated deck with picket railing built by JB Contracting ATX in Austin, TX" fetchpriority="high" decoding="async" width="1600" height="1000">
+  </picture>
   <div class="hero-scrim" aria-hidden="true"></div>
 
   <div class="hero-inner">
@@ -3498,7 +3506,7 @@
       <p class="hero-sub">Family-owned, working across Travis, Hays, and Williamson counties. <strong>John walks your project himself</strong>, writes a line-itemed quote on the spot, and texts you a photo every day the crew is out. Free estimates, written warranty, and somebody actually answers the phone.</p>
       <div class="hero-phone-block">
         <span class="hero-phone-eyebrow">Call or text</span>
-        <a href="tel:5125873914" class="hero-phone-link" aria-label="Call JB Contracting ATX at 512-587-3914">
+        <a href="tel:5125873914" class="hero-phone-link" aria-label="(512) 587-3914, call JB Contracting ATX">
           <svg class="hero-phone-icon" width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
@@ -3602,7 +3610,7 @@
 <!-- REVIEWS BAND, moved out of hero so the form sits front-and-center -->
 <section class="reviews-band">
   <div class="reviews-band-inner">
-    <a href="https://share.google/FJ3Q5fyQ3lhUheeQw" target="_blank" rel="noopener" class="reviews-band-rating" aria-label="Read our 5.0 reviews on Google">
+    <a href="https://share.google/FJ3Q5fyQ3lhUheeQw" target="_blank" rel="noopener" class="reviews-band-rating" aria-label="5.0 Verified Google reviews, read them on Google">
       <div class="reviews-band-num">5.0</div>
       <div>
         <div class="reviews-band-stars">★★★★★</div>
@@ -4301,7 +4309,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="jb-logo.png" alt="JB Contracting ATX" style="height: 78px; width: auto; margin-bottom: 18px; filter: brightness(0) invert(1);" width="450" height="284">
+      <img src="jb-logo.png" alt="JB Contracting ATX" style="height: 78px; width: auto; margin-bottom: 18px; filter: brightness(0) invert(1);" width="300" height="189">
       <p>Austin's family-owned contractor. Honest work, quality craftsmanship, and homes that feel like home.</p>
       <div class="social-row">
         <a href="https://www.facebook.com/profile.php?id=61581850651194" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
@@ -4364,7 +4372,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div>© 2026 JB Contracting ATX · Licensed & Insured · <a href="privacy.html">Privacy Policy</a></div>
+    <div>© 2026 JB Contracting ATX · Licensed & Insured · <a href="privacy.html" style="color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 2px;">Privacy Policy</a></div>
     <div>Built with care in Austin, Texas</div>
   </div>
 </footer>
@@ -6922,7 +6930,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
 </style>
 <div class="jb-mobile-cta" role="navigation" aria-label="Contact JB Contracting ATX">
-  <a class="call" href="tel:+15125873914" aria-label="Call JB Contracting ATX at 512-587-3914">
+  <a class="call" href="tel:+15125873914" aria-label="Call John at JB Contracting ATX, (512) 587-3914">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .7-.3 1l-2.2 2.3z"/></svg>
     Call John
   </a>
@@ -7106,7 +7114,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
 </style>
 
-<div class="jb-popup-overlay" id="jb-popup" role="dialog" aria-modal="true" aria-labelledby="jb-popup-title" aria-hidden="true">
+<div class="jb-popup-overlay" id="jb-popup" inert role="dialog" aria-modal="true" aria-labelledby="jb-popup-title" aria-hidden="true">
   <div class="jb-popup">
     <button type="button" class="jb-popup-close" id="jb-popup-close" aria-label="Close">&times;</button>
     <form id="jb-popup-form" class="jb-popup-form" onsubmit="return submitPopupQuote(event)" novalidate>
@@ -7195,6 +7203,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     markShown();
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden', 'false');
+    overlay.removeAttribute('inert');
     if (window.jbTrack) {
       window.jbTrack('popup_shown', { trigger: source || 'unknown' });
     }
@@ -7202,6 +7211,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   function closePopup() {
     overlay.classList.remove('is-open');
     overlay.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('inert', '');
   }
 
   closeBtn && closeBtn.addEventListener('click', closePopup);
