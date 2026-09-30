@@ -3364,7 +3364,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   // Only the live domain reports, so local tests never count as leads.
-  if (/(^|\.)jbcontractingatx\.com$/.test(location.hostname)) {
+  if (/(^|\.)jbcontractingatx\.com$/.test(location.hostname) && !/notrack/.test(location.search + location.hash)) {
     gtag('config', 'G-QEZESKC3B6', {
       'anonymize_ip': true,
       'send_page_view': true

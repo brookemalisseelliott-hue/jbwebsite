@@ -179,6 +179,8 @@ The page needs:
    possible, merge `origin/main` in first, re-run validation, then push.
    Never force-push `main`.
 3. Wait about a minute, then confirm the new URL returns HTTP 200 with curl.
+   If you open the LIVE site in a browser for any check, add `?notrack` to the
+   URL so the visit is not counted in Google Analytics.
 4. Append a line to the log below and commit/push that too.
 
 ## 8. Final summary (your last message)

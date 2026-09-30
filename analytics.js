@@ -4,13 +4,14 @@
  * test servers and file:// pages still get a working jbTrack, they just never
  * configure the tag, so test submissions cannot land in the lead counts.
  * (Five fake generate_lead events from 127.0.0.1 on 3 Sep 2026 are why.)
+ * Testing the LIVE site? Add ?notrack to the URL and nothing is recorded.
  */
 (function () {
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
   gtag('js', new Date());
-  if (/(^|\.)jbcontractingatx\.com$/.test(location.hostname)) {
+  if (/(^|\.)jbcontractingatx\.com$/.test(location.hostname) && !/notrack/.test(location.search + location.hash)) {
     gtag('config', 'G-QEZESKC3B6', {
       anonymize_ip: true,
       send_page_view: true
