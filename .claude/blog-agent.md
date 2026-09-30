@@ -11,6 +11,9 @@ Brooke Bernard. Brooke approved this weekly agent on 28 Sep 2026.
 
 ## 1. Pick the topic
 
+Baseline search data saved on 30 Sep 2026 is in `.claude/data/` (see its
+README). Use it when choosing between topics if live data is unavailable.
+
 Take the FIRST topic in the queue whose file does not already exist in the
 repo. Never write a second page on a topic that already has one. Before
 writing, grep the repo for the main keyword and read any page that already
@@ -21,13 +24,14 @@ competing with it.
 |---|------|---------------|-----|
 | 1 | blog-trex-vs-timbertech-vs-fiberon.html | trex vs timbertech, fiberon vs trex, best composite decking texas | Comparison format ranks for competitors; "fiberon" 5.4K/mo |
 | 2 | blog-deck-repair-cost-austin.html | deck repair cost, deck repair austin | Repair guides rank fast here (siding repair hit 5.5 in week one) |
-| 3 | blog-hardie-vs-lp-smartside.html | hardie vs lp smartside, fiber cement vs engineered wood siding | Comparison format; complements the Hardie cost guide |
-| 4 | blog-impact-resistant-shingles-texas.html | class 4 shingles texas, impact resistant roof insurance discount | Storm/hail cluster already ranks 12 to 20 |
-| 5 | blog-metal-vs-shingle-roof-austin.html | metal roof vs shingles texas | Pairs with the roof replacement cost guide |
-| 6 | blog-when-to-stain-deck-fence-austin.html | when to stain a fence, when to stain a new deck texas | Maintenance searches; fences are the volume business |
-| 7 | blog-adding-roof-to-pergola.html | pergola roof cost, adding a roof to a pergola | GSC shows this cluster at 12 to 18 on the pergola guide |
-| 8 | blog-deck-boards-texas-heat.html | best decking for texas heat, composite vs wood deck hot | Heat is the recurring Austin objection |
-| 9 | blog-deck-permit-austin.html | do i need a permit for a deck in austin | Only use the rules already on the site; see section 3 |
+| 3 | blog-deck-design-ideas-austin.html | deck design austin, austin deck design, deck design austin tx | About 90 impressions in 90 days at 33 to 44 with no page; link to the homepage Design Builder (index.html#designer) |
+| 4 | blog-hardie-vs-lp-smartside.html | hardie vs lp smartside, fiber cement vs engineered wood siding | Comparison format; complements the Hardie cost guide |
+| 5 | blog-impact-resistant-shingles-texas.html | class 4 shingles texas, impact resistant roof insurance discount | Storm/hail cluster already ranks 12 to 20 |
+| 6 | blog-metal-vs-shingle-roof-austin.html | metal roof vs shingles texas | Pairs with the roof replacement cost guide |
+| 7 | blog-when-to-stain-deck-fence-austin.html | when to stain a fence, when to stain a new deck texas | Maintenance searches; fences are the volume business |
+| 8 | blog-adding-roof-to-pergola.html | pergola roof cost, adding a roof to a pergola | GSC shows this cluster at 12 to 18 on the pergola guide |
+| 9 | blog-deck-boards-texas-heat.html | best decking for texas heat, composite vs wood deck hot | Heat is the recurring Austin objection |
+| 10 | blog-deck-permit-austin.html | do i need a permit for a deck in austin | Only use the rules already on the site; see section 3 |
 
 If every file exists, choose a new topic that fits JB's services and does
 not duplicate an existing page, and say clearly in your final summary that
