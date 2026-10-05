@@ -122,6 +122,11 @@ the quote form `<div class="quote-form-wrap" id="quote">` up to
 `<section class="related-row">`, and the related-row tail to the end.
 
 Before writing the file, ASSERT all of these, and stop if any fail:
+- The quote form belongs to THIS page: `data-source`, the `subject` and
+  `from_name` hidden inputs and every `qf-*` id use the new file's slug, and
+  the form heading, selected service and SMS text match the topic. (Four
+  posts once shipped asking "What would your screened porch cost?" because
+  the template's form was copied unchanged.)
 - `googletagmanager.com/gtag/js?id=G-QEZESKC3B6` and `analytics.js` are in the
   head. (A template without them shipped three untracked pages once.)
 - The file ends with `</html>`.
@@ -206,3 +211,4 @@ Plain English for Brooke, no jargon, no em dashes:
 | 2026-09-24 | blog-retaining-wall-cost-austin.html | Retaining Wall Cost in Austin (2026) |
 | 2026-09-28 | blog-fence-repair-cost-austin.html | Fence Repair Cost in Austin (2026) |
 | 2026-09-28 | blog-gazebo-vs-pavilion-vs-pergola.html | Gazebo vs Pavilion vs Pergola |
+| 2026-10-05 | blog-trex-vs-timbertech-vs-fiberon.html | Trex vs TimberTech vs Fiberon: Best Decking for Texas |
