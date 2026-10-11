@@ -92,6 +92,10 @@ ALLOWED (true):
   insurance deductible.
 - Decks over 30 inches above grade need code guardrail.
 
+PRICING RULE (Brooke, Oct 2026): prices belong in blog posts and cost
+guides. Do not lead the homepage, service pages or city pages with prices,
+and never put a price in a non-blog page title.
+
 NEVER write:
 - Financing, payment plans, or rates. None are offered yet.
 - Manufacturer certifications, BBB, awards, warranty terms or years in
