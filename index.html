@@ -3394,11 +3394,61 @@
   }, true);
 </script>
 
+
+<style>
+  /* ===== Hero refresh (Oct 2026): proof row, shorter copy, real-photo strip ===== */
+  .hero-proof { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; flex-wrap: wrap; }
+  .hero-proof-nd { display: block; line-height: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.25); transition: transform .2s; }
+  .hero-proof-nd:hover { transform: translateY(-2px); }
+  .hero-proof-nd img { height: 58px; width: auto; display: block; }
+  .hero-proof-g { display: inline-flex; align-items: center; gap: 10px; height: 58px; box-sizing: border-box; padding: 0 16px; border-radius: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); color: #fff; text-decoration: none; backdrop-filter: blur(4px); transition: background .2s; }
+  .hero-proof-g:hover { background: rgba(255,255,255,0.18); }
+  .hp-num { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 1; }
+  .hp-stars { display: block; color: var(--gold, #c9a227); font-size: 14px; letter-spacing: 2px; line-height: 1.2; }
+  .hp-src { display: block; font-size: 12px; color: rgba(255,255,255,0.75); }
+  .hero-shots { display: block; margin-top: 26px; text-decoration: none; max-width: 520px; }
+  .hero-shots-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .hero-shots-row img { width: 100%; height: 76px; object-fit: cover; border-radius: 8px; display: block; border: 2px solid rgba(255,255,255,0.25); transition: transform .2s, border-color .2s; }
+  .hero-shots:hover .hero-shots-row img { border-color: rgba(255,255,255,0.6); }
+  .hero-shots-label { display: inline-block; margin-top: 10px; color: #fff; font-weight: 700; font-size: 14px; border-bottom: 1px dashed rgba(255,255,255,0.4); }
+  @media (max-width: 760px) {
+    .hero-proof { gap: 10px; margin-bottom: 18px; }
+    .hero-proof-nd img, .hero-proof-g { height: 50px; }
+    .hp-num { font-size: 24px; }
+    .hero-shots-row img { height: 62px; }
+  }
+
+  @media (min-width: 921px) {
+    .hero-scrim {
+      background:
+        linear-gradient(95deg, rgba(8,20,33,0.90) 0%, rgba(8,20,33,0.80) 34%, rgba(8,20,33,0.50) 64%, rgba(8,20,33,0.38) 100%),
+        linear-gradient(180deg, rgba(8,20,33,0.40) 0%, rgba(8,20,33,0.15) 40%, rgba(8,20,33,0.55) 100%);
+    }
+  }
+
+  /* ===== Reviews band refresh: one clean centered column ===== */
+  .reviews-band { padding: 44px 20px 54px; }
+  .reviews-band-inner { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 780px; gap: 18px; }
+  .reviews-band-rating { padding: 8px 18px; border-radius: 999px; gap: 12px; }
+  .reviews-band-num { font-size: 30px; }
+  .reviews-band-stars { font-size: 15px; margin-bottom: 0; }
+  .reviews-band-quote-stage { width: 100%; min-height: 150px; padding: 0; }
+  .reviews-band .hero-quote { text-align: center; }
+  .reviews-band .hero-quote-mark { margin: 0 auto 10px; }
+  .reviews-band .hero-quote p { font-family: 'Fraunces', Georgia, serif; font-size: 23px; line-height: 1.4; color: var(--navy, #16293d); margin-bottom: 12px; }
+  .reviews-band .hero-quote-attrib { justify-content: center; font-size: 14px; }
+  .reviews-band .hero-quote-dots { left: 0; right: 0; bottom: -34px; justify-content: center; padding-left: 0; }
+  @media (max-width: 760px) {
+    .reviews-band { padding: 34px 18px 46px; }
+    .reviews-band .hero-quote p { font-size: 19px; }
+    .reviews-band-quote-stage { min-height: 190px; }
+  }
+</style>
 </head>
 <body>
 
 <div class="announce">
-  Now scheduling <span>fall 2026 builds</span> &middot; Call or text anytime &middot; <a href="#designer">Get a free quote &rarr;</a>
+  Now booking fall and winter builds &middot; <a href="free-backyard-idea-book.html" onclick="if(window.jbTrack)jbTrack('kit_promo_click',{placement:'announce'});">Free backyard style guide + bluebonnet seeds &rarr;</a>
 </div>
 
 <header class="header">
@@ -3506,21 +3556,15 @@
 
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-texas-badge" aria-label="Now scheduling fall 2026 builds">
-        <svg class="hero-texas-badge-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <polygon points="12,2 14.4,9.4 22,9.4 15.8,14 18.2,21.4 12,16.8 5.8,21.4 8.2,14 2,9.4 9.6,9.4"/>
-        </svg>
-        <div class="hero-texas-badge-text">
-          <span class="hero-texas-badge-main">Now Scheduling Fall 2026</span>
-          <span class="hero-texas-badge-sub">Family Owned &middot; Licensed &amp; Insured</span>
-        </div>
+      <div class="hero-proof">
+        <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx/" target="_blank" rel="noopener" class="hero-proof-nd" onclick="if(window.jbTrack)jbTrack('nextdoor_badge_click',{placement:'hero'});"><img src="nextdoor-fave-2025-2026.jpg" alt="Nextdoor Neighborhood Fave winner, 2025 and 2026" width="1280" height="720"></a>
+        <a href="https://share.google/FJ3Q5fyQ3lhUheeQw" target="_blank" rel="noopener" class="hero-proof-g" aria-label="5.0 stars on Google, read the reviews"><span class="hp-num">5.0</span><span><span class="hp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="hp-src">Google reviews</span></span></a>
       </div>
       <h1>
         <span class="hero-h1-pre">Austin Contractor</span>
         <span class="hero-h1-main">Decks, Roofing, Fences &amp; <em>Outdoor Living</em>.</span>
       </h1>
-      <div class="hero-tagline">JB Contracting ATX. Built across greater Austin.</div>
-      <p class="hero-sub">Family-owned, working across Travis, Hays, and Williamson counties. <strong>John walks your project himself</strong>, writes a line-itemed quote on the spot, and texts you a photo every day the crew is out. Free estimates, written warranty, and somebody actually answers the phone.</p>
+      <p class="hero-sub"><strong>JB Contracting ATX</strong> is family-owned and builds across greater Austin. John walks your project himself and writes you a free, line-itemed quote.</p>
       <div class="hero-phone-block">
         <span class="hero-phone-eyebrow">Call or text</span>
         <a href="tel:5125873914" class="hero-phone-link" aria-label="(512) 587-3914, call JB Contracting ATX">
@@ -3531,16 +3575,9 @@
         </a>
         <span class="hero-phone-sub">Available anytime, day or night.</span>
       </div>
-      <div class="hero-trust">
-        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Call or Text Anytime</div>
-        <a href="https://share.google/FJ3Q5fyQ3lhUheeQw" target="_blank" rel="noopener" class="hero-trust-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 5.0 on Google</a>
-        <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx/" target="_blank" rel="noopener" class="hero-trust-link" onclick="if(window.jbTrack)jbTrack('nextdoor_badge_click',{placement:'hero'});"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 3h10v2h3v3a4 4 0 0 1-4 4h-.3A5 5 0 0 1 13 14.9V17h3v3H8v-3h3v-2.1A5 5 0 0 1 8.3 12H8a4 4 0 0 1-4-4V5h3V3zm0 4H6v1a2 2 0 0 0 1 1.7V7zm10 0v2.7A2 2 0 0 0 18 8V7h-1z"/></svg> Nextdoor Fave 2025 &amp; 2026</a>
-        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Licensed & Insured</div>
-      </div>
-      <a href="#work" class="hero-see-work" onclick="if(window.jbTrack)jbTrack('hero_see_work_click');">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        See our recent work
-        <span class="hero-see-work-arrow" aria-hidden="true">&rarr;</span>
+      <a href="#work" class="hero-shots" onclick="if(window.jbTrack)jbTrack('hero_see_work_click');">
+        <span class="hero-shots-row"><img src="new-pergola-pavilion-golden-640.webp" alt="Cedar pavilion built by JB Contracting ATX" width="640" height="533" loading="lazy" decoding="async"><img src="gallery-fence-stained-640.webp" alt="Horizontal cedar fence built by JB Contracting ATX" width="640" height="494" loading="lazy" decoding="async"><img src="new-deck-covered-hillcountry-640.webp" alt="Covered deck built by JB Contracting ATX" width="640" height="484" loading="lazy" decoding="async"><img src="new-pavilion-cedar-metal-roof-poolside-640.webp" alt="Poolside pavilion built by JB Contracting ATX" width="640" height="480" loading="lazy" decoding="async"></span>
+        <span class="hero-shots-label">See our recent work &rarr;</span>
       </a>
     </div>
     <aside class="hero-visual">
@@ -3667,10 +3704,6 @@
         <button class="hero-quote-dot" aria-label="Review 4"></button>
       </div>
     </div>
-
-    <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx?utm_campaign=1777324347235&amp;share_action_id=697f0fe1-5856-4df6-9390-e112bc49870c" target="_blank" rel="noopener" class="reviews-band-award" aria-label="Nextdoor Neighborhood Fave winner, 2025 and 2026">
-      <img loading="lazy" decoding="async" src="nextdoor-fave-2025-2026.jpg" alt="Nextdoor Neighborhood Fave winner, 2025 and 2026" width="1280" height="720">
-    </a>
   </div>
 </section>
 
