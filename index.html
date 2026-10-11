@@ -3447,6 +3447,7 @@
   }
 </style>
 <style>#hero-quote-form { scroll-margin-top: 96px; }</style>
+<style>.nav .moodboard-trigger { display: none; } .nav .moodboard-trigger.has-designs { display: inline-flex; }</style>
 </head>
 <body>
 
@@ -3646,13 +3647,6 @@
           <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Call or text anytime</span>
           <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> No fees, no obligation</span>
           <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Licensed &amp; insured</span>
-        </div>
-
-        <div class="hero-form-or">
-          <a href="#designer" onclick="if(window.jbTrack)jbTrack('hero_designer_link_click');">
-            Use the interactive Project Designer &rarr;
-          </a>
-          <span class="hero-form-or-sub">Pick materials, finishes, and features. Build your project on screen.</span>
         </div>
 
         <div class="hero-form-success" id="hero-form-success" hidden>
@@ -5791,11 +5785,14 @@ function startOver() {
 
 function updateMoodboardCount() {
   const countEl = document.getElementById('moodboard-count-nav');
+  const trig = countEl.closest('.moodboard-trigger');
   if (savedDesigns.length > 0) {
     countEl.textContent = savedDesigns.length;
     countEl.classList.add('has');
+    if (trig) trig.classList.add('has-designs');
   } else {
     countEl.classList.remove('has');
+    if (trig) trig.classList.remove('has-designs');
   }
 }
 
@@ -7135,50 +7132,33 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 <div class="jb-popup-overlay" id="jb-popup" inert role="dialog" aria-modal="true" aria-labelledby="jb-popup-title" aria-hidden="true">
   <div class="jb-popup">
     <button type="button" class="jb-popup-close" id="jb-popup-close" aria-label="Close">&times;</button>
-    <form id="jb-popup-form" class="jb-popup-form" onsubmit="return submitPopupQuote(event)" novalidate>
-      <span class="jb-popup-eyebrow">Now Scheduling Fall 2026</span>
-      <h2 id="jb-popup-title">Got a project in mind?</h2>
-      <p class="jb-popup-sub">Tell us a little about it and we'll come walk the project, measure everything, and write up an honest, line-itemed quote. Free, no obligation.</p>
+    <form id="jb-popup-form" class="jb-popup-form" onsubmit="return submitPopupGuide(event)" novalidate>
+      <span class="jb-popup-eyebrow">Free for Austin homeowners</span>
+      <h2 id="jb-popup-title">Planning a backyard project?</h2>
+      <p class="jb-popup-sub">Get our free backyard style guide: four Austin styles, color palettes, and every fence, deck and patio option drawn out. Plus free bluebonnet seeds if you'd like them.</p>
 
       <input type="hidden" name="access_key" value="61415131-1581-4830-b93f-e25d8a13724e">
-      <input type="hidden" name="subject" value="New Popup Quote Request">
-      <input type="hidden" name="from_name" value="JB Website , Popup">
+      <input type="hidden" name="subject" value="NEW STYLE GUIDE SIGN-UP">
+      <input type="hidden" name="from_name" value="JB Website: popup">
       <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
 
       <div class="jb-popup-field">
-        <label for="pop-name">Your name</label>
-        <input type="text" id="pop-name" name="name" required autocomplete="name">
+        <label for="pop-name">First name</label>
+        <input type="text" id="pop-name" name="name" required autocomplete="given-name">
       </div>
       <div class="jb-popup-field">
-        <label for="pop-phone">Phone</label>
-        <input type="tel" id="pop-phone" name="phone" required autocomplete="tel" placeholder="(512) 555-1234" oninput="formatPhone(this)" maxlength="14">
-      </div>
-      <div class="jb-popup-field">
-        <label for="pop-project">What are we building?</label>
-        <select id="pop-project" name="project" required>
-          <option value="">Pick one&hellip;</option>
-          <option>Deck or covered patio</option>
-          <option>Roof replacement or repair</option>
-          <option>Fence (cedar, privacy, gate)</option>
-          <option>Pergola or patio cover</option>
-          <option>Siding</option>
-          <option>Hardscape (patio, walkway, firepit)</option>
-          <option>Multiple / Not sure yet</option>
-        </select>
+        <label for="pop-email">Email</label>
+        <input type="email" id="pop-email" name="email" required autocomplete="email" placeholder="you@email.com">
       </div>
 
-      <div class="jb-popup-field">
-        <label for="pop-email">Email <span class="jb-popup-opt">(optional)</span></label>
-        <input type="email" id="pop-email" name="email" autocomplete="email" placeholder="you@email.com">
-      </div>
-
-      <button type="submit" class="jb-popup-submit">Get my free quote &rarr;</button>
-      <p class="jb-popup-or">Prefer to call? <a href="tel:5125873914">(512) 587-3914</a> &middot; Prefer email? <a href="mailto:jbconstructionatx@gmail.com">jbconstructionatx@gmail.com</a></p>
+      <button type="submit" class="jb-popup-submit">Send me the style guide &rarr;</button>
+      <p class="jb-popup-or">Just your email. No sales calls. Ready for a quote instead? <a href="tel:5125873914">Call or text (512) 587-3914</a></p>
 
       <div class="jb-popup-success" id="jb-popup-success" hidden>
         <div class="jb-popup-success-icon" aria-hidden="true">&check;</div>
-        <h2>Got it. We'll be in touch.</h2>
-        <p>Your details are with John. If it's urgent, call <a href="tel:5125873914"><strong>(512) 587-3914</strong></a>.</p>
+        <h2>Here's your style guide.</h2>
+        <p><a class="jb-popup-submit" style="display:block;text-align:center;text-decoration:none" href="jb-backyard-style-guide.pdf" download onclick="if(window.jbTrack)jbTrack('style_guide_open',{lead_source:'popup'});">&#8681;&nbsp; Download the style guide</a></p>
+        <p>Want free bluebonnet seeds too? <a href="free-backyard-idea-book.html#seeds">Get them here &rarr;</a></p>
       </div>
     </form>
   </div>
@@ -7188,12 +7168,13 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 (function () {
   /* JB popup controller.
    * - Fires once per browser session.
-   * - After a 20s delay OR on exit-intent (whichever comes first).
+   * - Offers the free style guide, not a quote (softer ask).
+   * - Desktop: 60s delay or exit intent. Phones: 60s plus half the page read.
    * - Suppressed if visitor already started filling the hero form
    *   (so we never interrupt active engagement).
    * - Stores a flag in sessionStorage so closing it kills it for the session.
    */
-  var POPUP_DELAY_MS = 45000;  // 45 seconds. Engaged visitors only.
+  var POPUP_DELAY_MS = 60000;  // 60 seconds. Engaged visitors only.
   var SESSION_KEY = 'jb_popup_shown';
 
   function isAlreadyShown() {
@@ -7240,60 +7221,49 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     if (e.key === 'Escape' && overlay.classList.contains('is-open')) closePopup();
   });
 
-  // 20-second delayed trigger
-  setTimeout(function () { openPopup('delay_45s'); }, POPUP_DELAY_MS);
-
-  // Exit-intent trigger (desktop only, mobile has no analog).
-  document.addEventListener('mouseout', function (e) {
-    if (e.clientY <= 0 || e.relatedTarget === null) {
-      openPopup('exit_intent');
-    }
-  });
+  // Desktop: after 60 seconds, or when the cursor leaves to close the tab.
+  // Phones: only once someone has spent 60 seconds AND read half the page,
+  // so it never interrupts a visitor who just arrived.
+  var isPhone = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+  var loadedAt = Date.now();
+  if (!isPhone) {
+    setTimeout(function () { openPopup('delay_60s'); }, POPUP_DELAY_MS);
+    document.addEventListener('mouseout', function (e) {
+      if (e.clientY <= 0 || e.relatedTarget === null) openPopup('exit_intent');
+    });
+  } else {
+    var onScroll = function () {
+      var depth = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+      if (Date.now() - loadedAt >= POPUP_DELAY_MS && depth >= 0.5) {
+        window.removeEventListener('scroll', onScroll);
+        openPopup('mobile_60s_half_page');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
 })();
 
-async function submitPopupQuote(e) {
+async function submitPopupGuide(e) {
   e.preventDefault();
   var form = e.target;
-  var btn = form.querySelector('.jb-popup-submit');
+  var btn = form.querySelector('button.jb-popup-submit');
   var success = document.getElementById('jb-popup-success');
-
-  // Cheap validation
-  var required = ['name', 'phone', 'project'];
-  for (var i = 0; i < required.length; i++) {
-    var f = form.querySelector('[name="' + required[i] + '"]');
-    if (f && !String(f.value || '').trim()) { f.focus(); return false; }
-  }
-
-  if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-
+  var name = form.querySelector('[name="name"]'), email = form.querySelector('[name="email"]');
+  if (!String(name.value || '').trim()) { name.focus(); return false; }
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(email.value || '').trim())) { email.focus(); return false; }
+  if (btn) { btn.disabled = true; btn.textContent = 'Sending\u2026'; }
   try {
-    var fd = new FormData(form);
-    var res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
+    var res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
     var data = await res.json().catch(function () { return {}; });
-    if (!res.ok || data.success === false) {
-      throw new Error(data.message || 'Web3Forms ' + res.status);
-    }
-    if (window.jbTrack) {
-      window.jbTrack('generate_lead', {
-        service: form.querySelector('[name="project"]').value || 'unknown',
-        lead_source: 'popup',
-        has_email: form.querySelector('[name="email"]').value.trim() ? 'yes' : 'no',
-        value: 1,
-        currency: 'USD'
-      });
-      window.jbTrack('popup_lead_submit');
-    }
-    // Hide form, show success
-    var children = form.children;
-    for (var j = 0; j < children.length; j++) {
-      if (children[j] !== success) children[j].style.display = 'none';
-    }
-    if (success) success.hidden = false;
+    if (!res.ok || data.success === false) throw new Error(data.message || 'Web3Forms ' + res.status);
   } catch (err) {
-    console.error('Popup quote submit failed:', err);
-    if (btn) { btn.disabled = false; btn.textContent = 'Get my free quote →'; }
-    alert("Something went wrong. Please call John direct at (512) 587-3914.");
+    console.error('Popup guide submit failed:', err);
   }
+  if (window.jbTrack) window.jbTrack('lead_magnet_download', { asset: 'style_guide', lead_source: 'popup' });
+  for (var j = 0; j < form.children.length; j++) {
+    if (form.children[j] !== success) form.children[j].style.display = 'none';
+  }
+  if (success) success.hidden = false;
   return false;
 }
 </script>
