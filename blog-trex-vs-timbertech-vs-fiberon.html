@@ -124,6 +124,32 @@
 <link rel="stylesheet" href="blog.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QEZESKC3B6"></script>
 <script src="analytics.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.jbcontractingatx.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://www.jbcontractingatx.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Trex vs TimberTech vs Fiberon: Best Decking for Texas",
+      "item": "https://www.jbcontractingatx.com/blog-trex-vs-timbertech-vs-fiberon.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="announce">
@@ -160,7 +186,10 @@
   </div>
 </section>
 <div class="blog-feature-img">
-  <img fetchpriority="high" loading="eager" src="gallery-deck-sunset.jpg" alt="Covered backyard deck with built-in lighting at dusk on an elevated lot near Austin" width="1206" height="1385">
+  <picture>
+    <source type="image/webp" srcset="gallery-deck-sunset-640.webp 640w, gallery-deck-sunset-1200.webp 1200w, gallery-deck-sunset-1600.webp 1206w" sizes="(max-width: 1080px) calc(100vw - 56px), 1024px">
+    <img fetchpriority="high" loading="eager" src="gallery-deck-sunset.jpg" alt="Covered backyard deck with built-in lighting at dusk on an elevated lot near Austin" width="1206" height="1385">
+  </picture>
 </div>
 <article class="blog-body">
 
