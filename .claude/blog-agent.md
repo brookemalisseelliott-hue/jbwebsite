@@ -83,7 +83,7 @@ ALLOWED (true):
 - Family-owned. Licensed and insured. 5.0 on Google.
 - Nextdoor Neighborhood Fave 2025 and 2026 (confirmed by Brooke, Oct 2026).
 - John Bernard, owner, has been building across Central Texas for over a
-  decade and founded JB in 2023 (say it exactly that way if at all).
+  decade and founded JB in 2024 (say it exactly that way if at all).
 - John walks every estimate himself. Free on-site estimates. Line-itemed
   quotes. We handle permits and HOA architectural review.
 - Service area: Austin, South Austin, Cedar Park, Round Rock, Brushy Creek,
