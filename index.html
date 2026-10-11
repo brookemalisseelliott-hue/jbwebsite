@@ -3416,6 +3416,8 @@
     .hero-proof-nd img, .hero-proof-g { height: 50px; }
     .hp-num { font-size: 24px; }
     .hero-shots-row img { height: 62px; }
+    .hero-phone-block { padding: 14px 18px !important; }
+    .hero-phone-sub { display: none !important; }
   }
 
   @media (min-width: 921px) {
@@ -3444,6 +3446,7 @@
     .reviews-band-quote-stage { min-height: 190px; }
   }
 </style>
+<style>#hero-quote-form { scroll-margin-top: 96px; }</style>
 </head>
 <body>
 
@@ -3473,7 +3476,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         (512) 587-3914
       </a>
-      <a href="#designer" class="btn btn-primary">Get Free Quote</a>
+      <a href="#hero-quote-form" class="btn btn-primary">Get Free Quote</a>
       <button class="mobile-menu-toggle" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -3493,7 +3496,7 @@
     </div>
 
     <div class="mobile-drawer-cta">
-      <a href="#designer" class="btn btn-primary btn-large" onclick="closeMobileMenu()">Get Free Quote →</a>
+      <a href="#hero-quote-form" class="btn btn-primary btn-large" onclick="closeMobileMenu()">Get Free Quote →</a>
       <a href="tel:5125873914" class="btn btn-outline-navy btn-large">📞 (512) 587-3914</a>
     </div>
 
@@ -3661,6 +3664,38 @@
     </aside>
   </div>
 </section>
+
+<!-- NEXTDOOR AWARD -->
+<section class="nd-award" aria-label="Nextdoor Neighborhood Fave 2025 and 2026">
+  <div class="nd-award-inner">
+    <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx/" target="_blank" rel="noopener" class="nd-award-badge" onclick="if(window.jbTrack)jbTrack('nextdoor_badge_click',{placement:'award_section'});"><img src="nextdoor-fave-2025-2026.jpg" alt="Nextdoor Neighborhood Fave winner, 2025 and 2026" width="1280" height="720" loading="lazy" decoding="async"></a>
+    <div class="nd-award-copy">
+      <span class="nd-award-kick">Voted by our neighbors</span>
+      <h2>A Nextdoor Neighborhood Fave, <em>two years running.</em></h2>
+      <p>In 2025 and again in 2026, Austin neighbors voted JB Contracting a Neighborhood Fave on Nextdoor. For a small family business, that means everything. Thank you, Austin.</p>
+      <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx/" target="_blank" rel="noopener" class="nd-award-link">See us on Nextdoor &rarr;</a>
+    </div>
+  </div>
+</section>
+<style>
+  .nd-award { background: linear-gradient(135deg, #fbf3df 0%, #f3e6c4 100%); padding: 44px 20px; border-top: 1px solid rgba(0,0,0,.05); border-bottom: 1px solid rgba(0,0,0,.05); }
+  .nd-award-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 400px 1fr; gap: 48px; align-items: center; }
+  .nd-award-badge { display: block; line-height: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 18px 40px rgba(22,41,61,.18); transform: rotate(-2deg); transition: transform .25s; }
+  .nd-award-badge:hover { transform: rotate(0deg) scale(1.02); }
+  .nd-award-badge img { width: 100%; height: auto; display: block; }
+  .nd-award-kick { display: block; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: #1c8751; margin-bottom: 10px; }
+  .nd-award h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; color: var(--navy, #16293d); margin: 0 0 14px; }
+  .nd-award h2 em { color: #1c8751; }
+  .nd-award p { font-size: 17px; line-height: 1.6; color: #3b4a58; margin: 0 0 18px; max-width: 560px; }
+  .nd-award-link { display: inline-block; font-weight: 700; color: var(--navy, #16293d); text-decoration: none; border-bottom: 2px solid #1c8751; padding-bottom: 2px; }
+  .nd-award-link:hover { color: #1c8751; }
+  @media (max-width: 860px) {
+    .nd-award { padding: 42px 20px; }
+    .nd-award-inner { grid-template-columns: 1fr; gap: 26px; text-align: center; }
+    .nd-award-badge { max-width: 320px; margin: 0 auto; }
+    .nd-award p { margin-left: auto; margin-right: auto; }
+  }
+</style>
 
 <!-- REVIEWS BAND, moved out of hero so the form sits front-and-center -->
 <section class="reviews-band">
@@ -4088,38 +4123,6 @@
 </section>
 
 <!-- REVIEWS -->
-<!-- NEXTDOOR AWARD -->
-<section class="nd-award" aria-label="Nextdoor Neighborhood Fave 2025 and 2026">
-  <div class="nd-award-inner">
-    <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx/" target="_blank" rel="noopener" class="nd-award-badge" onclick="if(window.jbTrack)jbTrack('nextdoor_badge_click',{placement:'award_section'});"><img src="nextdoor-fave-2025-2026.jpg" alt="Nextdoor Neighborhood Fave winner, 2025 and 2026" width="1280" height="720" loading="lazy" decoding="async"></a>
-    <div class="nd-award-copy">
-      <span class="nd-award-kick">Voted by our neighbors</span>
-      <h2>A Nextdoor Neighborhood Fave, <em>two years running.</em></h2>
-      <p>In 2025 and again in 2026, Austin neighbors voted JB Contracting a Neighborhood Fave on Nextdoor. For a small family business, that means everything. Thank you, Austin.</p>
-      <a href="https://nextdoor.com/pages/jb-contracting-and-property-services-austin-tx/" target="_blank" rel="noopener" class="nd-award-link">See us on Nextdoor &rarr;</a>
-    </div>
-  </div>
-</section>
-<style>
-  .nd-award { background: linear-gradient(135deg, #fbf3df 0%, #f3e6c4 100%); padding: 56px 20px; border-top: 1px solid rgba(0,0,0,.05); border-bottom: 1px solid rgba(0,0,0,.05); }
-  .nd-award-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 400px 1fr; gap: 48px; align-items: center; }
-  .nd-award-badge { display: block; line-height: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 18px 40px rgba(22,41,61,.18); transform: rotate(-2deg); transition: transform .25s; }
-  .nd-award-badge:hover { transform: rotate(0deg) scale(1.02); }
-  .nd-award-badge img { width: 100%; height: auto; display: block; }
-  .nd-award-kick { display: block; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: #1c8751; margin-bottom: 10px; }
-  .nd-award h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; color: var(--navy, #16293d); margin: 0 0 14px; }
-  .nd-award h2 em { color: #1c8751; }
-  .nd-award p { font-size: 17px; line-height: 1.6; color: #3b4a58; margin: 0 0 18px; max-width: 560px; }
-  .nd-award-link { display: inline-block; font-weight: 700; color: var(--navy, #16293d); text-decoration: none; border-bottom: 2px solid #1c8751; padding-bottom: 2px; }
-  .nd-award-link:hover { color: #1c8751; }
-  @media (max-width: 860px) {
-    .nd-award { padding: 42px 20px; }
-    .nd-award-inner { grid-template-columns: 1fr; gap: 26px; text-align: center; }
-    .nd-award-badge { max-width: 320px; margin: 0 auto; }
-    .nd-award p { margin-left: auto; margin-right: auto; }
-  }
-</style>
-
 <section class="reviews" id="reviews">
   <div class="container reveal">
     <div class="section-header">
@@ -6953,7 +6956,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H8l-4 4V6c0-1.1.9-2 2-2zm2 5h12v2H6V9zm0 4h9v2H6v-2z"/></svg>
     Text
   </a>
-  <a class="quote" href="#designer" onclick="if(window.jbTrack)jbTrack('mobile_cta_quote_click');" aria-label="Get a free quote">
+  <a class="quote" href="#hero-quote-form" onclick="if(window.jbTrack)jbTrack('mobile_cta_quote_click');" aria-label="Get a free quote">
     Free Quote
   </a>
 </div>
