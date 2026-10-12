@@ -123,7 +123,6 @@
 }
 </script>
 <style>.quick-answer{background:#f3f8f5;border:1px solid #cfe3d7;border-left:4px solid #1c8751;border-radius:10px;padding:16px 20px;margin:0 0 28px}.quick-answer .qa-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1c8751;margin:0 0 6px}.quick-answer .qa-q{font-weight:700;color:#16293d;margin:0 0 6px}.quick-answer p{margin:0}.quick-answer p+p{margin-top:6px}.about-facts th{text-align:left;width:34%;font-weight:700;color:#16293d;vertical-align:top}.about-portrait{float:right;width:220px;margin:4px 0 16px 24px}.about-portrait img{width:100%;height:auto;border-radius:12px;display:block}.about-portrait figcaption{font-size:13px;color:#5b6876;margin-top:6px;text-align:center}.about-badge{margin:0 0 16px}.about-badge img{width:100%;max-width:420px;height:auto;border-radius:12px;display:block}@media(max-width:600px){.blog-body .about-portrait{float:none;width:180px;margin:0 auto 16px}}</style>
-<style>.about-photos{display:grid;grid-template-columns:3fr 2fr;gap:14px}.about-photos img{width:100%;height:520px;object-fit:cover;border-radius:16px;display:block}.about-photos picture{display:block}.about-photos img[src^="about-john-brooke-pumpkins"]{object-position:50% 30%}@media(max-width:700px){.about-photos{gap:8px;grid-template-columns:1.4fr 1fr}.about-photos img{height:240px;border-radius:12px}}</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -141,6 +140,9 @@
 }
 </script>
 <style>.about-community{margin:8px 0 24px;max-width:340px}.about-community img{width:100%;height:auto;border-radius:12px;display:block}.about-community figcaption{font-size:13px;color:#5b6876;margin-top:6px}</style>
+<link rel="preload" as="image" href="about-hero-couple.webp" media="(min-width: 901px)">
+<link rel="preload" as="image" href="about-hero-pumpkins-m.webp" media="(max-width: 900px)">
+<style>.about-hero{background-color:#0f2133;background-image:linear-gradient(90deg,rgba(15,33,51,.94) 0%,rgba(15,33,51,.86) 38%,rgba(15,33,51,.4) 64%,rgba(15,33,51,.18) 100%),url("about-hero-couple.webp");background-repeat:no-repeat;background-position:0 0,right top;background-size:100% 100%,auto 112%}.about-hero .blog-hero-inner{max-width:1080px}.about-hero h1,.about-hero .lede{max-width:600px}@media(max-width:900px){.about-hero{background-image:linear-gradient(180deg,rgba(11,24,38,.86),rgba(22,41,61,.82)),url("about-hero-pumpkins-m.webp");background-position:0 0,center top;background-size:100% 100%,cover}.about-hero h1,.about-hero .lede{max-width:none}}</style>
 </head>
 <body>
 <div class="announce">
@@ -238,7 +240,7 @@ function closeMobileMenu(){var d=document.getElementById('mobile-drawer'),t=docu
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileMenu();});
 </script>
 
-<section class="blog-hero">
+<section class="blog-hero about-hero">
   <div class="blog-hero-inner">
     <a href="index.html" class="blog-back">&larr; Back to home</a>
     <div class="blog-eyebrow">About Us &middot; Austin, Texas</div>
@@ -247,12 +249,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileM
     <div class="blog-meta-row"><span>Family-owned</span><span class="dot">&middot;</span><span>Licensed &amp; insured</span><span class="dot">&middot;</span><span>5.0 on Google</span></div>
   </div>
 </section>
-<div class="blog-feature-img about-photos">
+<div class="blog-feature-img">
   <img fetchpriority="high" loading="eager" src="about-john-brooke.jpg" alt="John Bernard, owner of JB Contracting ATX, with his wife Brooke" width="1600" height="1069">
-  <picture>
-    <source type="image/webp" srcset="about-john-brooke-pumpkins.webp">
-    <img loading="eager" src="about-john-brooke-pumpkins.jpg" alt="John and Brooke Elliott Bernard at a Central Texas pumpkin patch" width="900" height="1200">
-  </picture>
 </div>
 <article class="blog-body">
 
