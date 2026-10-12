@@ -243,3 +243,5 @@ Plain English for Brooke, no jargon, no em dashes:
 | 2026-09-28 | blog-fence-repair-cost-austin.html | Fence Repair Cost in Austin (2026) |
 | 2026-09-28 | blog-gazebo-vs-pavilion-vs-pergola.html | Gazebo vs Pavilion vs Pergola |
 | 2026-10-05 | blog-trex-vs-timbertech-vs-fiberon.html | Trex vs TimberTech vs Fiberon: Best Decking for Texas |
+| 2026-10-12 | blog-hardie-vs-lp-smartside.html | Hardie vs LP SmartSide: Best Siding for Austin Homes |
+| 2026-10-12 | blog-metal-vs-shingle-roof-austin.html | Metal Roof vs Shingles in Austin: Cost, Hail & Heat |
