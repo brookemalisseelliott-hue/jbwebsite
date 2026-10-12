@@ -164,6 +164,12 @@ The page needs:
   in it must also appear in the post body and in section 2.
 - Write each FAQ answer and the opening sentence under each H2 so it makes
   sense quoted on its own, without the surrounding text.
+- Sources: when the post states a law, permit rule, insurance rule, report
+  figure or manufacturer claim, add `<h2 id="sources">Sources</h2>` and a
+  `<ul class="sources-list">` just before the author box, in the format used
+  in blog-roof-replacement-cost-austin.html. Only list official pages you
+  actually opened (city, state statute, TDI, manufacturer, the Cost vs Value
+  report), and only for statements the page makes.
 - Author box: copy the `<aside class="author-box">` block (and its one-line
   `.author-box` style) from blog-deck-cost-austin.html and place it just
   before `</article>`. Do not change its wording.
