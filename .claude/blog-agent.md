@@ -145,13 +145,25 @@ The page needs:
 - JSON-LD Article (author John Bernard, Owner; publisher JB Contracting ATX
   with logo https://www.jbcontractingatx.com/jb-logo.png; datePublished and
   dateModified = today) and a FAQPage whose questions and answers match the
-  visible FAQ exactly.
+  visible FAQ exactly. Copy the author and publisher objects from
+  blog-siding-repair-cost-austin.html so they carry the shared entity ids
+  `https://www.jbcontractingatx.com/#john-bernard` and
+  `https://www.jbcontractingatx.com/#business` (this is how search engines
+  and AI assistants connect every post to the same business and owner).
 - Hero: `blog-hero` section with back link to blog.html, eyebrow, H1, lede,
   meta row "By John Bernard / Updated <Month D, YYYY> / N min read".
 - Feature image: `<img fetchpriority="high" loading="eager" ...>` using an
   EXISTING photo in the repo relevant to the topic, with width and height
   equal to the file's real pixel size (read it with PIL), and a descriptive
   alt. Never lazy-load the hero.
+- Quick answer box (answer engine optimization): the first thing inside
+  `<article class="blog-body">` is an `<aside class="quick-answer">` with a
+  "Quick answer" label, the main question, and a 40 to 70 word answer that
+  states the real numbers or the verdict up front. Copy the markup and the
+  one-line `.quick-answer` style from blog-deck-cost-austin.html. Every number
+  in it must also appear in the post body and in section 2.
+- Write each FAQ answer and the opening sentence under each H2 so it makes
+  sense quoted on its own, without the surrounding text.
 - Body: 1,700 to 2,400 words. At least one `<table class="cost-table">`, a
   `<div class="pull-cta">` with a button to `#quote`, 8 FAQs as
   `<details class="faq-item"><summary>..</summary><div class="faq-answer"><p>..</p></div></details>`
@@ -164,6 +176,8 @@ The page needs:
   same markup as the others, lazy image with correct width and height.
 - `sitemap.xml`: add a `<url>` with changefreq monthly, priority 0.75,
   lastmod today.
+- `llms.txt`: add a line for the new post under "Cost guides and homeowner
+  resources", in the same `- [Title](URL)` format.
 - Add one contextual sentence linking to the new post from 3 to 5 existing
   relevant pages (just before `</article>` is fine). Use descriptive anchor
   text, not "click here".
@@ -193,6 +207,9 @@ The page needs:
    possible, merge `origin/main` in first, re-run validation, then push.
    Never force-push `main`.
 3. Wait about a minute, then confirm the new URL returns HTTP 200 with curl.
+   Then tell Bing (which feeds ChatGPT search) about it with IndexNow:
+   `curl -s -o /dev/null -w "%{http_code}" "https://api.indexnow.org/indexnow?url=<NEW URL>&key=b5a7a225fc101705d51e78e7ab089bf4"`
+   A 200 or 202 is success. The key file `b5a7a225fc101705d51e78e7ab089bf4.txt` must stay in the repo root.
    If you open the LIVE site in a browser for any check, add `?notrack` to the
    URL so the visit is not counted in Google Analytics.
 4. Append a line to the log below and commit/push that too.

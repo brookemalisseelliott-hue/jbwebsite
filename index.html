@@ -36,8 +36,17 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "JB Contracting ATX",
-  "alternateName": ["JB Contracting", "JB Contracting Austin"],
-  "url": "https://www.jbcontractingatx.com/"
+  "alternateName": [
+    "JB Contracting",
+    "JB Contracting Austin",
+    "JB Contracting and Property Services"
+  ],
+  "url": "https://www.jbcontractingatx.com/",
+  "@id": "https://www.jbcontractingatx.com/#website",
+  "publisher": {
+    "@id": "https://www.jbcontractingatx.com/#business"
+  },
+  "inLanguage": "en-US"
 }
 </script>
 <!-- LocalBusiness JSON-LD schema -->
@@ -45,10 +54,19 @@
 {
   "@context": "https://schema.org",
   "@type": "GeneralContractor",
+  "@id": "https://www.jbcontractingatx.com/#business",
   "foundingDate": "2024",
   "name": "JB Contracting ATX",
-  "alternateName": ["JB Contracting", "JB Contracting Austin", "JB Contracting and Property Services", "JB Construction"],
-  "award": ["Nextdoor Neighborhood Fave 2025", "Nextdoor Neighborhood Fave 2026"],
+  "alternateName": [
+    "JB Contracting",
+    "JB Contracting Austin",
+    "JB Contracting and Property Services",
+    "JB Construction"
+  ],
+  "award": [
+    "Nextdoor Neighborhood Fave 2025",
+    "Nextdoor Neighborhood Fave 2026"
+  ],
   "description": "Family-owned Austin contractor specializing in custom decks, roofing, cedar fences, pergolas, siding, and hardscape across Travis, Hays, and Williamson counties.",
   "url": "https://www.jbcontractingatx.com/",
   "telephone": "+1-512-587-3914",
@@ -204,6 +222,7 @@
   "email": "jbconstructionatx@gmail.com",
   "founder": {
     "@type": "Person",
+    "@id": "https://www.jbcontractingatx.com/#john-bernard",
     "name": "John Bernard",
     "jobTitle": "Owner"
   },
@@ -220,7 +239,8 @@
     "Siding repair",
     "Concrete patios",
     "Retaining walls"
-  ]
+  ],
+  "slogan": "Built around you."
 }
 </script>
 
@@ -3375,6 +3395,14 @@
   window.jbTrack = function(eventName, params){
     try { gtag('event', eventName, params || {}); } catch(e) {}
   };
+
+  // AI answer engines (ChatGPT, Perplexity, Gemini, Copilot, Claude): record
+  // each visit they send as "ai_referral" so AI visibility shows up in GA4.
+  (function () {
+    var src = (document.referrer || '') + ' ' + location.search;
+    var m = src.match(/chatgpt\.com|chat\.openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|you\.com/i);
+    if (m) { window.jbTrack('ai_referral', { ai_source: m[0].toLowerCase(), landing_page: location.pathname }); }
+  })();
   // Auto-track all phone-link taps as the "phone_call_click" event.
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a[href^="tel:"]');
@@ -3436,6 +3464,28 @@
 </style>
 <style>#hero-quote-form { scroll-margin-top: 96px; }</style>
 <style>.nav .moodboard-trigger { display: none; } .nav .moodboard-trigger.has-designs { display: inline-flex; }</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.jbcontractingatx.com/#john-bernard",
+  "name": "John Bernard",
+  "jobTitle": "Owner",
+  "description": "Owner of JB Contracting ATX. John has been building across Central Texas for over a decade and founded JB in 2024. He walks every estimate himself.",
+  "worksFor": {
+    "@id": "https://www.jbcontractingatx.com/#business"
+  },
+  "url": "https://www.jbcontractingatx.com/#about",
+  "knowsAbout": [
+    "Deck construction",
+    "Cedar fencing",
+    "Pergolas and patio covers",
+    "Roof replacement",
+    "Siding",
+    "Concrete patios"
+  ]
+}
+</script>
 </head>
 <body>
 

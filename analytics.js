@@ -25,6 +25,14 @@
     try { gtag('event', eventName, params || {}); } catch (e) { /* no-op */ }
   };
 
+  // AI answer engines (ChatGPT, Perplexity, Gemini, Copilot, Claude): record
+  // each visit they send as "ai_referral" so AI visibility shows up in GA4.
+  (function () {
+    var src = (document.referrer || '') + ' ' + location.search;
+    var m = src.match(/chatgpt\.com|chat\.openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|you\.com/i);
+    if (m) { window.jbTrack('ai_referral', { ai_source: m[0].toLowerCase(), landing_page: location.pathname }); }
+  })();
+
   // Auto-track every phone-link click as "phone_call_click". Calls are the
   // #1 conversion path for a contractor site, every tap should be counted.
   document.addEventListener('click', function (e) {
