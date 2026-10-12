@@ -164,6 +164,9 @@ The page needs:
   in it must also appear in the post body and in section 2.
 - Write each FAQ answer and the opening sentence under each H2 so it makes
   sense quoted on its own, without the surrounding text.
+- Author box: copy the `<aside class="author-box">` block (and its one-line
+  `.author-box` style) from blog-deck-cost-austin.html and place it just
+  before `</article>`. Do not change its wording.
 - Body: 1,700 to 2,400 words. At least one `<table class="cost-table">`, a
   `<div class="pull-cta">` with a button to `#quote`, 8 FAQs as
   `<details class="faq-item"><summary>..</summary><div class="faq-answer"><p>..</p></div></details>`
