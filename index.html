@@ -3494,7 +3494,7 @@
   ]
 }
 </script>
-<style>.mobile-drawer-main{padding-top:8px;padding-bottom:8px}.mobile-drawer-main .mobile-drawer-link:last-child{border-bottom:none}.mobile-drawer-group{padding:0 22px;border-bottom:1px solid var(--line-soft,#eef0f2)}.mobile-drawer-group summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-size:16px;font-weight:600;color:var(--navy,#16293d)}.mobile-drawer-group summary::-webkit-details-marker{display:none}.mobile-drawer-group summary::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;margin:0 6px 4px 0}.mobile-drawer-group[open] summary::after{transform:rotate(-135deg);margin-bottom:-4px}.mobile-drawer-group > div{padding:0 0 10px 12px}.mobile-drawer-group .mobile-drawer-link:last-child{border-bottom:none}</style>
+<style id="menu-v2">.nav a,.nav-dd-btn{white-space:nowrap}.phone-link{white-space:nowrap}@media(max-width:1180px){.nav{gap:22px}}.drawer-services{padding-top:14px}.drawer-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}.drawer-tile{display:flex;align-items:center;min-height:52px;padding:10px 12px;border-radius:10px;background:#f5f3ee;color:var(--navy,#16293d);font-weight:600;font-size:15px;line-height:1.25;text-decoration:none;border:1px solid #ebe7de}.drawer-tile:active,.drawer-tile:hover{background:#ece8de}.mobile-drawer-main{padding-top:6px;padding-bottom:6px}.mobile-drawer-main .mobile-drawer-link:last-child{border-bottom:none}.mobile-acc{padding:0 22px;border-top:1px solid var(--line-soft,#eef0f2)}.mobile-acc-btn{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-size:16px;font-weight:600;color:var(--navy,#16293d);cursor:pointer;-webkit-tap-highlight-color:transparent}.mobile-acc-btn::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;margin:0 6px 4px 0}.mobile-acc-btn[aria-expanded="true"]::after{transform:rotate(-135deg);margin-bottom:-4px}.mobile-acc-btn:focus-visible{outline:2px solid var(--accent,#3d7a63);outline-offset:2px}.mobile-acc-panel{padding:0 0 10px 12px}.mobile-acc-panel .mobile-drawer-link:last-child{border-bottom:none}.mobile-drawer-panel{padding-bottom:env(safe-area-inset-bottom,0px)}body.drawer-open .jb-mobile-cta{display:none!important}.nav-dd{position:relative}.nav-dd-btn{all:unset;display:inline-flex;align-items:center;gap:6px;cursor:pointer;color:var(--slate,#2c3f52);font-size:14px;font-weight:500;padding:8px 0}.nav-dd-btn:hover,.nav-dd:focus-within .nav-dd-btn{color:var(--accent,#3d7a63)}.nav-dd-menu{display:none;position:absolute;left:-18px;top:100%;z-index:60;min-width:420px;grid-template-columns:1fr 1fr;gap:2px 8px;background:#fff;border:1px solid #e4e2dd;border-radius:14px;box-shadow:0 18px 40px rgba(15,28,42,.16);padding:12px}.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{display:grid}.nav-dd-menu a{display:block;padding:10px 12px;border-radius:8px;color:var(--navy,#16293d)!important;font-weight:600;font-size:14px;text-decoration:none}.nav-dd-menu a:hover{background:#f5f3ee;color:var(--accent,#3d7a63)!important}</style>
 </head>
 <body>
 
@@ -3508,7 +3508,19 @@
       <img src="jb-logo-small.png" alt="JB Contracting ATX" style="height: 52px; width: auto;" width="180" height="114">
     </a>
     <nav class="nav">
-      <a href="#designer">Design Yours</a>
+      <div class="nav-dd">
+        <button type="button" class="nav-dd-btn" aria-haspopup="true">Services <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+        <div class="nav-dd-menu">
+          <a href="decks-austin.html">Decks</a>
+          <a href="fences-austin.html">Cedar Fences</a>
+          <a href="pergolas-austin.html">Pergolas</a>
+          <a href="patio-covers-austin.html">Patio Covers</a>
+          <a href="roofing-austin.html">Roofing</a>
+          <a href="siding-austin.html">Siding</a>
+          <a href="hardscape-austin.html">Concrete &amp; Hardscape</a>
+          <a href="outdoor-living-austin.html">Outdoor Living</a>
+        </div>
+      </div>
       <a href="#about">About</a>
       <a href="#work">Our Work</a>
       <a href="#reviews">Reviews</a>
@@ -3546,53 +3558,52 @@
       <a href="#hero-quote-form" class="btn btn-primary btn-large" onclick="closeMobileMenu()">Get Free Quote &rarr;</a>
       <a href="tel:5125873914" class="btn btn-outline-navy btn-large">&#128222; (512) 587-3914</a>
     </div>
+    <div class="mobile-drawer-section drawer-services">
+      <div class="mobile-drawer-label">Our Services</div>
+      <div class="drawer-tiles">
+      <a href="decks-austin.html" class="drawer-tile">Decks</a>
+      <a href="fences-austin.html" class="drawer-tile">Cedar Fences</a>
+      <a href="pergolas-austin.html" class="drawer-tile">Pergolas</a>
+      <a href="patio-covers-austin.html" class="drawer-tile">Patio Covers</a>
+      <a href="roofing-austin.html" class="drawer-tile">Roofing</a>
+      <a href="siding-austin.html" class="drawer-tile">Siding</a>
+      <a href="hardscape-austin.html" class="drawer-tile">Concrete &amp; Hardscape</a>
+      <a href="outdoor-living-austin.html" class="drawer-tile">Outdoor Living</a>
+      </div>
+    </div>
     <div class="mobile-drawer-section mobile-drawer-main">
       <a href="about.html" class="mobile-drawer-link">About Us</a>
       <a href="#work" class="mobile-drawer-link" onclick="closeMobileMenu()">Our Work</a>
       <a href="#reviews" class="mobile-drawer-link" onclick="closeMobileMenu()">Reviews</a>
-      <a href="#designer" class="mobile-drawer-link" onclick="closeMobileMenu()">Design Builder</a>
       <a href="free-backyard-idea-book.html" class="mobile-drawer-link">Free Style Guide</a>
     </div>
-    <details class="mobile-drawer-group">
-      <summary>Services</summary>
-      <div>
-      <a href="decks-austin.html" class="mobile-drawer-link">Custom Decks</a>
-      <a href="roofing-austin.html" class="mobile-drawer-link">Roofing</a>
-      <a href="fences-austin.html" class="mobile-drawer-link">Cedar Fences</a>
-      <a href="pergolas-austin.html" class="mobile-drawer-link">Pergolas</a>
-      <a href="patio-covers-austin.html" class="mobile-drawer-link">Patio Covers</a>
-      <a href="outdoor-living-austin.html" class="mobile-drawer-link">Outdoor Living</a>
-      <a href="siding-austin.html" class="mobile-drawer-link">Siding</a>
-      <a href="hardscape-austin.html" class="mobile-drawer-link">Hardscape</a>
+    <div class="mobile-acc">
+      <button type="button" class="mobile-acc-btn" aria-expanded="false" onclick="var o=this.getAttribute('aria-expanded')==='true';document.querySelectorAll('.mobile-acc-btn').forEach(function(b){b.setAttribute('aria-expanded','false');b.nextElementSibling.hidden=true;});if(!o){this.setAttribute('aria-expanded','true');this.nextElementSibling.hidden=false;}">Service Areas</button>
+      <div class="mobile-acc-panel" hidden>
+        <a href="south-austin-contractor.html" class="mobile-drawer-link">South Austin</a>
+        <a href="round-rock-contractor.html" class="mobile-drawer-link">Round Rock</a>
+        <a href="cedar-park-contractor.html" class="mobile-drawer-link">Cedar Park</a>
+        <a href="lakeway-contractor.html" class="mobile-drawer-link">Lakeway</a>
+        <a href="dripping-springs-contractor.html" class="mobile-drawer-link">Dripping Springs</a>
+        <a href="buda-contractor.html" class="mobile-drawer-link">Buda</a>
+        <a href="kyle-contractor.html" class="mobile-drawer-link">Kyle</a>
+        <a href="leander-contractor.html" class="mobile-drawer-link">Leander</a>
+        <a href="georgetown-contractor.html" class="mobile-drawer-link">Georgetown</a>
+        <a href="pflugerville-contractor.html" class="mobile-drawer-link">Pflugerville</a>
+        <a href="manchaca-contractor.html" class="mobile-drawer-link">Manchaca</a>
       </div>
-    </details>
-    <details class="mobile-drawer-group">
-      <summary>Service Areas</summary>
-      <div>
-      <a href="south-austin-contractor.html" class="mobile-drawer-link">South Austin</a>
-      <a href="round-rock-contractor.html" class="mobile-drawer-link">Round Rock</a>
-      <a href="cedar-park-contractor.html" class="mobile-drawer-link">Cedar Park</a>
-      <a href="lakeway-contractor.html" class="mobile-drawer-link">Lakeway</a>
-      <a href="dripping-springs-contractor.html" class="mobile-drawer-link">Dripping Springs</a>
-      <a href="buda-contractor.html" class="mobile-drawer-link">Buda</a>
-      <a href="kyle-contractor.html" class="mobile-drawer-link">Kyle</a>
-      <a href="leander-contractor.html" class="mobile-drawer-link">Leander</a>
-      <a href="georgetown-contractor.html" class="mobile-drawer-link">Georgetown</a>
-      <a href="pflugerville-contractor.html" class="mobile-drawer-link">Pflugerville</a>
-      <a href="manchaca-contractor.html" class="mobile-drawer-link">Manchaca</a>
+    </div>
+    <div class="mobile-acc">
+      <button type="button" class="mobile-acc-btn" aria-expanded="false" onclick="var o=this.getAttribute('aria-expanded')==='true';document.querySelectorAll('.mobile-acc-btn').forEach(function(b){b.setAttribute('aria-expanded','false');b.nextElementSibling.hidden=true;});if(!o){this.setAttribute('aria-expanded','true');this.nextElementSibling.hidden=false;}">Guides &amp; More</button>
+      <div class="mobile-acc-panel" hidden>
+        <a href="blog.html" class="mobile-drawer-link">Cost Guides &amp; Resources</a>
+        <a href="glossary.html" class="mobile-drawer-link">Glossary</a>
+        <a href="realtors.html" class="mobile-drawer-link">For Realtors</a>
+        <a href="hoa-property-managers.html" class="mobile-drawer-link">For HOAs &amp; Managers</a>
+        <a href="careers.html" class="mobile-drawer-link">Work With Us</a>
+        <a href="https://search.google.com/local/writereview?placeid=ChIJrzk4pjHlsAERx4JqXwjqsIE" target="_blank" rel="noopener" class="mobile-drawer-link" onclick="if(window.jbTrack)jbTrack('review_link_click')">Leave a Review</a>
       </div>
-    </details>
-    <details class="mobile-drawer-group">
-      <summary>Guides &amp; More</summary>
-      <div>
-      <a href="blog.html" class="mobile-drawer-link">Cost Guides &amp; Resources</a>
-      <a href="glossary.html" class="mobile-drawer-link">Glossary</a>
-      <a href="realtors.html" class="mobile-drawer-link">For Realtors</a>
-      <a href="hoa-property-managers.html" class="mobile-drawer-link">For HOAs &amp; Managers</a>
-      <a href="careers.html" class="mobile-drawer-link">Work With Us</a>
-      <a href="https://search.google.com/local/writereview?placeid=ChIJrzk4pjHlsAERx4JqXwjqsIE" target="_blank" rel="noopener" class="mobile-drawer-link" onclick="if(window.jbTrack)jbTrack('review_link_click')">Leave a Review</a>
-      </div>
-    </details>
+    </div>
   </aside>
 </div>
 
