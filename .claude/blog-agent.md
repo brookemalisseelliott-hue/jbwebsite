@@ -110,7 +110,9 @@ NEVER write:
 - Anything about competitors by name.
 
 VOICE: plain, honest, practical, first person plural ("we"), bylined to
-John Bernard. Tell people when the cheaper option is the right one. Short
+John Bernard. (Seven planning and design guides are bylined to Brooke
+Elliott, John's wife, with a "Reviewed by John Bernard" author box; keep new
+cost and build posts bylined to John unless Brooke asks otherwise.) Tell people when the cheaper option is the right one. Short
 paragraphs. No hype words, no "in today's world", no listicle filler.
 
 **Never use em dashes (the long dash) anywhere. Not in copy, titles, alt

@@ -735,3 +735,15 @@ footer a:hover { opacity: 1; color: var(--white); }
   .quote-form-row { grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
   .quote-form h2 { font-size: 23px; }
 }
+
+/* Grouped mobile menu */
+.mobile-drawer-main{padding-top:8px;padding-bottom:8px}
+.mobile-drawer-main .mobile-drawer-link:last-child{border-bottom:none}
+.mobile-drawer-group{padding:0 22px;border-bottom:1px solid var(--line-soft,#eef0f2)}
+.mobile-drawer-group summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-size:16px;font-weight:600;color:var(--navy,#16293d)}
+.mobile-drawer-group summary::-webkit-details-marker{display:none}
+.mobile-drawer-group summary::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;margin:0 6px 4px 0}
+.mobile-drawer-group[open] summary::after{transform:rotate(-135deg);margin-bottom:-4px}
+.mobile-drawer-group > div{padding:0 0 10px 12px}
+.mobile-drawer-group .mobile-drawer-link:last-child{border-bottom:none}
+

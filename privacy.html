@@ -44,9 +44,98 @@
         (512) 587-3914
       </a>
       <a href="index.html#designer" class="btn btn-primary">Get Free Quote</a>
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+  <div class="mobile-drawer-overlay" onclick="closeMobileMenu()"></div>
+  <aside class="mobile-drawer-panel" role="dialog" aria-label="Site navigation">
+    <div class="mobile-drawer-header">
+      <img src="jb-logo-small.png" alt="JB Contracting ATX" style="height: 36px; width: auto;" width="180" height="114">
+      <button class="mobile-drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-drawer-cta">
+      <a href="#quote" class="btn btn-primary btn-large" onclick="closeMobileMenu()">Get Free Quote &rarr;</a>
+      <a href="tel:5125873914" class="btn btn-outline-navy btn-large">&#128222; (512) 587-3914</a>
+    </div>
+    <div class="mobile-drawer-section mobile-drawer-main">
+      <a href="about.html" class="mobile-drawer-link">About Us</a>
+      <a href="index.html#work" class="mobile-drawer-link">Our Work</a>
+      <a href="index.html#reviews" class="mobile-drawer-link">Reviews</a>
+      <a href="index.html#designer" class="mobile-drawer-link">Design Builder</a>
+      <a href="free-backyard-idea-book.html" class="mobile-drawer-link">Free Style Guide</a>
+    </div>
+    <details class="mobile-drawer-group">
+      <summary>Services</summary>
+      <div>
+      <a href="decks-austin.html" class="mobile-drawer-link">Custom Decks</a>
+      <a href="roofing-austin.html" class="mobile-drawer-link">Roofing</a>
+      <a href="fences-austin.html" class="mobile-drawer-link">Cedar Fences</a>
+      <a href="pergolas-austin.html" class="mobile-drawer-link">Pergolas</a>
+      <a href="patio-covers-austin.html" class="mobile-drawer-link">Patio Covers</a>
+      <a href="outdoor-living-austin.html" class="mobile-drawer-link">Outdoor Living</a>
+      <a href="siding-austin.html" class="mobile-drawer-link">Siding</a>
+      <a href="hardscape-austin.html" class="mobile-drawer-link">Hardscape</a>
+      </div>
+    </details>
+    <details class="mobile-drawer-group">
+      <summary>Service Areas</summary>
+      <div>
+      <a href="south-austin-contractor.html" class="mobile-drawer-link">South Austin</a>
+      <a href="round-rock-contractor.html" class="mobile-drawer-link">Round Rock</a>
+      <a href="cedar-park-contractor.html" class="mobile-drawer-link">Cedar Park</a>
+      <a href="lakeway-contractor.html" class="mobile-drawer-link">Lakeway</a>
+      <a href="dripping-springs-contractor.html" class="mobile-drawer-link">Dripping Springs</a>
+      <a href="buda-contractor.html" class="mobile-drawer-link">Buda</a>
+      <a href="kyle-contractor.html" class="mobile-drawer-link">Kyle</a>
+      <a href="leander-contractor.html" class="mobile-drawer-link">Leander</a>
+      <a href="georgetown-contractor.html" class="mobile-drawer-link">Georgetown</a>
+      <a href="pflugerville-contractor.html" class="mobile-drawer-link">Pflugerville</a>
+      <a href="manchaca-contractor.html" class="mobile-drawer-link">Manchaca</a>
+      </div>
+    </details>
+    <details class="mobile-drawer-group">
+      <summary>Guides &amp; More</summary>
+      <div>
+      <a href="blog.html" class="mobile-drawer-link">Cost Guides &amp; Resources</a>
+      <a href="glossary.html" class="mobile-drawer-link">Glossary</a>
+      <a href="realtors.html" class="mobile-drawer-link">For Realtors</a>
+      <a href="hoa-property-managers.html" class="mobile-drawer-link">For HOAs &amp; Managers</a>
+      <a href="careers.html" class="mobile-drawer-link">Work With Us</a>
+      <a href="https://search.google.com/local/writereview?placeid=ChIJrzk4pjHlsAERx4JqXwjqsIE" target="_blank" rel="noopener" class="mobile-drawer-link" onclick="if(window.jbTrack)jbTrack('review_link_click')">Leave a Review</a>
+      </div>
+    </details>
+  </aside>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  var d = document.getElementById('mobile-drawer');
+  var t = document.getElementById('mobile-menu-toggle');
+  if (!d) return;
+  var open = d.classList.toggle('is-open');
+  d.setAttribute('aria-hidden', open ? 'false' : 'true');
+  if (t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.body.classList.toggle('drawer-open', open);
+}
+function closeMobileMenu() {
+  var d = document.getElementById('mobile-drawer');
+  var t = document.getElementById('mobile-menu-toggle');
+  if (!d) return;
+  d.classList.remove('is-open');
+  d.setAttribute('aria-hidden', 'true');
+  if (t) t.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('drawer-open');
+}
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMobileMenu(); });
+</script>
 
 <section class="blog-hero">
   <div class="blog-hero-inner">
