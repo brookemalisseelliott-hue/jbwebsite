@@ -115,7 +115,7 @@
   </url>
   <url>
     <loc>https://www.jbcontractingatx.com/blog.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -348,6 +348,12 @@
   <url>
     <loc>https://www.jbcontractingatx.com/blog-deck-repair-cost-austin.html</loc>
     <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.jbcontractingatx.com/blog-deck-design-ideas-austin.html</loc>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
