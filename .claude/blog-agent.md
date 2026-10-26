@@ -249,3 +249,4 @@ Plain English for Brooke, no jargon, no em dashes:
 | 2026-10-12 | blog-metal-vs-shingle-roof-austin.html | Metal Roof vs Shingles in Austin: Cost, Hail & Heat |
 | 2026-10-12 | blog-deck-repair-cost-austin.html | Deck Repair Cost in Austin: $1,800 to $7,000 (2026) |
 | 2026-10-19 | blog-deck-design-ideas-austin.html | Deck Design Ideas for Austin Backyards (2026) |
+| 2026-10-26 | blog-impact-resistant-shingles-texas.html | Class 4 Shingles in Texas: Cost, Hail and Insurance |
