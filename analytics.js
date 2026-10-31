@@ -82,6 +82,7 @@
         service: (project && project.value) || 'unknown',
         zip: (zip && zip.value) || '',
         lead_source: leadSource,
+        heard_about: (form.querySelector('[name="heard_about"]') || {}).value || 'not_given',
         has_email: (emailField && emailField.value.trim()) ? 'yes' : 'no',
         value: 1,
         currency: 'USD'

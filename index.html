@@ -3694,6 +3694,21 @@
         </div>
 
         <div class="hero-form-field">
+          <label for="hq-heard">How did you hear about us? <span class="hero-form-opt">(optional)</span></label>
+          <select id="hq-heard" name="heard_about">
+            <option value="">Pick one…</option>
+            <option>Google search</option>
+            <option>Google Maps or Business Profile</option>
+            <option>Nextdoor</option>
+            <option>Facebook or Instagram</option>
+            <option>ChatGPT or another AI app</option>
+            <option>Friend, neighbor or past customer</option>
+            <option>Saw our yard sign or truck</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="hero-form-field">
           <label for="hq-notes">Anything else? <span class="hero-form-opt">(optional)</span></label>
           <textarea id="hq-notes" name="notes" rows="2" placeholder="Dream features, timeline, must-haves…"></textarea>
         </div>
@@ -5139,6 +5154,7 @@ async function submitHeroQuote(e) {
         service: form.querySelector('[name="project"]').value || 'unknown',
         zip: form.querySelector('[name="zip"]').value || '',
         lead_source: 'hero_quick_quote',
+        heard_about: (form.querySelector('[name="heard_about"]') || {}).value || 'not_given',
         has_email: form.querySelector('[name="email"]').value.trim() ? 'yes' : 'no',
         value: 1,
         currency: 'USD'
