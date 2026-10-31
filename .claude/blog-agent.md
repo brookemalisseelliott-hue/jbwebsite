@@ -14,6 +14,11 @@ Brooke Bernard. Brooke approved this weekly agent on 28 Sep 2026.
 Baseline search data saved on 30 Sep 2026 is in `.claude/data/` (see its
 README). Use it when choosing between topics if live data is unavailable.
 
+Brooke exports Search Console by hand now that the Supermetrics trial has
+ended. Exports live in `.claude/gsc/<date>/` (Queries.csv, Pages.csv,
+Chart.csv, last 3 months). Use the newest one: a query cluster at positions
+8 to 20 with no dedicated page beats the next queue item.
+
 Take the FIRST topic in the queue whose file does not already exist in the
 repo. Never write a second page on a topic that already has one. Before
 writing, grep the repo for the main keyword and read any page that already
@@ -28,8 +33,8 @@ competing with it.
 | 4 | blog-hardie-vs-lp-smartside.html | hardie vs lp smartside, fiber cement vs engineered wood siding | Comparison format; complements the Hardie cost guide |
 | 5 | blog-impact-resistant-shingles-texas.html | class 4 shingles texas, impact resistant roof insurance discount | Storm/hail cluster already ranks 12 to 20 |
 | 6 | blog-metal-vs-shingle-roof-austin.html | metal roof vs shingles texas | Pairs with the roof replacement cost guide |
-| 7 | blog-when-to-stain-deck-fence-austin.html | when to stain a fence, when to stain a new deck texas | Maintenance searches; fences are the volume business |
-| 8 | blog-adding-roof-to-pergola.html | pergola roof cost, adding a roof to a pergola | GSC shows this cluster at 12 to 18 on the pergola guide |
+| 7 | blog-adding-roof-to-pergola.html | pergola roof cost, adding a roof to a pergola, patio roof contractors | GSC export 31 Oct 2026: "pergola roofing cost" at 12.6, "patio roof contractors brushy creek" 58 impressions at 10.4, and the pergola guide is the second-biggest page (1,898 impressions at 11.5). Do this one next. |
+| 8 | blog-when-to-stain-deck-fence-austin.html | when to stain a fence, when to stain a new deck texas | Maintenance searches; fences are the volume business |
 | 9 | blog-deck-boards-texas-heat.html | best decking for texas heat, composite vs wood deck hot | Heat is the recurring Austin objection |
 | 10 | blog-deck-permit-austin.html | do i need a permit for a deck in austin | Only use the rules already on the site; see section 3 |
 
