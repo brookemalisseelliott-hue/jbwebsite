@@ -256,3 +256,4 @@ Plain English for Brooke, no jargon, no em dashes:
 | 2026-10-19 | blog-deck-design-ideas-austin.html | Deck Design Ideas for Austin Backyards (2026) |
 | 2026-10-26 | blog-impact-resistant-shingles-texas.html | Class 4 Shingles in Texas: Cost, Hail and Insurance |
 | 2026-11-02 | blog-adding-roof-to-pergola.html | Adding a Roof to a Pergola in Austin: Options and Cost |
+| 2026-11-09 | blog-when-to-stain-deck-fence-austin.html | When to Stain a New Fence or Deck in Texas (2026) |
