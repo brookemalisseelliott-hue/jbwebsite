@@ -314,8 +314,8 @@
 <link rel="preload" as="image" type="image/webp" imagesrcset="new-deck-pt-railing-oaks-640.webp 640w, new-deck-pt-railing-oaks-800.webp 800w, new-deck-pt-railing-oaks-1200.webp 1200w, new-deck-pt-railing-oaks-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Fraunces:opsz,wght@9..144,400..700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Fraunces:opsz,wght@9..144,400..700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Bitter:wght@400..700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Bitter:wght@400..700&display=swap"></noscript>
 <style>
   :root {
     --navy: #16293d;
@@ -352,15 +352,11 @@
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    /* Fraunces carries an optical-size axis. Letting the browser drive it means
-       the hero renders with true display proportions (finer joins, tighter fit)
-       while a 15px heading renders with text proportions, instead of one text
-       drawing scaled up and down. This is most of what separates considered
-       type from a face dropped into a template. */
+    /* Uses a font's optical-size axis when it has one. Harmless otherwise. */
     font-optical-sizing: auto;
   }
   h1, h2, h3, h4 {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-weight: 600;
     line-height: 1.05;
     /* Gentler than the -0.025em the old slab needed: optical sizing already
@@ -405,7 +401,7 @@
     gap: 20px;
   }
   .logo {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-weight: 700;
     font-size: 22px;
     letter-spacing: -0.015em;
@@ -733,7 +729,7 @@
     line-height: 1;
   }
   .hero-texas-badge-main {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 19px;
     font-weight: 600;
     color: var(--white);
@@ -773,7 +769,7 @@
   }
   .hero-h1-main {
     display: block;
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: clamp(42px, 5.8vw, 78px);
     font-weight: 600;
     line-height: 1.02;
@@ -806,7 +802,7 @@
     background: rgba(255,255,255,0.45);
   }
   .hero-tagline {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-size: clamp(17px, 1.5vw, 21px);
     color: var(--gold);
@@ -847,7 +843,7 @@
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 38px;
     font-weight: 600;
     color: var(--white);
@@ -892,7 +888,7 @@
   .hero-form-stars { color: var(--gold); letter-spacing: 1px; font-size: 14px; }
   .hero-form-eyebrow-text strong { color: var(--navy, #16293d); font-weight: 700; }
   .hero-form-title {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 28px;
     line-height: 1.15;
     color: var(--navy, #16293d);
@@ -1059,7 +1055,7 @@
     margin-bottom: 14px;
   }
   .hero-form-success h3 {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 22px;
     color: var(--navy, #16293d);
     margin: 0 0 6px;
@@ -1197,7 +1193,7 @@
   }
   .hero-rating-block:hover { opacity: 0.88; }
   .hero-rating-num {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 64px;
     line-height: 0.95;
     font-weight: 600;
@@ -1249,7 +1245,7 @@
   }
   .reviews-band-rating:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
   .reviews-band-num {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 44px;
     line-height: 1;
     color: var(--navy, #16293d);
@@ -1524,7 +1520,7 @@
   }
   .stat-item:last-child { border-right: none; }
   .stat-num {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 40px;
     font-weight: 600;
     color: var(--navy);
@@ -1583,7 +1579,7 @@
     align-items: center;
     gap: 8px;
     color: var(--slate);
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-weight: 600;
     font-size: 18px;
     letter-spacing: -0.01em;
@@ -1676,7 +1672,7 @@
     margin-bottom: 8px;
   }
   .inspo-title {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 4px;
@@ -1791,7 +1787,7 @@
     margin-bottom: 8px;
   }
   .designer-step-title {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 30px;
     color: var(--navy);
     margin-bottom: 8px;
@@ -1905,7 +1901,7 @@
     font-size: 14px;
   }
   .option-tile-title {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-weight: 600;
     font-size: 16px;
     color: var(--navy);
@@ -2046,7 +2042,7 @@
     margin-bottom: 8px;
   }
   .preview-title {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 26px;
     color: var(--navy);
     margin-bottom: 24px;
@@ -2110,7 +2106,7 @@
   }
   .service-tile.selected svg { color: var(--accent); }
   .service-tile-title {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 16px;
     font-weight: 600;
     color: var(--navy);
@@ -2137,7 +2133,7 @@
   .summary-list .summary-row .val {
     color: var(--navy);
     font-weight: 600;
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     text-align: right;
     display: inline-flex;
     align-items: center;
@@ -2222,7 +2218,7 @@
     margin: 0 auto 26px;
     font-size: 30px;
   }
-  .designer-success h3 { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-size: 32px; color: var(--navy); margin-bottom: 14px; }
+  .designer-success h3 { font-family: 'Bitter', Georgia, 'Times New Roman', serif; font-size: 32px; color: var(--navy); margin-bottom: 14px; }
   .designer-success p { color: var(--slate-soft); max-width: 480px; margin: 0 auto 10px; }
   .success-testimonial {
     margin: 26px auto 0;
@@ -2234,7 +2230,7 @@
     text-align: left;
   }
   .success-stars { color: var(--accent); letter-spacing: 2px; font-size: 14px; margin-bottom: 8px; }
-  .success-quote { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-style: italic; color: var(--navy); font-size: 17px; line-height: 1.45; margin: 0 0 10px !important; }
+  .success-quote { font-family: 'Bitter', Georgia, 'Times New Roman', serif; font-style: italic; color: var(--navy); font-size: 17px; line-height: 1.45; margin: 0 0 10px !important; }
   .success-attrib { font-size: 13px; color: var(--slate-soft); margin: 0 !important; }
 
   @media (max-width: 920px) {
@@ -2280,7 +2276,7 @@
   .process-step::before {
     counter-increment: step;
     content: counter(step, decimal-leading-zero);
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 14px;
     font-weight: 600;
     color: var(--accent);
@@ -2301,7 +2297,7 @@
   }
   .process-step:hover .icon { background: var(--accent); color: var(--white); }
   .process-step h4 {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 22px;
     color: var(--navy);
     margin-bottom: 10px;
@@ -2343,7 +2339,7 @@
     display: inline-block;
   }
   .lead-magnet-text h2 {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: clamp(32px, 4vw, 48px);
     color: var(--navy);
     line-height: 1.05;
@@ -2386,7 +2382,7 @@
     box-shadow: var(--shadow);
   }
   .lead-magnet-form h3 {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 22px;
     color: var(--navy);
     margin-bottom: 6px;
@@ -2486,7 +2482,7 @@
     margin-bottom: 22px;
   }
   .why-signoff {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 500;
     font-size: 23px;
@@ -2591,7 +2587,7 @@
     padding: 28px 16px 12px;
     background: linear-gradient(180deg, transparent, rgba(15, 28, 42, 0.92));
     color: var(--white);
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 14px;
     font-weight: 500;
     opacity: 0;
@@ -2637,7 +2633,7 @@
     font-size: 16px; color: var(--slate);
   }
   .pricing-row:last-child { border-bottom: none; }
-  .pricing-row b { color: var(--navy); font-family: 'Fraunces', Georgia, serif; }
+  .pricing-row b { color: var(--navy); font-family: 'Bitter', Georgia, serif; }
   .pricing-form {
     position: relative;
     display: flex; align-items: center; justify-content: center;
@@ -2685,7 +2681,7 @@
   .pricing-table { width: 100%; border-collapse: collapse; margin: 6px 0 14px; font-size: 15.5px; }
   .pricing-table th {
     text-align: left; padding: 11px 12px; background: var(--paper);
-    font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--navy); font-size: 14px;
+    font-family: 'Bitter', Georgia, serif; font-weight: 600; color: var(--navy); font-size: 14px;
   }
   .pricing-table td { padding: 11px 12px; border-bottom: 1px solid var(--line-soft); color: var(--slate); }
   .pricing-table td:last-child { text-align: right; white-space: nowrap; font-weight: 600; color: var(--navy); }
@@ -2723,7 +2719,7 @@
   .faq-item > summary {
     cursor: pointer;
     padding: 20px 26px;
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 17px;
     font-weight: 600;
     color: var(--navy);
@@ -2799,7 +2795,7 @@
   }
   .review-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
   .review-card .quote-mark {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 100px;
     line-height: 1;
     color: var(--accent);
@@ -2894,7 +2890,7 @@
     margin-bottom: 10px;
   }
   .featured-blog-card h3 {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 20px;
     line-height: 1.2;
     color: var(--navy);
@@ -3090,7 +3086,7 @@
   }
   .lifestyle-info { flex: 1; }
   .lifestyle-title {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-weight: 600;
     font-size: 16px;
     color: var(--navy);
@@ -3134,7 +3130,7 @@
     margin-bottom: 8px;
   }
   .photo-upload-title {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 15px;
     font-weight: 600;
     color: var(--navy);
@@ -3269,7 +3265,7 @@
   }
   .moodboard-close:hover { background: var(--mist); }
   .moodboard-content h2 {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 32px;
     color: var(--navy);
     margin-bottom: 8px;
@@ -3316,7 +3312,7 @@
     margin-bottom: 4px;
   }
   .saved-design-title {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 18px;
     color: var(--navy);
     font-weight: 600;
@@ -3422,7 +3418,7 @@
   .hero-proof-nd img { height: 58px; width: auto; display: block; }
   .hero-proof-g { display: inline-flex; align-items: center; gap: 10px; height: 58px; box-sizing: border-box; padding: 0 16px; border-radius: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); color: #fff; text-decoration: none; backdrop-filter: blur(4px); transition: background .2s; }
   .hero-proof-g:hover { background: rgba(255,255,255,0.18); }
-  .hp-num { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 1; }
+  .hp-num { font-family: 'Bitter', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 1; }
   .hp-stars { display: block; color: var(--gold, #c9a227); font-size: 14px; letter-spacing: 2px; line-height: 1.2; }
   .hp-src { display: block; font-size: 12px; color: rgba(255,255,255,0.75); }
   .hero-shots { display: block; margin-top: 26px; text-decoration: none; max-width: 520px; }
@@ -3456,7 +3452,7 @@
   .reviews-band-quote-stage { width: 100%; min-height: 150px; padding: 0; }
   .reviews-band .hero-quote { text-align: center; }
   .reviews-band .hero-quote-mark { margin: 0 auto 10px; }
-  .reviews-band .hero-quote p { font-family: 'Fraunces', Georgia, serif; font-size: 23px; line-height: 1.4; color: var(--navy, #16293d); margin-bottom: 12px; }
+  .reviews-band .hero-quote p { font-family: 'Bitter', Georgia, serif; font-size: 23px; line-height: 1.4; color: var(--navy, #16293d); margin-bottom: 12px; }
   .reviews-band .hero-quote-attrib { justify-content: center; font-size: 14px; }
   .reviews-band .hero-quote-dots { left: 0; right: 0; bottom: -34px; justify-content: center; padding-left: 0; }
   @media (max-width: 760px) {
@@ -3744,7 +3740,7 @@
   .nd-award-badge:hover { transform: rotate(0deg) scale(1.02); }
   .nd-award-badge img { width: 100%; height: auto; display: block; }
   .nd-award-kick { display: block; font-size: 15px; font-weight: 600; color: #1c8751; margin-bottom: 10px; }
-  .nd-award h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; color: var(--navy, #16293d); margin: 0 0 14px; }
+  .nd-award h2 { font-family: 'Bitter', Georgia, serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12; color: var(--navy, #16293d); margin: 0 0 14px; }
   .nd-award h2 em { font-style: normal; color: inherit; font-weight: inherit; }
   .nd-award p { font-size: 17px; line-height: 1.6; color: #3b4a58; margin: 0; max-width: 560px; }
   @media (max-width: 860px) {
@@ -4199,7 +4195,7 @@
   .kit-band-inner { display: flex; align-items: center; gap: 22px; background: #16293d; color: #fff; border-radius: 16px; padding: 26px 30px; }
   .kit-band-flower { font-size: 48px; line-height: 1; color: #6f8fd8; flex: 0 0 auto; }
   .kit-band-copy { flex: 1 1 auto; }
-  .kit-band h2 { font-family: 'Fraunces', Georgia, serif; font-size: 26px; line-height: 1.2; margin: 0 0 6px; color: #fff; }
+  .kit-band h2 { font-family: 'Bitter', Georgia, serif; font-size: 26px; line-height: 1.2; margin: 0 0 6px; color: #fff; }
   .kit-band h2 em { font-style: normal; color: inherit; font-weight: inherit; }
   .kit-band p { margin: 0; color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.55; }
   .kit-band .btn { flex: 0 0 auto; white-space: nowrap; }
@@ -5926,7 +5922,7 @@ function openMoodboard() {
     grid.innerHTML = `
       <div class="moodboard-empty" style="grid-column: 1 / -1;">
         <div class="moodboard-empty-icon">🎨</div>
-        <div style="font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-size: 22px; color: var(--navy); margin-bottom: 6px;">Your mood board is empty</div>
+        <div style="font-family: 'Bitter', Georgia, 'Times New Roman', serif; font-size: 22px; color: var(--navy); margin-bottom: 6px;">Your mood board is empty</div>
         <div>Design a project below, then tap "Save to Mood Board" to start collecting the looks you love.</div>
       </div>`;
   } else {
@@ -6072,7 +6068,7 @@ function renderEmptyPreview() {
       <line x1="50" y1="180" x2="350" y2="180" stroke="#16293d" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.35"/>
       <line x1="200" y1="60" x2="200" y2="180" stroke="#16293d" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.25"/>
       <circle cx="200" cy="180" r="3" fill="#16293d" opacity="0.4"/>
-      <text x="200" y="125" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="17" fill="#16293d">Pick a project to start designing</text>
+      <text x="200" y="125" text-anchor="middle" font-family="Bitter, Georgia, serif" font-style="italic" font-size="17" fill="#16293d">Pick a project to start designing</text>
       <text x="200" y="148" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#5b6b7c" letter-spacing="1.2">YOUR LIVE PREVIEW APPEARS HERE</text>
     </svg>`;
 }
@@ -7146,7 +7142,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     margin-bottom: 10px;
   }
   .jb-popup h2 {
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Bitter', Georgia, 'Times New Roman', serif;
     font-size: 26px;
     line-height: 1.18;
     color: var(--navy, #16293d);

@@ -35,7 +35,7 @@ body {
   font-optical-sizing: auto;
 }
 h1, h2, h3, h4 {
-  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-family: 'Bitter', Georgia, 'Times New Roman', serif;
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.014em;
@@ -79,7 +79,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .header-inner { max-width: 1340px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .logo {
-  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-family: 'Bitter', Georgia, 'Times New Roman', serif;
   font-weight: 700;
   font-size: 22px;
   letter-spacing: -0.015em;
@@ -376,7 +376,7 @@ body.drawer-open { overflow: hidden; }
   text-align: left;
   border-bottom: 1px solid var(--line-soft);
 }
-.cost-table th { background: var(--paper); font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 600; color: var(--navy); }
+.cost-table th { background: var(--paper); font-family: 'Bitter', Georgia, 'Times New Roman', serif; font-weight: 600; color: var(--navy); }
 .cost-table tr:last-child td { border-bottom: none; }
 
 /* Narrow screens: let a wide cost table scroll itself instead of the page. */
@@ -560,7 +560,7 @@ footer a:hover { opacity: 1; color: var(--white); }
 .faq-item > summary {
   cursor: pointer;
   padding: 18px 22px;
-  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-family: 'Bitter', Georgia, 'Times New Roman', serif;
   font-size: 16.5px;
   font-weight: 600;
   color: var(--navy);
@@ -625,7 +625,7 @@ footer a:hover { opacity: 1; color: var(--white); }
   margin-bottom: 6px;
 }
 .price-callout-value {
-  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-family: 'Bitter', Georgia, 'Times New Roman', serif;
   font-size: 25px;
   font-weight: 700;
   color: var(--navy);
