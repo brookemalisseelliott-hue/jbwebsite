@@ -176,6 +176,21 @@ paragraphs. No hype words, no "in today's world", no listicle filler.
 **Never use em dashes (the long dash) anywhere. Not in copy, titles, alt
 text, schema or commit messages.** Use commas, colons, full stops or "to".
 
+HOUSE STYLE (Brooke, Nov 2026: the site read as AI-built; keep it from
+drifting back):
+- Headings (H1, H2) do not end with a full stop. Questions keep their "?".
+- Do not wrap a phrase in a heading in `<em>` to highlight it. The styles no
+  longer color it, so it only adds markup.
+- No arrows ("→" or `&rarr;`) at the end of links, buttons or card labels.
+  "Read the guide" is enough. Arrows are fine inside a sentence that maps one
+  thing to another ("Sloped yard &rarr; deck").
+- Use "honest" or "honestly" at most once per post, and never "actually" as
+  filler. Say the specific thing instead: a number, a material, a step.
+- Skip stock lines such as "built right the first time", "premium
+  craftsmanship", "no waiting around", "like we live there", "the parts most
+  contractors forget", and strings of rhetorical questions ("Sloped lot?
+  Limestone?"). Customer reviews are quoted as written and never edited.
+
 ---
 
 ## 4. Build the page
