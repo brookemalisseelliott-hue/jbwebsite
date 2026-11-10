@@ -86,6 +86,13 @@ Rules that follow (recommendations from that review; Brooke can overrule):
 Every price must match these. If a post needs a number not listed, give a
 range consistent with these or leave the number out. Never invent a price.
 
+The same figures are summarized in two places that answer engines read: the
+"2026 Austin price ranges at a glance" table at the top of `blog.html` and the
+"2026 price ranges" section of `llms.txt`. If a price in this section ever
+changes, change it in both of those and in the guide itself in the same
+commit. Two different numbers for the same job is the fastest way to stop
+being quoted.
+
 - Decks, per sq ft installed: pressure-treated $30 to $45, cedar $50 to $75,
   composite/PVC $60 to $100. Typical 300 sq ft: PT $9,000 to $13,500, cedar
   $15,000 to $22,500, composite $18,000 to $30,000.
