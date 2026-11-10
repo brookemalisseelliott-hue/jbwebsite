@@ -17,7 +17,8 @@ README). Use it when choosing between topics if live data is unavailable.
 Brooke exports Search Console by hand now that the Supermetrics trial has
 ended. Exports live in `.claude/gsc/<date>/` (Queries.csv, Pages.csv,
 Chart.csv, last 3 months). Use the newest one: a query cluster at positions
-8 to 20 with no dedicated page beats the next queue item.
+8 to 20 with no dedicated page beats the next queue item, but only if it
+passes the "real demand" test in section 1a.
 
 Take the FIRST topic in the queue whose file does not already exist in the
 repo. Never write a second page on a topic that already has one. Before
@@ -29,7 +30,7 @@ competing with it.
 |---|------|---------------|-----|
 | 1 | blog-trex-vs-timbertech-vs-fiberon.html | trex vs timbertech, fiberon vs trex, best composite decking texas | Comparison format ranks for competitors; "fiberon" 5.4K/mo |
 | 2 | blog-deck-repair-cost-austin.html | deck repair cost, deck repair austin | Repair guides rank fast here (siding repair hit 5.5 in week one) |
-| 3 | blog-deck-design-ideas-austin.html | deck design austin, austin deck design, deck design austin tx | About 90 impressions in 90 days at 33 to 44 with no page; link to the homepage Design Builder (index.html#designer) |
+| 3 | blog-deck-design-ideas-austin.html | deck design austin, austin deck design, deck design austin tx | About 90 impressions in 90 days at 33 to 44 with no page; link to the homepage Design Builder (/#designer) |
 | 4 | blog-hardie-vs-lp-smartside.html | hardie vs lp smartside, fiber cement vs engineered wood siding | Comparison format; complements the Hardie cost guide |
 | 5 | blog-impact-resistant-shingles-texas.html | class 4 shingles texas, impact resistant roof insurance discount | Storm/hail cluster already ranks 12 to 20 |
 | 6 | blog-metal-vs-shingle-roof-austin.html | metal roof vs shingles texas | Pairs with the roof replacement cost guide |
@@ -41,6 +42,42 @@ competing with it.
 If every file exists, choose a new topic that fits JB's services and does
 not duplicate an existing page, and say clearly in your final summary that
 the queue needs refilling.
+
+---
+
+## 1a. How to read a Search Console export (review of 9 Nov 2026)
+
+The 9 Nov 2026 export (`.claude/gsc/2026-11-09/`, last 3 months compared with
+the 3 months before) was checked against the site, the live server and the
+Semrush files. What it showed, so nobody re-learns it:
+
+- Google clicks are about one a day and almost all of them are people typing
+  the business name. Non-brand searches: 7,431 impressions, 6 clicks.
+- Clicks fell 121 to 104 because name searches fell (1,203 to 943
+  impressions), not because pages dropped. Average position improved.
+- Desktop is 76% of impressions at a 0.43% click rate. Phrases such as
+  "custom deck installation buda" or "pergolas installation in cedar park"
+  have collected hundreds of impressions at positions 7 to 17 since spring
+  without one click. Treat those as automated rank checks, not homeowners.
+- Rows at position 1 to 3 for "near me" phrases ("deck builder near me",
+  "siding contractors near me") are the Google Business Profile showing in
+  the map pack near the business. They are not web rankings.
+- Nothing is technically broken: robots, canonicals, sitemap, redirects,
+  schema, speed and duplicate-content checks all passed.
+
+Rules that follow (recommendations from that review; Brooke can overrule):
+
+- "Real demand" test: a query cluster counts only if it has at least one
+  click, or it reads the way a homeowner would type it and is not a one-town
+  phrase with zero clicks across two periods. Impressions alone prove nothing.
+- Do not retitle or re-aim an existing service or city page because of an
+  export. The Cedar Park hub title changed 7 times and the Buda hub 6 times
+  between 17 Sep and 31 Oct, which makes it impossible to tell what worked.
+  Leave titles and H1s on those pages alone for at least 8 weeks at a time.
+- Judge progress by non-brand clicks, calls and form leads. Not by
+  impressions and not by average position.
+- Link to the homepage as `/` and its sections as `/#reviews`, `/#work` and
+  so on. Never `index.html`, which is a duplicate address for the same page.
 
 ---
 
