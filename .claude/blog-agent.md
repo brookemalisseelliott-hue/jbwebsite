@@ -178,6 +178,9 @@ text, schema or commit messages.** Use commas, colons, full stops or "to".
 
 HOUSE STYLE (Brooke, Nov 2026: the site read as AI-built; keep it from
 drifting back):
+- Headline font is Bitter (body text stays Archivo), chosen by Brooke on
+  10 Nov 2026 to replace Fraunces. The template's `<head>` already loads it;
+  never add Fraunces back or load a third font.
 - Headings (H1, H2) do not end with a full stop. Questions keep their "?".
 - Do not wrap a phrase in a heading in `<em>` to highlight it. The styles no
   longer color it, so it only adds markup.
