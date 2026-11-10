@@ -129,6 +129,15 @@ being quoted.
 ## 3. Facts and claims
 
 ALLOWED (true):
+- The business is always written "JB Contracting ATX" in copy and in FAQ
+  schema. The Google listing is named "JB Contracting"; Nextdoor and Thumbtack
+  say "JB Contracting and Property Services". That longer name belongs only on
+  the About page and in the homepage schema `alternateName`, where it ties the
+  listings together. Answer engines quote FAQ answers word for word, so one
+  name everywhere else.
+- Service and city pages open their FAQ with a "Who builds X in Y?" question
+  whose answer starts "JB Contracting ATX builds ..." and names only places
+  and services already on that page.
 - Family-owned. Licensed and insured. 5.0 on Google.
 - Nextdoor Neighborhood Fave 2025 and 2026 (confirmed by Brooke, Oct 2026).
 - John Bernard, owner, has been building across Central Texas for over a
